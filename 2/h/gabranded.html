@@ -32,6 +32,65 @@ try {
 
 
 
+jQuery(function() { 
+	/*Track logo links*/
+	jQuery('#bc-logo').each(function() {
+		var track = jQuery(this);
+		var href = track.attr('href');
+		track.click(function() {
+			pageTracker._trackPageview('/inlinks/logo/' + href);
+		});
+	});
+	/*Track action links*/
+	jQuery('#college-top-actions a').each(function() {
+		var track = jQuery(this);
+		var href = track.attr('href');
+		track.click(function() {
+			pageTracker._trackPageview('/inlinks/actionlinks/' + href);
+		});
+	});
+	/*Track mainnav links*/
+	jQuery('#main-nav a').each(function() {
+		var track = jQuery(this);
+		var href = track.attr('href');
+		track.click(function() {
+			pageTracker._trackPageview('/inlinks/mainnav/' + href);
+		});
+	});
+	/*Track footer links*/
+	jQuery('#bigfoot a').each(function() {
+		var track = jQuery(this);
+		var href = track.attr('href');
+		track.click(function() {
+			pageTracker._trackPageview('/inlinks/foot/' + href);
+		});
+	});
+	
+	jQuery('#legalbar a').each(function() {
+		var track = jQuery(this);
+		var href = track.attr('href');
+		track.click(function() {
+			pageTracker._trackPageview('/inlinks/legalbar/' + href);
+		});
+	});
+	/*Track external links*/
+	jQuery('#content a').filter(function() {
+		var theHref = jQuery(this);
+		if (theHref.hostname && theHref.hostname !== location.hostname) {
+			jQuery(theHref).bind('click keypress', function(event) {
+				var code=event.charCode || event.keyCode;
+				if (!code || (code && code == 13)) {
+					if(pageTracker){
+						var fixedLink = this.href;
+						fixedLink = fixedLink.replace(/https?:\/\/(.*)/,"$1");
+						fixedLink = '/external/' + fixedLink;
+						pageTracker._trackPageview(fixedLink);
+					};
+				};
+			});
+		};
+	});
 
+});
 -->
 </script>
