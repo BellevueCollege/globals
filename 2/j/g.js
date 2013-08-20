@@ -2,7 +2,7 @@
 Sections
 -Noisy (plugin)
 -Functions
--Non Plugins
+-JQuery Document Ready
 */
 
 /*Noisy : https://github.com/DanielRapp/Noisy */
@@ -11,39 +11,43 @@ g:~~(255*Math.random());e.data[f+2]=b.monochrome?g:~~(255*Math.random());e.data[
 
 /*Functions*/
 
-/*Non-plugins*/
-jQuery('body').noisy({
-    'intensity' : 0.5, 
-    'size' : 200, 
-    'opacity' : 0.04, 
-    'fallback' : '', 
-    'monochrome' : false
-});
-jQuery('#bigfoot').noisy({
-    'intensity' : 0.5, 
-    'size' : 80, 
-    'opacity' : 0.05, 
-    'fallback' : '', 
-    'monochrome' : false
-}).find('.inner').noisy({
-    'intensity' : 1, 
-    'size' : 80, 
-    'opacity' : 0.04, 
-    'fallback' : '', 
-    'monochrome' : false
-});
-jQuery('#top-wrapper').find('.border').noisy({
-    'intensity' : 0.5, 
-    'size' : 80, 
-    'opacity' : 0.05, 
-    'fallback' : '', 
-    'monochrome' : true
+/* JQuery Document Ready*/
+jQuery(function() {
+	
+	jQuery('body').noisy({
+		'intensity' : 0.5, 
+		'size' : 200, 
+		'opacity' : 0.04, 
+		'fallback' : '', 
+		'monochrome' : false
+	});
+	jQuery('#bigfoot').noisy({
+		'intensity' : 0.5, 
+		'size' : 80, 
+		'opacity' : 0.05, 
+		'fallback' : '', 
+		'monochrome' : false
+	}).find('.inner').noisy({
+		'intensity' : 1, 
+		'size' : 80, 
+		'opacity' : 0.04, 
+		'fallback' : '', 
+		'monochrome' : false
+	});
+	jQuery('#top-wrapper').find('.border').noisy({
+		'intensity' : 0.5, 
+		'size' : 80, 
+		'opacity' : 0.05, 
+		'fallback' : '', 
+		'monochrome' : true
+	});
+	
+	jQuery('#main-nav').find('.navbar-inner').noisy({
+		'intensity' : 0.5, 
+		'size' : 40, 
+		'opacity' : 0.05, 
+		'fallback' : '', 
+		'monochrome' : true
+	});
 });
 
-jQuery('#main-nav').find('.navbar-inner').noisy({
-    'intensity' : 0.5, 
-    'size' : 40, 
-    'opacity' : 0.05, 
-    'fallback' : '', 
-    'monochrome' : true
-});
