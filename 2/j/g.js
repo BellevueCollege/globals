@@ -47,3 +47,9 @@ jQuery('#main-nav').find('.navbar-inner').noisy({
     'fallback' : '', 
     'monochrome' : true
 });
+
+/* Set first featured slider to active */
+jQuery(document).ready(function(){
+  $(".carousel-indicators li:first").addClass("active");
+  $(".carousel-inner .item:first").addClass("active");
+});
