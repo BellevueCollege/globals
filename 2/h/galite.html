@@ -30,40 +30,29 @@ try {
 } catch (err) { }
 
 jQuery(function() { 
-	/*Track logo links*/
-	jQuery('#bc-logo').each(function() {
-		var track = jQuery(this);
-		var href = track.attr('href');
-		track.click(function() {
-			pageTracker._trackPageview('/inlinks/logo/' + href);
-		});
+	/*Header links*/
+	jQuery('#top-wrap a').click(function() {
+		pageTracker._trackEvent('Header links', 'Click', jQuery(this).attr('href'));
 	});
-	/*Track action links*/
-	jQuery('#college-top-actions a').each(function() {
-		var track = jQuery(this);
-		var href = track.attr('href');
-		track.click(function() {
-			pageTracker._trackPageview('/inlinks/actionlinks/' + href);
-		});
+	
+	/*Track subnav links*/
+	jQuery('#subnav a').click(function() {
+		pageTracker._trackEvent('Subnav links', 'Click', jQuery(this).attr('href'));
 	});
-	/*Track mainnav links*/
-	jQuery('#main-nav a').each(function() {
-		var track = jQuery(this);
-		var href = track.attr('href');
-		track.click(function() {
-			pageTracker._trackPageview('/inlinks/mainnav/' + href);
-		});
+	
+	/*Track footer links*/
+	jQuery('#legalbar a').click(function() {
+		pageTracker._trackEvent('Footer links', 'Click', jQuery(this).attr('href'));
 	});
-	jQuery('#legalbar a').each(function() {
-		var track = jQuery(this);
-		var href = track.attr('href');
-		track.click(function() {
-			pageTracker._trackPageview('/inlinks/legalbar/' + href);
-		});
+	
+	/*Track PDF links*/
+	jQuery('href$="pdf"').click(function() {
+		pageTracker._trackEvent('PDF downloads', 'Download', jQuery(this).attr('href'));
 	});
+	
 	/*Track external links*/
 	jQuery('#content a').filter(function() {
-		var theHref = jQuery(this);
+		var theHref = this;
 		if (theHref.hostname && theHref.hostname !== location.hostname) {
 			jQuery(theHref).bind('click keypress', function(event) {
 				var code=event.charCode || event.keyCode;
