@@ -45,10 +45,10 @@ jQuery(function() {
 		pageTracker._trackEvent('Footer links', 'Click', jQuery(this).attr('href'));
 	});
 	
-	/*Track PDF links*/
-	jQuery('href$="pdf"').click(function() {
+	/*Track PDF links
+	jQuery('a[href$="pdf"]').click(function() {
 		pageTracker._trackEvent('PDF downloads', 'Download', jQuery(this).attr('href'));
-	});
+	});*/
 	
 	/*Track external links*/
 	jQuery('#content a').filter(function() {
