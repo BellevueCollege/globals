@@ -1619,13 +1619,11 @@ p.site-description {
 
 /* Content space
 ---------------------------------------- */
-#content-wrap {
+#content {
 	background-color: white;
 }
-
-#content {
-	padding-top: 2em;
-	padding-bottom: 2.66667em;
+#content.transparent {
+	background-color: none;
 }
 
 
