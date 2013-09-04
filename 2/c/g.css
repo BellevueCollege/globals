@@ -1566,7 +1566,7 @@ a.text-success:focus {
 	
 }
 
-#main {
+.globals-lite #main {
 	box-shadow: 0 5px 10px #888888;
 }
 .globals-lite #main { margin-top: 2.33333em;}
