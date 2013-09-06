@@ -1589,6 +1589,10 @@ a.text-success:focus {
 	padding-top: 1em;
 	padding-bottom:1em;
 }
+.globals-branded #site-header {
+	background-color: transparent;
+	padding: 0;
+}
 
 @media screen and (min-width: 37em) {
 	#site-header {
@@ -1600,9 +1604,12 @@ a.text-success:focus {
 
 h1.site-title {
 	font-size: 2.4em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	line-height:0.975em;;  /*UPDATE*/
 	color: #333333;
+}
+.globals-branded h1.site-title {
+	font-weight: 100;
 }
 
 h1.site-title a {
