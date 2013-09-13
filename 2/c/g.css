@@ -1534,6 +1534,7 @@ a.text-success:focus {
   text-shadow: none;
   background-color: transparent;
   border: 0;
+  zoom: 1;
 }
 
 .container {
