@@ -4157,27 +4157,28 @@ input[type="submit"].btn.btn-mini {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
   top: 40%;
-  left: 15px;
-  width: 40px;
-  height: 40px;
-  margin-top: -20px;
-  font-size: 60px;
+  left: 0.25em;
+  left: 1rem;
+  width: 0.666666em;
+  height: 0.666666em;
+  font-size: 4em;
   font-weight: 100;
-  line-height: 30px;
+  line-height: 0.5em;
   color: #ffffff;
   text-decoration:none;
   text-align: center;
   background: #222222;
-  border: 3px solid #ffffff;
-  -webkit-border-radius: 23px;
-     -moz-border-radius: 23px;
-          border-radius: 23px;
+  border: 0.0333333em solid #ffffff;
+  -webkit-border-radius: 0.5em;
+     -moz-border-radius: 0.5em;
+          border-radius: 0.5em;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
 
 .carousel-control.right {
-  right: 15px;
+  right: 0.25em;
+  right: 1rem;
   left: auto;
 }
 
@@ -4229,7 +4230,7 @@ input[type="submit"].btn.btn-mini {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 0.6666667em 1em;;
+  padding: 0.6666667em 1em;
   background: #333333;
   background: rgba(0, 0, 0, 0.75);
   color: #fff;
