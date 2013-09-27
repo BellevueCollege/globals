@@ -42,7 +42,7 @@ jQuery(function() {
 		'monochrome' : true
 	});
 	
-	jQuery('#main-nav').find('.navbar-inner').noisy({
+	jQuery('.navbar').find('.navbar-inner').noisy({
 		'intensity' : 0.5, 
 		'size' : 40, 
 		'opacity' : 0.05, 

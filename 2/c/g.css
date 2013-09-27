@@ -3480,6 +3480,24 @@ input[type="submit"].btn.btn-mini {
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
+#college-navbar .navbar-inner {
+	background-color: #fafafa;
+	background-image: -moz-linear-gradient(top, #1d67a2, #23588c);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1d67a2), to(#23588c));
+	background-image: -webkit-linear-gradient(top, #1d67a2, #23588c);
+	background-image: -o-linear-gradient(top, #1d67a2, #23588c);
+	background-image: linear-gradient(to bottom, #1d67a2, #23588c);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d67a2', endColorstr='#23588c', GradientType=0);
+	border-top: 0.0666667em solid #457baa;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+	     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+	*zoom: 1;
+	font-weight: bold;
+	padding: 0;
+	min-height: 1em;
+}
+
 .navbar-inner:before,
 .navbar-inner:after {
   display: table;
@@ -3713,6 +3731,21 @@ input[type="submit"].btn.btn-mini {
   font-weight: bold;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+#college-navbar.navbar .nav > li > a {
+  color: #f2f2f2;
+  padding: .33333em 1em;
+  padding: .33333em 1rem;
+  text-shadow: 0 1px 0 #003d79;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: .9em;
+  line-height:1.66667em;
+}
+#college-navbar #nav-top a {
+	background-color: white;
+	color: #003d79;
+	text-align: right;
+	text-shadow: none;
+}
 
 @media screen and (min-width: 20em) {
 	.navbar .nav {
@@ -3725,6 +3758,49 @@ input[type="submit"].btn.btn-mini {
 	}
 	.navbar .nav > li  {  
 		float: left;
+	}
+}
+@media screen and (min-width: 40em) {
+	#college-navbar.navbar .nav > li > a {
+	  padding: .33333em .55em;
+	  transition: padding .5s ease;
+	}
+	#college-navbar.navbar .nav > li:last-child > a {
+		border-right: 1px solid rgba(255, 255, 255, 0.04);
+	}
+}
+@media screen and (min-width: 45.2em) {
+	#college-navbar.navbar .nav > li > a {
+	  padding: .33333em 1em;
+	  transition: padding .5s ease;
+	}
+}
+@media screen and (min-width: 52.5em) {
+	#college-navbar.navbar .nav > li > a {
+	  font-size: 1em; 
+	  padding: .33333em 1.33333em;
+	  transition: padding .5s ease;
+	}
+}
+@media screen and (min-width: 61em) {
+	#college-navbar.navbar .nav > li > a {
+	  padding: .33333em 2em;
+	  transition: padding .5s ease;
+	}
+}
+@media screen and (min-width: 70em) {
+	#college-navbar.navbar .nav > li > a {
+	  padding: .33333em 2.666667em;
+	  transition: padding .5s ease;
+	}
+}
+@media screen and (min-width: 80em) {
+	#college-navbar.navbar .nav > li > a {
+	  padding: .33333em 3.0666666em;
+	  transition: padding .1s ease;
+	}
+	#college-navbar.navbar .nav > li:last-child > a {
+		border-right: none;
 	}
 }
 
@@ -3757,6 +3833,60 @@ input[type="submit"].btn.btn-mini {
 	        box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
   text-decoration: none;
   border-right: 1px solid #002d3f;
+}
+
+#college-navbar.navbar .nav > li > a:focus,
+#college-navbar.navbar .nav > li > a:hover {
+	color: #fff;
+	text-decoration: none;
+	background: rgb(129,167,200);
+	background: -moz-linear-gradient(top, rgb(129,167,200) 0%, rgb(62,116,163) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(129,167,200)), color-stop(100%,rgb(62,116,163)));
+	background: -webkit-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: -o-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: -ms-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: linear-gradient(to bottom, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+}
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a {
+    color: #FFFFFF;
+    text-decoration: none;
+	background: rgb(39,68,97);
+	background: -moz-linear-gradient(top,  rgb(39,68,97) 0%, rgb(20,53,83) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(39,68,97)), color-stop(100%,rgb(20,53,83)));
+	background: -webkit-linear-gradient(top,  rgb(39,68,97) 0%,rgb(20,53,83) 100%);
+	background: -o-linear-gradient(top,  rgb(39,68,97) 0%,rgb(20,53,83) 100%);
+	background: -ms-linear-gradient(top,  rgb(39,68,97) 0%,rgb(20,53,83) 100%);
+	background: linear-gradient(to bottom,  rgb(39,68,97) 0%,rgb(20,53,83) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#274461', endColorstr='#143553',GradientType=0 );
+	margin-top: -0.0666667em;
+	padding-top: 0.3999999em;
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:hover,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:hover,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:hover,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a:hover,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:hover,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a:hover,
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:focus,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:focus,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:focus,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a:focus,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:focus,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a:focus {
+	background: rgb(45,82,118);
+	background: -moz-linear-gradient(top, rgb(45,82,118) 0%, rgb(20,53,83) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(45,82,118)), color-stop(100%,rgb(20,53,83)));
+	background: -webkit-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: -o-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: -ms-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: linear-gradient(to bottom, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d5276', endColorstr='#143553',GradientType=0 );
 }
 
 .navbar .btn-navbar {
