@@ -3811,9 +3811,15 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
   text-decoration: none;
-  background-color: transparent;
+  background: #0e78ba;
+  background: -moz-linear-gradient(top,  #0e78ba 0%, #0055a0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0e78ba), color-stop(100%,#0055a0));
+  background: -webkit-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: -o-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: -ms-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: linear-gradient(to bottom,  #0e78ba 0%,#0055a0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 );
 }
 
 .navbar .nav > .active > a,
