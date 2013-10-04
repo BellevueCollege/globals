@@ -1863,7 +1863,7 @@ ul#college-top-actions li.top-actions a:focus {
 }
 .globals-branded #site-header {
 	background-color: transparent;
-	padding: 1em 0 0 0;
+	padding: 1.3333em 0 0 0;
 }
 
 @media screen and (min-width: 37em) {
