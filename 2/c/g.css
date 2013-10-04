@@ -1582,14 +1582,13 @@ a.text-success:focus {
 #skiplinks a:focus { position: inherit;}
 #skiplinks a:hover { color: #468847;}
 
-#main-wrap {
-	
-}
+#main-wrap {}
 
 .globals-lite #main {
 	box-shadow: 0 5px 10px #888888;
+	margin-top: 2.33333em;
+	background-color: white;
 }
-.globals-lite #main { margin-top: 2.33333em;}
 
 .globals-branded {}
 
@@ -1815,11 +1814,18 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	#nav-top {
 		position: absolute !important;
-		left: -9999999px !important;
+		left: -99999px !important;
+	}
+}
+@media screen and (min-width: 41em) {
+	#college-search-field {
+		width: 200px; 
 	}
 }
 @media screen and (min-width: 50em) {
-	#site-header > .content-padding { position: relative}
+	#site-header > .content-padding { 
+		position: relative
+	}
 	.header-search{
 		position: absolute;
 		right: 0;
@@ -1829,13 +1835,6 @@ ul#college-top-actions li.top-actions a:focus {
 	.header-search-w-description {
 		margin-top: 1em;
 	}
-}
-@media screen and (min-width: 41em) {
-	#college-search-field {
-		width: 200px; 
-	}
-}
-@media screen and (min-width: 50em) {
 	.branded #bc-logo {
 		width: 420px; 
 	}
@@ -1900,7 +1899,7 @@ p.site-description {
 /* Content space
 ---------------------------------------- */
 #content {
-	background-color: white;
+	xbackground-color: white;
 }
 #content.transparent {
 	background-color: transparent;
