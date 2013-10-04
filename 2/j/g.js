@@ -42,7 +42,7 @@ jQuery(function() {
 		'monochrome' : true
 	});
 	
-	jQuery('#main-nav').find('.navbar-inner').noisy({
+	jQuery('.navbar').find('.navbar-inner').noisy({
 		'intensity' : 0.5, 
 		'size' : 40, 
 		'opacity' : 0.05, 
@@ -53,6 +53,6 @@ jQuery(function() {
 
 /* Set first featured slider to active */
 jQuery(document).ready(function(){
-  $(".carousel-indicators li:first").addClass("active");
-  $(".carousel-inner .item:first").addClass("active");
+  jQuery(".carousel-indicators li:first").addClass("active");
+  jQuery(".carousel-inner .item:first").addClass("active");
 });
