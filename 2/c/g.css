@@ -1632,7 +1632,7 @@ a.text-success:focus {
 	overflow: hidden;
 	*display: none;   /*IE7 and below */
 } 
-.branded #main-nav { 
+.branded #college-navbar { 
 	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
