@@ -1866,10 +1866,13 @@ ul#college-top-actions li.top-actions a:focus {
 	padding: 1.3333em 0 0 0;
 }
 
-@media screen and (min-width: 37em) {
+@media screen and (min-width: 40em) {
 	#site-header {
 		padding-top: 1.666667em;
 		padding-bottom: 2em;
+	}
+	.globals-branded #site-header {
+		padding: 0;
 	}
 }
 
