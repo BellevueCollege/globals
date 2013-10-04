@@ -3753,6 +3753,9 @@ input[type="submit"].btn.btn-mini {
 	.navbar .nav {
  		float: left;
 	}
+	#college-navbar.navbar .nav {
+ 		float: none;
+	}
 	.navbar .nav > li > a { 
 		border-top: none;
 		border-right: 1px solid #5395c5;
@@ -3761,8 +3764,17 @@ input[type="submit"].btn.btn-mini {
 	.navbar .nav > li  {  
 		float: left;
 	}
+	#college-navbar.navbar .nav > li  {  
+		float: none;
+	}
 }
 @media screen and (min-width: 40em) {
+	#college-navbar.navbar .nav {
+ 		float: left;
+	}
+	#college-navbar.navbar .nav > li  {  
+		float: left;
+	}
 	#college-navbar.navbar .nav > li > a {
 	  padding: .33333em .55em;
 	  transition: padding .5s ease;
