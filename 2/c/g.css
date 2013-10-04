@@ -1603,11 +1603,11 @@ a.text-success:focus {
 }
 
 #top-wrap.branded {
-	background: #003d79 url(/g/2/i/headbgwide.jpg) repeat-x;
+	background: #003d79 url(../i/headbgwide.jpg) repeat-x;
 }
 
 .container.logobar {
-	background: url(/g/2/i/headbg.jpg) repeat-y scroll 0 0 #003D79;
+	background: url(../i/headbg.jpg) repeat-y scroll 0 0 #003D79;
 }
 
 .container.logobar .border {
@@ -1627,7 +1627,7 @@ a.text-success:focus {
 .header-search fieldset {
 	white-space:nowrap;}
 #main-nav-wrap {
-	background: #003d79 url(/g/2/i/headbgwide.jpg) 0 -20px repeat-x;
+	background: #003d79 url(../i/headbgwide.jpg) 0 -20px repeat-x;
 	border-bottom: 2px solid #002d3f;
 	overflow: hidden;
 	*display: none;   /*IE7 and below */
@@ -1643,7 +1643,7 @@ a.text-success:focus {
 }
 
 #smallhead {	
-	background: #003d79 url(/g/2/i/headbg.jpg) repeat-y;
+	background: #003d79 url(../i/headbg.jpg) repeat-y;
 	position: relative;
 	zoom: 1 /*IE hack, see next line*/;
 	padding: 0 1em;
@@ -1671,10 +1671,10 @@ a.text-success:focus {
 	width: auto;
 	margin: 0 auto;}
 .lite #bc-logo:hover {
-	background: url(/g/2/i/homepage.png) no-repeat 100% 0.5em;
+	background: url(../i/homepage.png) no-repeat 100% 0.5em;
 }
 .branded #bc-logo:hover {
-	background: url(/g/2/i/homepage.png) no-repeat 350px 17px;
+	background: url(../i/homepage.png) no-repeat 350px 17px;
 }
 a#bc-logo:focus {
 	outline: 1px dotted white;
