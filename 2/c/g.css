@@ -1222,27 +1222,27 @@ input.search-query {
 }
 
 .form-search .input-append .search-query {
-  -webkit-border-radius: 14px 0 0 14px;
-     -moz-border-radius: 14px 0 0 14px;
-          border-radius: 14px 0 0 14px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
 }
 
 .form-search .input-append .btn {
-  -webkit-border-radius: 0 14px 14px 0;
-     -moz-border-radius: 0 14px 14px 0;
-          border-radius: 0 14px 14px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
 }
 
 .form-search .input-prepend .search-query {
-  -webkit-border-radius: 0 14px 14px 0;
-     -moz-border-radius: 0 14px 14px 0;
-          border-radius: 0 14px 14px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
 }
 
 .form-search .input-prepend .btn {
-  -webkit-border-radius: 14px 0 0 14px;
-     -moz-border-radius: 14px 0 0 14px;
-          border-radius: 14px 0 0 14px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
 }
 
 .form-search input,
@@ -1683,19 +1683,40 @@ a#bc-logo:focus {
 	float: none;
 	display: block;
 	margin-top: 0.666667em;
-	margin-bottom: 1.333333em;
 	text-align: center;}
 #college-search-field {
 	background-color: rgba(255, 255, 255, 0.9);
 	width: 120px;
 	}
-#main-nav-link-wrap { 
+	
+#mobile-nav{
+	margin: 0;
+	padding: 0;
+	list-style-type:none;
 	text-align: center;
+	padding-bottom: 1em;
+	
 }
+#mobile-nav li {
+	padding: 0;
+	list-style-type:none;
+	margin: 0;
+}
+
 #main-nav-link {
-	margin: 0.66666em 0;
+	display: inline-block;
 	*display: none; /*IE7 and below*/
 }
+#college-search-wrap {
+	display: inline-block;
+}
+#college-search-field {
+	position: absolute;
+	top: -9999px;
+	left: -99999px;
+	}
+
+
 
 /*Actions*/
 ul#college-top-actions { 
@@ -1740,7 +1761,7 @@ ul#college-top-actions li.top-actions a:focus {
 }
 @media screen and (min-width: 23em) {
 	#college-search-field {
-		width: 230px
+		xwidth: 180px
 	}
 }
 @media screen and (min-width: 37em) {
@@ -1765,9 +1786,13 @@ ul#college-top-actions li.top-actions a:focus {
 	#bc-logo img {
 		margin: 0;
 	}
+	#college-search-wrap {
+		display: block;
+	}
 	#college-search  {
 		float:right;
 		clear: right;
+		margin-bottom: 1.333333em;
 	}
 	#college-search-field {
 		width: 150px; 
@@ -1802,12 +1827,12 @@ ul#college-top-actions li.top-actions a:focus {
 	ul#college-top-actions li:first-child a.top-actions { padding-right: 0}
 	
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 37em) {
 	.flexwrap {
 		display: table;
 		width: 100%;
 	}
-	#main-nav-link { display: none;}
+	#main-nav-link{ display: none;}
 	#main-nav-wrap {
 		display: table-header-group;
 		*display: none;   /*IE7 and below */
@@ -3771,7 +3796,7 @@ input[type="submit"].btn.btn-mini {
 		float: none;
 	}
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 37em) {
 	#college-navbar.navbar .nav {
  		float: left;
 	}
@@ -3785,6 +3810,10 @@ input[type="submit"].btn.btn-mini {
 	#college-navbar.navbar .nav > li:last-child > a {
 		border-right: 1px solid rgba(255, 255, 255, 0.04);
 	}
+	#nav-home { display: none;}
+}
+@media screen and (min-width: 39em) {
+	#nav-home { display: inherit;}
 }
 @media screen and (min-width: 45.2em) {
 	#college-navbar.navbar .nav > li > a {

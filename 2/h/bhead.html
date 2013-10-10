@@ -7,17 +7,20 @@
                 <li class="top-actions"><a href="http://www.bellevuecollege.edu/services/" class="top-actions">Online Services</a></li>
                 <li class="top-actions"><a href="http://www.bellevuecollege.edu/enrollment/registration/register/" class="top-actions">Register</a></li>
             </ul>
-            <form action="http://www.bellevuecollege.edu/search/" method="get" class="form-search" id="college-search" role="search">
-                <fieldset>
-                    <input type="text" name="txtQuery" id="college-search-field"> 
-                    <button class="btn" type="submit" id="college-search-submit">Search</button>
+            <ul id="mobile-nav">
+       		<li id="main-nav-link"><a href="#college-navbar" class="btn">Navigation Menu</a></li>
+        	<!--<li id="mobile-search-link"><a href="http://www.bellevuecollege.edu/search/">Search</a></li>-->
+            <li id="college-search-wrap"><form action="http://www.bellevuecollege.edu/search/" method="get" class="form-search" id="college-search" role="search">
+                <fieldset class="input-append">
+                    <input type="text" name="txtQuery" id="college-search-field" class="search-query"><button class="btn" type="submit" id="college-search-submit">Search</button>
                 </fieldset>
-            </form>
+            </form></li>
+    	</ul>
         </div><!--border -->					
     </div><!-- container -->
-    <div class="container" id="main-nav-link-wrap">
-        <a href="#college-navbar" class="btn" id="main-nav-link">Navigation Menu</a>
-    </div><!-- #main-nav-link-wrap -->
+    <!--<div class="navbar" id="main-nav-link-wrap">
+    	
+   </div> #main-nav-link-wrap -->
   
         <!--[if lte IE 7]>
             <div class="container">
