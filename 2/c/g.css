@@ -1,4 +1,4 @@
-/* Globals Version 2.1.1.2
+/* Globals Version 2.1.1.3
 
 Sections
 - Rebase CSS
@@ -59,6 +59,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-size: 100%;
 	vertical-align: baseline;
 }
+
 html {
 	font-size: 93.75%; /*15px*/
 	overflow-y: scroll;
@@ -1673,9 +1674,6 @@ a.text-success:focus {
 .lite #bc-logo:hover {
 	background: url(../i/homepage.png) no-repeat 100% 0.5em;
 }
-.branded #bc-logo:hover {
-	background: url(../i/homepage.png) no-repeat 350px 17px;
-}
 a#bc-logo:focus {
 	outline: 1px dotted white;
 }
@@ -1707,6 +1705,11 @@ a#bc-logo:focus {
 	display: inline-block;
 	*display: none; /*IE7 and below*/
 }
+#main-nav-link a {
+	padding-left: 3em;
+	padding-right: 3em;
+	margin-right: 0.33333em;	
+}
 #college-search-wrap {
 	display: inline-block;
 }
@@ -1714,9 +1717,14 @@ a#bc-logo:focus {
 	position: absolute;
 	top: -9999px;
 	left: -99999px;
-	}
-
-
+}
+#college-search-submit {
+	-webkit-border-radius: 4px 4px 4px 4px;
+     -moz-border-radius: 4px 4px 4px 4px;
+          border-radius: 4px 4px 4px 4px;
+	padding-left: 2em;
+	padding-right: 2em;
+}
 
 /*Actions*/
 ul#college-top-actions { 
@@ -1733,7 +1741,6 @@ ul#college-top-actions li.top-actions{
 	padding: 0; 
 	margin: 0; 
 	float: left; 
-
 }
 ul#college-top-actions a { 
 	font-size: 0.8em;
@@ -1755,13 +1762,48 @@ ul#college-top-actions li.top-actions a:focus {
 		text-decoration: none; }
 
 @media screen and (min-width: 20em) {
-	#college-search-field {
-		width: 180px
+	#main-nav-link a {
+		margin-right: 0.33333em;
+		
 	}
+	#college-search-submit {
+		padding-left: 3em;
+		padding-right: 3em;
+		margin-left: 0.33333em;
+	}	
 }
 @media screen and (min-width: 23em) {
+	#main-nav-link a {
+		padding-left: 4em;
+		padding-right: 4em;
+	}
+	#college-search-submit {
+		padding-left: 4em;
+		padding-right: 4em;
+	}	
+}
+@media screen and (min-width: 25em) {
+	
+	#main-nav-link a {
+		margin-left: 0.5em;
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+	#college-search-submit {
+		margin-left: 0;
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+	
 	#college-search-field {
-		xwidth: 180px
+		width: 110px;
+		position: inherit;
+		margin-left: 0.5em;
+	}
+	#college-search-submit {
+	webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
 	}
 }
 @media screen and (min-width: 37em) {
@@ -1797,6 +1839,7 @@ ul#college-top-actions li.top-actions a:focus {
 	#college-search-field {
 		width: 150px; 
 	}
+	
 	ul#college-top-actions { 
 		display: block; 
 	}
@@ -1826,8 +1869,6 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	ul#college-top-actions li:first-child a.top-actions { padding-right: 0}
 	
-}
-@media screen and (min-width: 37em) {
 	.flexwrap {
 		display: table;
 		width: 100%;
@@ -1865,6 +1906,9 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	.branded #bc-logo img {
 		max-width: 100%;
+	}
+	.branded #bc-logo:hover {
+		background: url(../i/homepage.png) no-repeat 350px 17px;
 	}
 }
 @media screen and (min-width: 55em) {
