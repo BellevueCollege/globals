@@ -1,4 +1,4 @@
-/* Globals Version 2.1.1.3
+/* Globals Version 2.1.1.4
 
 Sections
 - Rebase CSS
@@ -1666,7 +1666,6 @@ a.text-success:focus {
 .container.logobar {
 	background: url(../i/headbg.jpg) repeat-y scroll 0 0 #003D79;
 }
-
 .container.logobar .border {
 	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
@@ -1737,7 +1736,8 @@ a#bc-logo:focus {
 	float: none;
 	display: block;
 	margin-top: 0.666667em;
-	text-align: center;}
+	text-align: center;
+}
 #college-search-field {
 	background-color: rgba(255, 255, 255, 0.9);
 	width: 120px;
@@ -1774,6 +1774,9 @@ a#bc-logo:focus {
 	top: -9999px;
 	left: -99999px;
 }
+.ie7 #college-search-field {
+	xposition: inherit;
+}
 #college-search-submit {
 	-webkit-border-radius: 4px 4px 4px 4px;
      -moz-border-radius: 4px 4px 4px 4px;
@@ -1791,6 +1794,10 @@ ul#college-top-actions {
 	list-style:none;  
 	line-height: 31px; 
 	float: none;
+}
+.ie7 ul#college-top-actions,
+.ie7 ul#college-top-actions *{ 
+	zoom: 1 !important
 }
 ul#college-top-actions li.top-actions{ 
 	display: block; 
@@ -1849,32 +1856,36 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-left: 0;
 		padding-left: 12px;
 		padding-right: 12px;
+		webkit-border-radius: 0 4px 4px 0;
+     	  -moz-border-radius: 0 4px 4px 0;
+               border-radius: 0 4px 4px 0;
 	}
-	
 	#college-search-field {
 		width: 110px;
-		position: inherit;
+		position: static;
 		margin-left: 0.5em;
-	}
-	#college-search-submit {
-	webkit-border-radius: 0 4px 4px 0;
-     -moz-border-radius: 0 4px 4px 0;
-          border-radius: 0 4px 4px 0;
+		left: auto;
+		top: auto;
 	}
 }
 @media screen and (min-width: 37em) {
 	.branded #bc-logo {
 		margin-top: 1.5em;
 		padding-bottom: 1.5em;
+		width: 300px;
+	}
+	.ie8 .branded #bc-logo {
+		width: 280px;
 	}
 	.branded #bc-logo img {
-		max-width: 300px
+		max-width: 100%
 	}
 	.lite #bc-logo {
 		margin-top: 0.2em;
 		margin-bottom: 0.2em;
-		width: 310px; 
+		width: 310px;
 	}
+	
 	#smallhead {
 		padding:  0 1em;
 	}	
@@ -1886,6 +1897,7 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	#college-search-wrap {
 		display: block;
+		zoom: 1
 	}
 	#college-search  {
 		float:right;
@@ -1962,6 +1974,9 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	.branded #bc-logo img {
 		max-width: 100%;
+	}
+	.ie8 .branded #bc-logo {
+		width: 410px;
 	}
 	.branded #bc-logo:hover {
 		background: url(../i/homepage.png) no-repeat 350px 17px;
