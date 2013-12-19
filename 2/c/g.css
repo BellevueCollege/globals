@@ -1,4 +1,4 @@
-/* Globals Version 2.1.2
+/* Globals Version 2.1.3
 
 Sections
 - Rebase CSS
@@ -115,8 +115,9 @@ p {
 	margin-top: 1em;
 	text-rendering: optimizelegibility;}
 ul, ol, dl { 
-	margin-top: 1em;}
-
+	margin-top: 1em;
+	list-style-position: inside;
+}
 li { 
 	margin-top: .3333333em;
 	margin-left: 1.5em;
