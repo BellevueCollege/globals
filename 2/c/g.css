@@ -181,6 +181,11 @@ h1 + p {
 h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  { 
 	margin-top: 0
 }
+
+h5.class-heading{
+    margin-top: 2.16667rem !important;
+}
+
 address {
   display: block;
   margin-top: 1em;
