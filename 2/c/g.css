@@ -97,8 +97,10 @@ img {
 	border: 0;
 	-ms-interpolation-mode: bicubic;
   	max-width: 100%;
- 	width: auto; /*thks IE7/8*/
  	height: auto;
+}
+.ie7 img, .ie8 img {
+	 	width: auto;/*thks IE7/8*/
 }
 a {
 	outline: none;
