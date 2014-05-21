@@ -1792,6 +1792,9 @@ a#bc-logo:focus {
 	padding-left: 2em;
 	padding-right: 2em;
 }
+#mybc {
+	font-style: italic;
+}
 
 /*Actions*/
 ul#college-top-actions { 
