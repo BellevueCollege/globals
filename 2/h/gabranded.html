@@ -15,6 +15,10 @@ ga('create','UA-16482970-1','bellevuecollege.edu',{'name':'ceTracker'});  //CE T
 ga('require', 'linkid', 'linkid.js');  //Enhanced Link Attribution
 ga('require', 'displayfeatures'); //Grab DoubleClick Cookies- Privacy Policy Change Required
 
+// Cross Domain Tracking for CampusCE //
+ga('require','linker');
+ga('linker:autoLink',['campusce.net']);
+
 // Send Tracking Info //
 ga('send', 'pageview');
 
