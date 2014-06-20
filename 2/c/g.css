@@ -4903,3 +4903,11 @@ input[type="submit"].btn.btn-mini {
 	  float: right;
 	}
 }
+
+/* ************************************** */
+/*	Alert Message Overrides               */      
+/* ************************************** */
+
+#alertmessage h3 + p {
+	margin-top: 1em;
+}
