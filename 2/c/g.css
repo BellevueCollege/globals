@@ -1,4 +1,4 @@
-/* Globals Version 2.2
+/* Globals Version 2.5
 
 Sections
 - Rebase CSS
@@ -97,8 +97,10 @@ img {
 	border: 0;
 	-ms-interpolation-mode: bicubic;
   	max-width: 100%;
- 	width: auto; /*thks IE7/8*/
  	height: auto;
+}
+.ie7 img, .ie8 img {
+	 	width: auto;/*thks IE7/8*/
 }
 a {
 	outline: none;
@@ -1790,6 +1792,9 @@ a#bc-logo:focus {
 	padding-left: 2em;
 	padding-right: 2em;
 }
+#mybc {
+	font-style: italic;
+}
 
 /*Actions*/
 ul#college-top-actions { 
@@ -2550,7 +2555,7 @@ input[type="button"].btn-block {
 
 .btn-success:active,
 .btn-success.active {
-  background-color: #408140 \9;
+  background-color: #408140;
 }
 
 .btn-info {
@@ -2945,7 +2950,7 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
+  border: 1px solid #856831;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -2953,7 +2958,7 @@ input[type="submit"].btn.btn-mini {
 
 .alert,
 .alert h4 {
-  color: #c09853;
+  color: #856831;
 }
 
 .alert h4 {
@@ -2968,9 +2973,9 @@ input[type="submit"].btn.btn-mini {
 }
 
 .alert-success {
-  color: #468847;
+  color: #3b723b;
   background-color: #dff0d8;
-  border-color: #d6e9c6;
+  border-color: #3b723b;
 }
 
 .alert-success h4 {
@@ -2979,9 +2984,9 @@ input[type="submit"].btn.btn-mini {
 
 .alert-danger,
 .alert-error {
-  color: #b94a48;
+  color: #a23f3d;
   background-color: #f2dede;
-  border-color: #eed3d7;
+  border-color: #a23f3d;
 }
 
 .alert-danger h4,
@@ -2990,9 +2995,9 @@ input[type="submit"].btn.btn-mini {
 }
 
 .alert-info {
-  color: #3a87ad;
+  color: #2a617d;
   background-color: #d9edf7;
-  border-color: #bce8f1;
+  border-color: #2a617d;
 }
 
 .alert-info h4 {
@@ -4560,6 +4565,10 @@ input[type="submit"].btn.btn-mini {
   list-style: none;
 }
 
+.carousel.slide.content-padding .carousel-indicators {
+  right: 3em;
+}
+
 .carousel-indicators li {
   display: block;
   float: left;
@@ -4893,4 +4902,12 @@ input[type="submit"].btn.btn-mini {
 	.row [class*="span"].pull-right {
 	  float: right;
 	}
+}
+
+/* ************************************** */
+/*	Alert Message Overrides               */      
+/* ************************************** */
+
+#alertmessage h3 + p {
+	margin-top: 1em;
 }
