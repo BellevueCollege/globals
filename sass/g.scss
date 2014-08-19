@@ -1,4 +1,4 @@
-/* Globals Version 3.0.0
+/* Globals Version 3.0
 
 /* Load Defaul Bootstrap */
 @import "bootstrap/bootstrap";
@@ -765,7 +765,7 @@ ul#college-top-actions {
 	margin: 0; 
 	list-style:none;  
 	line-height: 31px; 
-	float: none;
+	float: right;
 }
 .ie7 ul#college-top-actions,
 .ie7 ul#college-top-actions *{ 
@@ -886,8 +886,8 @@ ul#college-top-actions li.top-actions a:focus {
 		display: block; 
 	}
 	ul#college-top-actions li.top-actions{ 
-		float: right;
-		padding: 0 1px 0 0; 
+		float: left;
+		padding: 0 0px 0 1px; 
 	}
 	ul#college-top-actions li:after {
 		color: white;
@@ -896,20 +896,20 @@ ul#college-top-actions li.top-actions a:focus {
 		display: block;
 		float: left;
 	}
-	ul#college-top-actions li:first-child:after{
+	ul#college-top-actions li:last-child:after{
 		content: "";
 	}
-	ul#college-top-actions li:first-child{ 
+	ul#college-top-actions li:last-child{ 
 		background: none; 
-		padding-right: 0;
+		padding-left: 0;
 	}
-	ul#college-top-actions li:first-child a.top-actions { padding-right: 0}
+	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
 	
 	ul#college-top-actions a.top-actions { 
 		padding: 0 0.8em; 
 		text-decoration: underline; 
 	}
-	ul#college-top-actions li:first-child a.top-actions { padding-right: 0}
+	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
 	
 	.flexwrap {
 		display: table;
@@ -1561,10 +1561,19 @@ button.close {
 	margin: 0;
 	padding: 0;
 }
-
+#college-navbar.navbar .nav li {
+	padding-left: 20px;
+}
+@media screen and (min-width: 37em) {
+	#college-navbar.navbar .nav li {
+		padding-left: 0;
+	}
+}
 .navbar {
-	@include background-image(linear-gradient(top, #0071bc, #004684));
-	//background: #0071bc;
+	background: #0071bc;
+	@include background-image(linear-gradient(#0071bc 0%, #004684 100%)); /* W3C */
+	background: -ms-linear-gradient(top, #0071bc 0%,#004684 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0071bc', endColorstr='#004684',GradientType=0 ); /* IE6-9 */
 	@include border-radius(0px, 0px);
 	min-height:30px !important;
 	margin-bottom: 0;
@@ -1582,7 +1591,10 @@ button.close {
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
 	text-decoration: none;
-	@include background-image(linear-gradient(top, #0e78ba, #0055a0));
+//	@include background-image(linear-gradient(top, #0e78ba, #0055a0));
+	@include background-image(linear-gradient(#0e78ba 0%, #0055a0 100%));
+	background: -ms-linear-gradient(top, #0e78ba 0%,#0055a0 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 ); /* IE6-9 */
 	color: #fff;	
 }
 

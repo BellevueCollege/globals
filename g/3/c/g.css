@@ -1,4 +1,4 @@
-/* Globals Version 3.0.0
+/* Globals Version 3.0
 
 /* Load Defaul Bootstrap */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -9021,7 +9021,7 @@ ul#college-top-actions {
   margin: 0;
   list-style: none;
   line-height: 31px;
-  float: none;
+  float: right;
 }
 
 /* line 771, ../../../sass/g.scss */
@@ -9189,8 +9189,8 @@ ul#college-top-actions li.top-actions a:focus {
 
   /* line 888, ../../../sass/g.scss */
   ul#college-top-actions li.top-actions {
-    float: right;
-    padding: 0 1px 0 0;
+    float: left;
+    padding: 0 0px 0 1px;
   }
 
   /* line 892, ../../../sass/g.scss */
@@ -9203,19 +9203,19 @@ ul#college-top-actions li.top-actions a:focus {
   }
 
   /* line 899, ../../../sass/g.scss */
-  ul#college-top-actions li:first-child:after {
+  ul#college-top-actions li:last-child:after {
     content: "";
   }
 
   /* line 902, ../../../sass/g.scss */
-  ul#college-top-actions li:first-child {
+  ul#college-top-actions li:last-child {
     background: none;
-    padding-right: 0;
+    padding-left: 0;
   }
 
   /* line 906, ../../../sass/g.scss */
   ul#college-top-actions li:first-child a.top-actions {
-    padding-right: 0;
+    padding-left: 0;
   }
 
   /* line 908, ../../../sass/g.scss */
@@ -9226,7 +9226,7 @@ ul#college-top-actions li.top-actions a:focus {
 
   /* line 912, ../../../sass/g.scss */
   ul#college-top-actions li:first-child a.top-actions {
-    padding-right: 0;
+    padding-left: 0;
   }
 
   /* line 914, ../../../sass/g.scss */
@@ -10055,13 +10055,30 @@ button.close {
   padding: 0;
 }
 
-/* line 1565, ../../../sass/g.scss */
+/* line 1564, ../../../sass/g.scss */
+#college-navbar.navbar .nav li {
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 37em) {
+  /* line 1568, ../../../sass/g.scss */
+  #college-navbar.navbar .nav li {
+    padding-left: 0;
+  }
+}
+/* line 1572, ../../../sass/g.scss */
 .navbar {
+  background: #0071bc;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0071bc), color-stop(100%, #004684));
-  background-image: -webkit-linear-gradient(top, #0071bc, #004684);
-  background-image: -moz-linear-gradient(top, #0071bc, #004684);
-  background-image: -o-linear-gradient(top, #0071bc, #004684);
-  background-image: linear-gradient(top, #0071bc, #004684);
+  background-image: -webkit-linear-gradient(#0071bc 0%, #004684 100%);
+  background-image: -moz-linear-gradient(#0071bc 0%, #004684 100%);
+  background-image: -o-linear-gradient(#0071bc 0%, #004684 100%);
+  background-image: linear-gradient(#0071bc 0%, #004684 100%);
+  /* W3C */
+  background: -ms-linear-gradient(top, #0071bc 0%, #004684 100%);
+  /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0071bc', endColorstr='#004684',GradientType=0 );
+  /* IE6-9 */
   -webkit-border-radius: 0px 0px;
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
@@ -10069,7 +10086,7 @@ button.close {
   margin-bottom: 0;
 }
 
-/* line 1575, ../../../sass/g.scss */
+/* line 1584, ../../../sass/g.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
@@ -10079,32 +10096,36 @@ button.close {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* line 1583, ../../../sass/g.scss */
+/* line 1592, ../../../sass/g.scss */
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   text-decoration: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0e78ba), color-stop(100%, #0055a0));
-  background-image: -webkit-linear-gradient(top, #0e78ba, #0055a0);
-  background-image: -moz-linear-gradient(top, #0e78ba, #0055a0);
-  background-image: -o-linear-gradient(top, #0e78ba, #0055a0);
-  background-image: linear-gradient(top, #0e78ba, #0055a0);
+  background-image: -webkit-linear-gradient(#0e78ba 0%, #0055a0 100%);
+  background-image: -moz-linear-gradient(#0e78ba 0%, #0055a0 100%);
+  background-image: -o-linear-gradient(#0e78ba 0%, #0055a0 100%);
+  background-image: linear-gradient(#0e78ba 0%, #0055a0 100%);
+  background: -ms-linear-gradient(top, #0e78ba 0%, #0055a0 100%);
+  /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 );
+  /* IE6-9 */
   color: #fff;
 }
 
-/* line 1589, ../../../sass/g.scss */
+/* line 1601, ../../../sass/g.scss */
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   border-right-color: #fff;
   font-weight: bold;
 }
 
-/* line 1595, ../../../sass/g.scss */
+/* line 1607, ../../../sass/g.scss */
 .navbar-nav > li > a {
   padding-top: 12px !important;
   padding-bottom: 13px !important;
 }
 
-/* line 1600, ../../../sass/g.scss */
+/* line 1612, ../../../sass/g.scss */
 .navbar .nav > li > a {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -10112,7 +10133,7 @@ button.close {
 /* ************************************** */
 /* Carousel 																*/
 /* ************************************** */
-/* line 1608, ../../../sass/g.scss */
+/* line 1620, ../../../sass/g.scss */
 .carousel-control {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
@@ -10136,14 +10157,14 @@ button.close {
   filter: alpha(opacity=50);
 }
 
-/* line 1631, ../../../sass/g.scss */
+/* line 1643, ../../../sass/g.scss */
 .carousel-control.right {
   right: 0.25em;
   right: 1rem;
   left: auto;
 }
 
-/* line 1638, ../../../sass/g.scss */
+/* line 1650, ../../../sass/g.scss */
 .carousel-control:hover,
 .carousel-control:focus {
   color: #ffffff;
@@ -10153,7 +10174,7 @@ button.close {
   outline: none;
 }
 
-/* line 1648, ../../../sass/g.scss */
+/* line 1660, ../../../sass/g.scss */
 .carousel-indicators {
   position: absolute;
   top: 1em;
@@ -10168,12 +10189,12 @@ button.close {
   list-style: none;
 }
 
-/* line 1662, ../../../sass/g.scss */
+/* line 1674, ../../../sass/g.scss */
 .carousel.slide.content-padding .carousel-indicators {
   right: 3em;
 }
 
-/* line 1666, ../../../sass/g.scss */
+/* line 1678, ../../../sass/g.scss */
 .carousel-indicators li {
   display: block;
   float: left;
@@ -10190,13 +10211,13 @@ button.close {
   cursor: pointer;
 }
 
-/* line 1681, ../../../sass/g.scss */
+/* line 1693, ../../../sass/g.scss */
 .carousel-indicators li:hover {
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 
-/* line 1686, ../../../sass/g.scss */
+/* line 1698, ../../../sass/g.scss */
 .carousel-indicators .active {
   background-color: #fff;
   width: 1em;
@@ -10204,13 +10225,13 @@ button.close {
   margin-left: 0.33333333em;
 }
 
-/* line 1693, ../../../sass/g.scss */
+/* line 1705, ../../../sass/g.scss */
 .carousel-indicators li.active:hover {
   background-color: #fff;
   cursor: auto;
 }
 
-/* line 1698, ../../../sass/g.scss */
+/* line 1710, ../../../sass/g.scss */
 .carousel-caption {
   position: absolute;
   right: 0;
@@ -10223,7 +10244,7 @@ button.close {
   text-align: left;
 }
 
-/* line 1710, ../../../sass/g.scss */
+/* line 1722, ../../../sass/g.scss */
 .carousel-caption h2 {
   font-size: 1.4em;
   line-height: 1.429em;
@@ -10232,18 +10253,18 @@ button.close {
   padding: 0;
 }
 
-/* line 1718, ../../../sass/g.scss */
+/* line 1730, ../../../sass/g.scss */
 .carousel-caption p {
   margin: 0;
 }
 
-/* line 1721, ../../../sass/g.scss */
+/* line 1733, ../../../sass/g.scss */
 .carousel-caption a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 1726, ../../../sass/g.scss */
+/* line 1738, ../../../sass/g.scss */
 .carousel-caption a:focus,
 .carousel-caption a:hover {
   text-decoration: underline;
