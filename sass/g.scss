@@ -1,4 +1,4 @@
-/* Globals Version 3.0.0.1
+/* Globals Version 3.0.0.2
 
 /* Load Defaul Bootstrap */
 @import "bootstrap/bootstrap";
@@ -710,17 +710,22 @@ a#bc-logo:focus {
 	width: 120px;
 	}
 
-#mobile-nav{
+#mob-nav{
 	margin: 0;
 	padding: 0;
 	list-style-type:none;
-	text-align: center;
-/*	padding-bottom: 1em; */
-	margin-top: 1em;	
+	margin-top: 0.5em;	
 }
-#mobile-nav li {
+
+#mob-nav .input-group {
+	margin-bottom: 1em; 
+//	float: right;
+	padding: 0 1em;
+}
+
+#mobile-nav  {
 	padding: 0;
-	list-style-type:none;
+	list-style-type: none;
 	margin: 0;
 //	float: left;
 }
@@ -735,13 +740,16 @@ a#bc-logo:focus {
 	margin-right: 0.33333em;	
 	margin-bottom: 1em;
 }
-#college-search-wrap {
+
+/*#college-search-wrap {
 	display: inline-block;
 }
+*/
 #college-search-field {
-	position: absolute;
+/*	position: absolute;
 	top: -9999px;
 	left: -99999px;
+*/
 }
 .ie7 #college-search-field {
 	xposition: inherit;
@@ -834,10 +842,11 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	#college-search-field {
 		width: 110px;
-		position: static;
+/*		position: static;
 		margin-left: 0.5em;
 		left: auto;
 		top: auto;
+	*/
 	}
 }
 @media screen and (min-width: 37em) {
@@ -867,10 +876,6 @@ ul#college-top-actions li.top-actions a:focus {
 	#bc-logo img {
 		margin: 0;
 	}
-	#college-search-wrap {
-		display: block;
-		zoom: 1
-	}
 	#college-search  {
 		float:right;
 		clear: right;
@@ -879,7 +884,7 @@ ul#college-top-actions li.top-actions a:focus {
 	#college-search-field {
 		width: 150px; 
 	}
-	.branded ul#mobile-nav {
+	.branded #mob-nav {
 		float: right;
 	}	
 	ul#college-top-actions { 
@@ -927,11 +932,11 @@ ul#college-top-actions li.top-actions a:focus {
 	.navbar-nav {
 		margin: 0;
 	}
-	#mobile-nav li {
-		float: none;
+	#mob-nav {
+//		float: none;
 	}
-	.img-responsive {
-		width: 100%;
+	#mob-nav.col-xs-6 {
+//    width: 75%;
 	}
 }
 @media screen and (min-width: 41em) {
@@ -1003,6 +1008,10 @@ ul#college-top-actions li.top-actions a:focus {
 #site-header .form-search {
 /*	margin-top: .5em; */
 }
+
+.branded .form-control {
+	height: auto;
+}
 @media screen and (min-width: 37em) {
 	#site-header {
 		padding-top: 1.666667em; 
@@ -1025,7 +1034,7 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-bottom: 1.3333em;
 	}
 	.branded .form-search {
-		margin-bottom: 1em;
+//		margin-bottom: 1em;
 	}
 	.globals-branded #site-header {
 		padding: 0;
@@ -1524,13 +1533,13 @@ button.close {
 }
 */
 @media screen and (min-width: 70em) {
-	#college-navbar.navbar .nav > li > a {
+	.branded #college-navbar.navbar .nav > li > a {
 	  padding: .33333em 2em;
 	  transition: padding .5s ease;
 	}
 }
 @media screen and (min-width: 80em) {
-	#college-navbar.navbar .nav > li > a {
+	.branded #college-navbar.navbar .nav > li > a {
 	  padding: .33333em 3em;
 	  transition: padding .1s ease;
 	}
