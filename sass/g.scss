@@ -1,7 +1,7 @@
-/* Globals Version 3.0.1.0
+/* Globals Version 3.0.1.1
 
 /* Load Defaul Bootstrap */
-@import "bootstrap/bootstrap";
+@import "bootstrap";
 
 /* Load compass helpers */
 @import "compass";
@@ -12,13 +12,13 @@
 
 /*
 -------Baseline Grid
-1.66667em	25px 
+1.66667em	25px
 
--------Typographic scale 
-Name	Size em/px		 	Ised in 
+-------Typographic scale
+Name	Size em/px		 	Ised in
 
 		7.2em :	108px
-		6.0em :	90px 
+		6.0em :	90px
 		4.8em :	72px
 		3.6em :	54px
 		2.4em :	36px		Section Header
@@ -34,7 +34,7 @@ Name	Size em/px		 	Ised in
 
 /* ************************************** */
 /* ************************************** */
-/*	Our Additions to Normalize.css        */      
+/*	Our Additions to Normalize.css        */
 /* ************************************** */
 /* ************************************** */
 
@@ -55,7 +55,7 @@ body {
 	line-height: 1.66666667em;
 	text-rendering: optimizeLegibility;
 	color: #444;
-	background-color: #F2F2F2;  
+	background-color: #F2F2F2;
 }
 
 /*
@@ -67,7 +67,7 @@ img {
 */
 
 /* ************************************** */
-/*	Bellevue College Global Elements      */      
+/*	Bellevue College Global Elements      */
 /* ************************************** */
 
 .ie7 img, .ie8 img {
@@ -84,19 +84,19 @@ a:focus {
 	color: $bc-primary-color;
 	outline: thin dotted;
 }
-p { 
+p {
 	margin-top: 1em;
 	text-rendering: optimizelegibility;
 }
-ul, ol, dl { 
+ul, ol, dl {
 	margin-top: 1em;
 	list-style-position: inside;
 }
-li { 
+li {
 	margin-top: .3333333em;
 	margin-left: 1.5em;
   padding-left: 0.5em;}
-	
+
 dt {
 	font-weight: bold;
 	margin-top: .66666em;
@@ -106,8 +106,8 @@ dd {
 }
 
 /* **************************************** */
-/*	Scale:  																*/	
-/*  traditional http://lamb.cc/typograph/   */      
+/*	Scale:  																*/
+/*  traditional http://lamb.cc/typograph/   */
 /* **************************************** */
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-rendering: optimizelegibility;
 	clear: both;
 }
-h1 { 
+h1 {
 	font-size: 1.8em;
 	line-height: 1.296em;
 }
@@ -149,14 +149,14 @@ h6 {
 	line-height: 1.66666667em;
 	margin-top: 2em;
 }
-h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 { 
+h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
 	margin-top: 0.66666667em;
 	margin-top: 0.66666667rem;
 }
 h1 + p {
 	margin-top: 0.66666667em;
 }
-h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  { 
+h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  {
 	margin-top: 0
 }
 
@@ -273,7 +273,7 @@ ul:first-child,
 ol:first-child,
 dl:first-child,
 address:first-child
-table:first-child { 
+table:first-child {
 	margin-top: 0;
 }
 dl:first-child dt:first-child {
@@ -314,7 +314,7 @@ pre {
 
 code {
   padding: 0.2em 0.4em;
-  color: #BF1A38; 
+  color: #BF1A38;
   white-space: nowrap;
   background-color: #f7f7f9;/*review*/
   border: 1px solid #e1e1e8;/*review*/
@@ -385,7 +385,7 @@ sub {
 
 
 /* ************************************** */
-/*	Classes applied to text      					*/      
+/*	Classes applied to text      					*/
 /* ************************************** */
 
 .lead {
@@ -454,7 +454,7 @@ a.text-success:focus {
 
 
 /* *************************************************** */
-/*	Classes that apply to multiple elements types      */      
+/*	Classes that apply to multiple elements types      */
 /* *************************************************** */
 
 .pull-right {
@@ -519,7 +519,7 @@ a.text-success:focus {
 
 /* ************************************** */
 /* ************************************** */
-/*	SITE STRUCTURE                        */      
+/*	SITE STRUCTURE                        */
 /* ************************************** */
 /* ************************************** */
 
@@ -531,7 +531,7 @@ a.text-success:focus {
 */
 
 /* ************************************** */
-/*	Reusable structure     								*/      
+/*	Reusable structure     								*/
 /* ************************************** */
 
 .clearfix {
@@ -569,7 +569,7 @@ a.text-success:focus {
 @media screen and (min-width: 55em) {
 	.content-padding {
 		padding:  0	2em;
-	}	
+	}
 }
 
 .no-padding {
@@ -578,21 +578,21 @@ a.text-success:focus {
 }
 
 /* ************************************** */
-/*	General													      */      
+/*	General													      */
 /* ************************************** */
 
 #skiplinks {}
-#skiplinks li { 
-	display: inline; 
-	margin: 0; 
+#skiplinks li {
+	display: inline;
+	margin: 0;
 	padding: 0;}
-#skiplinks a { 
-	display: block; 
-	line-height: 1.8em; 
+#skiplinks a {
+	display: block;
+	line-height: 1.8em;
 	text-align: center;
-	position: absolute; 
+	position: absolute;
 	top: -99999px;
-	text-decoration: none; 
+	text-decoration: none;
 	font-weight: bold }
 #skiplinks a:focus { position: inherit;}
 #skiplinks a:hover { color: #468847;}
@@ -612,7 +612,7 @@ a.text-success:focus {
 
 
 /* ************************************** */
-/*	head      														*/      
+/*	head      														*/
 /* ************************************** */
 
 #top-wrap.lite {
@@ -632,7 +632,7 @@ a.text-success:focus {
 .container.logobar.border {
 	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);	
+	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 }
 
 .ie7 .container.logobar .border,
@@ -654,18 +654,18 @@ a.text-success:focus {
 	border-bottom: 2px solid #002d3f;
 	overflow: hidden;
 	*display: none;   /*IE7 and below */
-} 
-.branded #college-navbar { 
+}
+.branded #college-navbar {
 	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 	position: relative;
 }
-.display-table #top-wrap #college-navbar { 
+.display-table #top-wrap #college-navbar {
 	display:none;  /*IE8+ hack when it renders in compatibility mode*/
 }
 
-#smallhead {	
+#smallhead {
 	background: $bc-primary-color url(../i/headbg.jpg) repeat-y;
 	position: relative;
 	zoom: 1 /*IE hack, see next line*/;
@@ -674,8 +674,98 @@ a.text-success:focus {
 	-moz-transition: padding 0.5s ease;
 	-ms-transition: padding 0.5s ease;
 	-o-transition: padding 0.5s ease;
-	transition: padding 0.5s ease;}
-	
+	transition: padding 0.5s ease;
+	}
+/* Branded Nav */
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	  text-decoration: none;
+  background: #0e78ba;
+  background: -moz-linear-gradient(top,  #0e78ba 0%, #0055a0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0e78ba), color-stop(100%,#0055a0));
+  background: -webkit-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: -o-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: -ms-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
+  background: linear-gradient(to bottom,  #0e78ba 0%,#0055a0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 );
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #fff;
+  background-color: #27445f;
+  background-image: -moz-linear-gradient(top, #27445f, #143351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#27445f), to(#143351));
+  background-image: -webkit-linear-gradient(top, #27445f, #143351);
+  background-image: -o-linear-gradient(top, #27445f, #143351);
+  background-image: linear-gradient(to bottom, #27445f, #143351);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#27445f', endColorstr='#143351', GradientType=0);
+  -webkit-box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
+	   -moz-box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
+	        box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  border-right: 1px solid #002d3f;
+}
+
+#college-navbar.navbar .nav > li > a:focus,
+#college-navbar.navbar .nav > li > a:hover {
+	color: #fff;
+	text-decoration: none;
+	background: rgb(129,167,200);
+	background: -moz-linear-gradient(top, rgb(129,167,200) 0%, rgb(62,116,163) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(129,167,200)), color-stop(100%,rgb(62,116,163)));
+	background: -webkit-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: -o-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: -ms-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	background: linear-gradient(to bottom, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+}
+.nav-home    		#college-navbar.navbar .nav > li#nav-home > a,
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a {
+    color: #FFFFFF;
+    text-decoration: none;
+	background: rgb(0,35,70);
+	background: -moz-linear-gradient(top,  rgb(0,35,70) 0%, rgb(0,18,36) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,35,70)), color-stop(100%,rgb(0,18,36)));
+	background: -webkit-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
+	background: -o-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
+	background: -ms-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
+	background: linear-gradient(to bottom,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#274461', endColorstr='#143553',GradientType=0 );
+//	margin-top: -0.0666667em;
+	padding-top: 0.3999999em;
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.nav-home    		#college-navbar.navbar .nav > li#nav-home > a:hover,
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:hover,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:hover,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:hover,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a:hover,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:hover,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a:hover,
+.nav-home    		#college-navbar.navbar .nav > li#nav-home > a:focus,
+.nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:focus,
+.nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:focus,
+.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:focus,
+.nav-services   #college-navbar.navbar .nav > li#nav-services > a:focus,
+.nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:focus,
+.nav-about      #college-navbar.navbar .nav > li#nav-about > a:focus {
+	background: rgb(45,82,118);
+	background: -moz-linear-gradient(top, rgb(45,82,118) 0%, rgb(20,53,83) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(45,82,118)), color-stop(100%,rgb(20,53,83)));
+	background: -webkit-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: -o-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: -ms-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	background: linear-gradient(to bottom, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d5276', endColorstr='#143553',GradientType=0 );
+}
+/* End Branded Nav */
+
 #bc-logo {
 	display: block;
 	float: none;
@@ -688,7 +778,7 @@ a.text-success:focus {
 	margin-top: 0.666655557em;
 	padding-bottom: 0.333333em;
 }
-#bc-logo img { 
+#bc-logo img {
 	display: block;
 	height: auto;
 	width: auto;
@@ -699,7 +789,7 @@ a.text-success:focus {
 a#bc-logo:focus {
 	outline: 1px dotted white;
 }
-#college-search { 
+#college-search {
 	float: none;
 	display: block;
 	margin-top: 0.666667em;
@@ -714,11 +804,11 @@ a#bc-logo:focus {
 	margin: 0;
 	padding: 0;
 	list-style-type:none;
-	margin-top: 0.5em;	
+	margin-top: 0.5em;
 }
 
 #mob-nav .input-group {
-	margin-bottom: 1em; 
+	margin-bottom: 1em;
 //	float: right;
 	padding: 0 1em;
 }
@@ -737,9 +827,10 @@ a#bc-logo:focus {
 #main-nav-link a {
 	padding-left: 3em;
 	padding-right: 3em;
-	margin-right: 0.33333em;	
+	margin-right: 0.33333em;
 	margin-bottom: 1em;
 }
+
 
 /*#college-search-wrap {
 	display: inline-block;
@@ -766,42 +857,42 @@ a#bc-logo:focus {
 }
 
 /*Actions*/
-ul#college-top-actions { 
-	display: none; 
-	list-style: none; 
-	padding: 0; 
-	margin: 0; 
-	list-style:none;  
-	line-height: 31px; 
+ul#college-top-actions {
+	display: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style:none;
+	line-height: 31px;
 	float: right;
 }
 .ie7 ul#college-top-actions,
-.ie7 ul#college-top-actions *{ 
+.ie7 ul#college-top-actions *{
 	zoom: 1 !important
 }
-ul#college-top-actions li.top-actions{ 
-	display: block; 
-	padding: 0; 
-	margin: 0; 
-	float: left; 
+ul#college-top-actions li.top-actions{
+	display: block;
+	padding: 0;
+	margin: 0;
+	float: left;
 }
-ul#college-top-actions a { 
+ul#college-top-actions a {
 	font-size: 0.8em;
 	color: white;
 	color: rgba(255,255,255,0.8);
 	*color: white;/*IE7 and below */
-	display: block; 
+	display: block;
 	float: left;
-	padding: 0 1em; 
+	padding: 0 1em;
 	text-decoration: underline;
-	line-height: 2.5em; 
+	line-height: 2.5em;
 }
-ul#college-top-actions li.top-actions a:hover { 
-	text-decoration: none; 
+ul#college-top-actions li.top-actions a:hover {
+	text-decoration: none;
 	color: white;}
 ul#college-top-actions li.top-actions a:focus {
-		outline: dotted 1px #ddd; 
-		background-color: #4D78A1; 
+		outline: dotted 1px #ddd;
+		background-color: #4D78A1;
 		text-decoration: none; }
 
 @media screen and (min-width: 20em) {
@@ -813,7 +904,7 @@ ul#college-top-actions li.top-actions a:focus {
 		padding-left: 3em;
 		padding-right: 3em;
 		margin-left: 0.33333em;
-	}	
+	}
 }
 @media screen and (min-width: 23em) {
 	#main-nav-link a {
@@ -823,10 +914,10 @@ ul#college-top-actions li.top-actions a:focus {
 	#college-search-submit {
 		padding-left: 4em;
 		padding-right: 4em;
-	}	
+	}
 }
 @media screen and (min-width: 25em) {
-	
+
 	#main-nav-link a {
 		margin-left: 0.5em;
 		padding-left: 2em;
@@ -866,11 +957,11 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-bottom: 0.2em;
 		width: 310px;
 	}
-	
+
 	#smallhead {
 		padding:  0 1em;
-	}	
-	ul.top-actions, #bc-logo { 
+	}
+	ul.top-actions, #bc-logo {
 		float: left;
 	}
 	#bc-logo img {
@@ -882,17 +973,17 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-bottom: 1.333333em;
 	}
 	#college-search-field {
-		width: 150px; 
+		width: 150px;
 	}
 	.branded #mob-nav {
 		float: right;
-	}	
-	ul#college-top-actions { 
-		display: block; 
 	}
-	ul#college-top-actions li.top-actions{ 
+	ul#college-top-actions {
+		display: block;
+	}
+	ul#college-top-actions li.top-actions{
 		float: left;
-		padding: 0 0px 0 1px; 
+		padding: 0 0px 0 1px;
 	}
 	ul#college-top-actions li:after {
 		color: white;
@@ -904,18 +995,18 @@ ul#college-top-actions li.top-actions a:focus {
 	ul#college-top-actions li:last-child:after{
 		content: "";
 	}
-	ul#college-top-actions li:last-child{ 
-		background: none; 
+	ul#college-top-actions li:last-child{
+		background: none;
 		padding-left: 0;
 	}
 	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
-	
-	ul#college-top-actions a.top-actions { 
-		padding: 0 0.8em; 
-		text-decoration: underline; 
+
+	ul#college-top-actions a.top-actions {
+		padding: 0 0.8em;
+		text-decoration: underline;
 	}
 	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
-	
+
 	.flexwrap {
 		display: table;
 		width: 100%;
@@ -941,7 +1032,7 @@ ul#college-top-actions li.top-actions a:focus {
 }
 @media screen and (min-width: 41em) {
 	#college-search-field {
-		width: 200px; 
+		width: 200px;
 	}
 }
 @media screen and (min-width: 50em) {
@@ -949,7 +1040,7 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-top: 1em;
 	}
 	.branded #bc-logo {
-		width: 420px; 
+		width: 420px;
 	}
 	.branded #bc-logo img {
 		max-width: 100%;
@@ -972,11 +1063,11 @@ ul#college-top-actions li.top-actions a:focus {
 @media screen and (min-width: 80em) {
 	#smallhead {
 		padding:  0;
-	}	
+	}
 }
 
 /* ************************************** */
-/*	Section header      */      
+/*	Section header      */
 /* ************************************** */
 
 #site-header {
@@ -995,14 +1086,14 @@ ul#college-top-actions li.top-actions a:focus {
     display: inline;
     margin-right: .66666667em;
     padding: 0;
-    margin-left: 0;	
+    margin-left: 0;
 }
 #site-header .social-media a {
 	padding-right: .66666667em;
 	float: none;
 	display: inline;
 }
-#site-header .social-media a.more { 
+#site-header .social-media a.more {
 	font-size: .9em;
 	padding-top: .3333333em;}
 #site-header .form-search {
@@ -1014,7 +1105,7 @@ ul#college-top-actions li.top-actions a:focus {
 }
 @media screen and (min-width: 37em) {
 	#site-header {
-		padding-top: 1.666667em; 
+		padding-top: 1.666667em;
 		padding-bottom: 2em;
 	}
 	#site-header .header-search {
@@ -1087,7 +1178,7 @@ p.site-description {
 
 
 /* ************************************** */
-/*	Content space 									      */      
+/*	Content space 									      */
 /* ************************************** */
 
 #content {
@@ -1099,11 +1190,11 @@ p.site-description {
 
 
 /* ************************************** */
-/*	Foot														      */      
+/*	Foot														      */
 /* ************************************** */
 
 
-#bigfoot { 
+#bigfoot {
 	background-color: #E1E1E1;
     border-bottom: 1px solid #999999;
     border-top: 1px solid #999999;
@@ -1121,7 +1212,7 @@ p.site-description {
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 }
-		
+
 #bigfoot ul {
 	margin: 0;
 	padding: 0;
@@ -1154,7 +1245,7 @@ p.site-description {
 	float: left;
 	padding-right: .66666667em;
 }
-.social-media a.more { 
+.social-media a.more {
 	font-size: .9em;
 	padding-top: .3333333em;}
 #bellevueaddress {}
@@ -1163,42 +1254,42 @@ p.site-description {
 	font-size: .9em;
 }
 
-#legalbar { 
-	clear: left; 
-	margin: 0 auto; 
+#legalbar {
+	clear: left;
+	margin: 0 auto;
 	padding: 1em 0 1em 0;
-	text-align: center; 
+	text-align: center;
 }
 #bigfoot + .container #legalbar {
 	padding: 0.66666667em 0 1em 0;
 }
-#legalbar a:focus { 
+#legalbar a:focus {
 	outline: dotted 1px $bc-primary-color}
-#legalbar li { 
-	display: inline; 
+#legalbar li {
+	display: inline;
 	padding:0;
 	margin: 0;
-	list-style-type: none;} 
-#legalbar li a { 
+	list-style-type: none;}
+#legalbar li a {
 	padding: 0 0.9em 0 1em;
 	color: #666;
 	border-left: 1px solid #DDDDDD;
 	font-size: .8em;
 	white-space: nowrap;}
 #legalbar li a:hover,
-#legalbar li a:focus { 
+#legalbar li a:focus {
 	color: $bc-primary-color;}
 #legalbar li.first a {
 	border-left: none;}
-#legalbar li.last { 
-	float: none; 
-	clear: left; 
-	display: block; 
+#legalbar li.last {
+	float: none;
+	clear: left;
+	display: block;
 	padding: 0}
 #legalbar li.last a {
-	padding-left: 0; 
+	padding-left: 0;
 	border-left: none; }
-#legalbar span { 
+#legalbar span {
 	padding-left: 21px;}
 
 
@@ -1207,11 +1298,11 @@ p.site-description {
 	#main-nav-wrap,
 	#bigfoot,
 	#top-wrap { padding: 0 0.3333333em; }
-	
+
 	#main-wrap.globals-branded {
 		padding-top: 2em;
 		padding-bottom: 2em;
-	} 
+	}
 
 	.globals-branded #site-header {
 		padding: 0;
@@ -1230,7 +1321,7 @@ p.site-description {
 
 
 /* ************************************** */
-/*  Close														      */      
+/*  Close														      */
 /* ************************************** */
 
 .close {
@@ -1262,7 +1353,7 @@ button.close {
 }
 
 /* ************************************** */
-/*	Pagination      */      
+/*	Pagination      */
 /* ************************************** */
 
 .pagination {
@@ -1477,7 +1568,7 @@ button.close {
 	#college-navbar.navbar .nav {
  		float: none;
 	}
-	.navbar .nav > li > a { 
+	.navbar .nav > li > a {
 		border-top: none;
 		border-right: 1px solid #5395c5;
  		border-right-color: rgba(255,255,255,0.2);
@@ -1485,10 +1576,10 @@ button.close {
 	#college-navbar.navbar .nav > li > a {
 		font-size: 0.9em;
 	}
-	.navbar .nav > li  {  
+	.navbar .nav > li  {
 		float: left;
 	}
-	#college-navbar.navbar .nav > li  {  
+	#college-navbar.navbar .nav > li  {
 		float: none;
 	}
 }
@@ -1497,7 +1588,7 @@ button.close {
 	#college-navbar.navbar .nav {
  		float: left;
 	}
-	#college-navbar.navbar .nav > li  {  
+	#college-navbar.navbar .nav > li  {
 		float: left;
 	}
 	#college-navbar.navbar .nav > li > a {
@@ -1520,14 +1611,14 @@ button.close {
 }
 @media screen and (min-width: 52.5em) {
 	#college-navbar.navbar .nav > li > a {
-	  font-size: 1em; 
+	  font-size: 1em;
 	  padding: .33333em 1em;
 	  transition: padding .5s ease;
 	}
 }
 /*@media screen and (min-width: 61em) {
 	#college-navbar.navbar .nav > li > a {
-	  padding: .33333em 2em; 
+	  padding: .33333em 2em;
 	  transition: padding .5s ease;
 	}
 }
@@ -1551,12 +1642,12 @@ button.close {
 
 /* ************************************** */
 /* ************************************** */
-/*	Our Bootstrap Overrides						    */      
+/*	Our Bootstrap Overrides						    */
 /* ************************************** */
 /* ************************************** */
 
 #main-nav-wrap .container-fluid {
-//	padding: 0;	
+//	padding: 0;
 }
 
 /* ************************************** */
@@ -1604,7 +1695,7 @@ button.close {
 	@include background-image(linear-gradient(#0e78ba 0%, #0055a0 100%));
 	background: -ms-linear-gradient(top, #0e78ba 0%,#0055a0 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 ); /* IE6-9 */
-	color: #fff;	
+	color: #fff;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -1614,7 +1705,7 @@ button.close {
 }
 
 .navbar-nav > li > a {
-	padding-top:12px !important; 
+	padding-top:12px !important;
 	padding-bottom:13px !important;
 }
 
@@ -1729,7 +1820,7 @@ button.close {
 }
 
 .carousel-caption h2 {
-  font-size: 1.4em;  
+  font-size: 1.4em;
   line-height: 1.429em;
   color: #fff;
   margin: 0;
@@ -1744,7 +1835,7 @@ button.close {
   text-decoration: none;
 }
 .carousel-caption a:focus,
-.carousel-caption a:hover { 
+.carousel-caption a:hover {
 	text-decoration: underline
 }
 
