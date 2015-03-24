@@ -1,3 +1,13 @@
 .img-responsive {
 	width: 100%;
 }
+
+/*	Underline All Links not part of other elements	*/
+a {
+	text-decoration: underline;
+}
+
+button,
+a.btn {
+	text-decoration: none;
+}

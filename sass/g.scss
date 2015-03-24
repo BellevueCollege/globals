@@ -50,7 +50,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 html {
 	font-family: Helvetica, Arial, sans-serif;
-  font-size: 93.75%; /*15px*/
+	font-size: 93.75%; /*15px*/
 	overflow-y: scroll;
 	border: 0;
 	}
@@ -65,7 +65,7 @@ body {
 img {
 	-ms-interpolation-mode: bicubic;
 	max-width: 100%;
- 	height: auto;
+	height: auto;
 }
 */
 
@@ -74,19 +74,34 @@ img {
 /* ************************************** */
 
 .ie7 img, .ie8 img {
-	 	width: auto;/*thks IE7/8*/
+	width: auto;/*thks IE7/8*/
 }
 a {
 	outline: none;
 	color: $link-color;
 }
-a:hover{
+
+a:hover {
 	color: $bc-primary-color;
 }
-a:focus {
+a:focus, a:active {
 	color: $bc-primary-color;
-	outline: thin dotted;
+	box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset;
+	border-radius: 3px;
 }
+
+/*	Highlight items that are within the 'main' area. One option for adding underlines.
+#main {
+	a {
+		text-decoration: underline;
+	}
+	button, .btn, .carousel {
+		a {
+			text-decoration: none;
+		}
+	}
+}
+*/
 p {
 	margin-top: 1em;
 	text-rendering: optimizelegibility;
@@ -98,7 +113,7 @@ ul, ol, dl {
 li {
 	margin-top: .3333333em;
 	margin-left: 1.5em;
-  padding-left: 0.5em;}
+	padding-left: 0.5em;}
 
 dt {
 	font-weight: bold;
@@ -114,7 +129,7 @@ dd {
 /* **************************************** */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family:Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-weight: normal;
 	text-rendering: optimizelegibility;
 	clear: both;
@@ -177,7 +192,7 @@ q {
 	quotes: none;
 }
 blockquote {
-	font-family:Georgia, "Times New Roman", Times, serif;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	line-height: 1.66666667em;
 	margin: 1.33333em 0 0.333333em;
 	padding: 0.333333em 2.4em 0.33333em 3.6em;
@@ -405,7 +420,7 @@ a.muted:focus {
 }
 
 .text-warning {
-  xcolor: #DF6F35;
+  color: #DF6F35;
   color: rgb(227,125,72);
   color: rgb(230,138,91);
 }
@@ -709,6 +724,10 @@ a.text-success:focus {
 	        box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
   text-decoration: none;
   border-right: 1px solid #002d3f;
+}
+
+#college-navbar a {
+	text-decoration: none;
 }
 
 #college-navbar.navbar .nav > li > a:focus,
@@ -1719,7 +1738,6 @@ button.close {
 /* ************************************** */
 /* Carousel 																*/
 /* ************************************** */
-
 .carousel-control {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: absolute;
@@ -1808,6 +1826,10 @@ button.close {
 .carousel-indicators li.active:hover {
   background-color: #fff;
   cursor:auto;
+}
+
+.carousel a {
+	text-decoration: none;
 }
 
 .carousel-caption {
