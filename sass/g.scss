@@ -1,6 +1,9 @@
 /* Globals Version 3.1.0
 
-/* Load Defaul Bootstrap */
+/* Set path for Bootstrap icon fonts */
+$icon-font-path: "../f/";
+
+/* Load Default Bootstrap */
 @import "bootstrap";
 
 /* Load compass helpers */
