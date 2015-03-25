@@ -1,4 +1,11 @@
-/* Globals Version 3.1.0
+/* Globals Version 3.1.0 */
+
+/* Set Browser Support */
+$critical-usage-threshold: 0.1;
+$graceful-usage-threshold: 2;
+$browser-minimum-versions: (
+  "ie": "10",
+);
 
 /* Set path for Bootstrap icon fonts */
 $icon-font-path: "../f/";
@@ -52,33 +59,29 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline;
 }
 html {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: $font-body;
 	font-size: 93.75%; /*15px*/
 	overflow-y: scroll;
 	border: 0;
 	}
 body {
-	line-height: 1.66666667em;
+	line-height: $std-line-height;
 	text-rendering: optimizeLegibility;
 	color: #444;
 	background-color: #F2F2F2;
 }
 
-/*
-img {
-	-ms-interpolation-mode: bicubic;
-	max-width: 100%;
-	height: auto;
-}
-*/
 
 /* ************************************** */
 /*	Bellevue College Global Elements      */
 /* ************************************** */
 
-.ie7 img, .ie8 img {
-	width: auto;/*thks IE7/8*/
-}
+/* Removed as IE 7/8 is no longer supported
+
+	ie7 img, .ie8 img {
+	width: auto;
+}*/
+
 a {
 	outline: none;
 	color: $link-color;
@@ -87,43 +90,36 @@ a {
 a:hover {
 	color: $bc-primary-color;
 }
+
+/* focus state for keyboard nav */
 a:focus, a:active {
-	color: $bc-primary-color;
+	@extend a:hover;
 	box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset;
 	border-radius: 3px;
 }
 
-/*	Highlight items that are within the 'main' area. One option for adding underlines.
-#main {
-	a {
-		text-decoration: underline;
-	}
-	button, .btn, .carousel {
-		a {
-			text-decoration: none;
-		}
-	}
-}
-*/
 p {
-	margin-top: 1em;
-	text-rendering: optimizelegibility;
+	margin-top: $std-margin;
 }
+
 ul, ol, dl {
-	margin-top: 1em;
+	margin-top: $std-margin;
 	list-style-position: inside;
 }
+
 li {
-	margin-top: .3333333em;
-	margin-left: 1.5em;
-	padding-left: 0.5em;}
+	margin-top: $sm-margin;
+	margin-left: $std-margin*1.5;
+	padding-left: $std-margin/2;
+}
 
 dt {
 	font-weight: bold;
-	margin-top: .66666em;
+	margin-top: $sm-margin*2;
 }
+
 dd {
-	margin-left: 1em;
+	margin-left: $std-margin;
 }
 
 /* **************************************** */
@@ -132,9 +128,8 @@ dd {
 /* **************************************** */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: $font-heading;
 	font-weight: normal;
-	text-rendering: optimizelegibility;
 	clear: both;
 }
 h1 {
@@ -187,21 +182,24 @@ h5.class-heading{
 
 address {
   display: block;
-  margin-top: 1em;
+  margin-top: $std-margin;
   font-style: normal;
 }
+
 blockquote,
 q {
 	quotes: none;
 }
+
 blockquote {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	line-height: 1.66666667em;
+	font-family:  $font-heading;
+	line-height: $std-line-height;
 	margin: 1.33333em 0 0.333333em;
 	padding: 0.333333em 2.4em 0.33333em 3.6em;
 	position: relative;
 	color: rgb(102, 102, 102);
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -209,6 +207,7 @@ q:after {
 	content: '';
 	content: none;
 }
+
 blockquote:before {
 	display: block;
 	content: "\201C";
@@ -218,19 +217,23 @@ blockquote:before {
 	top: 0.25em;
 	color: #aaa;
 }
+
 blockquote p {
   margin-bottom: 0;
   font-size: 1.4em;
   font-weight: 300;
   line-height: 1.25em;
 }
+
 blockquote small {
   display: block;
   color: #999999;
 }
+
 blockquote small:before {
   content: '\2014 \00A0';
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -239,21 +242,23 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 caption,
 th,
 td {
 	font-weight: normal;
 	text-align: left;
 }
+
 .table {
   width: 100%;
-  margin-top: 1em;
+  margin-top: $std-margin;
 }
 
 .table th,
 .table td {
   padding: .6em .666667em .666667em;
-  line-height: 1.66667em;
+  line-height: $std-line-height;
   text-align: left;
   vertical-align: top;
   border-top: .066667em solid #E0E0E0;
@@ -302,7 +307,7 @@ dl:first-child dt:first-child {
 }
 small {
   font-size: .8em;
-  line-height: 1.666666em;
+  line-height: $std-line-height;
 }
 strong {
   font-weight: bold;
@@ -325,12 +330,10 @@ abbr.initialism {
 code,
 pre {
   padding: 0 3px 2px; /*review*/
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: $font-monospace;
   font-size: .8em;
   color: #333333; /*review*/
-  -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-          border-radius: 2px;
+  @include border-radius(2px);
 }
 
 code {
@@ -411,7 +414,7 @@ sub {
 
 .lead {
 	font-size: 1.4em;
-	line-height: 1.66666667em;
+	line-height: $std-line-height;
 }
 .muted {
   color: #999999;
@@ -423,24 +426,21 @@ a.muted:focus {
 }
 
 .text-warning {
-  color: #DF6F35;
-  color: rgb(227,125,72);
-  color: rgb(230,138,91);
+  color: #b8511d;
 }
 
 a.text-warning:hover,
 a.text-warning:focus {
-  color: #DF6F35;
-  color: rgb(202, 101, 49);
+  color: #9e4519;
 }
 
 .text-error {
-  color: #BF1A38;
+  color: #bf1a38;
 }
 
 a.text-error:hover,
 a.text-error:focus {
-  color: rgb(134, 19, 40);
+  color: #a51631;
 }
 
 .text-info {
@@ -453,14 +453,14 @@ a.text-info:focus {
 }
 
 .text-success {
-  color: #AEB93F;
-  color: rgb(140, 149, 51);
+  color: #747c2b;
 }
 
 a.text-success:hover,
 a.text-success:focus {
-  color: rgb(88, 93, 32);
+  color: #5f6623;
 }
+
 .text-left {
   text-align: left;
 }
@@ -537,22 +537,15 @@ a.text-success:focus {
 }
 
 
-
 /* ************************************** */
 /* ************************************** */
 /*	SITE STRUCTURE                        */
 /* ************************************** */
 /* ************************************** */
 
-/*
-.container { //override bootstrap 3
-	padding-left: 0;
-	padding-right: 0;
-}
-*/
 
 /* ************************************** */
-/*	Reusable structure     								*/
+/*	Reusable structure     				  */
 /* ************************************** */
 
 .clearfix {
@@ -587,6 +580,7 @@ a.text-success:focus {
 .content-padding {
 	padding:  0	1em;
 }
+
 @media screen and (min-width: 55em) {
 	.content-padding {
 		padding:  0	2em;
@@ -595,7 +589,6 @@ a.text-success:focus {
 
 .no-padding {
    padding: 0 !important;
-  /* margin: 0 !important; */
 }
 
 /* ************************************** */
@@ -606,7 +599,9 @@ a.text-success:focus {
 #skiplinks li {
 	display: inline;
 	margin: 0;
-	padding: 0;}
+	padding: 0;
+}
+
 #skiplinks a {
 	display: block;
 	line-height: 1.8em;
@@ -614,9 +609,16 @@ a.text-success:focus {
 	position: absolute;
 	top: -99999px;
 	text-decoration: none;
-	font-weight: bold }
-#skiplinks a:focus { position: inherit;}
-#skiplinks a:hover { color: #468847;}
+	font-weight: bold;
+}
+
+#skiplinks a:focus {
+	position: inherit;
+}
+
+#skiplinks a:hover {
+	color: #468847;
+}
 
 #main-wrap {}
 
@@ -633,7 +635,7 @@ a.text-success:focus {
 
 
 /* ************************************** */
-/*	head      														*/
+/*	head      								*/
 /* ************************************** */
 
 #top-wrap.lite {
@@ -651,9 +653,7 @@ a.text-success:focus {
 	padding-right: 0;
 }
 .container.logobar.border {
-	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
 }
 
 .ie7 .container.logobar .border,
@@ -672,14 +672,11 @@ a.text-success:focus {
 }
 #main-nav-wrap {
 	background: $bc-primary-color url(../i/headbgwide.jpg) 0 -20px repeat-x;
-	border-bottom: 2px solid #002d3f;
+	border-bottom: 2px solid #002e40;
 	overflow: hidden;
-	*display: none;   /*IE7 and below */
 }
 .branded #college-navbar {
-	-moz-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-	-webkit-box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-	box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
 	position: relative;
 }
 .display-table #top-wrap #college-navbar {
@@ -691,61 +688,36 @@ a.text-success:focus {
 	position: relative;
 	zoom: 1 /*IE hack, see next line*/;
 	padding: 0 1em;
-	-webkit-transition: padding 0.5s ease;
-	-moz-transition: padding 0.5s ease;
-	-ms-transition: padding 0.5s ease;
-	-o-transition: padding 0.5s ease;
-	transition: padding 0.5s ease;
-	}
-/* Branded Nav */
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
-	  text-decoration: none;
-  background: #0e78ba;
-  background: -moz-linear-gradient(top,  #0e78ba 0%, #0055a0 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0e78ba), color-stop(100%,#0055a0));
-  background: -webkit-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
-  background: -o-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
-  background: -ms-linear-gradient(top,  #0e78ba 0%,#0055a0 100%);
-  background: linear-gradient(to bottom,  #0e78ba 0%,#0055a0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 );
-}
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
-  color: #fff;
-  background-color: #27445f;
-  background-image: -moz-linear-gradient(top, #27445f, #143351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#27445f), to(#143351));
-  background-image: -webkit-linear-gradient(top, #27445f, #143351);
-  background-image: -o-linear-gradient(top, #27445f, #143351);
-  background-image: linear-gradient(to bottom, #27445f, #143351);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#27445f', endColorstr='#143351', GradientType=0);
-  -webkit-box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
-	   -moz-box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
-	        box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  border-right: 1px solid #002d3f;
+	@include transition( padding 0.5s ease );
 }
 
+/* Branded Nav */
 #college-navbar a {
 	text-decoration: none;
 }
 
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	text-decoration: none;
+	background: #0e78ba;
+	@include background-image(linear-gradient(to bottom,  #0e78ba 0%,#0055a0 100%));
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #FFFFFF;
+  @include background-image(linear-gradient(to bottom, #27445f, #143351));
+  @include box-shadow(inset 0 0px 1em rgba(0, 0, 0, 0.2));
+  border-right: 1px solid #002d3f;
+}
+
 #college-navbar.navbar .nav > li > a:focus,
 #college-navbar.navbar .nav > li > a:hover {
-	color: #fff;
-	text-decoration: none;
-	background: rgb(129,167,200);
-	background: -moz-linear-gradient(top, rgb(129,167,200) 0%, rgb(62,116,163) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(129,167,200)), color-stop(100%,rgb(62,116,163)));
-	background: -webkit-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
-	background: -o-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
-	background: -ms-linear-gradient(top, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
-	background: linear-gradient(to bottom, rgb(129,167,200) 0%,rgb(62,116,163) 100%);
+	color: #FFFFFF;
+	@include background-image(linear-gradient(to bottom, rgb(129,167,200) 0%,rgb(62,116,163) 100%));
 }
-.nav-home    		#college-navbar.navbar .nav > li#nav-home > a,
+
+.nav-home    	#college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes    #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs   #college-navbar.navbar .nav > li#nav-programs > a,
 .nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a,
@@ -753,42 +725,27 @@ a.text-success:focus {
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a,
 .nav-about      #college-navbar.navbar .nav > li#nav-about > a {
     color: #FFFFFF;
-    text-decoration: none;
-	background: rgb(0,35,70);
-	background: -moz-linear-gradient(top,  rgb(0,35,70) 0%, rgb(0,18,36) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,35,70)), color-stop(100%,rgb(0,18,36)));
-	background: -webkit-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
-	background: -o-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
-	background: -ms-linear-gradient(top,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
-	background: linear-gradient(to bottom,  rgb(0,35,70) 0%,rgb(0,18,36) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#274461', endColorstr='#143553',GradientType=0 );
-//	margin-top: -0.0666667em;
+	@include background-image(linear-gradient(to bottom,  rgb(0,35,70) 0%,rgb(0,18,36) 100%));
 	padding-top: 0.3999999em;
 	border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-.nav-home    		#college-navbar.navbar .nav > li#nav-home > a:hover,
+.nav-home    	#college-navbar.navbar .nav > li#nav-home > a:hover,
 .nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:hover,
 .nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:hover,
 .nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:hover,
 .nav-services   #college-navbar.navbar .nav > li#nav-services > a:hover,
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:hover,
 .nav-about      #college-navbar.navbar .nav > li#nav-about > a:hover,
-.nav-home    		#college-navbar.navbar .nav > li#nav-home > a:focus,
+.nav-home    	#college-navbar.navbar .nav > li#nav-home > a:focus,
 .nav-classes    #college-navbar.navbar .nav > li#nav-classes > a:focus,
 .nav-programs   #college-navbar.navbar .nav > li#nav-programs > a:focus,
 .nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:focus,
 .nav-services   #college-navbar.navbar .nav > li#nav-services > a:focus,
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:focus,
 .nav-about      #college-navbar.navbar .nav > li#nav-about > a:focus {
-	background: rgb(45,82,118);
-	background: -moz-linear-gradient(top, rgb(45,82,118) 0%, rgb(20,53,83) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(45,82,118)), color-stop(100%,rgb(20,53,83)));
-	background: -webkit-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
-	background: -o-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
-	background: -ms-linear-gradient(top, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
-	background: linear-gradient(to bottom, rgb(45,82,118) 0%,rgb(20,53,83) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d5276', endColorstr='#143553',GradientType=0 );
+	@include background-image(linear-gradient(to bottom, rgb(45,82,118) 0%,rgb(20,53,83) 100%));
 }
+
 /* End Branded Nav */
 
 #bc-logo {
@@ -807,23 +764,40 @@ a.text-success:focus {
 	display: block;
 	height: auto;
 	width: auto;
-	margin: 0 auto;}
+	margin: 0 auto;
+}
+
 .lite #bc-logo:hover {
 	background: url(../i/homepage.png) no-repeat 100% 0.5em;
 }
-a#bc-logo:focus {
-	outline: 1px dotted white;
-}
+/* Appears to be no longer used */
+/*
 #college-search {
 	float: none;
 	display: block;
 	margin-top: 0.666667em;
 	text-align: center;
 }
+
 #college-search-field {
 	background-color: rgba(255, 255, 255, 0.9);
 	width: 120px;
-	}
+}
+
+.ie7 #college-search-field {
+	position: inherit;
+}
+#college-search-submit {
+    @include border-radius (4px);
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+*/
+
+#college-search-field-x {
+	@include border-left-radius (4px);
+}
 
 #mob-nav{
 	margin: 0;
@@ -834,7 +808,6 @@ a#bc-logo:focus {
 
 #mob-nav .input-group {
 	margin-bottom: 1em;
-//	float: right;
 	padding: 0 1em;
 }
 
@@ -842,7 +815,6 @@ a#bc-logo:focus {
 	padding: 0;
 	list-style-type: none;
 	margin: 0;
-//	float: left;
 }
 
 #main-nav-link {
@@ -856,27 +828,6 @@ a#bc-logo:focus {
 	margin-bottom: 1em;
 }
 
-
-/*#college-search-wrap {
-	display: inline-block;
-}
-*/
-#college-search-field {
-/*	position: absolute;
-	top: -9999px;
-	left: -99999px;
-*/
-}
-.ie7 #college-search-field {
-	xposition: inherit;
-}
-#college-search-submit {
-	-webkit-border-radius: 4px 4px 4px 4px;
-     -moz-border-radius: 4px 4px 4px 4px;
-          border-radius: 4px 4px 4px 4px;
-	padding-left: 2em;
-	padding-right: 2em;
-}
 #mybc {
 	font-style: italic;
 }
@@ -905,7 +856,6 @@ ul#college-top-actions a {
 	font-size: 0.8em;
 	color: white;
 	color: rgba(255,255,255,0.8);
-	*color: white;/*IE7 and below */
 	display: block;
 	float: left;
 	padding: 0 1em;
@@ -913,12 +863,8 @@ ul#college-top-actions a {
 	line-height: 2.5em;
 }
 ul#college-top-actions li.top-actions a:hover {
-	text-decoration: none;
-	color: white;}
-ul#college-top-actions li.top-actions a:focus {
-		outline: dotted 1px #ddd;
-		background-color: #4D78A1;
-		text-decoration: none; }
+	color: white;
+}
 
 @media screen and (min-width: 20em) {
 	#main-nav-link a {
@@ -952,9 +898,7 @@ ul#college-top-actions li.top-actions a:focus {
 		margin-left: 0;
 		padding-left: 12px;
 		padding-right: 12px;
-		webkit-border-radius: 0 4px 4px 0;
-     	  -moz-border-radius: 0 4px 4px 0;
-               border-radius: 0 4px 4px 0;
+        @include border-radius( 0 4px 4px 0 );
 	}
 	#college-search-field {
 		width: 110px;
@@ -1048,12 +992,7 @@ ul#college-top-actions li.top-actions a:focus {
 	.navbar-nav {
 		margin: 0;
 	}
-	#mob-nav {
-//		float: none;
-	}
-	#mob-nav.col-xs-6 {
-//    width: 75%;
-	}
+
 }
 @media screen and (min-width: 41em) {
 	#college-search-field {
@@ -1120,9 +1059,7 @@ ul#college-top-actions li.top-actions a:focus {
 }
 #site-header .social-media a.more {
 	font-size: .9em;
-	padding-top: .3333333em;}
-#site-header .form-search {
-/*	margin-top: .5em; */
+	padding-top: .3333333em;
 }
 
 .branded .form-control {
@@ -1135,23 +1072,16 @@ ul#college-top-actions li.top-actions a:focus {
 	}
 	#site-header .header-search {
 		margin: 0;
-/*		float: right; */
 	}
-	#site-header .social-media {
-/*		float: right; */
-/*		margin-top: 0; */
-	}
+
 	#site-header .social-media li {
 		margin-right: 0;
 	}
 	#site-header .form-search {
-/*		float: right; */
 		margin-top: 1em;
 		margin-bottom: 1.3333em;
 	}
-	.branded .form-search {
-//		margin-bottom: 1em;
-	}
+
 	.globals-branded #site-header {
 		padding: 0;
 		padding-top: 2em;
@@ -1175,6 +1105,7 @@ ul#college-top-actions li.top-actions a:focus {
 			margin-top: 0;
 			text-align: right;
 	}
+
 	ul#college-top-actions a.top-actions {
 		padding-left: 7px;
 		padding-right: 7px;
@@ -1183,7 +1114,7 @@ ul#college-top-actions li.top-actions a:focus {
 
 h1.site-title {
 	font-size: 2.4em;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: $font-body;
 	line-height:0.975em;;  /*UPDATE*/
 	color: #333333;
 }
@@ -1207,7 +1138,7 @@ p.site-description {
 /* ************************************** */
 
 #content {
-	xbackground-color: white;
+	background-color: white;
 }
 #content.transparent {
 	background-color: transparent;
@@ -1225,8 +1156,7 @@ p.site-description {
     border-top: 1px solid #999999;
 }
 #bigfoot .inner {
-	box-shadow: -2px 2px 2px #BBBBBB, 2px 2px 2px #BBBBBB;
-	box-shadow: -2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7);
+	@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
 	padding-top: 1.3333333em;
 	padding-bottom: 1.3333333em;
 	background-color: #E5E5E5;
@@ -1241,24 +1171,32 @@ p.site-description {
 #bigfoot ul {
 	margin: 0;
 	padding: 0;
-	list-style: none}
+	list-style: none
+}
+
 #bigfoot li {
 	margin: 0;
 	padding: 0;
 	font-size: 0.9em;
 	color: #777;
-	}
+}
+
 #bigfoot h3 {
 	font-size: .9em;
 	font-weight: bold;
 	color: #666;
-	font-family: Helvetica, Arial, sans-serif
+	font-family: $font-body;
 }
+#bigfoot h3 ~ ul {
+	margin-bottom: $std-margin;
+}
+
 #bigfoot a {
 	text-decoration: none;
 	white-space: nowrap;
 	line-height:1em;
 }
+
 .social-media {
 	margin-top: 1.3333em;
 }
@@ -1322,7 +1260,8 @@ p.site-description {
 	#main-wrap,
 	#main-nav-wrap,
 	#bigfoot,
-	#top-wrap { padding: 0 0.3333333em; }
+	#top-wrap { padding: 0 0.3333333em;
+	}
 
 	#main-wrap.globals-branded {
 		padding-top: 2em;
@@ -1341,7 +1280,7 @@ p.site-description {
 	#main-wrap,
 	#main-nav-wrap,
 	#bigfoot,
-	#top-wrap { padding: 0 0.66667em; }
+	#top-wrap { padding: 0 0.66667em;}
 }
 
 
@@ -1356,8 +1295,7 @@ p.site-description {
   line-height: 20px;
   color: #000000;
   text-shadow: 0 1px 0 #ffffff;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  @include opacity (0.2);
 }
 
 .close:hover,
@@ -1365,8 +1303,7 @@ p.site-description {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
+  @include opacity(0.4) ;
 }
 
 button.close {
@@ -1390,13 +1327,10 @@ button.close {
   *display: inline;
   margin-bottom: 0;
   margin-left: 0;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+  @include border-radius(4px);
   *zoom: 1;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+
 }
 
 .pagination ul > li {
@@ -1438,23 +1372,14 @@ button.close {
 
 .pagination ul > li:first-child > a,
 .pagination ul > li:first-child > span {
-  border-left-width: 1px;
-  -webkit-border-bottom-left-radius: 4px;
-          border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-          border-top-left-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
+	border-left-width: 1px;
+	@include border-left-radius(4px);
+
 }
 
 .pagination ul > li:last-child > a,
 .pagination ul > li:last-child > span {
-  -webkit-border-top-right-radius: 4px;
-          border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-          border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
+  @include border-right-radius(4px);
 }
 
 .pagination-centered {
@@ -1473,46 +1398,26 @@ button.close {
 
 .pagination-large ul > li:first-child > a,
 .pagination-large ul > li:first-child > span {
-  -webkit-border-bottom-left-radius: 6px;
-          border-bottom-left-radius: 6px;
-  -webkit-border-top-left-radius: 6px;
-          border-top-left-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  -moz-border-radius-topleft: 6px;
+	@include border-left-radius(6px);
 }
 
 .pagination-large ul > li:last-child > a,
 .pagination-large ul > li:last-child > span {
-  -webkit-border-top-right-radius: 6px;
-          border-top-right-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-          border-bottom-right-radius: 6px;
-  -moz-border-radius-topright: 6px;
-  -moz-border-radius-bottomright: 6px;
+	@include border-right-radius(6px);
 }
 
 .pagination-mini ul > li:first-child > a,
 .pagination-small ul > li:first-child > a,
 .pagination-mini ul > li:first-child > span,
 .pagination-small ul > li:first-child > span {
-  -webkit-border-bottom-left-radius: 3px;
-          border-bottom-left-radius: 3px;
-  -webkit-border-top-left-radius: 3px;
-          border-top-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-topleft: 3px;
+	@include border-left-radius(3px);
 }
 
 .pagination-mini ul > li:last-child > a,
 .pagination-small ul > li:last-child > a,
 .pagination-mini ul > li:last-child > span,
 .pagination-small ul > li:last-child > span {
-  -webkit-border-top-right-radius: 3px;
-          border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-          border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
+	@include border-right-radius(3px);
 }
 
 .pagination-small ul > li > a,
@@ -1554,11 +1459,9 @@ button.close {
   text-decoration: none;
   display: inline-block;
   padding: .333333em 1em;
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #ddd;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+  @include border-radius (5px);
 }
 
 .pager li > a:hover,
@@ -1631,14 +1534,14 @@ button.close {
 @media screen and (min-width: 45.2em) {
 	#college-navbar.navbar .nav > li > a {
 	  padding: .33333em 1em;
-	  transition: padding .5s ease;
+	  @include transition (padding .5s ease);
 	}
 }
 @media screen and (min-width: 52.5em) {
 	#college-navbar.navbar .nav > li > a {
 	  font-size: 1em;
 	  padding: .33333em 1em;
-	  transition: padding .5s ease;
+	  @include transition ( padding .5s ease);
 	}
 }
 /*@media screen and (min-width: 61em) {
@@ -1651,13 +1554,13 @@ button.close {
 @media screen and (min-width: 70em) {
 	.branded #college-navbar.navbar .nav > li > a {
 	  padding: .33333em 2em;
-	  transition: padding .5s ease;
+	  @include transition ( padding .5s ease );
 	}
 }
 @media screen and (min-width: 80em) {
 	.branded #college-navbar.navbar .nav > li > a {
 	  padding: .33333em 3em;
-	  transition: padding .1s ease;
+	  @include transition ( padding .1s ease );
 	}
 	#college-navbar.navbar .nav > li:last-child > a {
 		border-right: none;
@@ -1697,8 +1600,6 @@ button.close {
 .navbar {
 	background: #0071bc;
 	@include background-image(linear-gradient(#0071bc 0%, #004684 100%)); /* W3C */
-	background: -ms-linear-gradient(top, #0071bc 0%,#004684 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0071bc', endColorstr='#004684',GradientType=0 ); /* IE6-9 */
 	@include border-radius(0px, 0px);
 	min-height:30px !important;
 	margin-bottom: 0;
@@ -1708,18 +1609,15 @@ button.close {
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
   color: #fff;
-	background: #27445f;
+  background: #27445f;
   border-right: 1px solid #002d3f;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  @include text-shadow (0 -1px 0 rgba(0, 0, 0, 0.2));
 }
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
 	text-decoration: none;
-//	@include background-image(linear-gradient(top, #0e78ba, #0055a0));
 	@include background-image(linear-gradient(#0e78ba 0%, #0055a0 100%));
-	background: -ms-linear-gradient(top, #0e78ba 0%,#0055a0 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e78ba', endColorstr='#0055a0',GradientType=0 ); /* IE6-9 */
 	color: #fff;
 }
 
@@ -1742,7 +1640,7 @@ button.close {
 /* Carousel 																*/
 /* ************************************** */
 .carousel-control {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: $font-body;
   position: absolute;
   top: 40%;
   left: 0.25em;
@@ -1757,11 +1655,8 @@ button.close {
   text-align: center;
   background: #222222;
   border: 0.0333333em solid #ffffff;
-  -webkit-border-radius: 0.5em;
-     -moz-border-radius: 0.5em;
-          border-radius: 0.5em;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  @include border-radius (0.5em);
+  @include opacity (0.5);
 }
 
 .carousel-control.right {
@@ -1774,8 +1669,7 @@ button.close {
 .carousel-control:focus {
   color: #ffffff;
   text-decoration: none;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+  @include opacity (0.9);
   outline: none;
 }
 
@@ -1809,7 +1703,7 @@ button.close {
   text-indent: -999px;
   background-color: #ccc;
   background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 0.5em;
+  @include border-radius (0.5em);
   padding: 0;
   border: none;
   cursor: pointer;
