@@ -8591,13 +8591,19 @@ button.close {
 /* Typography */
 /* Components */
 /* Get our Bootstrap overrides */
+/* line 1, ../../../sass/_bootstrap-overrides.scss */
+.img-responsive {
+  max-width: intrinsic;
+  width: 100%;
+}
+
 /*	Underline All Links not part of other elements	*/
-/* line 3, ../../../sass/_bootstrap-overrides.scss */
+/* line 6, ../../../sass/_bootstrap-overrides.scss */
 a {
   text-decoration: underline;
 }
 
-/* line 7, ../../../sass/_bootstrap-overrides.scss */
+/* line 10, ../../../sass/_bootstrap-overrides.scss */
 button,
 a.btn {
   text-decoration: none;
