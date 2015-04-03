@@ -8591,18 +8591,13 @@ button.close {
 /* Typography */
 /* Components */
 /* Get our Bootstrap overrides */
-/* line 1, ../../../sass/_bootstrap-overrides.scss */
-.img-responsive {
-  width: 100%;
-}
-
 /*	Underline All Links not part of other elements	*/
-/* line 6, ../../../sass/_bootstrap-overrides.scss */
+/* line 3, ../../../sass/_bootstrap-overrides.scss */
 a {
   text-decoration: underline;
 }
 
-/* line 10, ../../../sass/_bootstrap-overrides.scss */
+/* line 7, ../../../sass/_bootstrap-overrides.scss */
 button,
 a.btn {
   text-decoration: none;
@@ -10832,5 +10827,3 @@ button.close {
 }
 
 /* Experiments with Flexbox */
-
-/*# sourceMappingURL=g.css.map */
