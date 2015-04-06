@@ -11,3 +11,8 @@ button,
 a.btn {
 	text-decoration: none;
 }
+
+/* Unbold Lables */
+label {
+	font-weight: inherit;
+}

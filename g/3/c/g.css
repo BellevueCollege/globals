@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Globals Version 3.1.0.1 */
+/*! Globals Version 3.1.0.2 */
 /* Set Browser Support */
 /* Set path for Bootstrap icon fonts */
 /* Load Default Bootstrap */
@@ -8609,6 +8609,12 @@ a.btn {
   text-decoration: none;
 }
 
+/* Unbold Lables */
+/* line 16, ../../../sass/_bootstrap-overrides.scss */
+label {
+  font-weight: inherit;
+}
+
 /*
 -------Baseline Grid
 1.66667em	25px
@@ -10833,3 +10839,5 @@ button.close {
 }
 
 /* Experiments with Flexbox */
+
+/*# sourceMappingURL=g.css.map */
