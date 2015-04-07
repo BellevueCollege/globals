@@ -8589,7 +8589,7 @@ button.close {
 /* Variables */
 /* Color */
 /* Typography */
-/* Components */
+/* Breakpoints (Partially Implimented) */
 /* Get our Bootstrap overrides */
 /* line 1, ../../../sass/partials/_bootstrap-overrides.scss */
 .img-responsive {
@@ -9488,12 +9488,12 @@ a.text-success:focus {
 }
 
 /* Branded Nav */
-/* line 106, ../../../sass/partials/_headfoot.scss */
+/* line 103, ../../../sass/partials/_headfoot.scss */
 #college-navbar a {
   text-decoration: none;
 }
 
-/* line 110, ../../../sass/partials/_headfoot.scss */
+/* line 107, ../../../sass/partials/_headfoot.scss */
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus,
@@ -9506,7 +9506,7 @@ a.text-success:focus {
   background-image: linear-gradient(to bottom, #0e78ba 0%, #0055a0 100%);
 }
 
-/* line 116, ../../../sass/partials/_headfoot.scss */
+/* line 113, ../../../sass/partials/_headfoot.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus,
@@ -9521,7 +9521,7 @@ a.text-success:focus {
   border-right: 1px solid #002d3f;
 }
 
-/* line 125, ../../../sass/partials/_headfoot.scss */
+/* line 122, ../../../sass/partials/_headfoot.scss */
 #college-navbar.navbar .nav > li > a:focus,
 #college-navbar.navbar .nav > li > a:hover,
 #college-navbar.navbar .nav > li > a:focus,
@@ -9533,7 +9533,7 @@ a.text-success:focus {
   background-image: linear-gradient(to bottom, #81a7c8 0%, #3e74a3 100%);
 }
 
-/* line 131, ../../../sass/partials/_headfoot.scss */
+/* line 128, ../../../sass/partials/_headfoot.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a,
@@ -9550,7 +9550,7 @@ a.text-success:focus {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 143, ../../../sass/partials/_headfoot.scss */
+/* line 140, ../../../sass/partials/_headfoot.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a:hover, .nav-home #college-navbar.navbar .nav > li#nav-home > a:focus, .nav-home #college-navbar.navbar .nav > li#nav-home > a:active,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:hover,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
@@ -9584,19 +9584,19 @@ a.text-success:focus {
 }
 
 /* End Branded Nav */
-/* line 162, ../../../sass/partials/_headfoot.scss */
+/* line 159, ../../../sass/partials/_headfoot.scss */
 #bc-logo {
   display: block;
   float: none;
 }
 
-/* line 167, ../../../sass/partials/_headfoot.scss */
+/* line 164, ../../../sass/partials/_headfoot.scss */
 .branded #bc-logo {
   margin-top: 0.666655557em;
   padding-bottom: 0.333333em;
 }
 
-/* line 171, ../../../sass/partials/_headfoot.scss */
+/* line 168, ../../../sass/partials/_headfoot.scss */
 #bc-logo img {
   display: block;
   height: auto;
@@ -9604,13 +9604,13 @@ a.text-success:focus {
   margin: 0 auto;
 }
 
-/* line 181, ../../../sass/partials/_headfoot.scss */
+/* line 178, ../../../sass/partials/_headfoot.scss */
 #college-search-field-x {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
-/* line 185, ../../../sass/partials/_headfoot.scss */
+/* line 182, ../../../sass/partials/_headfoot.scss */
 #mob-nav {
   margin: 0;
   padding: 0;
@@ -9618,20 +9618,20 @@ a.text-success:focus {
   margin-top: 0.5em;
 }
 
-/* line 192, ../../../sass/partials/_headfoot.scss */
+/* line 189, ../../../sass/partials/_headfoot.scss */
 #mob-nav .input-group {
   margin-bottom: 1em;
   padding: 0 1em;
 }
 
-/* line 198, ../../../sass/partials/_headfoot.scss */
+/* line 195, ../../../sass/partials/_headfoot.scss */
 #main-nav-link {
   display: inline-block;
   *display: none;
   /*IE7 and below*/
 }
 
-/* line 202, ../../../sass/partials/_headfoot.scss */
+/* line 199, ../../../sass/partials/_headfoot.scss */
 #main-nav-link a {
   padding-left: 3em;
   padding-right: 3em;
@@ -9639,13 +9639,13 @@ a.text-success:focus {
   margin-bottom: 1em;
 }
 
-/* line 209, ../../../sass/partials/_headfoot.scss */
+/* line 206, ../../../sass/partials/_headfoot.scss */
 #mybc {
   font-style: italic;
 }
 
 /*Actions*/
-/* line 214, ../../../sass/partials/_headfoot.scss */
+/* line 211, ../../../sass/partials/_headfoot.scss */
 ul#college-top-actions {
   display: none;
   list-style: none;
@@ -9656,13 +9656,13 @@ ul#college-top-actions {
   float: right;
 }
 
-/* line 223, ../../../sass/partials/_headfoot.scss */
+/* line 220, ../../../sass/partials/_headfoot.scss */
 .ie7 ul#college-top-actions,
 .ie7 ul#college-top-actions * {
   zoom: 1 !important;
 }
 
-/* line 227, ../../../sass/partials/_headfoot.scss */
+/* line 224, ../../../sass/partials/_headfoot.scss */
 ul#college-top-actions li.top-actions {
   display: block;
   padding: 0;
@@ -9670,7 +9670,7 @@ ul#college-top-actions li.top-actions {
   float: left;
 }
 
-/* line 233, ../../../sass/partials/_headfoot.scss */
+/* line 230, ../../../sass/partials/_headfoot.scss */
 ul#college-top-actions a {
   font-size: 0.8em;
   color: white;
@@ -9682,19 +9682,19 @@ ul#college-top-actions a {
   line-height: 2.5em;
 }
 
-/* line 243, ../../../sass/partials/_headfoot.scss */
+/* line 240, ../../../sass/partials/_headfoot.scss */
 ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-actions a:focus, ul#college-top-actions li.top-actions a:active {
   color: white;
 }
 
 @media screen and (min-width: 20em) {
-  /* line 248, ../../../sass/partials/_headfoot.scss */
+  /* line 245, ../../../sass/partials/_headfoot.scss */
   #main-nav-link a {
     margin-right: 0.33333em;
     margin-bottom: 1.8em;
   }
 
-  /* line 252, ../../../sass/partials/_headfoot.scss */
+  /* line 249, ../../../sass/partials/_headfoot.scss */
   #college-search-submit {
     padding-left: 3em;
     padding-right: 3em;
@@ -9702,27 +9702,27 @@ ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-act
   }
 }
 @media screen and (min-width: 23em) {
-  /* line 259, ../../../sass/partials/_headfoot.scss */
+  /* line 257, ../../../sass/partials/_headfoot.scss */
   #main-nav-link a {
     padding-left: 4em;
     padding-right: 4em;
   }
 
-  /* line 263, ../../../sass/partials/_headfoot.scss */
+  /* line 261, ../../../sass/partials/_headfoot.scss */
   #college-search-submit {
     padding-left: 4em;
     padding-right: 4em;
   }
 }
 @media screen and (min-width: 25em) {
-  /* line 270, ../../../sass/partials/_headfoot.scss */
+  /* line 268, ../../../sass/partials/_headfoot.scss */
   #main-nav-link a {
     margin-left: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
   }
 
-  /* line 275, ../../../sass/partials/_headfoot.scss */
+  /* line 273, ../../../sass/partials/_headfoot.scss */
   #college-search-submit {
     margin-left: 0;
     padding-left: 12px;
@@ -9730,73 +9730,68 @@ ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-act
     border-radius: 0 4px 4px 0;
   }
 
-  /* line 281, ../../../sass/partials/_headfoot.scss */
+  /* line 279, ../../../sass/partials/_headfoot.scss */
   #college-search-field {
     width: 110px;
-    /*		position: static;
-    		margin-left: 0.5em;
-    		left: auto;
-    		top: auto;
-    	*/
   }
 }
 @media screen and (min-width: 37em) {
-  /* line 295, ../../../sass/partials/_headfoot.scss */
+  /* line 288, ../../../sass/partials/_headfoot.scss */
   .branded #bc-logo {
     margin-top: 1.5em;
     padding-bottom: 1.5em;
     width: 300px;
   }
 
-  /* line 300, ../../../sass/partials/_headfoot.scss */
+  /* line 293, ../../../sass/partials/_headfoot.scss */
   .ie8 .branded #bc-logo {
     width: 280px;
   }
 
-  /* line 303, ../../../sass/partials/_headfoot.scss */
+  /* line 296, ../../../sass/partials/_headfoot.scss */
   .branded #bc-logo img {
     max-width: 100%;
   }
 
-  /* line 307, ../../../sass/partials/_headfoot.scss */
+  /* line 300, ../../../sass/partials/_headfoot.scss */
   ul.top-actions, #bc-logo {
     float: left;
   }
 
-  /* line 310, ../../../sass/partials/_headfoot.scss */
+  /* line 303, ../../../sass/partials/_headfoot.scss */
   #bc-logo img {
     margin: 0;
   }
 
-  /* line 313, ../../../sass/partials/_headfoot.scss */
+  /* line 306, ../../../sass/partials/_headfoot.scss */
   #college-search {
     float: right;
     clear: right;
     margin-bottom: 1.333333em;
   }
 
-  /* line 318, ../../../sass/partials/_headfoot.scss */
+  /* line 311, ../../../sass/partials/_headfoot.scss */
   #college-search-field {
     width: 150px;
   }
 
-  /* line 321, ../../../sass/partials/_headfoot.scss */
+  /* line 314, ../../../sass/partials/_headfoot.scss */
   .branded #mob-nav {
     float: right;
   }
 
-  /* line 324, ../../../sass/partials/_headfoot.scss */
+  /* line 317, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions {
     display: block;
   }
 
-  /* line 327, ../../../sass/partials/_headfoot.scss */
+  /* line 320, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li.top-actions {
     float: left;
     padding: 0 0px 0 1px;
   }
 
-  /* line 331, ../../../sass/partials/_headfoot.scss */
+  /* line 324, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li:after {
     color: white;
     color: rgba(255, 255, 255, 0.1);
@@ -9805,96 +9800,96 @@ ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-act
     float: left;
   }
 
-  /* line 338, ../../../sass/partials/_headfoot.scss */
+  /* line 331, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li:last-child:after {
     content: "";
   }
 
-  /* line 341, ../../../sass/partials/_headfoot.scss */
+  /* line 334, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li:last-child {
     background: none;
     padding-left: 0;
   }
 
-  /* line 345, ../../../sass/partials/_headfoot.scss */
+  /* line 338, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li:first-child a.top-actions {
     padding-left: 0;
   }
 
-  /* line 347, ../../../sass/partials/_headfoot.scss */
+  /* line 340, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions a.top-actions {
     padding: 0 0.8em;
     text-decoration: underline;
   }
 
-  /* line 351, ../../../sass/partials/_headfoot.scss */
+  /* line 344, ../../../sass/partials/_headfoot.scss */
   ul#college-top-actions li:first-child a.top-actions {
     padding-left: 0;
   }
 
-  /* line 353, ../../../sass/partials/_headfoot.scss */
+  /* line 346, ../../../sass/partials/_headfoot.scss */
   .flexwrap {
     display: table;
     width: 100%;
   }
 
-  /* line 357, ../../../sass/partials/_headfoot.scss */
+  /* line 350, ../../../sass/partials/_headfoot.scss */
   #main-nav-link {
     display: none;
   }
 
-  /* line 358, ../../../sass/partials/_headfoot.scss */
+  /* line 351, ../../../sass/partials/_headfoot.scss */
   #main-nav-wrap {
     display: table-header-group;
     *display: none;
     /*IE7 and below */
   }
 
-  /* line 362, ../../../sass/partials/_headfoot.scss */
+  /* line 355, ../../../sass/partials/_headfoot.scss */
   #nav-top {
     position: absolute !important;
     left: -99999px !important;
   }
 
-  /* line 366, ../../../sass/partials/_headfoot.scss */
+  /* line 359, ../../../sass/partials/_headfoot.scss */
   .navbar-nav {
     margin: 0;
   }
 }
 @media screen and (min-width: 41em) {
-  /* line 372, ../../../sass/partials/_headfoot.scss */
+  /* line 368, ../../../sass/partials/_headfoot.scss */
   #college-search-field {
     width: 200px;
   }
 }
 @media screen and (min-width: 50em) {
-  /* line 377, ../../../sass/partials/_headfoot.scss */
+  /* line 373, ../../../sass/partials/_headfoot.scss */
   .header-search-w-description {
     margin-top: 1em;
   }
 
-  /* line 380, ../../../sass/partials/_headfoot.scss */
+  /* line 376, ../../../sass/partials/_headfoot.scss */
   .branded #bc-logo {
     width: 420px;
   }
 
-  /* line 383, ../../../sass/partials/_headfoot.scss */
+  /* line 379, ../../../sass/partials/_headfoot.scss */
   .branded #bc-logo img {
     max-width: 100%;
   }
 
-  /* line 386, ../../../sass/partials/_headfoot.scss */
+  /* line 382, ../../../sass/partials/_headfoot.scss */
   .ie8 .branded #bc-logo {
     width: 410px;
   }
 
-  /* line 389, ../../../sass/partials/_headfoot.scss */
+  /* line 385, ../../../sass/partials/_headfoot.scss */
   .branded #bc-logo:hover {
     background: url(../i/homepage.png) no-repeat 350px 17px;
   }
 }
 @media screen and (min-width: 55em) {
-  /* line 394, ../../../sass/partials/_headfoot.scss */
+  /* line 390, ../../../sass/partials/_headfoot.scss */
   #smallhead {
     padding: 0 2em;
   }
@@ -9902,25 +9897,25 @@ ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-act
 /* ************************************** */
 /*	Section header      */
 /* ************************************** */
-/* line 404, ../../../sass/partials/_headfoot.scss */
+/* line 400, ../../../sass/partials/_headfoot.scss */
 #site-header {
   background-color: white;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
-/* line 409, ../../../sass/partials/_headfoot.scss */
+/* line 405, ../../../sass/partials/_headfoot.scss */
 .globals-branded #site-header {
   background-color: transparent;
   padding: 1.3333em 0 0 0;
 }
 
-/* line 413, ../../../sass/partials/_headfoot.scss */
+/* line 409, ../../../sass/partials/_headfoot.scss */
 #site-header .social-media {
   margin-top: 1.3333em;
 }
 
-/* line 416, ../../../sass/partials/_headfoot.scss */
+/* line 412, ../../../sass/partials/_headfoot.scss */
 #site-header .social-media li {
   display: inline;
   margin-right: .66666667em;
@@ -9928,55 +9923,55 @@ ul#college-top-actions li.top-actions a:hover, ul#college-top-actions li.top-act
   margin-left: 0;
 }
 
-/* line 422, ../../../sass/partials/_headfoot.scss */
+/* line 418, ../../../sass/partials/_headfoot.scss */
 #site-header .social-media a {
   padding-right: .66666667em;
   float: none;
   display: inline;
 }
 
-/* line 427, ../../../sass/partials/_headfoot.scss */
+/* line 423, ../../../sass/partials/_headfoot.scss */
 #site-header .social-media a.more {
   font-size: .9em;
   padding-top: .3333333em;
 }
 
-/* line 432, ../../../sass/partials/_headfoot.scss */
+/* line 428, ../../../sass/partials/_headfoot.scss */
 .branded .form-control {
   height: auto;
 }
 
 @media screen and (min-width: 37em) {
-  /* line 436, ../../../sass/partials/_headfoot.scss */
+  /* line 434, ../../../sass/partials/_headfoot.scss */
   #site-header {
     padding-top: 1.666667em;
     padding-bottom: 2em;
   }
 
-  /* line 440, ../../../sass/partials/_headfoot.scss */
+  /* line 438, ../../../sass/partials/_headfoot.scss */
   #site-header .header-search {
     margin: 0;
   }
 
-  /* line 444, ../../../sass/partials/_headfoot.scss */
+  /* line 442, ../../../sass/partials/_headfoot.scss */
   #site-header .social-media li {
     margin-right: 0;
   }
 
-  /* line 447, ../../../sass/partials/_headfoot.scss */
+  /* line 445, ../../../sass/partials/_headfoot.scss */
   #site-header .form-search {
     margin-top: 1em;
     margin-bottom: 1.3333em;
   }
 
-  /* line 452, ../../../sass/partials/_headfoot.scss */
+  /* line 450, ../../../sass/partials/_headfoot.scss */
   .globals-branded #site-header {
     padding: 0;
     padding-top: 2em;
   }
 }
 @media screen and (min-width: 46em) {
-  /* line 458, ../../../sass/partials/_headfoot.scss */
+  /* line 457, ../../../sass/partials/_headfoot.scss */
   #site-header .header-search {
     margin-top: 1em;
   }

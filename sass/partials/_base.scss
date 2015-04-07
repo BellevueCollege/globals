@@ -28,4 +28,17 @@ $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
 
-/* Components */
+
+
+/* Breakpoints (Partially Implimented) */
+
+// Bootstrap Breakpoints
+$breakpoint-bs-sm: 48em;
+$breakpoint-bs-md: 62em;
+$breakpoint-bs-lg: 75em;
+
+//Custom Breakpoints
+$breakpoint-mobile-xs: 20em; //320
+$breakpoint-mobile-sm: 25em; //400
+$breakpoint-mobile-md: 37em; //592
+
