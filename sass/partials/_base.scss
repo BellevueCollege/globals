@@ -1,0 +1,31 @@
+/* Set Browser Support */
+$critical-usage-threshold: 0.1;
+$graceful-usage-threshold: 2;
+$browser-minimum-versions: (
+  "ie": "10",
+);
+/* Set path for Bootstrap icon fonts */
+$icon-font-path: "../f/";
+
+/* Load Default Bootstrap */
+@import "bootstrap";
+
+/* Load compass helpers */
+@import "compass";
+
+
+/* Variables */
+
+/* Color */
+$link-color: #0073ae;
+$bc-primary-color: #003d79;
+
+/* Typography */
+$font-body: Helvetica, Arial, sans-serif;
+$font-heading: Georgia, "Times New Roman", Times, serif;
+$font-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$std-line-height: 1.66666667em;
+$std-margin: 1em;
+$sm-margin: $std-margin/3;
+
+/* Components */
