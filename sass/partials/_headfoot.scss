@@ -58,7 +58,11 @@
 	}
 }
 
-
+@media screen and (min-width: 55em) {
+	#smallhead {
+		padding:  0 2em;
+	}
+}
 
 /* Branded */
 
@@ -172,34 +176,7 @@
 	margin: 0 auto;
 }
 
-
-
-
-#college-search-field-x {
-	@include border-left-radius (4px);
-}
-
-#mob-nav{
-	margin: 0;
-	padding: 0;
-	list-style-type:none;
-	margin-top: 0.5em;
-}
-
 #mob-nav .input-group {
-	margin-bottom: 1em;
-	padding: 0 1em;
-}
-
-
-#main-nav-link {
-	display: inline-block;
-	*display: none; /*IE7 and below*/
-}
-#main-nav-link a {
-	padding-left: 3em;
-	padding-right: 3em;
-	margin-right: 0.33333em;
 	margin-bottom: 1em;
 }
 
@@ -209,7 +186,6 @@
 
 /*Actions*/
 ul#college-top-actions {
-	display: none;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -217,6 +193,7 @@ ul#college-top-actions {
 	line-height: 31px;
 	float: right;
 }
+
 .ie7 ul#college-top-actions,
 .ie7 ul#college-top-actions *{
 	zoom: 1 !important
@@ -241,45 +218,6 @@ ul#college-top-actions li.top-actions a:hover {
 	color: white;
 }
 
-@media screen and (min-width: $breakpoint-mobile-xs) {
-	#main-nav-link a {
-		margin-right: 0.33333em;
-		margin-bottom: 1.8em;
-	}
-	#college-search-submit {
-		padding-left: 3em;
-		padding-right: 3em;
-		margin-left: 0.33333em;
-	}
-}
-
-@media screen and (min-width: 23em) {
-	#main-nav-link a {
-		padding-left: 4em;
-		padding-right: 4em;
-	}
-	#college-search-submit {
-		padding-left: 4em;
-		padding-right: 4em;
-	}
-}
-@media screen and (min-width: $breakpoint-mobile-sm) {
-
-	#main-nav-link a {
-		margin-left: 0.5em;
-		padding-left: 2em;
-		padding-right: 2em;
-	}
-	#college-search-submit {
-		margin-left: 0;
-		padding-left: 12px;
-		padding-right: 12px;
-        @include border-radius( 0 4px 4px 0 );
-	}
-	#college-search-field {
-		width: 110px;
-	}
-}
 
 
 
@@ -302,14 +240,6 @@ ul#college-top-actions li.top-actions a:hover {
 	}
 	#bc-logo img {
 		margin: 0;
-	}
-	#college-search  {
-		float:right;
-		clear: right;
-		margin-bottom: 1.333333em;
-	}
-	#college-search-field {
-		width: 150px;
 	}
 	.branded #mob-nav {
 		float: right;
@@ -347,7 +277,10 @@ ul#college-top-actions li.top-actions a:hover {
 		display: table;
 		width: 100%;
 	}
-	#main-nav-link{ display: none;}
+	#main-nav-link{ 
+		display: none; 
+	}
+	
 	#main-nav-wrap {
 		display: table-header-group;
 		*display: none;   /*IE7 and below */
@@ -362,17 +295,7 @@ ul#college-top-actions li.top-actions a:hover {
 
 }
 
-
-
-@media screen and (min-width: 41em) {
-	#college-search-field {
-		width: 200px;
-	}
-}
 @media screen and (min-width: 50em) {
-	.header-search-w-description {
-		margin-top: 1em;
-	}
 	.branded #bc-logo {
 		width: 420px;
 	}
@@ -386,11 +309,7 @@ ul#college-top-actions li.top-actions a:hover {
 		background: url(../i/homepage.png) no-repeat 350px 17px;
 	}
 }
-@media screen and (min-width: 55em) {
-	#smallhead {
-		padding:  0 2em;
-	}
-}
+
 
 
 /* ************************************** */
