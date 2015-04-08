@@ -184,43 +184,33 @@
 	font-style: italic;
 }
 
-/*Actions*/
 ul#college-top-actions {
+	@include flexbox((
+    display: flex,
+    flex-direction: row wrap,
+    justify-content: space-around
+  ));
+  
+}
+ul#college-top-actions li {
 	list-style: none;
-	padding: 0;
-	margin: 0;
-	list-style:none;
-	line-height: 31px;
-	float: right;
+	margin: .25em auto 1em auto;
+	padding: .5em;
+	@include flexbox((
+    flex: 0 1 auto
+  ));
+  
+	float: left; //fallback for non-flexbox browsers
 }
 
-.ie7 ul#college-top-actions,
-.ie7 ul#college-top-actions *{
-	zoom: 1 !important
-}
-ul#college-top-actions li.top-actions{
-	display: block;
-	padding: 0;
-	margin: 0;
-	float: left;
-}
 ul#college-top-actions a {
-	font-size: 0.8em;
 	color: white;
 	color: rgba(255,255,255,0.8);
-	display: block;
-	float: left;
-	padding: 0 1em;
-	text-decoration: underline;
-	line-height: 2.5em;
 }
-ul#college-top-actions li.top-actions a:hover {
+
+ul#college-top-actions a:hover {
 	color: white;
 }
-
-
-
-
 
 @media screen and (min-width: $breakpoint-mobile-md) {
 	.branded #bc-logo {
@@ -241,37 +231,15 @@ ul#college-top-actions li.top-actions a:hover {
 	#bc-logo img {
 		margin: 0;
 	}
-	.branded #mob-nav {
-		float: right;
-	}
+	
 	ul#college-top-actions {
 		display: block;
+		float: right;
 	}
-	ul#college-top-actions li.top-actions{
-		float: left;
-		padding: 0 0px 0 1px;
+	ul#college-top-actions li{
+		font-size: .8em;
+		margin: .25em auto .25em auto;
 	}
-	ul#college-top-actions li:after {
-		color: white;
-		color: rgba(255, 255, 255, 0.1);
-		content: "|";
-		display: block;
-		float: left;
-	}
-	ul#college-top-actions li:last-child:after{
-		content: "";
-	}
-	ul#college-top-actions li:last-child{
-		background: none;
-		padding-left: 0;
-	}
-	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
-
-	ul#college-top-actions a.top-actions {
-		padding: 0 0.8em;
-		text-decoration: underline;
-	}
-	ul#college-top-actions li:first-child a.top-actions { padding-left: 0}
 
 	.flexwrap {
 		display: table;
@@ -393,8 +361,8 @@ ul#college-top-actions li.top-actions a:hover {
 	}
 
 	ul#college-top-actions a.top-actions {
-		padding-left: 7px;
-		padding-right: 7px;
+		padding-left: .7em;
+		padding-right: .7em;
 	}
 }
 
