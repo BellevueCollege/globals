@@ -190,8 +190,8 @@ ul#college-top-actions {
 }
 ul#college-top-actions li {
 	list-style: none;
-	margin: .25em auto 1em auto;
-	padding: .5em;
+	margin: 0 auto;
+	padding: .2em;
 	@include flexbox((
     flex: 0 1 auto
   ));
@@ -203,7 +203,7 @@ ul#college-top-actions li {
 ul#college-top-actions a {
 	color: white;
 	color: rgba(255,255,255,0.8);
-	padding: .2em 1em;
+	padding: .5em 1em;
 	display: block;
 }
 
@@ -213,6 +213,7 @@ ul#college-top-actions a:hover {
 .lite ul#college-top-actions {
 	padding: 0;
 	margin: 0;
+	display: none;  // If we decide to show in lite, remove
 }
 .lite ul#college-top-actions li {
 	margin: 0 auto 0 auto;
@@ -238,7 +239,8 @@ ul#college-top-actions a:hover {
 		margin: 0;
 	}
 	
-	ul#college-top-actions {
+	ul#college-top-actions,
+	.lite ul#college-top-actions {
 		display: block;
 		float: right;
 	}
