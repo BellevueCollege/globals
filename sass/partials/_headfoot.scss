@@ -14,14 +14,14 @@
 .header-search fieldset {
 	white-space:nowrap;	
 }
-#smallhead {
+#smallhead-wrap {
 	background: $bc-primary-color url(../i/headbg.jpg) repeat-y;
+}
+#smallhead {
 	position: relative;
 	zoom: 1 /*IE hack, see next line*/;
-	padding: 0 1em;
 	@include transition( padding 0.5s ease );
 }
-
 
 .lite #bc-logo {
 	margin-top: 0.2em;
@@ -30,13 +30,14 @@
 .lite #bc-logo:hover {
 	background: url(../i/homepage.png) no-repeat 100% 0.5em;
 }
+
 #mobile-nav  {
 	padding: 0;
 	list-style-type: none;
 	margin: 0;
 }
 
-@media screen and (min-width: $breakpoint-mobile-md) {
+@media screen and (min-width: $breakpoint-bs-sm) {
 	.lite #bc-logo {
 		margin-top: 0.2em;
 		margin-bottom: 0.2em;
@@ -58,11 +59,6 @@
 	}
 }
 
-@media screen and (min-width: 55em) {
-	#smallhead {
-		padding:  0 2em;
-	}
-}
 
 /* Branded */
 
@@ -203,16 +199,26 @@ ul#college-top-actions li {
 	float: left; //fallback for non-flexbox browsers
 }
 
+
 ul#college-top-actions a {
 	color: white;
 	color: rgba(255,255,255,0.8);
+	padding: .2em 1em;
+	display: block;
 }
 
 ul#college-top-actions a:hover {
 	color: white;
 }
+.lite ul#college-top-actions {
+	padding: 0;
+	margin: 0;
+}
+.lite ul#college-top-actions li {
+	margin: 0 auto 0 auto;
+}
 
-@media screen and (min-width: $breakpoint-mobile-md) {
+@media screen and (min-width: $breakpoint-bs-sm) {
 	.branded #bc-logo {
 		margin-top: 1.5em;
 		padding-bottom: 1.5em;
@@ -238,7 +244,14 @@ ul#college-top-actions a:hover {
 	}
 	ul#college-top-actions li{
 		font-size: .8em;
-		margin: .25em auto .25em auto;
+		margin: 0em auto 0em auto;
+	}
+	
+	ul#college-top-actions a {
+		padding: .1em 1em;
+	}
+	.lite ul#college-top-actions a {
+		line-height: 1.5em;
 	}
 
 	.flexwrap {
@@ -248,7 +261,6 @@ ul#college-top-actions a:hover {
 	#main-nav-link{ 
 		display: none; 
 	}
-	
 	#main-nav-wrap {
 		display: table-header-group;
 		*display: none;   /*IE7 and below */
@@ -317,7 +329,7 @@ ul#college-top-actions a:hover {
 }
 
 
-@media screen and (min-width: $breakpoint-mobile-md) {
+@media screen and (min-width: $breakpoint-bs-sm) {
 	#site-header {
 		padding-top: 1.666667em;
 		padding-bottom: 2em;
@@ -340,11 +352,13 @@ ul#college-top-actions a:hover {
 	}
 }
 
+/*
 @media screen and (min-width: 46em) {
 	#site-header .header-search {
 		margin-top: 1em;
 	}
 }
+*/
 
 @media screen and (min-width: 50em) {
 #site-header .social-media {
@@ -510,26 +524,6 @@ p.site-description {
 	padding-left: 21px;}
 
 
-@media screen and (min-width: 40em) {
-	#main-wrap,
-	#main-nav-wrap,
-	#bigfoot,
-	#top-wrap { padding: 0 0.3333333em;
-	}
-
-	#main-wrap.globals-branded {
-		padding-top: 2em;
-		padding-bottom: 2em;
-	}
-
-	.globals-branded #site-header {
-		padding: 0;
-	}
-	#main-wrap.bchome {
-		padding-top:0;
-		padding-bottom: 0;
-	}
-}
 @media screen and (min-width: 50em) {
 	#main-wrap,
 	#main-nav-wrap,
@@ -537,12 +531,9 @@ p.site-description {
 	#top-wrap { padding: 0 0.66667em;}
 }
 
-@media screen and (min-width: $breakpoint-mobile-xs) {
+@media screen and (min-width: $breakpoint-bs-sm) {
 	.navbar .nav {
  		float: left;
-	}
-	#college-navbar.navbar .nav {
- 		float: none;
 	}
 	.navbar .nav > li > a {
 		border-top: none;
@@ -558,9 +549,7 @@ p.site-description {
 	#college-navbar.navbar .nav > li  {
 		float: none;
 	}
-}
 
-@media screen and (min-width: $breakpoint-mobile-md) {
 	#college-navbar.navbar .nav {
  		float: left;
 	}
@@ -579,12 +568,7 @@ p.site-description {
 @media screen and (min-width: 39em) {
 	#nav-home { display: inherit;}
 }
-@media screen and (min-width: 45.2em) {
-	#college-navbar.navbar .nav > li > a {
-	  padding: .33333em 1em;
-	  @include transition (padding .5s ease);
-	}
-}
+
 @media screen and (min-width: 52.5em) {
 	#college-navbar.navbar .nav > li > a {
 	  font-size: 1em;
@@ -640,7 +624,7 @@ p.site-description {
 #college-navbar.navbar .nav li {
 	padding-left: 20px;
 }
-@media screen and (min-width: 37em) {
+@media screen and (min-width: $breakpoint-bs-sm) {
 	#college-navbar.navbar .nav li {
 		padding-left: 0;
 	}
