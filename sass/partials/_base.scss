@@ -5,17 +5,15 @@ $browser-minimum-versions: (
   "ie": "10",
 );
 
-
 /* Set path for Bootstrap icon fonts */
-$icon-font-path: "../f/";
+$icon-font-path: "";
 
 /* Load Default Bootstrap */
+@import "bootstrap-compass";
 @import "bootstrap";
-
 
 /* Load compass helpers */
 @import "compass";
-
 
 /* Variables */
 
