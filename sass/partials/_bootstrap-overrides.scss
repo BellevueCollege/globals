@@ -1,0 +1,18 @@
+.img-responsive {
+	max-width: intrinsic;
+	width: 100%;
+}
+/*	Underline All Links not part of other elements	*/
+a {
+	text-decoration: underline;
+}
+
+button,
+a.btn {
+	text-decoration: none;
+}
+
+/* Unbold Lables */
+label {
+	font-weight: inherit;
+}

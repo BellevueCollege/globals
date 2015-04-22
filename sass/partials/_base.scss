@@ -1,0 +1,49 @@
+/* Set Browser Support */
+$critical-usage-threshold: 0.1;
+$graceful-usage-threshold: 2;
+$browser-minimum-versions: (
+  "ie": "10",
+);
+
+/* Set path for Bootstrap icon fonts */
+$icon-font-path: "";
+
+/* Load Default Bootstrap */
+@import "bootstrap-compass";
+@import "bootstrap";
+
+/* Load compass helpers */
+@import "compass";
+
+/* Variables */
+
+/* Color */
+$link-color: #0073ae;
+$bc-primary-color: #003d79;
+
+/* Typography */
+$font-body: Helvetica, Arial, sans-serif;
+$font-heading: Georgia, "Times New Roman", Times, serif;
+$font-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$std-line-height: 1.66666667em;
+$std-margin: 1em;
+$sm-margin: $std-margin/3;
+
+
+
+/* Breakpoints (Partially Implimented) */
+
+// Bootstrap Breakpoints
+$breakpoint-bs-sm: 48em;
+$breakpoint-bs-md: 62em;
+$breakpoint-bs-lg: 75em;
+
+//Custom Breakpoints
+//$breakpoint-mobile-xs: 20em; //320
+//$breakpoint-mobile-sm: 25em; //400
+//$breakpoint-mobile-md: 37em; //592
+
+$breakpoint-mobile-xs: $breakpoint-bs-sm; //320
+$breakpoint-mobile-sm: $breakpoint-bs-sm; //400
+$breakpoint-mobile-md: $breakpoint-bs-sm; //592
+
