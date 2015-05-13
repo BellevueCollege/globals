@@ -12,7 +12,7 @@
 	margin-top: 0.66667em;
 }
 .header-search fieldset {
-	white-space:nowrap;	
+	white-space:nowrap;
 }
 #smallhead-wrap {
 	background: $bc-primary-color url(../i/headbg.jpg) repeat-y;
@@ -186,7 +186,7 @@ ul#college-top-actions {
     flex-direction: row wrap,
     justify-content: space-around
   ));
-  
+
 }
 ul#college-top-actions li {
 	list-style: none;
@@ -195,7 +195,7 @@ ul#college-top-actions li {
 	@include flexbox((
     flex: 0 1 auto
   ));
-  
+
 	float: left; //fallback for non-flexbox browsers
 }
 
@@ -231,14 +231,14 @@ ul#college-top-actions a:hover {
 	.branded #bc-logo img {
 		max-width: 100%
 	}
-	
+
 	ul.top-actions, #bc-logo {
 		float: left;
 	}
 	#bc-logo img {
 		margin: 0;
 	}
-	
+
 	ul#college-top-actions,
 	.lite ul#college-top-actions {
 		display: block;
@@ -248,7 +248,7 @@ ul#college-top-actions a:hover {
 		font-size: .8em;
 		margin: 0em auto 0em auto;
 	}
-	
+
 	ul#college-top-actions a {
 		padding: .1em 1em;
 	}
@@ -260,8 +260,8 @@ ul#college-top-actions a:hover {
 		display: table;
 		width: 100%;
 	}
-	#main-nav-link{ 
-		display: none; 
+	#main-nav-link{
+		display: none;
 	}
 	#main-nav-wrap {
 		display: table-header-group;
@@ -668,4 +668,23 @@ p.site-description {
 
 .navbar .nav > li > a {
 	border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* ************************************** */
+/* Emergency Alerts (Rave) 				*/
+/* ************************************** */
+
+/* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
+
+#ravealertheader.alert {
+	@include border-radius(0);
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
+	margin-bottom: 0;
+}
+
+#ravealertheader .glyphicon {
+	font-size: 4em;
+	text-align: center;
+	display: block;
 }
