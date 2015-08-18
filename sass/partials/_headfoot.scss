@@ -382,19 +382,20 @@ ul#college-top-actions a:hover {
 	}
 }
 
+p.site-title,
 h1.site-title {
 	font-size: 2.4em;
 	font-family: $font-body;
-	line-height:0.975em;;  /*UPDATE*/
 	color: #333333;
 }
 .globals-branded h1.site-title {
 	font-weight: 100;
 }
 
+p.site-title a,
 h1.site-title a {
 	color: #333;
-	text-decoration: none;;
+	text-decoration: none;
 }
 
 p.site-description {
