@@ -55,7 +55,12 @@ p {
 
 ul, ol, dl {
 	margin-top: $std-margin;
-	list-style-position: inside;
+}
+
+#content {
+    ul, ol, dl {
+        overflow: hidden;
+    }
 }
 
 li {
