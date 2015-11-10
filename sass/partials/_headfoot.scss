@@ -87,7 +87,6 @@
 }
 #main-nav-wrap {
 	background: $bc-primary-color url(../i/headbgwide.jpg) 0 -20px repeat-x;
-	border-bottom: 2px solid #002e40;
 	overflow: hidden;
 }
 .branded #college-navbar {
@@ -255,17 +254,51 @@ ul#college-top-actions a:hover {
 	.lite ul#college-top-actions a {
 		line-height: 1.5em;
 	}
-
 	.flexwrap {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		@include display-flex();
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-moz-box-orient: vertical;
+		-moz-box-direction: reverse;
+		-ms-flex-direction: column-reverse;
+		@include flex-direction(column-reverse);
+	}
+	/* Provide display:table based styles for non-flexbox browsers */
+	.no-flexbox .flexwrap {
 		display: table;
 		width: 100%;
 	}
+
 	#main-nav-link{
-		display: none;
+		/* Apply .sr-only styles */
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: 0;
 	}
+
 	#main-nav-wrap {
+		-webkit-box-flex: auto;
+		-moz-box-flex: auto;
+		-ms-flex: auto;
+		@include flex (auto);
+	}
+	/* Provide display:table based styles for non-flexbox browsers */
+	.no-flexbox #main-nav-wrap {
 		display: table-header-group;
-		*display: none;   /*IE7 and below */
+	}
+	#content {
+		-webkit-box-flex: auto;
+		-moz-box-flex: auto;
+		-ms-flex: auto;
+		@include flex (auto);
 	}
 	#nav-top {
 		position: absolute !important;
@@ -529,7 +562,6 @@ p.site-description {
 
 @media screen and (min-width: 50em) {
 	#main-wrap,
-	#main-nav-wrap,
 	#bigfoot,
 	#top-wrap { padding: 0 0.66667em;}
 }
