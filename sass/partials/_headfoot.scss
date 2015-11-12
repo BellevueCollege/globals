@@ -267,7 +267,7 @@ ul#college-top-actions a:hover {
 		@include flex-direction(column-reverse);
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
-	.no-flexbox .flexwrap {
+	.no-flexbox.no-flexboxtweener.no-flexbox-legacy .flexwrap {
 		display: table;
 		width: 100%;
 	}
@@ -291,7 +291,7 @@ ul#college-top-actions a:hover {
 		@include flex (auto);
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
-	.no-flexbox #main-nav-wrap {
+	.no-flexbox.no-flexboxtweener.no-flexbox-legacy #main-nav-wrap {
 		display: table-header-group;
 	}
 	#content {

@@ -9888,7 +9888,7 @@ ul#college-top-actions a:hover {
 
   /* Provide display:table based styles for non-flexbox browsers */
   /* line 270, ../../../sass/partials/_headfoot.scss */
-  .no-flexbox .flexwrap {
+  .no-flexbox.no-flexboxtweener.no-flexbox-legacy .flexwrap {
     display: table;
     width: 100%;
   }
@@ -9917,7 +9917,7 @@ ul#college-top-actions a:hover {
 
   /* Provide display:table based styles for non-flexbox browsers */
   /* line 294, ../../../sass/partials/_headfoot.scss */
-  .no-flexbox #main-nav-wrap {
+  .no-flexbox.no-flexboxtweener.no-flexbox-legacy #main-nav-wrap {
     display: table-header-group;
   }
 
