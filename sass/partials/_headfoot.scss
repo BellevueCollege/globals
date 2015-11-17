@@ -193,7 +193,7 @@ ul#college-top-actions a:hover {
 		@include flex-direction(column-reverse);
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
-	.no-flexbox.no-flexboxtweener.no-flexbox-legacy .flexwrap {
+	.no-flexbox.no-flexboxlegacy.no-flexboxtweener .flexwrap {
 		display: table;
 		width: 100%;
 	}
@@ -206,7 +206,7 @@ ul#college-top-actions a:hover {
 		@include flex (auto);
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
-	.no-flexbox.no-flexboxtweener.no-flexbox-legacy #main-nav-wrap {
+	.no-flexbox.no-flexboxlegacy.no-flexboxtweener #main-nav-wrap {
 		display: table-header-group;
 	}
 	#content {
