@@ -22,7 +22,7 @@
 .navbar {
 	background: #0071bc;
 	@include background-image(linear-gradient(#0071bc 0%, #004684 100%)); /* W3C */
-	@include border-radius(0px, 0px);
+	@include border-radius(0px, 0px); // Override Bootstrap Default
 	min-height:30px !important;
 	margin-bottom: 0;
 	border: none;
@@ -34,8 +34,8 @@
 }
 
 .navbar-nav > li > a {
-	padding-top:12px !important;
-	padding-bottom:13px !important;
+	text-align: center;
+	width: 100%;
 }
 
 .navbar .nav > li > a:focus,
@@ -48,10 +48,11 @@
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: #FFFFFF;
-  @include background-image(linear-gradient(to bottom, #27445f, #143351));
-  @include box-shadow(inset 0 0px 1em rgba(0, 0, 0, 0.2));
-  border-right: 1px solid #002d3f;
+	color: #FFFFFF;
+	@include background-image(linear-gradient(to bottom, #27445f, #143351));
+	@include box-shadow(inset 0 0px 1em rgba(0, 0, 0, 0.2));
+	border-right: 1px solid #002d3f;
+	border-bottom: 1px solid #002d3f;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -60,38 +61,29 @@
 	font-weight: bold;
 }
 
-#college-navbar.navbar .nav li {
-	padding-left: 20px;
-}
 
 /**
  * Breakpoints
  */
 
 @media screen and (min-width: $breakpoint-bs-sm) {
-	#college-navbar.navbar .nav {
- 		float: left;
-	}
-	#college-navbar.navbar .nav > li  {
-		float: left;
-		padding-left: 0;
-	}
-
 	#college-navbar.navbar .nav > li > a {
-		padding: .33333em .5em;
-		transition: padding .5s ease;
+		padding: .75em .25em;
 		font-size: 0.9em;
-		border-top: none;
+	}
+
+	.lite #college-navbar.navbar .nav > li {
+		border-top: 1px solid #5395c5;
+	}
+
+	#college-navbar.navbar .nav > li {
 		border-right: 1px solid #5395c5;
- 		border-right-color: rgba(255,255,255,0.2);
+		border-color: rgba(255,255,255,0.2);
 	}
 
+	#college-navbar.navbar .nav > li:last-child,
 	#college-navbar.navbar .nav > li:last-child > a {
-		border-right: 1px solid rgba(255, 255, 255, 0.04);
-	}
-
-	#nav-home {
-		display: none;
+		border-right: none !important;
 	}
 
 	#main-nav-link{
@@ -105,34 +97,112 @@
 		clip: rect(0,0,0,0);
 		border: 0;
 	}
-}
-@media screen and (min-width: 39em) {
-	#nav-home {
-		display: inherit;
+
+	/* Flexbox Goodness */
+	#college-navbar.navbar .nav {
+		float: none;
+
+		/* Legacy Flexbox */
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-moz-box-orient: horizontal;
+		-moz-box-direction: normal;
+		box-direction: normal;
+		box-orient: horizontal;
+
+		/* IE 10 Flexbox */
+		display: -ms-flexbox;
+		display: flexbox;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		/* Modern Flexbox */
+		@include display-flex();
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+
+
+		li {
+			float: none;
+			/* Legacy Flexbox */
+			-webkit-box-flex: auto;
+			-moz-box-flex: auto;
+			box-flex: auto;
+
+			/* IE 10 Flexbox */
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+
+			/* Modern Flexbox */
+			@include flex(1 1 auto);
+		}
+
+		/*
+		 * Fancy CSS3 selectors to handle situations when there are very few menu items
+		 *
+		 * Disables flexbox when there are 3 or fewer menu items. Based on http://stackoverflow.com/a/12198561
+		*/
+		li:first-child:nth-last-child(1),
+		li:first-child:nth-last-child(2),
+		li:first-child:nth-last-child(2) ~ li,
+		li:first-child:nth-last-child(3),
+		li:first-child:nth-last-child(3) ~ li,
+		li:first-child:nth-last-child(4),
+		li:first-child:nth-last-child(4) ~ li {
+			float: left;
+			border-right: 1px solid #5395c5 !important;
+			border-top: none;
+			/* Legacy Flexbox */
+			-webkit-box-flex: none;
+			-moz-box-flex: none;
+			box-flex: none;
+
+			/* IE 10 Flexbox */
+			-ms-flex: none;
+			flex: none;
+
+			/* Modern Flexbox */
+			@include flex(none);
+
+			a {
+				padding-left: 2em;
+				padding-right: 2em;
+			}
+		}
+	}
+
+	/*
+	 * Non-Flexbox Fallback
+	 */
+
+	/* No Flexwrap */
+	.flexbox.no-flexwrap,
+	.flexboxtweener.no-flexwrap,
+	.flexboxlegacy.no-flexwrap {
+		#college-navbar.navbar .nav li {
+			display: inline-block;
+		}
+	}
+	/* No Flexbox */
+	.no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li {
+		width: auto;
+		float: left;
+		a {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
 	}
 }
 
 @media screen and (min-width: 52.5em) {
 	#college-navbar.navbar .nav > li > a {
 		font-size: 1em;
-		padding: .33333em 1em;
-		@include transition ( padding .5s ease);
-	}
-}
-
-@media screen and (min-width: 70em) {
-	.branded #college-navbar.navbar .nav > li > a {
-	  padding: .33333em 2em;
-	  @include transition ( padding .5s ease );
-	}
-}
-@media screen and (min-width: 80em) {
-	.branded #college-navbar.navbar .nav > li > a {
-	  padding: .33333em 3em;
-	  @include transition ( padding .1s ease );
-	}
-	#college-navbar.navbar .nav > li:last-child > a {
-		border-right: none;
 	}
 }
 
@@ -153,7 +223,6 @@
 .nav-about      #college-navbar.navbar .nav > li#nav-about > a {
   color: #FFFFFF;
 	@include background-image(linear-gradient(to bottom,  rgb(0,35,70) 0%,rgb(0,18,36) 100%));
-	padding-top: 0.3999999em;
 	border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .nav-home    	#college-navbar.navbar .nav > li#nav-home > a:hover,
@@ -175,5 +244,4 @@
 
 .branded #college-navbar {
 	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
-	position: relative;
 }
