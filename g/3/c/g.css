@@ -10827,20 +10827,29 @@ button.close {
   text-decoration: none;
 }
 
-/* line 94, ../../../sass/partials/_carousel.scss */
+/* Force caption below slideshow on mobile */
+/* line 95, ../../../sass/partials/_carousel.scss */
 .carousel-caption {
-  position: absolute;
+  position: static;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0.6666667em 1em;
   background: #333333;
-  background: rgba(0, 0, 0, 0.75);
+  background: black;
   color: #fff;
   text-align: left;
 }
 
-/* line 106, ../../../sass/partials/_carousel.scss */
+@media screen and (min-width: 48em) {
+  /* Overlay caption on larger breakpoints */
+  /* line 109, ../../../sass/partials/_carousel.scss */
+  .carousel-caption {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+/* line 115, ../../../sass/partials/_carousel.scss */
 .carousel-caption h2 {
   font-size: 1.4em;
   line-height: 1.429em;
@@ -10849,18 +10858,18 @@ button.close {
   padding: 0;
 }
 
-/* line 114, ../../../sass/partials/_carousel.scss */
+/* line 123, ../../../sass/partials/_carousel.scss */
 .carousel-caption p {
   margin: 0;
 }
 
-/* line 117, ../../../sass/partials/_carousel.scss */
+/* line 126, ../../../sass/partials/_carousel.scss */
 .carousel-caption a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 121, ../../../sass/partials/_carousel.scss */
+/* line 130, ../../../sass/partials/_carousel.scss */
 .carousel-caption a:focus,
 .carousel-caption a:hover,
 .carousel-caption a:focus {
