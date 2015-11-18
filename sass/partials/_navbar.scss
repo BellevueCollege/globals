@@ -17,6 +17,15 @@
 
 #college-navbar a {
 	text-decoration: none;
+
+}
+
+/* prevent normal focus state */
+#college-navbar a:focus {
+	@extend a:hover;
+	box-shadow: none;
+	border-radius: none;
+	color: #fff;
 }
 
 .navbar {

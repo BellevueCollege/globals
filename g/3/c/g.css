@@ -67,7 +67,8 @@ a {
 /* line 98, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_normalize.scss */
 a:active,
 a:hover,
-a:focus {
+a:focus,
+#college-navbar a:focus {
   outline: 0;
 }
 
@@ -1745,7 +1746,7 @@ a {
   text-decoration: none;
 }
 /* line 52, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_scaffolding.scss */
-a:hover, a:focus, a:focus {
+a:hover, a:focus, #college-navbar a:focus, a:focus {
   color: #23527c;
   text-decoration: underline;
 }
@@ -2014,7 +2015,7 @@ mark,
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-primary:hover, a.text-primary:focus,
+a.text-primary:hover, a.text-primary:focus, #college-navbar a.text-primary:focus,
 a.text-primary:focus {
   color: #286090;
 }
@@ -2025,7 +2026,7 @@ a.text-primary:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-success:hover, a.text-success:focus,
+a.text-success:hover, a.text-success:focus, #college-navbar a.text-success:focus,
 a.text-success:focus {
   color: #2b542c;
 }
@@ -2036,7 +2037,7 @@ a.text-success:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-info:hover, a.text-info:focus,
+a.text-info:hover, a.text-info:focus, #college-navbar a.text-info:focus,
 a.text-info:focus {
   color: #245269;
 }
@@ -2047,7 +2048,7 @@ a.text-info:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-warning:hover, a.text-warning:focus,
+a.text-warning:hover, a.text-warning:focus, #college-navbar a.text-warning:focus,
 a.text-warning:focus {
   color: #66512c;
 }
@@ -2058,7 +2059,7 @@ a.text-warning:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-danger:hover, a.text-danger:focus,
+a.text-danger:hover, a.text-danger:focus, #college-navbar a.text-danger:focus,
 a.text-danger:focus {
   color: #843534;
 }
@@ -2074,7 +2075,7 @@ a.text-danger:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-primary:hover, a.bg-primary:focus,
+a.bg-primary:hover, a.bg-primary:focus, #college-navbar a.bg-primary:focus,
 a.bg-primary:focus {
   background-color: #286090;
 }
@@ -2085,7 +2086,7 @@ a.bg-primary:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-success:hover, a.bg-success:focus,
+a.bg-success:hover, a.bg-success:focus, #college-navbar a.bg-success:focus,
 a.bg-success:focus {
   background-color: #c1e2b3;
 }
@@ -2096,7 +2097,7 @@ a.bg-success:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-info:hover, a.bg-info:focus,
+a.bg-info:hover, a.bg-info:focus, #college-navbar a.bg-info:focus,
 a.bg-info:focus {
   background-color: #afd9ee;
 }
@@ -2107,7 +2108,7 @@ a.bg-info:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-warning:hover, a.bg-warning:focus,
+a.bg-warning:hover, a.bg-warning:focus, #college-navbar a.bg-warning:focus,
 a.bg-warning:focus {
   background-color: #f7ecb5;
 }
@@ -2118,7 +2119,7 @@ a.bg-warning:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-danger:hover, a.bg-danger:focus,
+a.bg-danger:hover, a.bg-danger:focus, #college-navbar a.bg-danger:focus,
 a.bg-danger:focus {
   background-color: #e4b9b9;
 }
@@ -4922,14 +4923,14 @@ tbody.collapse.in {
 }
 
 /* line 78, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, #college-navbar .dropdown-menu > li > a:focus, .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #262626;
   background-color: #f5f5f5;
 }
 
 /* line 88, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:focus {
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, #college-navbar .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
@@ -4937,11 +4938,11 @@ tbody.collapse.in {
 }
 
 /* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, #college-navbar .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
   color: #777777;
 }
 /* line 110, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, #college-navbar .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
   text-decoration: none;
   background-color: transparent;
   background-image: none;
@@ -5436,7 +5437,7 @@ tbody.collapse.in {
   padding: 10px 15px;
 }
 /* line 23, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, #college-navbar .nav > li > a:focus, .nav > li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
 }
@@ -5445,14 +5446,14 @@ tbody.collapse.in {
   color: #777777;
 }
 /* line 34, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav > li.disabled > a:hover, .nav > li.disabled > a:focus, .nav > li.disabled > a:focus {
+.nav > li.disabled > a:hover, .nav > li.disabled > a:focus, #college-navbar .nav > li.disabled > a:focus, .nav > li.disabled > a:focus {
   color: #777777;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
 }
 /* line 46, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav .open > a:focus {
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav #college-navbar .open > a:focus, #college-navbar .nav .open > a:focus, .nav .open > a:focus {
   background-color: #eeeeee;
   border-color: #337ab7;
 }
@@ -5485,11 +5486,11 @@ tbody.collapse.in {
   border-radius: 4px 4px 0 0;
 }
 /* line 89, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, #college-navbar .nav-tabs > li > a:focus {
   border-color: #eeeeee #eeeeee #ddd;
 }
 /* line 96, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, #college-navbar .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:focus {
   color: #555555;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -5510,7 +5511,7 @@ tbody.collapse.in {
   margin-left: 2px;
 }
 /* line 131, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:focus {
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, #college-navbar .nav-pills > li.active > a:focus, .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #337ab7;
 }
@@ -5570,6 +5571,8 @@ tbody.collapse.in {
 .nav-tabs.nav-justified > .active > a:hover,
 .nav-tabs-justified > .active > a:focus,
 .nav-tabs.nav-justified > .active > a:focus,
+#college-navbar .nav-tabs-justified > .active > a:focus,
+#college-navbar .nav-tabs.nav-justified > .active > a:focus,
 .nav-tabs-justified > .active > a:focus,
 .nav-tabs.nav-justified > .active > a:focus {
   border: 1px solid #ddd;
@@ -5586,6 +5589,8 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus,
+  #college-navbar .nav-tabs-justified > .active > a:focus,
+  #college-navbar .nav-tabs.nav-justified > .active > a:focus,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
     border-bottom-color: #fff;
@@ -5856,7 +5861,7 @@ tbody.collapse.in {
     line-height: 20px;
   }
   /* line 257, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
   }
 }
@@ -6059,17 +6064,17 @@ tbody.collapse.in {
   color: #777;
 }
 /* line 418, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default #college-navbar .navbar-nav > li > a:focus, #college-navbar .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
   color: #333;
   background-color: transparent;
 }
 /* line 425, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default #college-navbar .navbar-nav > .active > a:focus, #college-navbar .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
   background-color: #e7e7e7;
 }
 /* line 433, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default .navbar-nav > .disabled > a:focus {
+.navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default #college-navbar .navbar-nav > .disabled > a:focus, #college-navbar .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default .navbar-nav > .disabled > a:focus {
   color: #ccc;
   background-color: transparent;
 }
@@ -6091,7 +6096,7 @@ tbody.collapse.in {
   border-color: #e7e7e7;
 }
 /* line 462, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default #college-navbar .navbar-nav > .open > a:focus, #college-navbar .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #e7e7e7;
   color: #555;
 }
@@ -6101,17 +6106,17 @@ tbody.collapse.in {
     color: #777;
   }
   /* line 475, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333;
     background-color: transparent;
   }
   /* line 482, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > .active > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
     background-color: #e7e7e7;
   }
   /* line 490, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > .disabled > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #ccc;
     background-color: transparent;
   }
@@ -6160,17 +6165,17 @@ tbody.collapse.in {
   color: #9d9d9d;
 }
 /* line 552, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:focus {
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse #college-navbar .navbar-nav > li > a:focus, #college-navbar .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
   background-color: transparent;
 }
 /* line 559, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse #college-navbar .navbar-nav > .active > a:focus, #college-navbar .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
   background-color: #090909;
 }
 /* line 567, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse .navbar-nav > .disabled > a:focus {
+.navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse #college-navbar .navbar-nav > .disabled > a:focus, #college-navbar .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444;
   background-color: transparent;
 }
@@ -6192,7 +6197,7 @@ tbody.collapse.in {
   border-color: #101010;
 }
 /* line 596, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse #college-navbar .navbar-nav > .open > a:focus, #college-navbar .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #090909;
   color: #fff;
 }
@@ -6210,17 +6215,17 @@ tbody.collapse.in {
     color: #9d9d9d;
   }
   /* line 615, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #fff;
     background-color: transparent;
   }
   /* line 622, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > .active > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
     background-color: #090909;
   }
   /* line 630, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > .disabled > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444;
     background-color: transparent;
   }
@@ -6307,7 +6312,7 @@ tbody.collapse.in {
   border-top-right-radius: 4px;
 }
 /* line 41, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pagination.scss */
-.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > a:focus,
+.pagination > li > a:hover, .pagination > li > a:focus, #college-navbar .pagination > li > a:focus, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 3;
@@ -6316,7 +6321,7 @@ tbody.collapse.in {
   border-color: #ddd;
 }
 /* line 52, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pagination.scss */
-.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > a:focus,
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, #college-navbar .pagination > .active > a:focus, .pagination > .active > a:focus,
 .pagination > .active > span,
 .pagination > .active > span:hover,
 .pagination > .active > span:focus {
@@ -6333,6 +6338,7 @@ tbody.collapse.in {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus,
+#college-navbar .pagination > .disabled > a:focus,
 .pagination > .disabled > a:focus {
   color: #777777;
   background-color: #fff;
@@ -6410,7 +6416,7 @@ tbody.collapse.in {
   border-radius: 15px;
 }
 /* line 23, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pager.scss */
-.pager li > a:hover, .pager li > a:focus,
+.pager li > a:hover, .pager li > a:focus, .pager #college-navbar li > a:focus, #college-navbar .pager li > a:focus,
 .pager li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
@@ -6429,6 +6435,8 @@ tbody.collapse.in {
 .pager .disabled > a,
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
+.pager #college-navbar .disabled > a:focus,
+#college-navbar .pager .disabled > a:focus,
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #777777;
@@ -6460,7 +6468,7 @@ tbody.collapse.in {
 }
 
 /* line 33, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_labels.scss */
-a.label:hover, a.label:focus, a.label:focus {
+a.label:hover, a.label:focus, #college-navbar a.label:focus, a.label:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -6568,7 +6576,7 @@ a.label:hover, a.label:focus, a.label:focus {
 }
 
 /* line 62, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-a.badge:hover, a.badge:focus, a.badge:focus {
+a.badge:hover, a.badge:focus, #college-navbar a.badge:focus, a.badge:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -6652,7 +6660,7 @@ a.badge:hover, a.badge:focus, a.badge:focus {
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_thumbnails.scss */
-a.thumbnail:hover, a.thumbnail:focus,
+a.thumbnail:hover, a.thumbnail:focus, #college-navbar a.thumbnail:focus,
 a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #337ab7;
@@ -6973,7 +6981,7 @@ button.list-group-item .list-group-item-heading {
   color: #333;
 }
 /* line 55, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-a.list-group-item:hover, a.list-group-item:focus, a.list-group-item:focus,
+a.list-group-item:hover, a.list-group-item:focus, #college-navbar a.list-group-item:focus, a.list-group-item:focus,
 button.list-group-item:hover,
 button.list-group-item:focus {
   text-decoration: none;
@@ -7040,14 +7048,14 @@ button.list-group-item-success .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-success:hover, a.list-group-item-success:focus, a.list-group-item-success:focus,
+a.list-group-item-success:hover, a.list-group-item-success:focus, #college-navbar a.list-group-item-success:focus, a.list-group-item-success:focus,
 button.list-group-item-success:hover,
 button.list-group-item-success:focus {
   color: #3c763d;
   background-color: #d0e9c6;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus, a.list-group-item-success.active:focus,
+a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus, #college-navbar a.list-group-item-success.active:focus, a.list-group-item-success.active:focus,
 button.list-group-item-success.active,
 button.list-group-item-success.active:hover,
 button.list-group-item-success.active:focus {
@@ -7073,14 +7081,14 @@ button.list-group-item-info .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-info:hover, a.list-group-item-info:focus, a.list-group-item-info:focus,
+a.list-group-item-info:hover, a.list-group-item-info:focus, #college-navbar a.list-group-item-info:focus, a.list-group-item-info:focus,
 button.list-group-item-info:hover,
 button.list-group-item-info:focus {
   color: #31708f;
   background-color: #c4e3f3;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus, a.list-group-item-info.active:focus,
+a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus, #college-navbar a.list-group-item-info.active:focus, a.list-group-item-info.active:focus,
 button.list-group-item-info.active,
 button.list-group-item-info.active:hover,
 button.list-group-item-info.active:focus {
@@ -7106,14 +7114,14 @@ button.list-group-item-warning .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-warning:hover, a.list-group-item-warning:focus, a.list-group-item-warning:focus,
+a.list-group-item-warning:hover, a.list-group-item-warning:focus, #college-navbar a.list-group-item-warning:focus, a.list-group-item-warning:focus,
 button.list-group-item-warning:hover,
 button.list-group-item-warning:focus {
   color: #8a6d3b;
   background-color: #faf2cc;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus, a.list-group-item-warning.active:focus,
+a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus, #college-navbar a.list-group-item-warning.active:focus, a.list-group-item-warning.active:focus,
 button.list-group-item-warning.active,
 button.list-group-item-warning.active:hover,
 button.list-group-item-warning.active:focus {
@@ -7139,14 +7147,14 @@ button.list-group-item-danger .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-danger:hover, a.list-group-item-danger:focus, a.list-group-item-danger:focus,
+a.list-group-item-danger:hover, a.list-group-item-danger:focus, #college-navbar a.list-group-item-danger:focus, a.list-group-item-danger:focus,
 button.list-group-item-danger:hover,
 button.list-group-item-danger:focus {
   color: #a94442;
   background-color: #ebcccc;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus, a.list-group-item-danger.active:focus,
+a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus, #college-navbar a.list-group-item-danger.active:focus, a.list-group-item-danger.active:focus,
 button.list-group-item-danger.active,
 button.list-group-item-danger.active:hover,
 button.list-group-item-danger.active:focus {
@@ -8871,7 +8879,7 @@ a {
 }
 
 /* line 41, ../../../sass/partials/_typography.scss */
-a:hover, a:focus {
+a:hover, a:focus, #college-navbar a:focus {
   color: #003d79;
 }
 
@@ -9310,7 +9318,7 @@ sub {
 }
 
 /* line 380, ../../../sass/partials/_typography.scss */
-a.muted:hover, a.muted:focus,
+a.muted:hover, a.muted:focus, #college-navbar a.muted:focus,
 a.muted:focus {
   color: #808080;
 }
@@ -9321,7 +9329,7 @@ a.muted:focus {
 }
 
 /* line 389, ../../../sass/partials/_typography.scss */
-a.text-warning:hover, a.text-warning:focus,
+a.text-warning:hover, a.text-warning:focus, #college-navbar a.text-warning:focus,
 a.text-warning:focus {
   color: #9e4519;
 }
@@ -9332,7 +9340,7 @@ a.text-warning:focus {
 }
 
 /* line 398, ../../../sass/partials/_typography.scss */
-a.text-error:hover, a.text-error:focus,
+a.text-error:hover, a.text-error:focus, #college-navbar a.text-error:focus,
 a.text-error:focus {
   color: #a51631;
 }
@@ -9343,7 +9351,7 @@ a.text-error:focus {
 }
 
 /* line 407, ../../../sass/partials/_typography.scss */
-a.text-info:hover, a.text-info:focus,
+a.text-info:hover, a.text-info:focus, #college-navbar a.text-info:focus,
 a.text-info:focus {
   color: #00537d;
 }
@@ -9354,7 +9362,7 @@ a.text-info:focus {
 }
 
 /* line 416, ../../../sass/partials/_typography.scss */
-a.text-success:hover, a.text-success:focus,
+a.text-success:hover, a.text-success:focus, #college-navbar a.text-success:focus,
 a.text-success:focus {
   color: #5f6623;
 }
@@ -10218,7 +10226,15 @@ p.site-description {
   text-decoration: none;
 }
 
-/* line 22, ../../../sass/partials/_navbar.scss */
+/* prevent normal focus state */
+/* line 24, ../../../sass/partials/_navbar.scss */
+#college-navbar a:focus {
+  box-shadow: none;
+  border-radius: none;
+  color: #fff;
+}
+
+/* line 31, ../../../sass/partials/_navbar.scss */
 .navbar {
   background: #0071bc;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzFiYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNDY4NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -10231,22 +10247,24 @@ p.site-description {
   margin-bottom: 0;
   border: none;
 }
-/* line 30, ../../../sass/partials/_navbar.scss */
+/* line 39, ../../../sass/partials/_navbar.scss */
 .navbar li {
   margin: 0;
   padding: 0;
 }
 
-/* line 36, ../../../sass/partials/_navbar.scss */
+/* line 45, ../../../sass/partials/_navbar.scss */
 .navbar-nav > li > a {
   text-align: center;
   width: 100%;
 }
 
-/* line 41, ../../../sass/partials/_navbar.scss */
+/* line 50, ../../../sass/partials/_navbar.scss */
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover,
-.navbar .nav > li > a:focus {
+.navbar .nav > li > a:focus,
+.navbar #college-navbar .nav > li > a:focus,
+#college-navbar .navbar .nav > li > a:focus {
   text-decoration: none;
   color: #FFFFFF;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgxYTdjOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNlNzRhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -10255,10 +10273,12 @@ p.site-description {
   background-image: linear-gradient(to bottom, #81a7c8 0%, #3e74a3 100%);
 }
 
-/* line 48, ../../../sass/partials/_navbar.scss */
+/* line 57, ../../../sass/partials/_navbar.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus,
+.navbar #college-navbar .nav > .active > a:focus,
+#college-navbar .navbar .nav > .active > a:focus,
 .navbar .nav > .active > a:focus {
   color: #FFFFFF;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI3NDQ1ZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MzM1MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -10270,7 +10290,7 @@ p.site-description {
   border-bottom: 1px solid #002d3f;
 }
 
-/* line 58, ../../../sass/partials/_navbar.scss */
+/* line 67, ../../../sass/partials/_navbar.scss */
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   border-right-color: #fff;
@@ -10281,30 +10301,30 @@ p.site-description {
  * Breakpoints
  */
 @media screen and (min-width: 48em) {
-  /* line 70, ../../../sass/partials/_navbar.scss */
+  /* line 79, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav > li > a {
     padding: .75em .25em;
     font-size: 0.9em;
   }
 
-  /* line 75, ../../../sass/partials/_navbar.scss */
+  /* line 84, ../../../sass/partials/_navbar.scss */
   .lite #college-navbar.navbar .nav > li {
     border-top: 1px solid #5395c5;
   }
 
-  /* line 79, ../../../sass/partials/_navbar.scss */
+  /* line 88, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav > li {
     border-right: 1px solid #5395c5;
     border-color: rgba(255, 255, 255, 0.2);
   }
 
-  /* line 84, ../../../sass/partials/_navbar.scss */
+  /* line 93, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav > li:last-child,
   #college-navbar.navbar .nav > li:last-child > a {
     border-right: none !important;
   }
 
-  /* line 89, ../../../sass/partials/_navbar.scss */
+  /* line 98, ../../../sass/partials/_navbar.scss */
   #main-nav-link {
     /* Apply .sr-only styles */
     position: absolute;
@@ -10318,7 +10338,7 @@ p.site-description {
   }
 
   /* Flexbox Goodness */
-  /* line 102, ../../../sass/partials/_navbar.scss */
+  /* line 111, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav {
     float: none;
     /* Legacy Flexbox */
@@ -10351,7 +10371,7 @@ p.site-description {
      * Disables flexbox when there are 3 or fewer menu items. Based on http://stackoverflow.com/a/12198561
     */
   }
-  /* line 130, ../../../sass/partials/_navbar.scss */
+  /* line 139, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li {
     float: none;
     /* Legacy Flexbox */
@@ -10365,7 +10385,7 @@ p.site-description {
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
   }
-  /* line 150, ../../../sass/partials/_navbar.scss */
+  /* line 159, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li:first-child:nth-last-child(1),
   #college-navbar.navbar .nav li:first-child:nth-last-child(2),
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li,
@@ -10387,7 +10407,7 @@ p.site-description {
     -webkit-flex: none;
     flex: none;
   }
-  /* line 172, ../../../sass/partials/_navbar.scss */
+  /* line 181, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li:first-child:nth-last-child(1) a,
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) a,
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li a,
@@ -10403,7 +10423,7 @@ p.site-description {
    * Non-Flexbox Fallback
    */
   /* No Flexwrap */
-  /* line 187, ../../../sass/partials/_navbar.scss */
+  /* line 196, ../../../sass/partials/_navbar.scss */
   .flexbox.no-flexwrap #college-navbar.navbar .nav li,
   .flexboxtweener.no-flexwrap #college-navbar.navbar .nav li,
   .flexboxlegacy.no-flexwrap #college-navbar.navbar .nav li {
@@ -10411,19 +10431,19 @@ p.site-description {
   }
 
   /* No Flexbox */
-  /* line 192, ../../../sass/partials/_navbar.scss */
+  /* line 201, ../../../sass/partials/_navbar.scss */
   .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li {
     width: auto;
     float: left;
   }
-  /* line 195, ../../../sass/partials/_navbar.scss */
+  /* line 204, ../../../sass/partials/_navbar.scss */
   .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li a {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
 @media screen and (min-width: 52.5em) {
-  /* line 204, ../../../sass/partials/_navbar.scss */
+  /* line 213, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav > li > a {
     font-size: 1em;
   }
@@ -10434,7 +10454,7 @@ p.site-description {
 /**
  * Mark items as selected when class is added to body
  */
-/* line 217, ../../../sass/partials/_navbar.scss */
+/* line 226, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a,
@@ -10450,7 +10470,7 @@ p.site-description {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 228, ../../../sass/partials/_navbar.scss */
+/* line 237, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a:hover, .nav-home #college-navbar.navbar .nav > li#nav-home > a:focus,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:hover,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
@@ -10477,7 +10497,7 @@ p.site-description {
   background-image: linear-gradient(to bottom, #2d5276 0%, #143553 100%);
 }
 
-/* line 245, ../../../sass/partials/_navbar.scss */
+/* line 254, ../../../sass/partials/_navbar.scss */
 .branded #college-navbar {
   box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 }
@@ -10553,7 +10573,7 @@ button.close {
 }
 
 /* line 65, ../../../sass/partials/_pagination.scss */
-.pagination ul > li > a:hover, .pagination ul > li > a:focus,
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination #college-navbar ul > li > a:focus, #college-navbar .pagination ul > li > a:focus,
 .pagination ul > li > a:focus,
 .pagination ul > .active > a,
 .pagination ul > .active > span {
@@ -10572,6 +10592,8 @@ button.close {
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
 .pagination ul > .disabled > a:focus,
+.pagination #college-navbar ul > .disabled > a:focus,
+#college-navbar .pagination ul > .disabled > a:focus,
 .pagination ul > .disabled > a:focus {
   color: #999999;
   cursor: default;
@@ -10694,7 +10716,7 @@ button.close {
 }
 
 /* line 181, ../../../sass/partials/_pagination.scss */
-.pager li > a:hover, .pager li > a:focus,
+.pager li > a:hover, .pager li > a:focus, .pager #college-navbar li > a:focus, #college-navbar .pager li > a:focus,
 .pager li > a:focus {
   text-decoration: none;
   background-color: #f5f5f5;
@@ -10716,6 +10738,8 @@ button.close {
 .pager .disabled > a,
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
+.pager #college-navbar .disabled > a:focus,
+#college-navbar .pager .disabled > a:focus,
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #999999;
@@ -10872,7 +10896,9 @@ button.close {
 /* line 130, ../../../sass/partials/_carousel.scss */
 .carousel-caption a:focus,
 .carousel-caption a:hover,
-.carousel-caption a:focus {
+.carousel-caption a:focus,
+.carousel-caption #college-navbar a:focus,
+#college-navbar .carousel-caption a:focus {
   text-decoration: underline;
 }
 
