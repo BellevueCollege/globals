@@ -67,7 +67,8 @@ a {
 /* line 98, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_normalize.scss */
 a:active,
 a:hover,
-a:focus {
+a:focus,
+#college-navbar a:focus {
   outline: 0;
 }
 
@@ -1745,7 +1746,7 @@ a {
   text-decoration: none;
 }
 /* line 52, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_scaffolding.scss */
-a:hover, a:focus, a:focus {
+a:hover, a:focus, #college-navbar a:focus, a:focus {
   color: #23527c;
   text-decoration: underline;
 }
@@ -2014,7 +2015,7 @@ mark,
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-primary:hover, a.text-primary:focus,
+a.text-primary:hover, a.text-primary:focus, #college-navbar a.text-primary:focus,
 a.text-primary:focus {
   color: #286090;
 }
@@ -2025,7 +2026,7 @@ a.text-primary:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-success:hover, a.text-success:focus,
+a.text-success:hover, a.text-success:focus, #college-navbar a.text-success:focus,
 a.text-success:focus {
   color: #2b542c;
 }
@@ -2036,7 +2037,7 @@ a.text-success:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-info:hover, a.text-info:focus,
+a.text-info:hover, a.text-info:focus, #college-navbar a.text-info:focus,
 a.text-info:focus {
   color: #245269;
 }
@@ -2047,7 +2048,7 @@ a.text-info:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-warning:hover, a.text-warning:focus,
+a.text-warning:hover, a.text-warning:focus, #college-navbar a.text-warning:focus,
 a.text-warning:focus {
   color: #66512c;
 }
@@ -2058,7 +2059,7 @@ a.text-warning:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
-a.text-danger:hover, a.text-danger:focus,
+a.text-danger:hover, a.text-danger:focus, #college-navbar a.text-danger:focus,
 a.text-danger:focus {
   color: #843534;
 }
@@ -2074,7 +2075,7 @@ a.text-danger:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-primary:hover, a.bg-primary:focus,
+a.bg-primary:hover, a.bg-primary:focus, #college-navbar a.bg-primary:focus,
 a.bg-primary:focus {
   background-color: #286090;
 }
@@ -2085,7 +2086,7 @@ a.bg-primary:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-success:hover, a.bg-success:focus,
+a.bg-success:hover, a.bg-success:focus, #college-navbar a.bg-success:focus,
 a.bg-success:focus {
   background-color: #c1e2b3;
 }
@@ -2096,7 +2097,7 @@ a.bg-success:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-info:hover, a.bg-info:focus,
+a.bg-info:hover, a.bg-info:focus, #college-navbar a.bg-info:focus,
 a.bg-info:focus {
   background-color: #afd9ee;
 }
@@ -2107,7 +2108,7 @@ a.bg-info:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-warning:hover, a.bg-warning:focus,
+a.bg-warning:hover, a.bg-warning:focus, #college-navbar a.bg-warning:focus,
 a.bg-warning:focus {
   background-color: #f7ecb5;
 }
@@ -2118,7 +2119,7 @@ a.bg-warning:focus {
 }
 
 /* line 8, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
-a.bg-danger:hover, a.bg-danger:focus,
+a.bg-danger:hover, a.bg-danger:focus, #college-navbar a.bg-danger:focus,
 a.bg-danger:focus {
   background-color: #e4b9b9;
 }
@@ -4922,14 +4923,14 @@ tbody.collapse.in {
 }
 
 /* line 78, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, #college-navbar .dropdown-menu > li > a:focus, .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #262626;
   background-color: #f5f5f5;
 }
 
 /* line 88, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:focus {
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, #college-navbar .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
@@ -4937,11 +4938,11 @@ tbody.collapse.in {
 }
 
 /* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, #college-navbar .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
   color: #777777;
 }
 /* line 110, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus, #college-navbar .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:focus {
   text-decoration: none;
   background-color: transparent;
   background-image: none;
@@ -5436,7 +5437,7 @@ tbody.collapse.in {
   padding: 10px 15px;
 }
 /* line 23, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, #college-navbar .nav > li > a:focus, .nav > li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
 }
@@ -5445,14 +5446,14 @@ tbody.collapse.in {
   color: #777777;
 }
 /* line 34, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav > li.disabled > a:hover, .nav > li.disabled > a:focus, .nav > li.disabled > a:focus {
+.nav > li.disabled > a:hover, .nav > li.disabled > a:focus, #college-navbar .nav > li.disabled > a:focus, .nav > li.disabled > a:focus {
   color: #777777;
   text-decoration: none;
   background-color: transparent;
   cursor: not-allowed;
 }
 /* line 46, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav .open > a:focus {
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav #college-navbar .open > a:focus, #college-navbar .nav .open > a:focus, .nav .open > a:focus {
   background-color: #eeeeee;
   border-color: #337ab7;
 }
@@ -5485,11 +5486,11 @@ tbody.collapse.in {
   border-radius: 4px 4px 0 0;
 }
 /* line 89, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, #college-navbar .nav-tabs > li > a:focus {
   border-color: #eeeeee #eeeeee #ddd;
 }
 /* line 96, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:focus {
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, #college-navbar .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:focus {
   color: #555555;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -5510,7 +5511,7 @@ tbody.collapse.in {
   margin-left: 2px;
 }
 /* line 131, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:focus {
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, #college-navbar .nav-pills > li.active > a:focus, .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #337ab7;
 }
@@ -5570,6 +5571,8 @@ tbody.collapse.in {
 .nav-tabs.nav-justified > .active > a:hover,
 .nav-tabs-justified > .active > a:focus,
 .nav-tabs.nav-justified > .active > a:focus,
+#college-navbar .nav-tabs-justified > .active > a:focus,
+#college-navbar .nav-tabs.nav-justified > .active > a:focus,
 .nav-tabs-justified > .active > a:focus,
 .nav-tabs.nav-justified > .active > a:focus {
   border: 1px solid #ddd;
@@ -5586,6 +5589,8 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus,
+  #college-navbar .nav-tabs-justified > .active > a:focus,
+  #college-navbar .nav-tabs.nav-justified > .active > a:focus,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
     border-bottom-color: #fff;
@@ -5856,7 +5861,7 @@ tbody.collapse.in {
     line-height: 20px;
   }
   /* line 257, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
   }
 }
@@ -6059,17 +6064,17 @@ tbody.collapse.in {
   color: #777;
 }
 /* line 418, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default #college-navbar .navbar-nav > li > a:focus, #college-navbar .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:focus {
   color: #333;
   background-color: transparent;
 }
 /* line 425, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:focus {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default #college-navbar .navbar-nav > .active > a:focus, #college-navbar .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
   background-color: #e7e7e7;
 }
 /* line 433, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default .navbar-nav > .disabled > a:focus {
+.navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default #college-navbar .navbar-nav > .disabled > a:focus, #college-navbar .navbar-default .navbar-nav > .disabled > a:focus, .navbar-default .navbar-nav > .disabled > a:focus {
   color: #ccc;
   background-color: transparent;
 }
@@ -6091,7 +6096,7 @@ tbody.collapse.in {
   border-color: #e7e7e7;
 }
 /* line 462, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default #college-navbar .navbar-nav > .open > a:focus, #college-navbar .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #e7e7e7;
   color: #555;
 }
@@ -6101,17 +6106,17 @@ tbody.collapse.in {
     color: #777;
   }
   /* line 475, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333;
     background-color: transparent;
   }
   /* line 482, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > .active > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
     background-color: #e7e7e7;
   }
   /* line 490, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open #college-navbar .dropdown-menu > .disabled > a:focus, #college-navbar .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #ccc;
     background-color: transparent;
   }
@@ -6160,17 +6165,17 @@ tbody.collapse.in {
   color: #9d9d9d;
 }
 /* line 552, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:focus {
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse #college-navbar .navbar-nav > li > a:focus, #college-navbar .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
   background-color: transparent;
 }
 /* line 559, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse #college-navbar .navbar-nav > .active > a:focus, #college-navbar .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:focus {
   color: #fff;
   background-color: #090909;
 }
 /* line 567, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse .navbar-nav > .disabled > a:focus {
+.navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse #college-navbar .navbar-nav > .disabled > a:focus, #college-navbar .navbar-inverse .navbar-nav > .disabled > a:focus, .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444;
   background-color: transparent;
 }
@@ -6192,7 +6197,7 @@ tbody.collapse.in {
   border-color: #101010;
 }
 /* line 596, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse #college-navbar .navbar-nav > .open > a:focus, #college-navbar .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #090909;
   color: #fff;
 }
@@ -6210,17 +6215,17 @@ tbody.collapse.in {
     color: #9d9d9d;
   }
   /* line 615, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > li > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #fff;
     background-color: transparent;
   }
   /* line 622, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > .active > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #fff;
     background-color: #090909;
   }
   /* line 630, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open #college-navbar .dropdown-menu > .disabled > a:focus, #college-navbar .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444;
     background-color: transparent;
   }
@@ -6307,7 +6312,7 @@ tbody.collapse.in {
   border-top-right-radius: 4px;
 }
 /* line 41, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pagination.scss */
-.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > a:focus,
+.pagination > li > a:hover, .pagination > li > a:focus, #college-navbar .pagination > li > a:focus, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 3;
@@ -6316,7 +6321,7 @@ tbody.collapse.in {
   border-color: #ddd;
 }
 /* line 52, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pagination.scss */
-.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > a:focus,
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, #college-navbar .pagination > .active > a:focus, .pagination > .active > a:focus,
 .pagination > .active > span,
 .pagination > .active > span:hover,
 .pagination > .active > span:focus {
@@ -6333,6 +6338,7 @@ tbody.collapse.in {
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus,
+#college-navbar .pagination > .disabled > a:focus,
 .pagination > .disabled > a:focus {
   color: #777777;
   background-color: #fff;
@@ -6410,7 +6416,7 @@ tbody.collapse.in {
   border-radius: 15px;
 }
 /* line 23, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_pager.scss */
-.pager li > a:hover, .pager li > a:focus,
+.pager li > a:hover, .pager li > a:focus, .pager #college-navbar li > a:focus, #college-navbar .pager li > a:focus,
 .pager li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
@@ -6429,6 +6435,8 @@ tbody.collapse.in {
 .pager .disabled > a,
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
+.pager #college-navbar .disabled > a:focus,
+#college-navbar .pager .disabled > a:focus,
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #777777;
@@ -6460,7 +6468,7 @@ tbody.collapse.in {
 }
 
 /* line 33, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_labels.scss */
-a.label:hover, a.label:focus, a.label:focus {
+a.label:hover, a.label:focus, #college-navbar a.label:focus, a.label:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -6568,7 +6576,7 @@ a.label:hover, a.label:focus, a.label:focus {
 }
 
 /* line 62, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_badges.scss */
-a.badge:hover, a.badge:focus, a.badge:focus {
+a.badge:hover, a.badge:focus, #college-navbar a.badge:focus, a.badge:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -6652,7 +6660,7 @@ a.badge:hover, a.badge:focus, a.badge:focus {
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_thumbnails.scss */
-a.thumbnail:hover, a.thumbnail:focus,
+a.thumbnail:hover, a.thumbnail:focus, #college-navbar a.thumbnail:focus,
 a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #337ab7;
@@ -6973,7 +6981,7 @@ button.list-group-item .list-group-item-heading {
   color: #333;
 }
 /* line 55, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_list-group.scss */
-a.list-group-item:hover, a.list-group-item:focus, a.list-group-item:focus,
+a.list-group-item:hover, a.list-group-item:focus, #college-navbar a.list-group-item:focus, a.list-group-item:focus,
 button.list-group-item:hover,
 button.list-group-item:focus {
   text-decoration: none;
@@ -7040,14 +7048,14 @@ button.list-group-item-success .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-success:hover, a.list-group-item-success:focus, a.list-group-item-success:focus,
+a.list-group-item-success:hover, a.list-group-item-success:focus, #college-navbar a.list-group-item-success:focus, a.list-group-item-success:focus,
 button.list-group-item-success:hover,
 button.list-group-item-success:focus {
   color: #3c763d;
   background-color: #d0e9c6;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus, a.list-group-item-success.active:focus,
+a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus, #college-navbar a.list-group-item-success.active:focus, a.list-group-item-success.active:focus,
 button.list-group-item-success.active,
 button.list-group-item-success.active:hover,
 button.list-group-item-success.active:focus {
@@ -7073,14 +7081,14 @@ button.list-group-item-info .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-info:hover, a.list-group-item-info:focus, a.list-group-item-info:focus,
+a.list-group-item-info:hover, a.list-group-item-info:focus, #college-navbar a.list-group-item-info:focus, a.list-group-item-info:focus,
 button.list-group-item-info:hover,
 button.list-group-item-info:focus {
   color: #31708f;
   background-color: #c4e3f3;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus, a.list-group-item-info.active:focus,
+a.list-group-item-info.active, a.list-group-item-info.active:hover, a.list-group-item-info.active:focus, #college-navbar a.list-group-item-info.active:focus, a.list-group-item-info.active:focus,
 button.list-group-item-info.active,
 button.list-group-item-info.active:hover,
 button.list-group-item-info.active:focus {
@@ -7106,14 +7114,14 @@ button.list-group-item-warning .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-warning:hover, a.list-group-item-warning:focus, a.list-group-item-warning:focus,
+a.list-group-item-warning:hover, a.list-group-item-warning:focus, #college-navbar a.list-group-item-warning:focus, a.list-group-item-warning:focus,
 button.list-group-item-warning:hover,
 button.list-group-item-warning:focus {
   color: #8a6d3b;
   background-color: #faf2cc;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus, a.list-group-item-warning.active:focus,
+a.list-group-item-warning.active, a.list-group-item-warning.active:hover, a.list-group-item-warning.active:focus, #college-navbar a.list-group-item-warning.active:focus, a.list-group-item-warning.active:focus,
 button.list-group-item-warning.active,
 button.list-group-item-warning.active:hover,
 button.list-group-item-warning.active:focus {
@@ -7139,14 +7147,14 @@ button.list-group-item-danger .list-group-item-heading {
   color: inherit;
 }
 /* line 19, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-danger:hover, a.list-group-item-danger:focus, a.list-group-item-danger:focus,
+a.list-group-item-danger:hover, a.list-group-item-danger:focus, #college-navbar a.list-group-item-danger:focus, a.list-group-item-danger:focus,
 button.list-group-item-danger:hover,
 button.list-group-item-danger:focus {
   color: #a94442;
   background-color: #ebcccc;
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/mixins/_list-group.scss */
-a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus, a.list-group-item-danger.active:focus,
+a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus, #college-navbar a.list-group-item-danger.active:focus, a.list-group-item-danger.active:focus,
 button.list-group-item-danger.active,
 button.list-group-item-danger.active:hover,
 button.list-group-item-danger.active:focus {
@@ -8871,7 +8879,7 @@ a {
 }
 
 /* line 41, ../../../sass/partials/_typography.scss */
-a:hover, a:focus {
+a:hover, a:focus, #college-navbar a:focus {
   color: #003d79;
 }
 
@@ -8892,25 +8900,40 @@ ul, ol, dl {
   margin-top: 1em;
 }
 
-/* line 61, ../../../sass/partials/_typography.scss */
+/* line 60, ../../../sass/partials/_typography.scss */
+#content {
+  /* Prevent long words from breaking formatting */
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+/* line 76, ../../../sass/partials/_typography.scss */
 #content ul, #content ol, #content dl {
   overflow: hidden;
 }
 
-/* line 66, ../../../sass/partials/_typography.scss */
+/* line 81, ../../../sass/partials/_typography.scss */
 li {
   margin-top: 0.33333333em;
   margin-left: 2.5em;
   padding-left: 0.5em;
 }
 
-/* line 72, ../../../sass/partials/_typography.scss */
+/* line 87, ../../../sass/partials/_typography.scss */
 dt {
   font-weight: bold;
   margin-top: 0.66666667em;
 }
 
-/* line 77, ../../../sass/partials/_typography.scss */
+/* line 92, ../../../sass/partials/_typography.scss */
 dd {
   margin-left: 1em;
 }
@@ -8919,20 +8942,20 @@ dd {
 /*	Scale:  																*/
 /*  traditional http://lamb.cc/typograph/   */
 /* **************************************** */
-/* line 86, ../../../sass/partials/_typography.scss */
+/* line 101, ../../../sass/partials/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   clear: both;
 }
 
-/* line 91, ../../../sass/partials/_typography.scss */
+/* line 106, ../../../sass/partials/_typography.scss */
 h1 {
   font-size: 1.8em;
   line-height: 1.296em;
 }
 
-/* line 95, ../../../sass/partials/_typography.scss */
+/* line 110, ../../../sass/partials/_typography.scss */
 h2 {
   font-size: 1.6em;
   line-height: 1.25em;
@@ -8940,7 +8963,7 @@ h2 {
   margin-top: 3rem;
 }
 
-/* line 101, ../../../sass/partials/_typography.scss */
+/* line 116, ../../../sass/partials/_typography.scss */
 h3 {
   font-size: 1.4em;
   line-height: 1.429em;
@@ -8948,7 +8971,7 @@ h3 {
   margin-top: 2.66666667rem;
 }
 
-/* line 107, ../../../sass/partials/_typography.scss */
+/* line 122, ../../../sass/partials/_typography.scss */
 h4 {
   font-size: 1.2em;
   line-height: 1.389em;
@@ -8956,7 +8979,7 @@ h4 {
   margin-top: 2.333333rem;
 }
 
-/* line 113, ../../../sass/partials/_typography.scss */
+/* line 128, ../../../sass/partials/_typography.scss */
 h5 {
   font-size: 1.1em;
   line-height: 1.515em;
@@ -8965,48 +8988,48 @@ h5 {
   /* line-height 27.5px, margin-top: 32.5px = 60px */
 }
 
-/* line 119, ../../../sass/partials/_typography.scss */
+/* line 134, ../../../sass/partials/_typography.scss */
 h6 {
   font-size: 1em;
   line-height: 1.66666667em;
   margin-top: 2em;
 }
 
-/* line 124, ../../../sass/partials/_typography.scss */
+/* line 139, ../../../sass/partials/_typography.scss */
 h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
   margin-top: 0.66666667em;
   margin-top: 0.66666667rem;
 }
 
-/* line 128, ../../../sass/partials/_typography.scss */
+/* line 143, ../../../sass/partials/_typography.scss */
 h1 + p {
   margin-top: 0.66666667em;
 }
 
-/* line 131, ../../../sass/partials/_typography.scss */
+/* line 146, ../../../sass/partials/_typography.scss */
 h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
   margin-top: 0;
 }
 
-/* line 135, ../../../sass/partials/_typography.scss */
+/* line 150, ../../../sass/partials/_typography.scss */
 h5.class-heading {
   margin-top: 2.16667rem !important;
 }
 
-/* line 139, ../../../sass/partials/_typography.scss */
+/* line 154, ../../../sass/partials/_typography.scss */
 address {
   display: block;
   margin-top: 1em;
   font-style: normal;
 }
 
-/* line 145, ../../../sass/partials/_typography.scss */
+/* line 160, ../../../sass/partials/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 150, ../../../sass/partials/_typography.scss */
+/* line 165, ../../../sass/partials/_typography.scss */
 blockquote {
   font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1.66666667em;
@@ -9016,7 +9039,7 @@ blockquote {
   color: #666666;
 }
 
-/* line 159, ../../../sass/partials/_typography.scss */
+/* line 174, ../../../sass/partials/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -9025,7 +9048,7 @@ q:after {
   content: none;
 }
 
-/* line 167, ../../../sass/partials/_typography.scss */
+/* line 182, ../../../sass/partials/_typography.scss */
 blockquote:before {
   display: block;
   content: "\201C";
@@ -9036,7 +9059,7 @@ blockquote:before {
   color: #aaa;
 }
 
-/* line 177, ../../../sass/partials/_typography.scss */
+/* line 192, ../../../sass/partials/_typography.scss */
 blockquote p {
   margin-bottom: 0;
   font-size: 1.4em;
@@ -9044,18 +9067,18 @@ blockquote p {
   line-height: 1.25em;
 }
 
-/* line 184, ../../../sass/partials/_typography.scss */
+/* line 199, ../../../sass/partials/_typography.scss */
 blockquote small {
   display: block;
   color: #999999;
 }
 
-/* line 189, ../../../sass/partials/_typography.scss */
+/* line 204, ../../../sass/partials/_typography.scss */
 blockquote small:before {
   content: '\2014 \00A0';
 }
 
-/* line 193, ../../../sass/partials/_typography.scss */
+/* line 208, ../../../sass/partials/_typography.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -9065,7 +9088,7 @@ table {
   border-spacing: 0;
 }
 
-/* line 202, ../../../sass/partials/_typography.scss */
+/* line 217, ../../../sass/partials/_typography.scss */
 caption,
 th,
 td {
@@ -9073,13 +9096,13 @@ td {
   text-align: left;
 }
 
-/* line 209, ../../../sass/partials/_typography.scss */
+/* line 224, ../../../sass/partials/_typography.scss */
 .table {
   width: 100%;
   margin-top: 1em;
 }
 
-/* line 214, ../../../sass/partials/_typography.scss */
+/* line 229, ../../../sass/partials/_typography.scss */
 .table th,
 .table td {
   padding: .6em .666667em .666667em;
@@ -9089,17 +9112,17 @@ td {
   border-top: .066667em solid #E0E0E0;
 }
 
-/* line 222, ../../../sass/partials/_typography.scss */
+/* line 237, ../../../sass/partials/_typography.scss */
 .table th {
   font-weight: bold;
 }
 
-/* line 225, ../../../sass/partials/_typography.scss */
+/* line 240, ../../../sass/partials/_typography.scss */
 .table thead th {
   vertical-align: bottom;
 }
 
-/* line 228, ../../../sass/partials/_typography.scss */
+/* line 243, ../../../sass/partials/_typography.scss */
 .table caption + thead tr:first-child th,
 .table caption + thead tr:first-child td,
 .table colgroup + thead tr:first-child th,
@@ -9109,24 +9132,24 @@ td {
   border-top: 0;
 }
 
-/* line 236, ../../../sass/partials/_typography.scss */
+/* line 251, ../../../sass/partials/_typography.scss */
 .table tbody + tbody {
   border-top: 0.33333em solid #E0E0E0;
 }
 
-/* line 239, ../../../sass/partials/_typography.scss */
+/* line 254, ../../../sass/partials/_typography.scss */
 .table-striped tbody > tr:nth-child(odd) > td,
 .table-striped tbody > tr:nth-child(odd) > th {
   background-color: #f7f7f7;
 }
 
-/* line 243, ../../../sass/partials/_typography.scss */
+/* line 258, ../../../sass/partials/_typography.scss */
 .table-hover tbody tr:hover > td,
 .table-hover tbody tr:hover > th {
   background-color: #f0f0f0;
 }
 
-/* line 247, ../../../sass/partials/_typography.scss */
+/* line 262, ../../../sass/partials/_typography.scss */
 h1:first-child,
 h2:first-child,
 h3:first-child,
@@ -9142,46 +9165,46 @@ table:first-child {
   margin-top: 0;
 }
 
-/* line 261, ../../../sass/partials/_typography.scss */
+/* line 276, ../../../sass/partials/_typography.scss */
 dl:first-child dt:first-child {
   margin-top: 0;
 }
 
-/* line 264, ../../../sass/partials/_typography.scss */
+/* line 279, ../../../sass/partials/_typography.scss */
 small {
   font-size: .8em;
   line-height: 1.66666667em;
 }
 
-/* line 268, ../../../sass/partials/_typography.scss */
+/* line 283, ../../../sass/partials/_typography.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 271, ../../../sass/partials/_typography.scss */
+/* line 286, ../../../sass/partials/_typography.scss */
 em {
   font-style: italic;
 }
 
-/* line 274, ../../../sass/partials/_typography.scss */
+/* line 289, ../../../sass/partials/_typography.scss */
 cite {
   font-style: normal;
 }
 
-/* line 277, ../../../sass/partials/_typography.scss */
+/* line 292, ../../../sass/partials/_typography.scss */
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #999999;
 }
 
-/* line 282, ../../../sass/partials/_typography.scss */
+/* line 297, ../../../sass/partials/_typography.scss */
 abbr.initialism {
   font-size: 90%;
   text-transform: uppercase;
 }
 
-/* line 286, ../../../sass/partials/_typography.scss */
+/* line 301, ../../../sass/partials/_typography.scss */
 code,
 pre {
   padding: 0 3px 2px;
@@ -9193,7 +9216,7 @@ pre {
   border-radius: 2px;
 }
 
-/* line 295, ../../../sass/partials/_typography.scss */
+/* line 310, ../../../sass/partials/_typography.scss */
 code {
   padding: 0.2em 0.4em;
   color: #BF1A38;
@@ -9204,7 +9227,7 @@ code {
   /*review*/
 }
 
-/* line 303, ../../../sass/partials/_typography.scss */
+/* line 318, ../../../sass/partials/_typography.scss */
 pre {
   display: block;
   padding: 9.5px;
@@ -9233,13 +9256,13 @@ pre {
   /*review*/
 }
 
-/* line 321, ../../../sass/partials/_typography.scss */
+/* line 336, ../../../sass/partials/_typography.scss */
 pre.prettyprint {
   margin-bottom: 20px;
   /*review*/
 }
 
-/* line 325, ../../../sass/partials/_typography.scss */
+/* line 340, ../../../sass/partials/_typography.scss */
 pre code {
   padding: 0;
   /*review*/
@@ -9250,24 +9273,24 @@ pre code {
   border: 0;
 }
 
-/* line 334, ../../../sass/partials/_typography.scss */
+/* line 349, ../../../sass/partials/_typography.scss */
 .pre-scrollable {
   max-height: 350px;
   overflow-y: scroll;
 }
 
-/* line 339, ../../../sass/partials/_typography.scss */
+/* line 354, ../../../sass/partials/_typography.scss */
 del {
   color: #333;
 }
 
-/* line 342, ../../../sass/partials/_typography.scss */
+/* line 357, ../../../sass/partials/_typography.scss */
 ins {
   background: #fff9c0;
   text-decoration: none;
 }
 
-/* line 346, ../../../sass/partials/_typography.scss */
+/* line 361, ../../../sass/partials/_typography.scss */
 hr {
   background-color: #ccc;
   border: 0;
@@ -9275,7 +9298,7 @@ hr {
   margin: 2em 1.3333333em;
 }
 
-/* line 352, ../../../sass/partials/_typography.scss */
+/* line 367, ../../../sass/partials/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -9284,12 +9307,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 359, ../../../sass/partials/_typography.scss */
+/* line 374, ../../../sass/partials/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 362, ../../../sass/partials/_typography.scss */
+/* line 377, ../../../sass/partials/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -9297,79 +9320,79 @@ sub {
 /* ************************************** */
 /*	Classes applied to text      					*/
 /* ************************************** */
-/* line 371, ../../../sass/partials/_typography.scss */
+/* line 386, ../../../sass/partials/_typography.scss */
 .lead {
   font-size: 1.15em;
   font-weight: normal;
   line-height: 1.66666667em;
 }
 
-/* line 376, ../../../sass/partials/_typography.scss */
+/* line 391, ../../../sass/partials/_typography.scss */
 .muted {
   color: #999999;
 }
 
-/* line 380, ../../../sass/partials/_typography.scss */
-a.muted:hover, a.muted:focus,
+/* line 395, ../../../sass/partials/_typography.scss */
+a.muted:hover, a.muted:focus, #college-navbar a.muted:focus,
 a.muted:focus {
   color: #808080;
 }
 
-/* line 385, ../../../sass/partials/_typography.scss */
+/* line 400, ../../../sass/partials/_typography.scss */
 .text-warning {
   color: #b8511d;
 }
 
-/* line 389, ../../../sass/partials/_typography.scss */
-a.text-warning:hover, a.text-warning:focus,
+/* line 404, ../../../sass/partials/_typography.scss */
+a.text-warning:hover, a.text-warning:focus, #college-navbar a.text-warning:focus,
 a.text-warning:focus {
   color: #9e4519;
 }
 
-/* line 394, ../../../sass/partials/_typography.scss */
+/* line 409, ../../../sass/partials/_typography.scss */
 .text-error {
   color: #bf1a38;
 }
 
-/* line 398, ../../../sass/partials/_typography.scss */
-a.text-error:hover, a.text-error:focus,
+/* line 413, ../../../sass/partials/_typography.scss */
+a.text-error:hover, a.text-error:focus, #college-navbar a.text-error:focus,
 a.text-error:focus {
   color: #a51631;
 }
 
-/* line 403, ../../../sass/partials/_typography.scss */
+/* line 418, ../../../sass/partials/_typography.scss */
 .text-info {
   color: #337ab7;
 }
 
-/* line 407, ../../../sass/partials/_typography.scss */
-a.text-info:hover, a.text-info:focus,
+/* line 422, ../../../sass/partials/_typography.scss */
+a.text-info:hover, a.text-info:focus, #college-navbar a.text-info:focus,
 a.text-info:focus {
   color: #00537d;
 }
 
-/* line 412, ../../../sass/partials/_typography.scss */
+/* line 427, ../../../sass/partials/_typography.scss */
 .text-success {
   color: #747c2b;
 }
 
-/* line 416, ../../../sass/partials/_typography.scss */
-a.text-success:hover, a.text-success:focus,
+/* line 431, ../../../sass/partials/_typography.scss */
+a.text-success:hover, a.text-success:focus, #college-navbar a.text-success:focus,
 a.text-success:focus {
   color: #5f6623;
 }
 
-/* line 421, ../../../sass/partials/_typography.scss */
+/* line 436, ../../../sass/partials/_typography.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 425, ../../../sass/partials/_typography.scss */
+/* line 440, ../../../sass/partials/_typography.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 429, ../../../sass/partials/_typography.scss */
+/* line 444, ../../../sass/partials/_typography.scss */
 .text-center {
   text-align: center;
 }
@@ -9660,52 +9683,617 @@ a.text-success:focus {
 }
 
 /* line 84, ../../../sass/partials/_headfoot.scss */
+#bc-logo {
+  display: block;
+  float: none;
+}
+
+/* line 89, ../../../sass/partials/_headfoot.scss */
+.branded #bc-logo {
+  margin-top: 0.666655557em;
+  padding-bottom: 0.333333em;
+}
+
+/* line 93, ../../../sass/partials/_headfoot.scss */
+#bc-logo img {
+  display: block;
+  height: auto;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* line 100, ../../../sass/partials/_headfoot.scss */
+#mob-nav .input-group {
+  margin-bottom: 1em;
+}
+
+/* line 104, ../../../sass/partials/_headfoot.scss */
+#mybc {
+  font-style: italic;
+}
+
+/* line 108, ../../../sass/partials/_headfoot.scss */
+ul#college-top-actions {
+  display: -webkit-flex;
+  -webkit-flex-direction: row wrap;
+  -webkit-justify-content: space-around;
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+}
+
+/* line 116, ../../../sass/partials/_headfoot.scss */
+ul#college-top-actions li {
+  list-style: none;
+  margin: 0 auto;
+  padding: .2em;
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+  float: left;
+}
+
+/* line 128, ../../../sass/partials/_headfoot.scss */
+ul#college-top-actions a {
+  color: white;
+  color: rgba(255, 255, 255, 0.8);
+  padding: .5em 1em;
+  display: block;
+}
+
+/* line 135, ../../../sass/partials/_headfoot.scss */
+ul#college-top-actions a:hover, ul#college-top-actions a:focus {
+  color: white;
+}
+
+/* line 138, ../../../sass/partials/_headfoot.scss */
+.lite ul#college-top-actions {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+/* line 143, ../../../sass/partials/_headfoot.scss */
+.lite ul#college-top-actions li {
+  margin: 0 auto 0 auto;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 148, ../../../sass/partials/_headfoot.scss */
+  .branded #bc-logo {
+    margin-top: 1.5em;
+    padding-bottom: 1.5em;
+    width: 300px;
+  }
+
+  /* line 153, ../../../sass/partials/_headfoot.scss */
+  .ie8 .branded #bc-logo {
+    width: 280px;
+  }
+
+  /* line 156, ../../../sass/partials/_headfoot.scss */
+  .branded #bc-logo img {
+    max-width: 100%;
+  }
+
+  /* line 160, ../../../sass/partials/_headfoot.scss */
+  ul.top-actions, #bc-logo {
+    float: left;
+  }
+
+  /* line 163, ../../../sass/partials/_headfoot.scss */
+  #bc-logo img {
+    margin: 0;
+  }
+
+  /* line 167, ../../../sass/partials/_headfoot.scss */
+  ul#college-top-actions,
+  .lite ul#college-top-actions {
+    display: block;
+    float: right;
+  }
+
+  /* line 172, ../../../sass/partials/_headfoot.scss */
+  ul#college-top-actions li {
+    font-size: .8em;
+    margin: 0em auto 0em auto;
+  }
+
+  /* line 177, ../../../sass/partials/_headfoot.scss */
+  ul#college-top-actions a {
+    padding: .1em 1em;
+  }
+
+  /* line 180, ../../../sass/partials/_headfoot.scss */
+  .lite ul#college-top-actions a {
+    line-height: 1.5em;
+  }
+
+  /* line 183, ../../../sass/partials/_headfoot.scss */
+  .flexwrap {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -moz-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  /* Provide display:table based styles for non-flexbox browsers */
+  /* line 196, ../../../sass/partials/_headfoot.scss */
+  .no-flexbox.no-flexboxlegacy.no-flexboxtweener .flexwrap {
+    display: table;
+    width: 100%;
+  }
+
+  /* line 202, ../../../sass/partials/_headfoot.scss */
+  #main-nav-wrap {
+    -webkit-box-flex: auto;
+    -moz-box-flex: auto;
+    -ms-flex: auto;
+    -webkit-flex: auto;
+    flex: auto;
+  }
+
+  /* Provide display:table based styles for non-flexbox browsers */
+  /* line 209, ../../../sass/partials/_headfoot.scss */
+  .no-flexbox.no-flexboxlegacy.no-flexboxtweener #main-nav-wrap {
+    display: table-header-group;
+  }
+
+  /* line 212, ../../../sass/partials/_headfoot.scss */
+  #content {
+    -webkit-box-flex: auto;
+    -moz-box-flex: auto;
+    -ms-flex: auto;
+    -webkit-flex: auto;
+    flex: auto;
+  }
+
+  /* line 218, ../../../sass/partials/_headfoot.scss */
+  #nav-top {
+    position: absolute !important;
+    left: -99999px !important;
+  }
+
+  /* line 222, ../../../sass/partials/_headfoot.scss */
+  .navbar-nav {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 50em) {
+  /* line 229, ../../../sass/partials/_headfoot.scss */
+  .branded #bc-logo {
+    width: 420px;
+  }
+
+  /* line 232, ../../../sass/partials/_headfoot.scss */
+  .branded #bc-logo img {
+    max-width: 100%;
+  }
+
+  /* line 235, ../../../sass/partials/_headfoot.scss */
+  .ie8 .branded #bc-logo {
+    width: 410px;
+  }
+
+  /* line 238, ../../../sass/partials/_headfoot.scss */
+  .branded #bc-logo:hover {
+    background: url(../i/homepage.png) no-repeat 350px 17px;
+  }
+}
+/* ************************************** */
+/*	Section header      */
+/* ************************************** */
+/* line 249, ../../../sass/partials/_headfoot.scss */
+#site-header {
+  background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/* line 254, ../../../sass/partials/_headfoot.scss */
+.globals-branded #site-header {
+  background-color: transparent;
+  padding: 1.3333em 0 0 0;
+}
+
+/* line 258, ../../../sass/partials/_headfoot.scss */
+#site-header .social-media {
+  margin-top: 1.3333em;
+}
+
+/* line 261, ../../../sass/partials/_headfoot.scss */
+#site-header .social-media li {
+  display: inline;
+  margin-right: .66666667em;
+  padding: 0;
+  margin-left: 0;
+}
+
+/* line 267, ../../../sass/partials/_headfoot.scss */
+#site-header .social-media a {
+  padding-right: .66666667em;
+  float: none;
+  display: inline;
+}
+
+/* line 272, ../../../sass/partials/_headfoot.scss */
+#site-header .social-media a.more {
+  font-size: .9em;
+  padding-top: .3333333em;
+}
+
+/* line 277, ../../../sass/partials/_headfoot.scss */
+.branded .form-control {
+  height: auto;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 283, ../../../sass/partials/_headfoot.scss */
+  #site-header {
+    padding-top: 1.666667em;
+    padding-bottom: 2em;
+  }
+
+  /* line 287, ../../../sass/partials/_headfoot.scss */
+  #site-header .header-search {
+    margin: 0;
+  }
+
+  /* line 291, ../../../sass/partials/_headfoot.scss */
+  #site-header .social-media li {
+    margin-right: 0;
+  }
+
+  /* line 294, ../../../sass/partials/_headfoot.scss */
+  #site-header .form-search {
+    margin-top: 1em;
+    margin-bottom: 1.3333em;
+  }
+
+  /* line 299, ../../../sass/partials/_headfoot.scss */
+  .globals-branded #site-header {
+    padding: 0;
+    padding-top: 2em;
+  }
+}
+/*
+@media screen and (min-width: 46em) {
+	#site-header .header-search {
+		margin-top: 1em;
+	}
+}
+*/
+@media screen and (min-width: 50em) {
+  /* line 314, ../../../sass/partials/_headfoot.scss */
+  #site-header .social-media {
+    /*    margin-top: 0; */
+  }
+
+  /* line 317, ../../../sass/partials/_headfoot.scss */
+  #site-header .header-search {
+    margin-top: 0em;
+  }
+}
+@media screen and (min-width: 62em) {
+  /* line 322, ../../../sass/partials/_headfoot.scss */
+  #site-header .social-media {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  /* line 327, ../../../sass/partials/_headfoot.scss */
+  ul#college-top-actions a.top-actions {
+    padding-left: .7em;
+    padding-right: .7em;
+  }
+}
+/* line 333, ../../../sass/partials/_headfoot.scss */
+p.site-title,
+h1.site-title {
+  font-size: 2.4em;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+
+/* line 339, ../../../sass/partials/_headfoot.scss */
+.globals-branded h1.site-title {
+  font-weight: 100;
+}
+
+/* line 343, ../../../sass/partials/_headfoot.scss */
+p.site-title a,
+h1.site-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* line 349, ../../../sass/partials/_headfoot.scss */
+p.site-description {
+  line-height: 1em;
+  margin: 0;
+}
+
+/* ************************************** */
+/*	Content space 									      */
+/* ************************************** */
+/* line 359, ../../../sass/partials/_headfoot.scss */
+#content {
+  background-color: white;
+}
+
+/* line 362, ../../../sass/partials/_headfoot.scss */
+#content.transparent {
+  background-color: transparent;
+}
+
+/* ************************************** */
+/*	Foot														      */
+/* ************************************** */
+/* line 372, ../../../sass/partials/_headfoot.scss */
+#bigfoot {
+  background-color: #E1E1E1;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+}
+
+/* line 377, ../../../sass/partials/_headfoot.scss */
+#bigfoot .inner {
+  box-shadow: -2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7);
+  padding-top: 1.3333333em;
+  padding-bottom: 1.3333333em;
+  background-color: #E5E5E5;
+}
+
+/* line 384, ../../../sass/partials/_headfoot.scss */
+.ie7 #bigfoot .inner,
+.ie8 #bigfoot .inner {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/* line 390, ../../../sass/partials/_headfoot.scss */
+#bigfoot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 396, ../../../sass/partials/_headfoot.scss */
+#bigfoot li {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* line 403, ../../../sass/partials/_headfoot.scss */
+#bigfoot h3 {
+  font-size: .9em;
+  font-weight: bold;
+  color: #666;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 409, ../../../sass/partials/_headfoot.scss */
+#bigfoot h3 ~ ul {
+  margin-bottom: 1em;
+}
+
+/* line 413, ../../../sass/partials/_headfoot.scss */
+#bigfoot a {
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1em;
+}
+
+/* line 419, ../../../sass/partials/_headfoot.scss */
+.social-media {
+  margin-top: 1.3333em;
+}
+
+/* line 422, ../../../sass/partials/_headfoot.scss */
+.social-media li {
+  display: inline;
+}
+
+/* line 425, ../../../sass/partials/_headfoot.scss */
+.social-media a {
+  display: block;
+  float: left;
+  padding-right: .66666667em;
+}
+
+/* line 430, ../../../sass/partials/_headfoot.scss */
+.social-media a.more {
+  font-size: .9em;
+  padding-top: .3333333em;
+}
+
+/* line 434, ../../../sass/partials/_headfoot.scss */
+#bellevueaddress .tel,
+#bellevueaddress .adr {
+  font-size: .9em;
+}
+
+/* line 439, ../../../sass/partials/_headfoot.scss */
+#legalbar {
+  clear: left;
+  margin: 0 auto;
+  padding: 1em 0 1em 0;
+  text-align: center;
+}
+
+/* line 445, ../../../sass/partials/_headfoot.scss */
+#bigfoot + .container #legalbar {
+  padding: 0.66666667em 0 1em 0;
+}
+
+/* line 448, ../../../sass/partials/_headfoot.scss */
+#legalbar a:focus {
+  outline: dotted 1px #003d79;
+}
+
+/* line 450, ../../../sass/partials/_headfoot.scss */
+#legalbar li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* line 455, ../../../sass/partials/_headfoot.scss */
+#legalbar li a {
+  padding: 0 0.9em 0 1em;
+  color: #666;
+  border-left: 1px solid #DDDDDD;
+  font-size: .8em;
+  white-space: nowrap;
+}
+
+/* line 461, ../../../sass/partials/_headfoot.scss */
+#legalbar li a:hover, #legalbar li a:focus,
+#legalbar li a:focus {
+  color: #003d79;
+}
+
+/* line 464, ../../../sass/partials/_headfoot.scss */
+#legalbar li.first a {
+  border-left: none;
+}
+
+/* line 466, ../../../sass/partials/_headfoot.scss */
+#legalbar li.last {
+  float: none;
+  clear: left;
+  display: block;
+  padding: 0;
+}
+
+/* line 471, ../../../sass/partials/_headfoot.scss */
+#legalbar li.last a {
+  padding-left: 0;
+  border-left: none;
+}
+
+/* line 474, ../../../sass/partials/_headfoot.scss */
+#legalbar span {
+  padding-left: 21px;
+}
+
+@media screen and (min-width: 50em) {
+  /* line 479, ../../../sass/partials/_headfoot.scss */
+  #main-wrap,
+  #bigfoot,
+  #top-wrap {
+    padding: 0 0.66667em;
+  }
+}
+/* ************************************** */
+/* ************************************** */
+/*	Our Bootstrap Overrides						    */
+/* ************************************** */
+/* ************************************** */
+/* ************************************** */
+/* Emergency Alerts (Rave) 				*/
+/* ************************************** */
+/* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
+/* line 503, ../../../sass/partials/_headfoot.scss */
+#ravealertheader.alert {
+  border-radius: 0;
+  box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
+  margin-bottom: 0;
+}
+
+/* line 509, ../../../sass/partials/_headfoot.scss */
+#ravealertheader .glyphicon {
+  font-size: 4em;
+  text-align: center;
+  display: block;
+}
+
+/**
+ * College Navbar Styles
+ */
+/**
+ * General
+ */
+/* line 9, ../../../sass/partials/_navbar.scss */
+#main-nav-wrap {
+  background: #003d79 url(../i/headbgwide.jpg) 0 -20px repeat-x;
+  overflow: hidden;
+}
+
+/* line 13, ../../../sass/partials/_navbar.scss */
 #main-nav-wrap .container {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 88, ../../../sass/partials/_headfoot.scss */
-#main-nav-wrap {
-  background: #003d79 url(../i/headbgwide.jpg) 0 -20px repeat-x;
-  border-bottom: 2px solid #002e40;
-  overflow: hidden;
-}
-
-/* line 93, ../../../sass/partials/_headfoot.scss */
-.branded #college-navbar {
-  box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-  position: relative;
-}
-
-/* line 97, ../../../sass/partials/_headfoot.scss */
-.display-table #top-wrap #college-navbar {
-  display: none;
-  /*IE8+ hack when it renders in compatibility mode*/
-}
-
-/* Branded Nav */
-/* line 103, ../../../sass/partials/_headfoot.scss */
+/* line 18, ../../../sass/partials/_navbar.scss */
 #college-navbar a {
   text-decoration: none;
 }
 
-/* line 107, ../../../sass/partials/_headfoot.scss */
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover,
-.navbar .nav > li > a:focus {
-  text-decoration: none;
-  background: #0e78ba;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNzhiYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNTVhMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-linear-gradient(top, #0e78ba 0%, #0055a0 100%);
-  background-image: linear-gradient(to bottom, #0e78ba 0%, #0055a0 100%);
+/* prevent normal focus state */
+/* line 24, ../../../sass/partials/_navbar.scss */
+#college-navbar a:focus {
+  box-shadow: none;
+  border-radius: none;
+  color: #fff;
 }
 
-/* line 113, ../../../sass/partials/_headfoot.scss */
+/* line 31, ../../../sass/partials/_navbar.scss */
+.navbar {
+  background: #0071bc;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzFiYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNDY4NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(#0071bc 0%, #004684 100%);
+  background-image: linear-gradient(#0071bc 0%, #004684 100%);
+  /* W3C */
+  border-radius: 0px / 0px;
+  min-height: 30px !important;
+  margin-bottom: 0;
+  border: none;
+}
+/* line 39, ../../../sass/partials/_navbar.scss */
+.navbar li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 45, ../../../sass/partials/_navbar.scss */
+.navbar-nav > li > a {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 50, ../../../sass/partials/_navbar.scss */
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus,
+.navbar #college-navbar .nav > li > a:focus,
+#college-navbar .navbar .nav > li > a:focus {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgxYTdjOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNlNzRhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(top, #81a7c8 0%, #3e74a3 100%);
+  background-image: linear-gradient(to bottom, #81a7c8 0%, #3e74a3 100%);
+}
+
+/* line 57, ../../../sass/partials/_navbar.scss */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus,
+.navbar #college-navbar .nav > .active > a:focus,
+#college-navbar .navbar .nav > .active > a:focus,
 .navbar .nav > .active > a:focus {
   color: #FFFFFF;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI3NDQ1ZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MzM1MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -9714,20 +10302,174 @@ a.text-success:focus {
   background-image: linear-gradient(to bottom, #27445f, #143351);
   box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.2);
   border-right: 1px solid #002d3f;
+  border-bottom: 1px solid #002d3f;
 }
 
-/* line 122, ../../../sass/partials/_headfoot.scss */
-#college-navbar.navbar .nav > li > a:focus,
-#college-navbar.navbar .nav > li > a:hover,
-#college-navbar.navbar .nav > li > a:focus {
-  color: #FFFFFF;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgxYTdjOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNlNzRhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-linear-gradient(top, #81a7c8 0%, #3e74a3 100%);
-  background-image: linear-gradient(to bottom, #81a7c8 0%, #3e74a3 100%);
+/* line 67, ../../../sass/partials/_navbar.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  border-right-color: #fff;
+  font-weight: bold;
 }
 
-/* line 128, ../../../sass/partials/_headfoot.scss */
+/**
+ * Breakpoints
+ */
+@media screen and (min-width: 48em) {
+  /* line 79, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav > li > a {
+    padding: .75em .25em;
+    font-size: 0.9em;
+  }
+
+  /* line 84, ../../../sass/partials/_navbar.scss */
+  .lite #college-navbar.navbar .nav > li {
+    border-top: 1px solid #5395c5;
+  }
+
+  /* line 88, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav > li {
+    border-right: 1px solid #5395c5;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* line 93, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav > li:last-child,
+  #college-navbar.navbar .nav > li:last-child > a {
+    border-right: none !important;
+  }
+
+  /* line 98, ../../../sass/partials/_navbar.scss */
+  #main-nav-link {
+    /* Apply .sr-only styles */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  /* Flexbox Goodness */
+  /* line 111, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav {
+    float: none;
+    /* Legacy Flexbox */
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    box-orient: horizontal;
+    /* IE 10 Flexbox */
+    display: -ms-flexbox;
+    display: flexbox;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Modern Flexbox */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /*
+     * Fancy CSS3 selectors to handle situations when there are very few menu items
+     *
+     * Disables flexbox when there are 3 or fewer menu items. Based on http://stackoverflow.com/a/12198561
+    */
+  }
+  /* line 139, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav li {
+    float: none;
+    /* Legacy Flexbox */
+    -webkit-box-flex: auto;
+    -moz-box-flex: auto;
+    box-flex: auto;
+    /* IE 10 Flexbox */
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    /* Modern Flexbox */
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  /* line 159, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav li:first-child:nth-last-child(1),
+  #college-navbar.navbar .nav li:first-child:nth-last-child(2),
+  #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(3),
+  #college-navbar.navbar .nav li:first-child:nth-last-child(3) ~ li,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(4),
+  #college-navbar.navbar .nav li:first-child:nth-last-child(4) ~ li {
+    float: left;
+    border-right: 1px solid #5395c5 !important;
+    border-top: none;
+    /* Legacy Flexbox */
+    -webkit-box-flex: none;
+    -moz-box-flex: none;
+    box-flex: none;
+    /* IE 10 Flexbox */
+    -ms-flex: none;
+    flex: none;
+    /* Modern Flexbox */
+    -webkit-flex: none;
+    flex: none;
+  }
+  /* line 181, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav li:first-child:nth-last-child(1) a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(2) a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(3) a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(3) ~ li a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(4) a,
+  #college-navbar.navbar .nav li:first-child:nth-last-child(4) ~ li a {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  /*
+   * Non-Flexbox Fallback
+   */
+  /* No Flexwrap */
+  /* line 196, ../../../sass/partials/_navbar.scss */
+  .flexbox.no-flexwrap #college-navbar.navbar .nav li,
+  .flexboxtweener.no-flexwrap #college-navbar.navbar .nav li,
+  .flexboxlegacy.no-flexwrap #college-navbar.navbar .nav li {
+    display: inline-block;
+  }
+
+  /* No Flexbox */
+  /* line 201, ../../../sass/partials/_navbar.scss */
+  .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li {
+    width: auto;
+    float: left;
+  }
+  /* line 204, ../../../sass/partials/_navbar.scss */
+  .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li a {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+@media screen and (min-width: 52.5em) {
+  /* line 213, ../../../sass/partials/_navbar.scss */
+  #college-navbar.navbar .nav > li > a {
+    font-size: 1em;
+  }
+}
+/**
+ * Branded Styles
+*/
+/**
+ * Mark items as selected when class is added to body
+ */
+/* line 226, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a,
@@ -9740,11 +10482,10 @@ a.text-success:focus {
   background-size: 100%;
   background-image: -webkit-linear-gradient(top, #002346 0%, #001224 100%);
   background-image: linear-gradient(to bottom, #002346 0%, #001224 100%);
-  padding-top: 0.3999999em;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 140, ../../../sass/partials/_headfoot.scss */
+/* line 237, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a:hover, .nav-home #college-navbar.navbar .nav > li#nav-home > a:focus,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:hover,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
@@ -9771,689 +10512,9 @@ a.text-success:focus {
   background-image: linear-gradient(to bottom, #2d5276 0%, #143553 100%);
 }
 
-/* End Branded Nav */
-/* line 159, ../../../sass/partials/_headfoot.scss */
-#bc-logo {
-  display: block;
-  float: none;
-}
-
-/* line 164, ../../../sass/partials/_headfoot.scss */
-.branded #bc-logo {
-  margin-top: 0.666655557em;
-  padding-bottom: 0.333333em;
-}
-
-/* line 168, ../../../sass/partials/_headfoot.scss */
-#bc-logo img {
-  display: block;
-  height: auto;
-  width: auto;
-  margin: 0 auto;
-}
-
-/* line 175, ../../../sass/partials/_headfoot.scss */
-#mob-nav .input-group {
-  margin-bottom: 1em;
-}
-
-/* line 179, ../../../sass/partials/_headfoot.scss */
-#mybc {
-  font-style: italic;
-}
-
-/* line 183, ../../../sass/partials/_headfoot.scss */
-ul#college-top-actions {
-  display: -webkit-flex;
-  -webkit-flex-direction: row wrap;
-  -webkit-justify-content: space-around;
-  display: flex;
-  flex-direction: row wrap;
-  justify-content: space-around;
-}
-
-/* line 191, ../../../sass/partials/_headfoot.scss */
-ul#college-top-actions li {
-  list-style: none;
-  margin: 0 auto;
-  padding: .2em;
-  -webkit-flex: 0 1 auto;
-  flex: 0 1 auto;
-  float: left;
-}
-
-/* line 203, ../../../sass/partials/_headfoot.scss */
-ul#college-top-actions a {
-  color: white;
-  color: rgba(255, 255, 255, 0.8);
-  padding: .5em 1em;
-  display: block;
-}
-
-/* line 210, ../../../sass/partials/_headfoot.scss */
-ul#college-top-actions a:hover, ul#college-top-actions a:focus {
-  color: white;
-}
-
-/* line 213, ../../../sass/partials/_headfoot.scss */
-.lite ul#college-top-actions {
-  padding: 0;
-  margin: 0;
-  display: none;
-}
-
-/* line 218, ../../../sass/partials/_headfoot.scss */
-.lite ul#college-top-actions li {
-  margin: 0 auto 0 auto;
-}
-
-@media screen and (min-width: 48em) {
-  /* line 223, ../../../sass/partials/_headfoot.scss */
-  .branded #bc-logo {
-    margin-top: 1.5em;
-    padding-bottom: 1.5em;
-    width: 300px;
-  }
-
-  /* line 228, ../../../sass/partials/_headfoot.scss */
-  .ie8 .branded #bc-logo {
-    width: 280px;
-  }
-
-  /* line 231, ../../../sass/partials/_headfoot.scss */
-  .branded #bc-logo img {
-    max-width: 100%;
-  }
-
-  /* line 235, ../../../sass/partials/_headfoot.scss */
-  ul.top-actions, #bc-logo {
-    float: left;
-  }
-
-  /* line 238, ../../../sass/partials/_headfoot.scss */
-  #bc-logo img {
-    margin: 0;
-  }
-
-  /* line 242, ../../../sass/partials/_headfoot.scss */
-  ul#college-top-actions,
-  .lite ul#college-top-actions {
-    display: block;
-    float: right;
-  }
-
-  /* line 247, ../../../sass/partials/_headfoot.scss */
-  ul#college-top-actions li {
-    font-size: .8em;
-    margin: 0em auto 0em auto;
-  }
-
-  /* line 252, ../../../sass/partials/_headfoot.scss */
-  ul#college-top-actions a {
-    padding: .1em 1em;
-  }
-
-  /* line 255, ../../../sass/partials/_headfoot.scss */
-  .lite ul#college-top-actions a {
-    line-height: 1.5em;
-  }
-
-  /* line 259, ../../../sass/partials/_headfoot.scss */
-  .flexwrap {
-    display: table;
-    width: 100%;
-  }
-
-  /* line 263, ../../../sass/partials/_headfoot.scss */
-  #main-nav-link {
-    display: none;
-  }
-
-  /* line 266, ../../../sass/partials/_headfoot.scss */
-  #main-nav-wrap {
-    display: table-header-group;
-    *display: none;
-    /*IE7 and below */
-  }
-
-  /* line 270, ../../../sass/partials/_headfoot.scss */
-  #nav-top {
-    position: absolute !important;
-    left: -99999px !important;
-  }
-
-  /* line 274, ../../../sass/partials/_headfoot.scss */
-  .navbar-nav {
-    margin: 0;
-  }
-}
-@media screen and (min-width: 50em) {
-  /* line 281, ../../../sass/partials/_headfoot.scss */
-  .branded #bc-logo {
-    width: 420px;
-  }
-
-  /* line 284, ../../../sass/partials/_headfoot.scss */
-  .branded #bc-logo img {
-    max-width: 100%;
-  }
-
-  /* line 287, ../../../sass/partials/_headfoot.scss */
-  .ie8 .branded #bc-logo {
-    width: 410px;
-  }
-
-  /* line 290, ../../../sass/partials/_headfoot.scss */
-  .branded #bc-logo:hover {
-    background: url(../i/homepage.png) no-repeat 350px 17px;
-  }
-}
-/* ************************************** */
-/*	Section header      */
-/* ************************************** */
-/* line 301, ../../../sass/partials/_headfoot.scss */
-#site-header {
-  background-color: white;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-/* line 306, ../../../sass/partials/_headfoot.scss */
-.globals-branded #site-header {
-  background-color: transparent;
-  padding: 1.3333em 0 0 0;
-}
-
-/* line 310, ../../../sass/partials/_headfoot.scss */
-#site-header .social-media {
-  margin-top: 1.3333em;
-}
-
-/* line 313, ../../../sass/partials/_headfoot.scss */
-#site-header .social-media li {
-  display: inline;
-  margin-right: .66666667em;
-  padding: 0;
-  margin-left: 0;
-}
-
-/* line 319, ../../../sass/partials/_headfoot.scss */
-#site-header .social-media a {
-  padding-right: .66666667em;
-  float: none;
-  display: inline;
-}
-
-/* line 324, ../../../sass/partials/_headfoot.scss */
-#site-header .social-media a.more {
-  font-size: .9em;
-  padding-top: .3333333em;
-}
-
-/* line 329, ../../../sass/partials/_headfoot.scss */
-.branded .form-control {
-  height: auto;
-}
-
-@media screen and (min-width: 48em) {
-  /* line 335, ../../../sass/partials/_headfoot.scss */
-  #site-header {
-    padding-top: 1.666667em;
-    padding-bottom: 2em;
-  }
-
-  /* line 339, ../../../sass/partials/_headfoot.scss */
-  #site-header .header-search {
-    margin: 0;
-  }
-
-  /* line 343, ../../../sass/partials/_headfoot.scss */
-  #site-header .social-media li {
-    margin-right: 0;
-  }
-
-  /* line 346, ../../../sass/partials/_headfoot.scss */
-  #site-header .form-search {
-    margin-top: 1em;
-    margin-bottom: 1.3333em;
-  }
-
-  /* line 351, ../../../sass/partials/_headfoot.scss */
-  .globals-branded #site-header {
-    padding: 0;
-    padding-top: 2em;
-  }
-}
-/*
-@media screen and (min-width: 46em) {
-	#site-header .header-search {
-		margin-top: 1em;
-	}
-}
-*/
-@media screen and (min-width: 50em) {
-  /* line 366, ../../../sass/partials/_headfoot.scss */
-  #site-header .social-media {
-    /*    margin-top: 0; */
-  }
-
-  /* line 369, ../../../sass/partials/_headfoot.scss */
-  #site-header .header-search {
-    margin-top: 0em;
-  }
-}
-@media screen and (min-width: 62em) {
-  /* line 374, ../../../sass/partials/_headfoot.scss */
-  #site-header .social-media {
-    margin-top: 0;
-    text-align: right;
-  }
-
-  /* line 379, ../../../sass/partials/_headfoot.scss */
-  ul#college-top-actions a.top-actions {
-    padding-left: .7em;
-    padding-right: .7em;
-  }
-}
-/* line 385, ../../../sass/partials/_headfoot.scss */
-p.site-title,
-h1.site-title {
-  font-size: 2.4em;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #333333;
-}
-
-/* line 391, ../../../sass/partials/_headfoot.scss */
-.globals-branded h1.site-title {
-  font-weight: 100;
-}
-
-/* line 395, ../../../sass/partials/_headfoot.scss */
-p.site-title a,
-h1.site-title a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* line 401, ../../../sass/partials/_headfoot.scss */
-p.site-description {
-  line-height: 1em;
-  margin: 0;
-}
-
-/* ************************************** */
-/*	Content space 									      */
-/* ************************************** */
-/* line 411, ../../../sass/partials/_headfoot.scss */
-#content {
-  background-color: white;
-}
-
-/* line 414, ../../../sass/partials/_headfoot.scss */
-#content.transparent {
-  background-color: transparent;
-}
-
-/* ************************************** */
-/*	Foot														      */
-/* ************************************** */
-/* line 424, ../../../sass/partials/_headfoot.scss */
-#bigfoot {
-  background-color: #E1E1E1;
-  border-bottom: 1px solid #999999;
-  border-top: 1px solid #999999;
-}
-
-/* line 429, ../../../sass/partials/_headfoot.scss */
-#bigfoot .inner {
-  box-shadow: -2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7);
-  padding-top: 1.3333333em;
-  padding-bottom: 1.3333333em;
-  background-color: #E5E5E5;
-}
-
-/* line 436, ../../../sass/partials/_headfoot.scss */
-.ie7 #bigfoot .inner,
-.ie8 #bigfoot .inner {
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-
-/* line 442, ../../../sass/partials/_headfoot.scss */
-#bigfoot ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* line 448, ../../../sass/partials/_headfoot.scss */
-#bigfoot li {
-  margin: 0;
-  padding: 0;
-  font-size: 0.9em;
-  color: #777;
-}
-
-/* line 455, ../../../sass/partials/_headfoot.scss */
-#bigfoot h3 {
-  font-size: .9em;
-  font-weight: bold;
-  color: #666;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-/* line 461, ../../../sass/partials/_headfoot.scss */
-#bigfoot h3 ~ ul {
-  margin-bottom: 1em;
-}
-
-/* line 465, ../../../sass/partials/_headfoot.scss */
-#bigfoot a {
-  text-decoration: none;
-  white-space: nowrap;
-  line-height: 1em;
-}
-
-/* line 471, ../../../sass/partials/_headfoot.scss */
-.social-media {
-  margin-top: 1.3333em;
-}
-
-/* line 474, ../../../sass/partials/_headfoot.scss */
-.social-media li {
-  display: inline;
-}
-
-/* line 477, ../../../sass/partials/_headfoot.scss */
-.social-media a {
-  display: block;
-  float: left;
-  padding-right: .66666667em;
-}
-
-/* line 482, ../../../sass/partials/_headfoot.scss */
-.social-media a.more {
-  font-size: .9em;
-  padding-top: .3333333em;
-}
-
-/* line 486, ../../../sass/partials/_headfoot.scss */
-#bellevueaddress .tel,
-#bellevueaddress .adr {
-  font-size: .9em;
-}
-
-/* line 491, ../../../sass/partials/_headfoot.scss */
-#legalbar {
-  clear: left;
-  margin: 0 auto;
-  padding: 1em 0 1em 0;
-  text-align: center;
-}
-
-/* line 497, ../../../sass/partials/_headfoot.scss */
-#bigfoot + .container #legalbar {
-  padding: 0.66666667em 0 1em 0;
-}
-
-/* line 500, ../../../sass/partials/_headfoot.scss */
-#legalbar a:focus {
-  outline: dotted 1px #003d79;
-}
-
-/* line 502, ../../../sass/partials/_headfoot.scss */
-#legalbar li {
-  display: inline;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-/* line 507, ../../../sass/partials/_headfoot.scss */
-#legalbar li a {
-  padding: 0 0.9em 0 1em;
-  color: #666;
-  border-left: 1px solid #DDDDDD;
-  font-size: .8em;
-  white-space: nowrap;
-}
-
-/* line 513, ../../../sass/partials/_headfoot.scss */
-#legalbar li a:hover, #legalbar li a:focus,
-#legalbar li a:focus {
-  color: #003d79;
-}
-
-/* line 516, ../../../sass/partials/_headfoot.scss */
-#legalbar li.first a {
-  border-left: none;
-}
-
-/* line 518, ../../../sass/partials/_headfoot.scss */
-#legalbar li.last {
-  float: none;
-  clear: left;
-  display: block;
-  padding: 0;
-}
-
-/* line 523, ../../../sass/partials/_headfoot.scss */
-#legalbar li.last a {
-  padding-left: 0;
-  border-left: none;
-}
-
-/* line 526, ../../../sass/partials/_headfoot.scss */
-#legalbar span {
-  padding-left: 21px;
-}
-
-@media screen and (min-width: 50em) {
-  /* line 531, ../../../sass/partials/_headfoot.scss */
-  #main-wrap,
-  #main-nav-wrap,
-  #bigfoot,
-  #top-wrap {
-    padding: 0 0.66667em;
-  }
-}
-@media screen and (min-width: 48em) {
-  /* line 538, ../../../sass/partials/_headfoot.scss */
-  .navbar .nav {
-    float: left;
-  }
-
-  /* line 541, ../../../sass/partials/_headfoot.scss */
-  .navbar .nav > li > a {
-    border-top: none;
-    border-right: 1px solid #5395c5;
-    border-right-color: rgba(255, 255, 255, 0.2);
-  }
-
-  /* line 546, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li > a {
-    font-size: 0.9em;
-  }
-
-  /* line 549, ../../../sass/partials/_headfoot.scss */
-  .navbar .nav > li {
-    float: left;
-  }
-
-  /* line 552, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li {
-    float: none;
-  }
-
-  /* line 556, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav {
-    float: left;
-  }
-
-  /* line 559, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li {
-    float: left;
-  }
-
-  /* line 562, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li > a {
-    padding: .33333em .5em;
-    transition: padding .5s ease;
-  }
-
-  /* line 566, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li:last-child > a {
-    border-right: 1px solid rgba(255, 255, 255, 0.04);
-  }
-
-  /* line 569, ../../../sass/partials/_headfoot.scss */
-  #nav-home {
-    display: none;
-  }
-}
-@media screen and (min-width: 39em) {
-  /* line 572, ../../../sass/partials/_headfoot.scss */
-  #nav-home {
-    display: inherit;
-  }
-}
-@media screen and (min-width: 52.5em) {
-  /* line 576, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li > a {
-    font-size: 1em;
-    padding: .33333em 1em;
-    -webkit-transition: padding 0.5s ease;
-    transition: padding 0.5s ease;
-  }
-}
-/*@media screen and (min-width: 61em) {
-	#college-navbar.navbar .nav > li > a {
-	  padding: .33333em 2em;
-	  transition: padding .5s ease;
-	}
-}
-*/
-@media screen and (min-width: 70em) {
-  /* line 590, ../../../sass/partials/_headfoot.scss */
-  .branded #college-navbar.navbar .nav > li > a {
-    padding: .33333em 2em;
-    -webkit-transition: padding 0.5s ease;
-    transition: padding 0.5s ease;
-  }
-}
-@media screen and (min-width: 80em) {
-  /* line 596, ../../../sass/partials/_headfoot.scss */
-  .branded #college-navbar.navbar .nav > li > a {
-    padding: .33333em 3em;
-    -webkit-transition: padding 0.1s ease;
-    transition: padding 0.1s ease;
-  }
-
-  /* line 600, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav > li:last-child > a {
-    border-right: none;
-  }
-}
-/* ************************************** */
-/* ************************************** */
-/*	Our Bootstrap Overrides						    */
-/* ************************************** */
-/* ************************************** */
-/* ************************************** */
-/* Navbar 																*/
-/* ************************************** */
-/* line 620, ../../../sass/partials/_headfoot.scss */
-.navbar-default {
-  border: none;
-}
-
-/* line 623, ../../../sass/partials/_headfoot.scss */
-.nav li {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 627, ../../../sass/partials/_headfoot.scss */
-#college-navbar.navbar .nav li {
-  padding-left: 20px;
-}
-
-@media screen and (min-width: 48em) {
-  /* line 631, ../../../sass/partials/_headfoot.scss */
-  #college-navbar.navbar .nav li {
-    padding-left: 0;
-  }
-}
-/* line 635, ../../../sass/partials/_headfoot.scss */
-.navbar {
-  background: #0071bc;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzFiYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNDY4NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-linear-gradient(#0071bc 0%, #004684 100%);
-  background-image: linear-gradient(#0071bc 0%, #004684 100%);
-  /* W3C */
-  border-radius: 0px / 0px;
-  min-height: 30px !important;
-  margin-bottom: 0;
-}
-
-/* line 643, ../../../sass/partials/_headfoot.scss */
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus,
-.navbar .nav > .active > a:focus {
-  color: #fff;
-  background: #27445f;
-  border-right: 1px solid #002d3f;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* line 652, ../../../sass/partials/_headfoot.scss */
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover,
-.navbar .nav > li > a:focus {
-  text-decoration: none;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNzhiYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNTVhMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-linear-gradient(#0e78ba 0%, #0055a0 100%);
-  background-image: linear-gradient(#0e78ba 0%, #0055a0 100%);
-  color: #fff;
-}
-
-/* line 659, ../../../sass/partials/_headfoot.scss */
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-  border-right-color: #fff;
-  font-weight: bold;
-}
-
-/* line 665, ../../../sass/partials/_headfoot.scss */
-.navbar-nav > li > a {
-  padding-top: 12px !important;
-  padding-bottom: 13px !important;
-}
-
-/* line 670, ../../../sass/partials/_headfoot.scss */
-.navbar .nav > li > a {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ************************************** */
-/* Emergency Alerts (Rave) 				*/
-/* ************************************** */
-/* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
-/* line 681, ../../../sass/partials/_headfoot.scss */
-#ravealertheader.alert {
-  border-radius: 0;
+/* line 254, ../../../sass/partials/_navbar.scss */
+.branded #college-navbar {
   box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
-  margin-bottom: 0;
-}
-
-/* line 687, ../../../sass/partials/_headfoot.scss */
-#ravealertheader .glyphicon {
-  font-size: 4em;
-  text-align: center;
-  display: block;
 }
 
 /* ************************************** */
@@ -10527,7 +10588,7 @@ button.close {
 }
 
 /* line 65, ../../../sass/partials/_pagination.scss */
-.pagination ul > li > a:hover, .pagination ul > li > a:focus,
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination #college-navbar ul > li > a:focus, #college-navbar .pagination ul > li > a:focus,
 .pagination ul > li > a:focus,
 .pagination ul > .active > a,
 .pagination ul > .active > span {
@@ -10546,6 +10607,8 @@ button.close {
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
 .pagination ul > .disabled > a:focus,
+.pagination #college-navbar ul > .disabled > a:focus,
+#college-navbar .pagination ul > .disabled > a:focus,
 .pagination ul > .disabled > a:focus {
   color: #999999;
   cursor: default;
@@ -10668,7 +10731,7 @@ button.close {
 }
 
 /* line 181, ../../../sass/partials/_pagination.scss */
-.pager li > a:hover, .pager li > a:focus,
+.pager li > a:hover, .pager li > a:focus, .pager #college-navbar li > a:focus, #college-navbar .pager li > a:focus,
 .pager li > a:focus {
   text-decoration: none;
   background-color: #f5f5f5;
@@ -10690,6 +10753,8 @@ button.close {
 .pager .disabled > a,
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
+.pager #college-navbar .disabled > a:focus,
+#college-navbar .pager .disabled > a:focus,
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #999999;
@@ -10801,20 +10866,29 @@ button.close {
   text-decoration: none;
 }
 
-/* line 94, ../../../sass/partials/_carousel.scss */
+/* Force caption below slideshow on mobile */
+/* line 95, ../../../sass/partials/_carousel.scss */
 .carousel-caption {
-  position: absolute;
+  position: static;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0.6666667em 1em;
   background: #333333;
-  background: rgba(0, 0, 0, 0.75);
+  background: black;
   color: #fff;
   text-align: left;
 }
 
-/* line 106, ../../../sass/partials/_carousel.scss */
+@media screen and (min-width: 48em) {
+  /* Overlay caption on larger breakpoints */
+  /* line 109, ../../../sass/partials/_carousel.scss */
+  .carousel-caption {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+/* line 115, ../../../sass/partials/_carousel.scss */
 .carousel-caption h2 {
   font-size: 1.4em;
   line-height: 1.429em;
@@ -10823,21 +10897,23 @@ button.close {
   padding: 0;
 }
 
-/* line 114, ../../../sass/partials/_carousel.scss */
+/* line 123, ../../../sass/partials/_carousel.scss */
 .carousel-caption p {
   margin: 0;
 }
 
-/* line 117, ../../../sass/partials/_carousel.scss */
+/* line 126, ../../../sass/partials/_carousel.scss */
 .carousel-caption a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 121, ../../../sass/partials/_carousel.scss */
+/* line 130, ../../../sass/partials/_carousel.scss */
 .carousel-caption a:focus,
 .carousel-caption a:hover,
-.carousel-caption a:focus {
+.carousel-caption a:focus,
+.carousel-caption #college-navbar a:focus,
+#college-navbar .carousel-caption a:focus {
   text-decoration: underline;
 }
 

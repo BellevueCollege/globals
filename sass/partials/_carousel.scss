@@ -91,16 +91,25 @@
 	text-decoration: none;
 }
 
+/* Force caption below slideshow on mobile */
 .carousel-caption {
-  position: absolute;
+  position: static;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0.6666667em 1em;
   background: #333333;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 1);
   color: #fff;
   text-align: left;
+}
+
+@media screen and (min-width: $breakpoint-bs-sm) {
+	/* Overlay caption on larger breakpoints */
+	.carousel-caption {
+		position: absolute;
+		background: rgba(0, 0, 0, 0.75);
+	}
 }
 
 .carousel-caption h2 {
