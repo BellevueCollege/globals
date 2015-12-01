@@ -146,8 +146,10 @@ ul#college-top-actions a:hover {
 
 @media screen and (min-width: $breakpoint-bs-sm) {
 	.branded #bc-logo {
-		margin-top: 1.5em;
-		padding-bottom: 1.5em;
+		margin-top: 1.16666667em;
+		margin-bottom: 1.16666667em;
+		padding-top: .33333333em;
+		padding-bottom: 0.333333em;
 		width: 300px;
 	}
 	.ie8 .branded #bc-logo {
@@ -259,15 +261,14 @@ ul#college-top-actions a:hover {
 	margin-top: 1.3333em;
 }
 #site-header .social-media li {
-    display: inline;
+    display: inline-block;
     margin-right: .66666667em;
     padding: 0;
     margin-left: 0;
 }
 #site-header .social-media a {
-	padding-right: .66666667em;
 	float: none;
-	display: inline;
+	display: inline-block;
 }
 #site-header .social-media a.more {
 	font-size: .9em;
@@ -425,7 +426,7 @@ p.site-description {
 .social-media a {
 	display: block;
 	float: left;
-	padding-right: .66666667em;
+	margin-right: .66666667em;
 }
 .social-media a.more {
 	font-size: .9em;
