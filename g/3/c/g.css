@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! Globals Version 3.5.0.2 */
+/*! Globals Version 3.5.0.3 */
 /* Set Browser Support */
 /* Set path for Bootstrap icon fonts */
 /* Load Default Bootstrap */
@@ -373,8 +373,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../f/glyphicons-halflings-regular.eot?1429715184);
-  src: url(../f/glyphicons-halflings-regular.eot?&1429715184#iefix) format("embedded-opentype"), url(../f/glyphicons-halflings-regular.woff2?1429715184) format("woff2"), url(../f/glyphicons-halflings-regular.woff?1429715184) format("woff"), url(../f/glyphicons-halflings-regular.ttf?1429715184) format("truetype"), url(../f/glyphicons-halflings-regular.svg?1429715184#glyphicons_halflingsregular) format("svg");
+  src: url(../f/glyphicons-halflings-regular.eot?1429899360);
+  src: url(../f/glyphicons-halflings-regular.eot?&1429899360#iefix) format("embedded-opentype"), url(../f/glyphicons-halflings-regular.woff2?1429899360) format("woff2"), url(../f/glyphicons-halflings-regular.woff?1429899360) format("woff"), url(../f/glyphicons-halflings-regular.ttf?1429899360) format("truetype"), url(../f/glyphicons-halflings-regular.svg?1429899360#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -8810,6 +8810,15 @@ a.btn {
 /* line 12, ../../../sass/partials/_bootstrap-overrides.scss */
 label {
   font-weight: inherit;
+}
+
+/* Change Pagination to use Inline Block
+   to prevent odd breaking on small screens */
+/* line 19, ../../../sass/partials/_bootstrap-overrides.scss */
+ul.pagination li {
+  display: inline-block;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* ************************************** */

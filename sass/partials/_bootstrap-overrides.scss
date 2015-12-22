@@ -12,3 +12,13 @@ a.btn {
 label {
 	font-weight: inherit;
 }
+
+/* Change Pagination to use Inline Block
+   to prevent odd breaking on small screens */
+ul.pagination {
+	li {
+		display: inline-block;
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
