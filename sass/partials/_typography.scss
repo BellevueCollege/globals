@@ -58,6 +58,20 @@ ul, ol, dl {
 }
 
 #content {
+	/* Prevent long words from breaking formatting */
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+
     ul, ol, dl {
         overflow: hidden;
     }
@@ -65,7 +79,7 @@ ul, ol, dl {
 
 li {
 	margin-top: $sm-margin;
-	margin-left: $std-margin*1.5;
+	margin-left: $std-margin*2.5;
 	padding-left: $std-margin/2;
 }
 
