@@ -443,3 +443,18 @@ a.text-success:focus {
 .text-center {
   text-align: center;
 }
+
+/* Bootstrap Tabs */
+ul.nav.nav-tabs {
+	li {
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+
+		a, a:focus {
+			text-decoration: none;
+			box-shadow: none;
+		}
+	}
+}
