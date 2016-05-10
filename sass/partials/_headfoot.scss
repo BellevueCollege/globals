@@ -398,7 +398,7 @@ p.site-description {
 	margin: 0;
 	padding: 0;
 	font-size: 0.9em;
-	color: #777;
+	color: #494949;
 }
 
 #bigfoot h3 {
@@ -412,9 +412,14 @@ p.site-description {
 }
 
 #bigfoot a {
-	text-decoration: none;
+	text-decoration: underline;
 	white-space: nowrap;
 	line-height:1em;
+	color: #003D79;
+}
+#bigfoot a:hover,
+#bigfoot a:active {
+	color: #000;
 }
 
 .social-media {

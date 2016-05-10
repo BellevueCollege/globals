@@ -1,4 +1,5 @@
-/*! Globals Version 3.7.1.1 */
+@charset "UTF-8";
+/*! Globals Version 3.7.1.2 */
 /* Set Browser Support */
 /* Set path for Bootstrap icon fonts */
 /* Load Default Bootstrap */
@@ -372,8 +373,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../f/glyphicons-halflings-regular.eot?1429715184);
-  src: url(../f/glyphicons-halflings-regular.eot?&1429715184#iefix) format("embedded-opentype"), url(../f/glyphicons-halflings-regular.woff2?1429715184) format("woff2"), url(../f/glyphicons-halflings-regular.woff?1429715184) format("woff"), url(../f/glyphicons-halflings-regular.ttf?1429715184) format("truetype"), url(../f/glyphicons-halflings-regular.svg?1429715184#glyphicons_halflingsregular) format("svg");
+  src: url(../f/glyphicons-halflings-regular.eot?1429899360);
+  src: url(../f/glyphicons-halflings-regular.eot?&1429899360#iefix) format("embedded-opentype"), url(../f/glyphicons-halflings-regular.woff2?1429899360) format("woff2"), url(../f/glyphicons-halflings-regular.woff?1429899360) format("woff"), url(../f/glyphicons-halflings-regular.ttf?1429899360) format("truetype"), url(../f/glyphicons-halflings-regular.svg?1429899360#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -10092,7 +10093,7 @@ p.site-description {
   margin: 0;
   padding: 0;
   font-size: 0.9em;
-  color: #777;
+  color: #494949;
 }
 
 /* line 404, ../../../sass/partials/_headfoot.scss */
@@ -10110,41 +10111,48 @@ p.site-description {
 
 /* line 414, ../../../sass/partials/_headfoot.scss */
 #bigfoot a {
-  text-decoration: none;
+  text-decoration: underline;
   white-space: nowrap;
   line-height: 1em;
+  color: #003D79;
 }
 
 /* line 420, ../../../sass/partials/_headfoot.scss */
+#bigfoot a:hover, #bigfoot a:focus,
+#bigfoot a:active {
+  color: #000;
+}
+
+/* line 425, ../../../sass/partials/_headfoot.scss */
 .social-media {
   margin-top: 1.3333em;
 }
 
-/* line 423, ../../../sass/partials/_headfoot.scss */
+/* line 428, ../../../sass/partials/_headfoot.scss */
 .social-media li {
   display: inline;
 }
 
-/* line 426, ../../../sass/partials/_headfoot.scss */
+/* line 431, ../../../sass/partials/_headfoot.scss */
 .social-media a {
   display: block;
   float: left;
   margin-right: .66666667em;
 }
 
-/* line 431, ../../../sass/partials/_headfoot.scss */
+/* line 436, ../../../sass/partials/_headfoot.scss */
 .social-media a.more {
   font-size: .9em;
   padding-top: .3333333em;
 }
 
-/* line 435, ../../../sass/partials/_headfoot.scss */
+/* line 440, ../../../sass/partials/_headfoot.scss */
 #bellevueaddress .tel,
 #bellevueaddress .adr {
   font-size: .9em;
 }
 
-/* line 440, ../../../sass/partials/_headfoot.scss */
+/* line 445, ../../../sass/partials/_headfoot.scss */
 #legalbar {
   clear: left;
   margin: 0 auto;
@@ -10152,17 +10160,17 @@ p.site-description {
   text-align: center;
 }
 
-/* line 446, ../../../sass/partials/_headfoot.scss */
+/* line 451, ../../../sass/partials/_headfoot.scss */
 #bigfoot + .container #legalbar {
   padding: 0.66666667em 0 1em 0;
 }
 
-/* line 449, ../../../sass/partials/_headfoot.scss */
+/* line 454, ../../../sass/partials/_headfoot.scss */
 #legalbar a:focus {
   outline: dotted 1px #003d79;
 }
 
-/* line 451, ../../../sass/partials/_headfoot.scss */
+/* line 456, ../../../sass/partials/_headfoot.scss */
 #legalbar li {
   display: inline;
   padding: 0;
@@ -10170,7 +10178,7 @@ p.site-description {
   list-style-type: none;
 }
 
-/* line 456, ../../../sass/partials/_headfoot.scss */
+/* line 461, ../../../sass/partials/_headfoot.scss */
 #legalbar li a {
   padding: 0 0.9em 0 1em;
   color: #666;
@@ -10179,18 +10187,18 @@ p.site-description {
   white-space: nowrap;
 }
 
-/* line 462, ../../../sass/partials/_headfoot.scss */
+/* line 467, ../../../sass/partials/_headfoot.scss */
 #legalbar li a:hover, #legalbar li a:focus,
 #legalbar li a:focus {
   color: #003d79;
 }
 
-/* line 465, ../../../sass/partials/_headfoot.scss */
+/* line 470, ../../../sass/partials/_headfoot.scss */
 #legalbar li.first a {
   border-left: none;
 }
 
-/* line 467, ../../../sass/partials/_headfoot.scss */
+/* line 472, ../../../sass/partials/_headfoot.scss */
 #legalbar li.last {
   float: none;
   clear: left;
@@ -10198,19 +10206,19 @@ p.site-description {
   padding: 0;
 }
 
-/* line 472, ../../../sass/partials/_headfoot.scss */
+/* line 477, ../../../sass/partials/_headfoot.scss */
 #legalbar li.last a {
   padding-left: 0;
   border-left: none;
 }
 
-/* line 475, ../../../sass/partials/_headfoot.scss */
+/* line 480, ../../../sass/partials/_headfoot.scss */
 #legalbar span {
   padding-left: 21px;
 }
 
 @media screen and (min-width: 50em) {
-  /* line 480, ../../../sass/partials/_headfoot.scss */
+  /* line 485, ../../../sass/partials/_headfoot.scss */
   #main-wrap,
   #bigfoot,
   #top-wrap {
@@ -10226,14 +10234,14 @@ p.site-description {
 /* Emergency Alerts (Rave) 				*/
 /* ************************************** */
 /* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
-/* line 504, ../../../sass/partials/_headfoot.scss */
+/* line 509, ../../../sass/partials/_headfoot.scss */
 #ravealertheader.alert {
   border-radius: 0;
   box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
   margin-bottom: 0;
 }
 
-/* line 510, ../../../sass/partials/_headfoot.scss */
+/* line 515, ../../../sass/partials/_headfoot.scss */
 #ravealertheader .glyphicon {
   font-size: 4em;
   text-align: center;
