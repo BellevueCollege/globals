@@ -11,6 +11,7 @@ $icon-font-path: "";
 /* Load Default Bootstrap */
 @import "bootstrap-compass";
 @import "bootstrap";
+@import "bootstrap-accessibility";
 
 /* Load compass helpers */
 @import "compass";
