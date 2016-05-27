@@ -5,8 +5,8 @@
 	font-family: $font-body;
 	position: absolute;
 	top: 40%;
-	left: 0.25em;
-	left: 1rem;
+	left: 0.3em;
+	left: 1.1rem;
 	width: 0.666666em;
 	height: 0.666666em;
 	font-size: 4em;
@@ -19,12 +19,40 @@
 	border: 0.0333333em solid #ffffff;
 	@include border-radius (0.5em);
 	@include opacity (0.5);
+
+	span.glyphicon {
+		margin-left: -.9rem;
+		margin-top: -1.05rem;
+		font-size: 30px;
+	}
+}
+a.carousel-control:focus {
+	@include border-radius (0.5em);
+	outline: none;
+}
+.carousel-control.right {
+	right: 0.3em;
+	right: 1.1rem;
+	left: auto;
+
+	span.glyphicon {
+		margin-right: -.9rem;
+		margin-left: auto;
+		margin-top: -1.05rem;
+		font-size: 30px;
+	}
 }
 
-.carousel-control.right {
-	right: 0.25em;
-	right: 1rem;
-	left: auto;
+@media screen and (min-width: $breakpoint-bs-md) {
+	.globals-lite .carousel-control {
+		left: 0.7em;
+		left: 3.3rem;
+	}
+	.globals-lite .carousel-control.right {
+		right: 0.7em;
+		right: 3.3rem;
+		left: auto;
+	}
 }
 
 .carousel-control:hover,
