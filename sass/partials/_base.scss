@@ -8,6 +8,17 @@ $browser-minimum-versions: (
 /* Set path for Bootstrap icon fonts */
 $icon-font-path: "";
 
+/* Over-ride default colors */
+$brand-primary:         #003D79; // BC Brand Primary Blue
+$brand-success:         #3a873a; // Darkened to meet a11y AA requirements
+$brand-info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
+$brand-warning:         #F2C01E; // BC Brand Yellow
+$brand-danger:          #C4122F; // BC Brand Red
+
+$btn-info-color:     #162F57;
+$btn-warning-color:     #000;
+$btn-warning-border:    #E36F1E; //BC Brand Orange
+
 /* Load Default Bootstrap */
 @import "bootstrap-compass";
 @import "bootstrap";
