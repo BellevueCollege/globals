@@ -10507,9 +10507,8 @@ p.site-description {
     border-right: none !important;
   }
 
-  /* line 98, ../../../sass/partials/_navbar.scss */
-  #main-nav-link {
-    /* Apply .sr-only styles */
+  /* line 99, ../../../sass/partials/_navbar.scss */
+  #main-nav-link a {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -10519,9 +10518,19 @@ p.site-description {
     clip: rect(0, 0, 0, 0);
     border: 0;
   }
+  /* line 109, ../../../sass/partials/_navbar.scss */
+  #main-nav-link a:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    border: 0;
+  }
 
   /* Flexbox Goodness */
-  /* line 111, ../../../sass/partials/_navbar.scss */
+  /* line 122, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav {
     float: none;
     /* Legacy Flexbox */
@@ -10554,7 +10563,7 @@ p.site-description {
      * Disables flexbox when there are 3 or fewer menu items. Based on http://stackoverflow.com/a/12198561
     */
   }
-  /* line 139, ../../../sass/partials/_navbar.scss */
+  /* line 150, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li {
     float: none;
     /* Legacy Flexbox */
@@ -10568,7 +10577,7 @@ p.site-description {
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
   }
-  /* line 159, ../../../sass/partials/_navbar.scss */
+  /* line 170, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li:first-child:nth-last-child(1),
   #college-navbar.navbar .nav li:first-child:nth-last-child(2),
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li,
@@ -10590,7 +10599,7 @@ p.site-description {
     -webkit-flex: none;
     flex: none;
   }
-  /* line 181, ../../../sass/partials/_navbar.scss */
+  /* line 192, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav li:first-child:nth-last-child(1) a,
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) a,
   #college-navbar.navbar .nav li:first-child:nth-last-child(2) ~ li a,
@@ -10606,7 +10615,7 @@ p.site-description {
    * Non-Flexbox Fallback
    */
   /* No Flexwrap */
-  /* line 196, ../../../sass/partials/_navbar.scss */
+  /* line 207, ../../../sass/partials/_navbar.scss */
   .flexbox.no-flexwrap #college-navbar.navbar .nav li,
   .flexboxtweener.no-flexwrap #college-navbar.navbar .nav li,
   .flexboxlegacy.no-flexwrap #college-navbar.navbar .nav li {
@@ -10614,19 +10623,19 @@ p.site-description {
   }
 
   /* No Flexbox */
-  /* line 201, ../../../sass/partials/_navbar.scss */
+  /* line 212, ../../../sass/partials/_navbar.scss */
   .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li {
     width: auto;
     float: left;
   }
-  /* line 204, ../../../sass/partials/_navbar.scss */
+  /* line 215, ../../../sass/partials/_navbar.scss */
   .no-flexbox.no-flexboxlegacy.no-flexboxtweener #college-navbar.navbar .nav li a {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
 @media screen and (min-width: 52.5em) {
-  /* line 213, ../../../sass/partials/_navbar.scss */
+  /* line 224, ../../../sass/partials/_navbar.scss */
   #college-navbar.navbar .nav > li > a {
     font-size: 1em;
   }
@@ -10637,7 +10646,7 @@ p.site-description {
 /**
  * Mark items as selected when class is added to body
  */
-/* line 226, ../../../sass/partials/_navbar.scss */
+/* line 237, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a,
@@ -10653,7 +10662,7 @@ p.site-description {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 237, ../../../sass/partials/_navbar.scss */
+/* line 248, ../../../sass/partials/_navbar.scss */
 .nav-home #college-navbar.navbar .nav > li#nav-home > a:hover, .nav-home #college-navbar.navbar .nav > li#nav-home > a:focus,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:hover,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
@@ -10680,7 +10689,7 @@ p.site-description {
   background-image: linear-gradient(to bottom, #2d5276 0%, #143553 100%);
 }
 
-/* line 254, ../../../sass/partials/_navbar.scss */
+/* line 265, ../../../sass/partials/_navbar.scss */
 .branded #college-navbar {
   box-shadow: -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4);
 }

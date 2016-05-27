@@ -95,16 +95,27 @@
 		border-right: none !important;
 	}
 
-	#main-nav-link{
-		/* Apply .sr-only styles */
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0,0,0,0);
-		border: 0;
+	#main-nav-link {
+		a {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			border: 0;
+		}
+		a:focus {
+			position:static;
+			width: auto;
+			height: auto;
+			padding: 0;
+			margin: 0;
+			overflow:auto;
+			border: 0;
+		}
+
 	}
 
 	/* Flexbox Goodness */
