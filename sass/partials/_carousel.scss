@@ -88,7 +88,8 @@ a.carousel-control:focus {
 	float: left;
 	width: 1em;
 	height: 1em;
-	margin: 0;
+	margin: 2px;
+	margin-top: .25em;
 	margin-left: 0.333333em;
 	text-indent: -999px;
 	background-color: #ccc;
@@ -107,7 +108,9 @@ a.carousel-control:focus {
 	background-color: #fff;
 	width: 1em;
 	height: 1em;
+	margin: 2px;
 	margin-left: 0.33333333em;
+	@include border-radius (9px);
 }
 
 .carousel-indicators li.active:hover {
