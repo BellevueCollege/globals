@@ -44,11 +44,11 @@ a.carousel-control:focus {
 }
 
 @media screen and (min-width: $breakpoint-bs-md) {
-	.globals-lite .carousel-control {
+	#carousel-featured-in-content .carousel-control {
 		left: 0.7em;
 		left: 3.3rem;
 	}
-	.globals-lite .carousel-control.right {
+	#carousel-featured-in-content .carousel-control.right {
 		right: 0.7em;
 		right: 3.3rem;
 		left: auto;
