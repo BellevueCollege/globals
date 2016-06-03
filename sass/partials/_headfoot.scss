@@ -337,8 +337,12 @@ h1.site-title {
 	font-family: $font-body;
 	color: #333333;
 }
-.globals-branded h1.site-title {
-	font-weight: 100;
+.globals-branded {
+	h1.site-title,
+	p.site-title {
+		font-weight: 100;
+		margin-bottom: .33em;
+	}
 }
 
 p.site-title a,
@@ -348,7 +352,7 @@ h1.site-title a {
 }
 
 p.site-description {
-	line-height: 1em;
+	line-height: 2.25em;
 	margin: 0;
 }
 
