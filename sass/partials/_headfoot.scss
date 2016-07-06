@@ -299,7 +299,7 @@ ul#college-top-actions a:hover {
 
 	.globals-branded #site-header {
 		padding: 0;
-		padding-top: 2em;
+		padding-top: 1em;
 	}
 }
 
@@ -336,12 +336,13 @@ h1.site-title {
 	font-size: 2.4em;
 	font-family: $font-body;
 	color: #333333;
+	line-height: 1em;
 }
 .globals-branded {
 	h1.site-title,
 	p.site-title {
 		font-weight: 100;
-		margin-bottom: .33em;
+		margin-bottom: .33rem;
 	}
 }
 
@@ -352,8 +353,9 @@ h1.site-title a {
 }
 
 p.site-description {
-	line-height: 2.25em;
+	line-height: 1.5em;
 	margin: 0;
+	margin-top: .5em;
 }
 
 
