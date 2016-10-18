@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! Globals Version 3.8.1.1 */
+/*! Globals Version 3.8.1.2 */
 /* Set Browser Support */
 /* Set path for Bootstrap icon fonts */
 /* Over-ride default colors */
@@ -10625,7 +10625,7 @@ p.site-description {
 .nav-home #college-navbar.navbar .nav > li#nav-home > a,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a,
-.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a,
+.nav-studentcentral #college-navbar.navbar .nav > li#nav-studentcentral > a,
 .nav-services #college-navbar.navbar .nav > li#nav-services > a,
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a,
 .nav-about #college-navbar.navbar .nav > li#nav-about > a {
@@ -10643,8 +10643,8 @@ p.site-description {
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a:hover,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a:focus,
-.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:hover,
-.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:focus,
+.nav-studentcentral #college-navbar.navbar .nav > li#nav-studentcentral > a:hover,
+.nav-studentcentral #college-navbar.navbar .nav > li#nav-studentcentral > a:focus,
 .nav-services #college-navbar.navbar .nav > li#nav-services > a:hover,
 .nav-services #college-navbar.navbar .nav > li#nav-services > a:focus,
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:hover,
@@ -10654,7 +10654,7 @@ p.site-description {
 .nav-home #college-navbar.navbar .nav > li#nav-home > a:focus,
 .nav-classes #college-navbar.navbar .nav > li#nav-classes > a:focus,
 .nav-programs #college-navbar.navbar .nav > li#nav-programs > a:focus,
-.nav-enrollment #college-navbar.navbar .nav > li#nav-enrollment > a:focus,
+.nav-studentcentral #college-navbar.navbar .nav > li#nav-studentcentral > a:focus,
 .nav-services #college-navbar.navbar .nav > li#nav-services > a:focus,
 .nav-campuslife #college-navbar.navbar .nav > li#nav-campuslife > a:focus,
 .nav-about #college-navbar.navbar .nav > li#nav-about > a:focus {
