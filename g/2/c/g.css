@@ -1,4 +1,4 @@
-/* Globals Version 2.5 (3.9)
+/* Globals Version 2.5
 
 Sections
 - Rebase CSS
@@ -3986,7 +3986,7 @@ input[type="submit"].btn.btn-mini {
 @media screen and (min-width: 52.5em) {
 	#college-navbar.navbar .nav > li > a {
 	  font-size: 1em; 
-	  padding: .33333em 1.0em;
+	  padding: .33333em 1.33333em;
 	  transition: padding .5s ease;
 	}
 }
@@ -3998,13 +3998,13 @@ input[type="submit"].btn.btn-mini {
 }
 @media screen and (min-width: 70em) {
 	#college-navbar.navbar .nav > li > a {
-	  padding: .33333em 2.3em;
+	  padding: .33333em 2.666667em;
 	  transition: padding .5s ease;
 	}
 }
 @media screen and (min-width: 80em) {
 	#college-navbar.navbar .nav > li > a {
-	  padding: .33333em 3.0em;
+	  padding: .33333em 3.0666666em;
 	  transition: padding .1s ease;
 	}
 	#college-navbar.navbar .nav > li:last-child > a {
