@@ -1,0 +1,40 @@
+{
+  "name": "globals",
+  "version": "3.9.0",
+  "description": "Bellevue College Style Library",
+  "main": "gulpfile.js",
+  "scripts": {
+    "install": "napa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.bellevuecollege.edu:globals"
+  },
+  "author": "Bellevue College ITS",
+  "license": "MIT",
+  "browserslist": [
+    "> 2% in US",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "napa": {
+    "noisy": "DanielRapp/Noisy"
+  },
+  "devDependencies": {
+    "Respond.js": "github:scottjehl/Respond",
+    "bootstrap-accessibility-plugin": "1.0.2",
+    "bootstrap-sass": "3.3.7",
+    "bourbon": "4.3.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "2.0.1",
+    "napa": "^2.3.0",
+    "uglify-save-license": "^0.4.1"
+  }
+}
