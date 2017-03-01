@@ -6,7 +6,7 @@ $browser-minimum-versions: (
 );
 
 /* Set path for Bootstrap icon fonts */
-$icon-font-path: "";
+$icon-font-path: "../f/";
 
 /* Over-ride default colors */
 $brand-primary:         #003D79; // BC Brand Primary Blue
@@ -20,13 +20,10 @@ $btn-warning-color:     #000;
 $btn-warning-border:    #E36F1E; //BC Brand Orange
 
 /* Load Default Bootstrap */
-//@import "bootstrap-compass";
 @import "bootstrap";
 @import "bootstrap-accessibility";
 
-/* Load compass helpers */
-//@import "compass";
-
+/* Load Bourbon mixin library */
 @import "bourbon";
 
 /* Variables */
