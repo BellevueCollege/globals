@@ -247,7 +247,7 @@ gulp.task('dev', [
             'sass-dev',
             'bootstrap-fonts',
             'bootstrap-scripts',
-            'modernizr-dev',
+            'modernizr',
             'respondjs',
             'header-scripts-full',
             'footer-scripts-full',
