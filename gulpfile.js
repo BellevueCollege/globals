@@ -93,8 +93,8 @@ gulp.task('sass-dev', function() {
       .pipe(sass(sassDevOptions).on('error', notify.onError(function (error) {
           return "Error: " + error.message;
       })))
-      .pipe(sourcemaps.write())
       .pipe(autoprefixer())
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest(config.cssPath));
 });
 
