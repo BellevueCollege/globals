@@ -439,17 +439,37 @@ a.text-success:focus {
   text-align: center;
 }
 
-/* Bootstrap Tabs */
-ul.nav.nav-tabs {
-	li {
-		margin-top: 0;
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
 
-		a, a:focus {
-			text-decoration: none;
-			box-shadow: none;
-		}
+/**
+ * Reset Bootstrap Elements
+ *
+ * Some Globals elements conflict with Bootstrap defaults,
+ * this code corrects this.
+ **/
+
+// Breadcrumbs
+ul.breadcrumb li {
+	margin: 0;
+	padding: 0;
+}
+
+// Alerts
+.alert {
+	h1, h2, h3, h4, h5, h6 {
+		clear: none;
 	}
+}
+
+// Remove underline where not needed
+button,
+a.btn,
+.list-group a {
+	text-decoration: none;
+}
+
+// Remove extra focus (should move!)
+button:focus,
+a.btn:focus,
+.list-group a:focus {
+	box-shadow: none;
 }
