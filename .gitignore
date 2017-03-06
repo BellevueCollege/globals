@@ -18,3 +18,4 @@ gulp.1
 # Add-ons
 bower_components
 .git
+.vscode
