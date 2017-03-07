@@ -167,6 +167,11 @@ blockquote {
 	color: rgb(102, 102, 102);
 }
 
+.blockquote-reverse,
+blockquote.pull-right {
+	padding-left: 3.5em;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
