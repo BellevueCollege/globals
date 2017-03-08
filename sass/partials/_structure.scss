@@ -3,30 +3,6 @@
 /*	Classes that apply to multiple elements types      */
 /* *************************************************** */
 
-.pull-right {
-  float: right;
-}
-
-.pull-left {
-  float: left;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.affix {
-  position: fixed;
-}
-
 .top-spacing0 {
 	margin-top: 0;
 }
@@ -79,23 +55,9 @@
 
 .clearfix:before,
 .clearfix:after {
-  display: table;
   line-height: 0;
-  content: "";
 }
 
-.clearfix:after {
-  clear: both;
-}
-
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-  zoom: 1;
-}
 .box-shadow {
 	box-shadow: 0 2px 4px #ddd;
 	background-color: white;
