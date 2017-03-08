@@ -10,7 +10,7 @@ $icon-font-path: "../f/";
 
 /* Over-ride default colors */
 $brand-primary:         #003D79; // BC Brand Primary Blue
-$brand-success:         #3a873a; // Darkened to meet a11y AA requirements
+$brand-success:         #317131; // Darkened to meet a11y AA requirements
 $brand-info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
 $brand-warning:         #F2C01E; // BC Brand Yellow
 $brand-danger:          #C4122F; // BC Brand Red
@@ -19,6 +19,9 @@ $btn-info-color:     #162F57;
 $btn-warning-color:     #000;
 $btn-warning-border:    #E36F1E; //BC Brand Orange
 
+$label-default-bg: #555;
+$badge-bg: #555;
+$breadcrumb-active-color: #555;
 /* Load Default Bootstrap */
 @import "bootstrap";
 @import "bootstrap-accessibility-custom"; //partial version - not all is neccessary

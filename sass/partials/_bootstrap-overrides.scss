@@ -26,3 +26,9 @@ ul.pagination {
 		padding-left: 0;
 	}
 }
+
+/* Accessibility fixes */
+.label-warning,
+.label-info {
+	color: #000;
+}
