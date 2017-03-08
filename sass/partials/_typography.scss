@@ -49,12 +49,6 @@ a:focus {
 	border-radius: 3px;
 }
 
-p {
-	margin-top: $std-margin;
-}
-
-ul, ol, dl {
-	margin-top: $std-margin;
 }
 
 #content {
@@ -68,25 +62,6 @@ ul, ol, dl {
 
 	/* Adds a hyphen where the word breaks, if supported (No Blink) */
 	hyphens: auto;
-
-    ul, ol, dl {
-        overflow: hidden;
-    }
-}
-
-li {
-	margin-top: $sm-margin;
-	margin-left: $std-margin*2.5;
-	padding-left: $std-margin/2;
-}
-
-dt {
-	font-weight: bold;
-	margin-top: $sm-margin*2;
-}
-
-dd {
-	margin-left: $std-margin;
 }
 
 /* **************************************** */
@@ -451,12 +426,6 @@ a.text-success:focus {
  * Some Globals elements conflict with Bootstrap defaults,
  * this code corrects this.
  **/
-
-// Breadcrumbs
-ul.breadcrumb li {
-	margin: 0;
-	padding: 0;
-}
 
 // Alerts
 .alert {

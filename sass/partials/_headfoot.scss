@@ -106,12 +106,18 @@
 }
 
 ul#college-top-actions {
+	margin: 0;
+	padding: 0;
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
 }
 
 ul#college-top-actions li {
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
 	list-style: none;
 	margin: 0 auto;
 	padding: .2em;
@@ -394,6 +400,7 @@ p.site-description {
 	font-weight: bold;
 	color: #666;
 	font-family: $font-body;
+	margin: 0;
 }
 #bigfoot h3 ~ ul {
 	margin-bottom: $std-margin;
