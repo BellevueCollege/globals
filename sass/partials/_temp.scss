@@ -33,9 +33,13 @@ As a style, all css blocks in this file should be commented with the following:
 .sidebar {
 	.wp-widget {
 		li {
+			// Note! This breaks some things!
 			margin-left: 0 !important;
 			padding-left: 0 !important;
 			margin-right: 0 !important;
+		}
+		.tweets li {
+			padding: .25em 1em !important;
 		}
 	}
 }
@@ -43,9 +47,14 @@ As a style, all css blocks in this file should be commented with the following:
 	margin: 0;
 }
 
+.sidebar .tweets {
+	padding: 0;
+}
+
 /* Mayflower Homepage, 2017-03-08 */
 .resources-menu {
 	h2 {
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 }
@@ -55,4 +64,10 @@ As a style, all css blocks in this file should be commented with the following:
 		list-style-type: none;
 		margin: 0 1em;
 		padding: 0;
-	}
+	} 
+}
+
+#home-news h2,
+#home-events h2 {
+	margin: 0;
+}
