@@ -25,51 +25,29 @@ a {
 /*  traditional http://lamb.cc/typograph/   */
 /* **************************************** */
 
+
+
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
-h1 {
-	line-height: 1.296em;
-}
-h2 {
-	line-height: 1.25em;
-	margin-top: 2em;
-	margin-top: 3rem;
-}
-h3 {
-	line-height: 1.429em;
-	margin-top: 2em;
-	margin-top: 2.66666667rem;
-}
-h4 {
-	line-height: 1.389em;
-	margin-top: 2em;
-	margin-top: 2.333333rem;
-}
-h5 {
-	line-height: 1.515em;
-	margin-top: 2em;
-	margin-top: 2.1666667rem;  /* line-height 27.5px, margin-top: 32.5px = 60px */
-}
-h6 {
-	line-height: 1.66666667em;
-	margin-top: 2em;
-}
-h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-	margin-top: 0.66666667em;
-	margin-top: 0.66666667rem;
-}
-h1 + p {
-	margin-top: 0.66666667em;
-}
-h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  {
-	margin-top: 0
+
+/* Allow for Bootstrap default functionality with added class */
+h1.noclear,
+h2.noclear,
+h3.noclear,
+h4.noclear,
+h5.noclear, 
+h6.noclear {
+	clear: none;
 }
 
-h5.class-heading{
+
+h5.class-heading {
     margin-top: 2.16667rem !important;
 }
 
+h1:first-child {
+	margin-top: 0;
 }
 
 
