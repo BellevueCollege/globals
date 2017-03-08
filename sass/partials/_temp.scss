@@ -1,0 +1,58 @@
+/* 
+# Why dooes this file exist?
+
+Some changes to Globals require changing or moving css within other projects,
+like Mayflower, Mayflower Homepage, etc. Unfortionatly browser caching and release
+schedules can prevent these changes from being available to the public in sync with
+globals releases.
+
+That's where this file comes in! The code here is temporary, and should always be 
+duplicated in another project. It lives here as a patch only, and should generally
+be removed on the next major release!
+
+As a style, all css blocks in this file should be commented with the following:
+
+* Project the code is from
+* Date which code was added
+
+*/
+
+/* Mayflower, 2017-03-08 */
+.gform_wrapper {
+	legend {
+		font-size: inherit;
+		font-weight: 700;
+		margin-bottom: 0;
+		border: none;
+	}
+	label {
+		font-weight: normal;
+	}
+}
+
+.sidebar {
+	.wp-widget {
+		li {
+			margin-left: 0 !important;
+			padding-left: 0 !important;
+			margin-right: 0 !important;
+		}
+	}
+}
+.widget-title {
+	margin: 0;
+}
+
+/* Mayflower Homepage, 2017-03-08 */
+.resources-menu {
+	h2 {
+		margin-bottom: 0;
+	}
+}
+
+#front-page-legal {
+	ul {
+		list-style-type: none;
+		margin: 0 1em;
+		padding: 0;
+	}
