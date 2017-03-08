@@ -22,6 +22,22 @@ $btn-warning-border:    #E36F1E; //BC Brand Orange
 $label-default-bg: #555;
 $badge-bg: #555;
 $breadcrumb-active-color: #555;
+$link-color: #0073ae;
+$link-hover-color: $brand-primary;
+
+$font-family-sans-serif:  Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$headings-font-family: $font-family-serif;
+
+$font-size-h1:            1.8em;
+$font-size-h2:            1.6em;
+$font-size-h3:            1.4em;
+$font-size-h4:            1.2em;
+$font-size-h5:            1.1em;
+$font-size-h6:            1em;
+
+$headings-font-weight:    400;
+
 /* Load Default Bootstrap */
 @import "bootstrap";
 @import "bootstrap-accessibility-custom"; //partial version - not all is neccessary
@@ -32,13 +48,12 @@ $breadcrumb-active-color: #555;
 /* Variables */
 
 /* Color */
-$link-color: #0073ae;
-$bc-primary-color: #003d79;
+$bc-primary-color: $brand-primary;
 
 /* Typography */
-$font-body: Helvetica, Arial, sans-serif;
-$font-heading: Georgia, "Times New Roman", Times, serif;
-$font-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-body: $font-family-sans-serif;
+$font-heading: $font-family-serif;
+$font-monospace: $font-family-monospace;
 $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
