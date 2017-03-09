@@ -5,7 +5,7 @@
 
 /* Lite Elements */
 #top-wrap.lite {
-	background-color: $bc-primary-color;
+	background-color: $brand-primary;
 	box-shadow: 0 0px 10px #999;
 }
 .header-search{
@@ -15,7 +15,7 @@
 	white-space:nowrap;
 }
 #smallhead-wrap {
-	background: $bc-primary-color url(../i/headbg.jpg) repeat-y;
+	background: $brand-primary url(../i/headbg.jpg) repeat-y;
 }
 #smallhead {
 	position: relative;
@@ -37,7 +37,7 @@
 	margin: 0;
 }
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	.lite #bc-logo {
 		margin-top: 0.2em;
 		margin-bottom: 0.2em;
@@ -63,11 +63,11 @@
 /* Branded */
 
 #top-wrap.branded {
-	background: $bc-primary-color url(../i/headbgwide.jpg) repeat-x;
+	background: $brand-primary url(../i/headbgwide.jpg) repeat-x;
 }
 
 .container.logobar {
-	background: url(../i/headbg.jpg) repeat-y scroll 0 0 $bc-primary-color;
+	background: url(../i/headbg.jpg) repeat-y scroll 0 0 $brand-primary;
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -146,7 +146,7 @@ ul#college-top-actions a:hover {
 	margin: 0 auto 0 auto;
 }
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	.branded #bc-logo {
 		margin-top: 1.16666667em;
 		margin-bottom: 1.16666667em;
@@ -268,7 +268,7 @@ ul#college-top-actions a:hover {
 }
 
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	#site-header {
 		padding-top: 1.666667em;
 		padding-bottom: 2em;
@@ -322,7 +322,7 @@ ul#college-top-actions a:hover {
 p.site-title,
 h1.site-title {
 	font-size: 2.4em;
-	font-family: $font-body;
+	font-family: $font-family-base;
 	color: #333333;
 	line-height: 1em;
 }
@@ -399,7 +399,7 @@ p.site-description {
 	font-size: .9em;
 	font-weight: bold;
 	color: #666;
-	font-family: $font-body;
+	font-family: $font-family-base;
 	margin: 0;
 }
 #bigfoot h3 ~ ul {
@@ -447,7 +447,7 @@ p.site-description {
 	padding: 0.66666667em 0 1em 0;
 }
 #legalbar a:focus {
-	outline: dotted 1px $bc-primary-color}
+	outline: dotted 1px $brand-primary}
 #legalbar li {
 	display: inline;
 	padding:0;
@@ -461,7 +461,7 @@ p.site-description {
 	white-space: nowrap;}
 #legalbar li a:hover,
 #legalbar li a:focus {
-	color: $bc-primary-color;}
+	color: $brand-primary;}
 #legalbar li.first a {
 	border-left: none;}
 #legalbar li.last {

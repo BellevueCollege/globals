@@ -2,7 +2,7 @@
 /* Carousel 																*/
 /* ************************************** */
 .carousel-control {
-	font-family: $font-body;
+	font-family: $font-family-base;
 	position: absolute;
 	top: 40%;
 	left: 0.3em;
@@ -43,7 +43,7 @@ a.carousel-control:focus {
 	}
 }
 
-@media screen and (min-width: $breakpoint-bs-md) {
+@media screen and (min-width: $screen-md-min) {
 	#carousel-featured-in-content .carousel-control {
 		left: 0.7em;
 		left: 3.3rem;
@@ -135,7 +135,7 @@ a.carousel-control:focus {
 	text-align: left;
 }
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	/* Overlay caption on larger breakpoints */
 	.carousel-caption {
 		position: absolute;

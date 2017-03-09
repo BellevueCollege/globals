@@ -15,7 +15,7 @@ $brand-info:            #afd7ff; // Lightened BC Brand Blue to meet a11y require
 $brand-warning:         #F2C01E; // BC Brand Yellow
 $brand-danger:          #C4122F; // BC Brand Red
 
-$btn-info-color:     #162F57;
+$btn-info-color:        #162F57;
 $btn-warning-color:     #000;
 $btn-warning-border:    #E36F1E; //BC Brand Orange
 
@@ -47,32 +47,8 @@ $headings-font-weight:    400;
 
 /* Variables */
 
-/* Color */
-$bc-primary-color: $brand-primary;
-
 /* Typography */
-$font-body: $font-family-sans-serif;
-$font-heading: $font-family-serif;
-$font-monospace: $font-family-monospace;
 $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
-
-
-
-/* Breakpoints (Partially Implimented) */
-
-// Bootstrap Breakpoints
-$breakpoint-bs-sm: 48em;
-$breakpoint-bs-md: 62em;
-$breakpoint-bs-lg: 75em;
-
-//Custom Breakpoints
-//$breakpoint-mobile-xs: 20em; //320
-//$breakpoint-mobile-sm: 25em; //400
-//$breakpoint-mobile-md: 37em; //592
-
-$breakpoint-mobile-xs: $breakpoint-bs-sm; //320
-$breakpoint-mobile-sm: $breakpoint-bs-sm; //400
-$breakpoint-mobile-md: $breakpoint-bs-sm; //592
 

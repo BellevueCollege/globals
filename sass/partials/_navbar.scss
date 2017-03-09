@@ -29,7 +29,7 @@ ul.nav.navbar-nav,
  * General
  */
 #main-nav-wrap {
-	background: $bc-primary-color url(../i/headbgwide.jpg) 0 -20px repeat-x;
+	background: $brand-primary url(../i/headbgwide.jpg) 0 -20px repeat-x;
 	overflow: hidden;
 
 	 .container {
@@ -97,7 +97,7 @@ ul.nav.navbar-nav,
  * Breakpoints
  */
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	#college-navbar.navbar .nav > li > a {
 		padding: .75em .25em;
 		font-size: 0.9em;
