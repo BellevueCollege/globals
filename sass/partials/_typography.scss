@@ -67,9 +67,6 @@ ul, ol, dl {
 	word-break: break-word;
 
 	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
 	hyphens: auto;
 
     ul, ol, dl {
@@ -303,7 +300,7 @@ pre {
   font-family: $font-monospace;
   font-size: .8em;
   color: #333333; /*review*/
-  @include border-radius(2px);
+  border-radius: 2px;
 }
 
 code {
@@ -327,9 +324,7 @@ pre {
   background-color: #f5f5f5;/*review*/
   border: 1px solid #ccc;/*review*/
   border: 1px solid rgba(0, 0, 0, 0.15);/*review*/
-  -webkit-border-radius: 4px;/*review*/
-     -moz-border-radius: 4px;/*review*/
-          border-radius: 4px;/*review*/
+  border-radius: 4px;/*review*/
 }
 
 pre.prettyprint {

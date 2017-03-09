@@ -20,7 +20,7 @@
 #smallhead {
 	position: relative;
 	zoom: 1 /*IE hack, see next line*/;
-	@include transition( padding 0.5s ease );
+	transition: padding 0.5s ease;
 }
 
 .lite #bc-logo {
@@ -106,20 +106,16 @@
 }
 
 ul#college-top-actions {
-	@include flexbox((
-    display: flex,
-    flex-direction: row wrap,
-    justify-content: space-around
-  ));
-
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
 }
+
 ul#college-top-actions li {
 	list-style: none;
 	margin: 0 auto;
 	padding: .2em;
-	@include flexbox((
-    flex: 0 1 auto
-  ));
+	flex: 0 1 auto;
 
 	float: left; //fallback for non-flexbox browsers
 }
@@ -183,16 +179,8 @@ ul#college-top-actions a:hover {
 		line-height: 1.5em;
 	}
 	.flexwrap {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		@include display-flex();
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: reverse;
-		-moz-box-orient: vertical;
-		-moz-box-direction: reverse;
-		-ms-flex-direction: column-reverse;
-		@include flex-direction(column-reverse);
+		display: flex;
+		flex-direction: column-reverse;
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
 	.no-flexbox.no-flexboxlegacy.no-flexboxtweener .flexwrap {
@@ -202,20 +190,14 @@ ul#college-top-actions a:hover {
 
 
 	#main-nav-wrap {
-		-webkit-box-flex: auto;
-		-moz-box-flex: auto;
-		-ms-flex: auto;
-		@include flex (auto);
+		flex: auto;
 	}
 	/* Provide display:table based styles for non-flexbox browsers */
 	.no-flexbox.no-flexboxlegacy.no-flexboxtweener #main-nav-wrap {
 		display: table-header-group;
 	}
 	#content {
-		-webkit-box-flex: auto;
-		-moz-box-flex: auto;
-		-ms-flex: auto;
-		@include flex (auto);
+		flex: auto;
 	}
 	#nav-top {
 		position: absolute !important;
@@ -513,7 +495,7 @@ p.site-description {
 /* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
 
 #ravealertheader.alert {
-	@include border-radius(0);
+	border-radius: 0;
 	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
 	margin-bottom: 0;
 }
