@@ -37,6 +37,7 @@ var sassOptions = {
       config.npmPath + '/bourbon/app/assets/stylesheets',
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
   ],
+  precision: 10
 }
 
 //Dev
@@ -49,7 +50,7 @@ var sassDevOptions = {
       config.npmPath + '/bourbon/app/assets/stylesheets',
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
   ],
-    precision: 10
+  precision: 10
 }
 
 /**
