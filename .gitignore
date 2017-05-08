@@ -1,2 +1,21 @@
 .sass-cache
-config.rb
+
+# from https://github.com/gulpjs/gulp/blob/master/.gitignore
+.DS_Store
+*.log
+node_modules
+build
+*.node
+components
+coverage
+*.orig
+.idea
+sandbox
+test/out-fixtures/*
+test/watch-*.txt
+gulp.1
+
+# Add-ons
+bower_components
+.git
+.vscode

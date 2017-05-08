@@ -2,7 +2,7 @@
 /* Carousel 																*/
 /* ************************************** */
 .carousel-control {
-	font-family: $font-body;
+	font-family: $font-family-base;
 	position: absolute;
 	top: 40%;
 	left: 0.3em;
@@ -17,7 +17,7 @@
 	text-align: center;
 	background: #222222;
 	border: 0.0333333em solid #ffffff;
-	@include border-radius (0.5em);
+	border-radius: 0.5em;
 	@include opacity (0.5);
 
 	span.glyphicon {
@@ -27,7 +27,7 @@
 	}
 }
 a.carousel-control:focus {
-	@include border-radius (0.5em);
+	border-radius: 0.5em;
 	outline: none;
 }
 .carousel-control.right {
@@ -43,7 +43,7 @@ a.carousel-control:focus {
 	}
 }
 
-@media screen and (min-width: $breakpoint-bs-md) {
+@media screen and (min-width: $screen-md-min) {
 	#carousel-featured-in-content .carousel-control {
 		left: 0.7em;
 		left: 3.3rem;
@@ -94,7 +94,7 @@ a.carousel-control:focus {
 	text-indent: -999px;
 	background-color: #ccc;
 	background-color: rgba(255, 255, 255, 0.25);
-	@include border-radius (0.5em);
+	border-radius: 0.5em;
 	padding: 0;
 	border: none;
 	cursor: pointer;
@@ -110,7 +110,7 @@ a.carousel-control:focus {
 	height: 1em;
 	margin: 2px;
 	margin-left: 0.33333333em;
-	@include border-radius (9px);
+	border-radius: 9px;
 }
 
 .carousel-indicators li.active:hover {
@@ -135,7 +135,7 @@ a.carousel-control:focus {
 	text-align: left;
 }
 
-@media screen and (min-width: $breakpoint-bs-sm) {
+@media screen and (min-width: $screen-sm-min) {
 	/* Overlay caption on larger breakpoints */
 	.carousel-caption {
 		position: absolute;

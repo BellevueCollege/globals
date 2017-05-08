@@ -1,61 +1,47 @@
-/* Set Browser Support */
-$critical-usage-threshold: 0.1;
-$graceful-usage-threshold: 2;
-$browser-minimum-versions: (
-  "ie": "10",
-);
-
 /* Set path for Bootstrap icon fonts */
-$icon-font-path: "";
+$icon-font-path: "../f/";
 
 /* Over-ride default colors */
 $brand-primary:         #003D79; // BC Brand Primary Blue
-$brand-success:         #3a873a; // Darkened to meet a11y AA requirements
+$brand-success:         #317131; // Darkened to meet a11y AA requirements
 $brand-info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
 $brand-warning:         #F2C01E; // BC Brand Yellow
 $brand-danger:          #C4122F; // BC Brand Red
 
-$btn-info-color:     #162F57;
+$btn-info-color:        #162F57;
 $btn-warning-color:     #000;
 $btn-warning-border:    #E36F1E; //BC Brand Orange
 
-/* Load Default Bootstrap */
-@import "bootstrap-compass";
-@import "bootstrap";
-@import "bootstrap-accessibility";
+$label-default-bg: #555;
+$badge-bg: #555;
+$breadcrumb-active-color: #555;
+$link-color: #0073ae;
+$link-hover-color: $brand-primary;
 
-/* Load compass helpers */
-@import "compass";
+$font-family-sans-serif:  Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$headings-font-family: $font-family-serif;
+
+$font-size-h1:            1.8em;
+$font-size-h2:            1.6em;
+$font-size-h3:            1.4em;
+$font-size-h4:            1.2em;
+$font-size-h5:            1.1em;
+$font-size-h6:            1em;
+
+$headings-font-weight:    400;
+
+/* Load Default Bootstrap */
+@import "bootstrap";
+@import "bootstrap-accessibility-custom"; //partial version - not all is neccessary
+
+/* Load Bourbon mixin library */
+@import "bourbon";
 
 /* Variables */
 
-/* Color */
-$link-color: #0073ae;
-$bc-primary-color: #003d79;
-
 /* Typography */
-$font-body: Helvetica, Arial, sans-serif;
-$font-heading: Georgia, "Times New Roman", Times, serif;
-$font-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
 $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
-
-
-
-/* Breakpoints (Partially Implimented) */
-
-// Bootstrap Breakpoints
-$breakpoint-bs-sm: 48em;
-$breakpoint-bs-md: 62em;
-$breakpoint-bs-lg: 75em;
-
-//Custom Breakpoints
-//$breakpoint-mobile-xs: 20em; //320
-//$breakpoint-mobile-sm: 25em; //400
-//$breakpoint-mobile-md: 37em; //592
-
-$breakpoint-mobile-xs: $breakpoint-bs-sm; //320
-$breakpoint-mobile-sm: $breakpoint-bs-sm; //400
-$breakpoint-mobile-md: $breakpoint-bs-sm; //592
 

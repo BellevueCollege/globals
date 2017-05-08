@@ -1,60 +1,10 @@
-/*
--------Baseline Grid
-1.66667em	25px
-
--------Typographic scale
-Name	Size em/px		 	Ised in
-
-		7.2em :	108px
-		6.0em :	90px
-		4.8em :	72px
-		3.6em :	54px
-		2.4em :	36px		Section Header
-		1.8em :	27px		H1
-		1.6em :	24px		H2
-		1.4em :	21px		H3
-		1.2em :	18px		H4
-		1.1em :	16.5px		H5
-		1.0em :	15px		DEFAULT  / H6
-		0.9em :	13.5px
-		0.8em :	12px
-*/
-
-
-
 
 /* ************************************** */
 /*	Bellevue College Global Elements      */
 /* ************************************** */
 
-/* Removed as IE 7/8 is no longer supported
-
-	ie7 img, .ie8 img {
-	width: auto;
-}*/
-
 a {
 	outline: none;
-	color: $link-color;
-}
-
-a:hover {
-	color: $bc-primary-color;
-}
-
-/* focus state for keyboard nav */
-a:focus {
-	@extend a:hover;
-	box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset;
-	border-radius: 3px;
-}
-
-p {
-	margin-top: $std-margin;
-}
-
-ul, ol, dl {
-	margin-top: $std-margin;
 }
 
 #content {
@@ -67,29 +17,7 @@ ul, ol, dl {
 	word-break: break-word;
 
 	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
 	hyphens: auto;
-
-    ul, ol, dl {
-        overflow: hidden;
-    }
-}
-
-li {
-	margin-top: $sm-margin;
-	margin-left: $std-margin*2.5;
-	padding-left: $std-margin/2;
-}
-
-dt {
-	font-weight: bold;
-	margin-top: $sm-margin*2;
-}
-
-dd {
-	margin-left: $std-margin;
 }
 
 /* **************************************** */
@@ -97,286 +25,64 @@ dd {
 /*  traditional http://lamb.cc/typograph/   */
 /* **************************************** */
 
+
+
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-heading;
-	font-weight: normal;
 	clear: both;
 }
-h1 {
-	font-size: 1.8em;
-	line-height: 1.296em;
-}
-h2 {
-	font-size: 1.6em;
-	line-height: 1.25em;
-	margin-top: 2em;
-	margin-top: 3rem;
-}
-h3 {
-	font-size: 1.4em;
-	line-height: 1.429em;
-	margin-top: 2em;
-	margin-top: 2.66666667rem;
-}
-h4 {
-	font-size: 1.2em;
-	line-height: 1.389em;
-	margin-top: 2em;
-	margin-top: 2.333333rem;
-}
-h5 {
-	font-size: 1.1em;
-	line-height: 1.515em;
-	margin-top: 2em;
-	margin-top: 2.1666667rem;  /* line-height 27.5px, margin-top: 32.5px = 60px */
-}
-h6 {
-	font-size: 1em;
-	line-height: 1.66666667em;
-	margin-top: 2em;
-}
-h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-	margin-top: 0.66666667em;
-	margin-top: 0.66666667rem;
-}
-h1 + p {
-	margin-top: 0.66666667em;
-}
-h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  {
-	margin-top: 0
+
+/* Allow for Bootstrap default functionality with added class */
+h1.noclear,
+h2.noclear,
+h3.noclear,
+h4.noclear,
+h5.noclear, 
+h6.noclear {
+	clear: none;
 }
 
-h5.class-heading{
+
+h5.class-heading {
     margin-top: 2.16667rem !important;
 }
 
-address {
-  display: block;
-  margin-top: $std-margin;
-  font-style: normal;
+h1:first-child {
+	margin-top: 0;
 }
 
-blockquote,
-q {
-	quotes: none;
-}
 
 blockquote {
-	font-family:  $font-heading;
-	line-height: $std-line-height;
+	font-family:  $headings-font-family;
 	margin: 1.33333em 0 0.333333em;
-	padding: 0.333333em 2.4em 0.33333em 3.6em;
+	padding: 0.333333em 2.4em 0.33333em 2.5em;
 	position: relative;
-	color: rgb(102, 102, 102);
+	color: $gray;
+	font-size: 1.4em;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-	content: none;
+.blockquote-reverse,
+blockquote.pull-right {
+	padding-left: 2.5em;
 }
 
 blockquote:before {
 	display: block;
 	content: "\201C";
-	font-size: 6em;
+	font-size: 6rem;
 	position: absolute;
 	left: 0.12em;
 	top: 0.25em;
-	color: #aaa;
-}
-
-blockquote p {
-  margin-bottom: 0;
-  font-size: 1.4em;
-  font-weight: 300;
-  line-height: 1.25em;
+	color: $gray-light;
 }
 
 blockquote small {
   display: block;
-  color: #999999;
+  color: $gray-light;
 }
 
 blockquote small:before {
   content: '\2014 \00A0';
 }
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	max-width: 100%;
-	background-color: transparent;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-caption,
-th,
-td {
-	font-weight: normal;
-	text-align: left;
-}
-
-.table {
-  width: 100%;
-  margin-top: $std-margin;
-}
-
-.table th,
-.table td {
-  padding: .6em .666667em .666667em;
-  line-height: $std-line-height;
-  text-align: left;
-  vertical-align: top;
-  border-top: .066667em solid #E0E0E0;
-}
-.table th {
-  font-weight: bold;
-}
-.table thead th {
-  vertical-align: bottom;
-}
-.table caption + thead tr:first-child th,
-.table caption + thead tr:first-child td,
-.table colgroup + thead tr:first-child th,
-.table colgroup + thead tr:first-child td,
-.table thead:first-child tr:first-child th,
-.table thead:first-child tr:first-child td {
-  border-top: 0;
-}
-.table tbody + tbody {
-  border-top: 0.33333em solid #E0E0E0;
-}
-.table-striped tbody > tr:nth-child(odd) > td,
-.table-striped tbody > tr:nth-child(odd) > th {
-  background-color: #f7f7f7;
-}
-.table-hover tbody tr:hover > td,
-.table-hover tbody tr:hover > th {
-  background-color: #f0f0f0;
-}
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child,
-p:first-child,
-ul:first-child,
-ol:first-child,
-dl:first-child,
-address:first-child
-table:first-child {
-	margin-top: 0;
-}
-dl:first-child dt:first-child {
-	margin-top: 0
-}
-small {
-  font-size: .8em;
-  line-height: $std-line-height;
-}
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
-}
-cite {
-  font-style: normal;
-}
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #999999;
-}
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
-code,
-pre {
-  padding: 0 3px 2px; /*review*/
-  font-family: $font-monospace;
-  font-size: .8em;
-  color: #333333; /*review*/
-  @include border-radius(2px);
-}
-
-code {
-  padding: 0.2em 0.4em;
-  color: #BF1A38;
-  white-space: nowrap;
-  background-color: #f7f7f9;/*review*/
-  border: 1px solid #e1e1e8;/*review*/
-}
-
-pre {
-  display: block;
-  padding: 9.5px;/*review*/
-  margin: 0 0 10px;/*review*/
-  font-size: 13px;/*review*/
-  line-height: 20px;/*review*/
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-  white-space: pre-wrap;
-  background-color: #f5f5f5;/*review*/
-  border: 1px solid #ccc;/*review*/
-  border: 1px solid rgba(0, 0, 0, 0.15);/*review*/
-  -webkit-border-radius: 4px;/*review*/
-     -moz-border-radius: 4px;/*review*/
-          border-radius: 4px;/*review*/
-}
-
-pre.prettyprint {
-  margin-bottom: 20px;/*review*/
-}
-
-pre code {
-  padding: 0;/*review*/
-  color: inherit;
-  white-space: pre;
-  white-space: pre-wrap;
-  background-color: transparent;
-  border: 0;
-}
-
-.pre-scrollable {
-  max-height: 350px;
-  overflow-y: scroll;
-}
-
-del {
-	color: #333;
-}
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: .0666667em;
-	margin: 2em 1.3333333em;
-}
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-sup {
-	top: -0.5em;
-}
-sub {
-	bottom: -0.25em;
-}
-
 
 /* ************************************** */
 /*	Classes applied to text      					*/
@@ -387,74 +93,31 @@ sub {
 	font-weight: normal;
 	line-height: $std-line-height;
 }
-.muted {
-  color: #999999;
-}
 
-a.muted:hover,
-a.muted:focus {
-  color: #808080;
-}
+/**
+ * Reset Bootstrap Elements
+ *
+ * Some Globals elements conflict with Bootstrap defaults,
+ * this code corrects this.
+ **/
 
-.text-warning {
-  color: #b8511d;
-}
-
-a.text-warning:hover,
-a.text-warning:focus {
-  color: #9e4519;
-}
-
-.text-error {
-  color: #bf1a38;
-}
-
-a.text-error:hover,
-a.text-error:focus {
-  color: #a51631;
-}
-
-.text-info {
-  color: $brand-primary;
-}
-
-a.text-info:hover,
-a.text-info:focus {
-  color: rgb(0, 83, 125);
-}
-
-.text-success {
-  color: #747c2b;
-}
-
-a.text-success:hover,
-a.text-success:focus {
-  color: #5f6623;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* Bootstrap Tabs */
-ul.nav.nav-tabs {
-	li {
-		margin-top: 0;
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
-
-		a, a:focus {
-			text-decoration: none;
-			box-shadow: none;
-		}
+// Alerts
+.alert {
+	h1, h2, h3, h4, h5, h6 {
+		clear: none;
 	}
+}
+
+// Remove underline where not needed
+button,
+a.btn,
+.list-group a {
+	text-decoration: none;
+}
+
+// Remove extra focus
+button:focus,
+a.btn:focus,
+.list-group a:focus {
+	box-shadow: none;
 }

@@ -1,16 +1,20 @@
+html {
+	font-family: $font-family-base;
+	font-size: 93.75%; /*15px*/
+	overflow-y: scroll;
+	border: 0;
+	}
+body {
+	line-height: $std-line-height;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	background-color: #F2F2F2;
+	font-size: 100%;
+}
+
 /*	Underline All Links not part of other elements	*/
 a {
 	text-decoration: underline;
-}
-
-button,
-a.btn {
-	text-decoration: none;
-}
-
-/* Unbold Lables */
-label {
-	font-weight: inherit;
 }
 
 /* Change Pagination to use Inline Block
@@ -21,4 +25,10 @@ ul.pagination {
 		margin-left: 0;
 		padding-left: 0;
 	}
+}
+
+/* Accessibility fixes */
+.label-warning,
+.label-info {
+	color: #000;
 }

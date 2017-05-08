@@ -1,11 +1,9 @@
-/*! Globals Version 3.9 */
+/*! Globals Version 3.10 */
 
 @import "partials/base";
 
 /* Get our Bootstrap overrides */
 @import "partials/bootstrap-overrides";
-
-@import "partials/normalize";
 
 @import "partials/typography";
 
@@ -18,3 +16,5 @@
 @import "partials/pagination";
 
 @import "partials/carousel";
+
+@import "partials/temp";
