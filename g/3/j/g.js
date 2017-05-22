@@ -1,7 +1,177 @@
-!function(t){t.fn.noisy=function(a){function e(t){var a=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(t);return a?{r:parseInt(a[1],16),g:parseInt(a[2],16),b:parseInt(a[3],16)}:null}a=t.extend({},t.fn.noisy.defaults,a),"undefined"!=typeof a.color&&(a.randomColors=!1);var r,o,n=!1;try{o=!0,localStorage.setItem("test",""),localStorage.removeItem("test"),n=localStorage.getItem(window.JSON.stringify(a))}catch(t){o=!1}if(n&&!a.disableCache)r=n;else{var i=document.createElement("canvas");if(i.getContext){i.width=i.height=a.size;for(var s=i.getContext("2d"),l=s.createImageData(i.width,i.height),d=Math.round(a.intensity*Math.pow(a.size,2)),p=255*a.opacity;d--;){var c=~~(Math.random()*i.width),u=~~(Math.random()*i.height),f=4*(c+u*l.width);if(a.randomColors){var h=d%255;a.colorChannels===parseInt(a.colorChannels)?h=d%a.colorChannels:t.isArray(a.colorChannels)&&(h=a.colorChannels[0]+d%(a.colorChannels[1]-a.colorChannels[0])),l.data[f]=h,l.data[f+1]=a.monochrome?h:~~(255*Math.random()),l.data[f+2]=a.monochrome?h:~~(255*Math.random()),l.data[f+3]=~~(Math.random()*p)}else{var b=e(a.color);l.data[f]=b.r,l.data[f+1]=b.g,l.data[f+2]=b.b,l.data[f+3]=~~(Math.random()*p)}}s.putImageData(l,0,0),r=i.toDataURL("image/png"),0!=r.indexOf("data:image/png")&&(r=a.fallback)}else r=a.fallback;if(window.JSON&&o&&!a.disableCache)try{localStorage.setItem(window.JSON.stringify(a),r)}catch(t){console.warn(t.message)}}return this.each(function(){t(this).css("background-image","url('"+r+"'),"+t(this).css("background-image"))})},t.fn.noisy.defaults={intensity:.9,size:200,opacity:.08,fallback:"",monochrome:!1,colorChannels:255,randomColors:!0,disableCache:!1}}(jQuery),jQuery(function(){jQuery("body").noisy({intensity:.5,size:200,opacity:.04,fallback:"",monochrome:!1}),jQuery("#bigfoot").noisy({intensity:.5,size:80,opacity:.05,fallback:"",monochrome:!1}).find(".inner").noisy({intensity:1,size:80,opacity:.04,fallback:"",monochrome:!1}),jQuery("#top-wrapper").find(".border").noisy({intensity:.5,size:80,opacity:.05,fallback:"",monochrome:!0}),jQuery(".navbar").find(".navbar-inner").noisy({intensity:.5,size:40,opacity:.05,fallback:"",monochrome:!0})}),/* ========================================================================
+(function($){
+	
+	$.fn.noisy = function(options) {
+		options = $.extend({}, $.fn.noisy.defaults, options);
+		
+		// set randomColors to false if you set color option
+		if ( typeof options.color !== 'undefined' ) {
+			options.randomColors = false;
+		}
+		var uri, localStorageSupported, cachedUri = false;
+		
+		try {
+			localStorageSupported = true;
+			localStorage.setItem("test", "");
+			localStorage.removeItem("test");
+			cachedUri = localStorage.getItem(window.JSON.stringify(options));
+		} catch(e) {
+			localStorageSupported = false;
+		}
+		
+		// Use localStorage cache if these options have been used before
+		if (cachedUri && !options.disableCache) {
+			uri = cachedUri;
+		}
+		else {
+			var canvas = document.createElement('canvas');
+			
+			// Use fallback image if canvas isn't supported
+			if (!canvas.getContext) {
+				uri = options.fallback;
+			}
+			else {
+				canvas.width = canvas.height = options.size;
+			
+				var ctx = canvas.getContext('2d'),
+				    imgData = ctx.createImageData(canvas.width, canvas.height),
+				    numPixels = Math.round( options.intensity * Math.pow(options.size, 2) ),
+				    maxAlpha = 255 * options.opacity;
+				    
+				// Add color to random pixels in the canvas
+				while (numPixels--) { // Read about the double bitwise NOT trick here: goo.gl/6DPpt
+					var x = ~~(Math.random()*canvas.width),
+					    y = ~~(Math.random()*canvas.height),
+					    index = (x + y * imgData.width) * 4;
+
+					if (options.randomColors) {
+						var colorChannel = numPixels % 255; // This will look random enough
+						if (options.colorChannels === parseInt(options.colorChannels)) {
+							colorChannel = numPixels % options.colorChannels;
+						} else if ($.isArray(options.colorChannels)) {
+							colorChannel = options.colorChannels[0] + (numPixels % (options.colorChannels[1]-options.colorChannels[0]));
+						}
+						
+						imgData.data[index] = colorChannel;                                               // red
+						imgData.data[index+1] = options.monochrome ? colorChannel : ~~(Math.random()*255);  // green
+						imgData.data[index+2] = options.monochrome ? colorChannel : ~~(Math.random()*255);  // blue
+						imgData.data[index+3] = ~~(Math.random()*maxAlpha);                                 // alpha
+					} else {
+						var rgb = hexToRgb(options.color);
+						imgData.data[index] = rgb.r;
+						imgData.data[index+1] = rgb.g;
+						imgData.data[index+2] = rgb.b;
+				        	imgData.data[index+3] = ~~(Math.random()*maxAlpha);
+					}
+				}
+				
+				ctx.putImageData(imgData, 0, 0);
+				uri = canvas.toDataURL('image/png');
+				
+				// toDataURL doesn't return anything in Android 2.2
+				if (uri.indexOf('data:image/png') != 0) {
+					uri = options.fallback;
+				}
+			}
+			
+			if (window.JSON && localStorageSupported && !options.disableCache) {
+				try {
+					localStorage.setItem(window.JSON.stringify(options), uri);
+				} catch(e) {
+					console.warn(e.message);
+				}
+			}
+		}
+
+		function hexToRgb(hex) {
+			var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+			return result ? {
+				r: parseInt(result[1], 16),
+				g: parseInt(result[2], 16),
+				b: parseInt(result[3], 16)
+			} : null;
+		}
+		
+		return this.each(function() {
+			$(this).css('background-image', "url('" + uri + "')," + $(this).css('background-image'));
+		});
+	};
+	$.fn.noisy.defaults = {
+		// How many percent of the image that is filled with noise, 
+		//   represented by a number between 0 and 1 inclusive
+		intensity:          0.9,
+		
+		// The width and height of the image in pixels
+		size:               200,
+		
+		// The maximum noise particle opacity,
+		//   represented by a number between 0 and 1 inclusive
+		opacity:            0.08,
+		
+		// A string linking to the image used if there's no canvas support
+		fallback:           '',
+		
+		// Specifies wheter the particles are grayscale or colorful
+		monochrome:         false,
+		
+		// The range of color channels to use for random color and monochrome noise
+		//   if a number, sets the upper range (max 255)
+		//   if an array, e.g. [200,255], sets the lower and upper range
+		colorChannels:     255,
+
+		// Specifies where the particles color are random or not, you can set color with color option
+		randomColors:      true,
+		
+		// Disables the use of localStorage if enabled (good when trying different settings)
+		disableCache:      false
+	};
+})(jQuery);
+
+/*Functions for BC Calls to Noisy.js*/
+
+/* JQuery Document Ready*/
+jQuery(function() {
+
+	jQuery('body').noisy({
+		'intensity' : 0.5,
+		'size' : 200,
+		'opacity' : 0.04,
+		'fallback' : '',
+		'monochrome' : false
+	});
+	jQuery('#bigfoot').noisy({
+		'intensity' : 0.5,
+		'size' : 80,
+		'opacity' : 0.05,
+		'fallback' : '',
+		'monochrome' : false
+	}).find('.inner').noisy({
+		'intensity' : 1,
+		'size' : 80,
+		'opacity' : 0.04,
+		'fallback' : '',
+		'monochrome' : false
+	});
+	jQuery('#top-wrapper').find('.border').noisy({
+		'intensity' : 0.5,
+		'size' : 80,
+		'opacity' : 0.05,
+		'fallback' : '',
+		'monochrome' : true
+	});
+
+	jQuery('.navbar').find('.navbar-inner').noisy({
+		'intensity' : 0.5,
+		'size' : 40,
+		'opacity' : 0.05,
+		'fallback' : '',
+		'monochrome' : true
+	});
+});
+
+/* ========================================================================
 * Extends Bootstrap v3.1.1
 
-* Copyright (c) <2014> eBay Software Foundation
+* Copyright (c) <2015> PayPal
 
 * All rights reserved.
 
@@ -11,8 +181,706 @@
 
 * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-* Neither the name of eBay or any of its subsidiaries or affiliates nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+* Neither the name of PayPal or any of its subsidiaries or affiliates nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 * ======================================================================== */
-function(t){"use strict";var a=function(t){return(t||"ui-id")+"-"+Math.floor(1e3*Math.random()+1)};t(".alert").attr("role","alert"),t(".close").removeAttr("aria-hidden").wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>');var e=t.fn.tooltip.Constructor.prototype.show,r=t.fn.tooltip.Constructor.prototype.hide;t.fn.tooltip.Constructor.prototype.show=function(){e.apply(this,arguments);var t=this.tip(),r=t.attr("id")||a("ui-tooltip");t.attr({role:"tooltip",id:r}),this.$element.attr("aria-describedby",r)},t.fn.tooltip.Constructor.prototype.hide=function(){return r.apply(this,arguments),g(this.$element,"aria-describedby",this.tip().attr("id")),this};var o=t.fn.popover.Constructor.prototype.setContent;t.fn.popover.Constructor.prototype.hide;t.fn.popover.Constructor.prototype.setContent=function(){o.apply(this,arguments);var t=this.tip(),e=t.attr("id")||a("ui-tooltip");t.attr({role:"alert",id:e}),this.$element.attr("aria-describedby",e),this.$element.focus()},t.fn.popover.Constructor.prototype.hide=function(){r.apply(this,arguments),g(this.$element,"aria-describedby",this.tip().attr("id"))},t(".modal-dialog").attr({role:"document"});var n=t.fn.modal.Constructor.prototype.hide;t.fn.modal.Constructor.prototype.hide=function(){var t=this.$element.parent().find('[data-target="#'+this.$element.attr("id")+'"]');n.apply(this,arguments),t.focus()};var i,s,l="[data-toggle=dropdown]",d=200,p=t(l).parent().find("ul").attr("role","menu"),c=p.find("li").attr("role","presentation");c.find("a").attr({role:"menuitem",tabIndex:"-1"}),t(l).attr({"aria-haspopup":"true","aria-expanded":"false"}),t(l).parent().on("shown.bs.dropdown",function(a){i=t(this);var e=i.find(l);e.attr("aria-expanded","true"),setTimeout(function(){s=t(".dropdown-menu [role=menuitem]:visible",i)[0];try{s.focus()}catch(t){}},d)}),t(l).parent().on("hidden.bs.dropdown",function(a){i=t(this);var e=i.find(l);e.attr("aria-expanded","false")}),t.fn.dropdown.Constructor.prototype.keydown=function(a){var e;/(32)/.test(a.keyCode)&&(e=t(this).parent(),t(this).trigger("click"),a.preventDefault()&&a.stopPropagation())},t(document).on("focusout.dropdown.data-api",".dropdown-menu",function(a){var e=t(this),r=this;setTimeout(function(){t.contains(r,document.activeElement)||(e.parent().removeClass("open"),e.parent().find("[data-toggle=dropdown]").attr("aria-expanded","false"))},150)}).on("keydown.bs.dropdown.data-api",l+", [role=menu]",t.fn.dropdown.Constructor.prototype.keydown);var u=t(".nav-tabs"),f=u.children("li"),h=u.find('[data-toggle="tab"], [data-toggle="pill"]');u.attr("role","tablist"),f.attr("role","presentation"),h.attr("role","tab"),h.each(function(e){var r=t(t(this).attr("href")),o=t(this),n=o.attr("id")||a("ui-tab");o.attr("id",n),o.parent().hasClass("active")?(o.attr({tabIndex:"0","aria-expanded":"true","aria-selected":"true","aria-controls":o.attr("href").substr(1)}),r.attr({role:"tabpanel",tabIndex:"0","aria-hidden":"false","aria-labelledby":n})):(o.attr({tabIndex:"-1","aria-expanded":"false","aria-selected":"false","aria-controls":o.attr("href").substr(1)}),r.attr({role:"tabpanel",tabIndex:"-1","aria-hidden":"true","aria-labelledby":n}))}),t.fn.tab.Constructor.prototype.keydown=function(a){var e,r,o=t(this),n=o.closest("ul[role=tablist] "),i=a.which||a.keyCode;if(o=t(this),/(37|38|39|40)/.test(i)){e=n.find("[role=tab]:visible"),r=e.index(e.filter(":focus")),38!=i&&37!=i||r--,39!=i&&40!=i||r++,r<0&&(r=e.length-1),r==e.length&&(r=0);var s=e.eq(r);"tab"===s.attr("role")&&s.tab("show").focus(),a.preventDefault(),a.stopPropagation()}},t(document).on("keydown.tab.data-api",'[data-toggle="tab"], [data-toggle="pill"]',t.fn.tab.Constructor.prototype.keydown);var b=t.fn.tab.Constructor.prototype.activate;t.fn.tab.Constructor.prototype.activate=function(t,a,e){var r=a.find("> .active");r.find("[data-toggle=tab]").attr({tabIndex:"-1","aria-selected":!1,"aria-expanded":!1}),r.filter(".tab-pane").attr({"aria-hidden":!0,tabIndex:"-1"}),b.apply(this,arguments),t.addClass("active"),t.find("[data-toggle=tab]").attr({tabIndex:"0","aria-selected":!0,"aria-expanded":!0}),t.filter(".tab-pane").attr({"aria-hidden":!1,tabIndex:"0"})};var y=t('[data-toggle="collapse"]');y.attr({role:"tab","aria-selected":"false","aria-expanded":"false"}),y.each(function(e){var r=t(this),o=t(r.attr("data-target")?r.attr("data-target"):r.attr("href")),n=r.attr("data-parent"),i=n&&t(n),s=r.attr("id")||a("ui-collapse");t(i).find("div:not(.collapse,.panel-body), h4").attr("role","presentation"),r.attr("id",s),i&&(i.attr({role:"tablist","aria-multiselectable":"true"}),o.hasClass("in")?(r.attr({"aria-controls":r.attr("href").substr(1),"aria-selected":"true","aria-expanded":"true",tabindex:"0"}),o.attr({role:"tabpanel",tabindex:"0","aria-labelledby":s,"aria-hidden":"false"})):(r.attr({"aria-controls":r.attr("href").substr(1),tabindex:"-1"}),o.attr({role:"tabpanel",tabindex:"-1","aria-labelledby":s,"aria-hidden":"true"})))});var m=t.fn.collapse.Constructor.prototype.toggle;t.fn.collapse.Constructor.prototype.toggle=function(){var a,e=this.$parent&&this.$parent.find('[aria-expanded="true"]');if(e){var r,o=e.attr("data-target")||(a=e.attr("href"))&&a.replace(/.*(?=#[^\s]+$)/,""),n=t(o),i=this.$element;this.$parent;this.$parent&&(r=this.$parent.find('[data-toggle=collapse][href="#'+this.$element.attr("id")+'"]')),m.apply(this,arguments),t.support.transition&&this.$element.one(t.support.transition.end,function(){e.attr({"aria-selected":"false","aria-expanded":"false",tabIndex:"-1"}),n.attr({"aria-hidden":"true",tabIndex:"-1"}),r.attr({"aria-selected":"true","aria-expanded":"true",tabIndex:"0"}),i.hasClass("in")?i.attr({"aria-hidden":"false",tabIndex:"0"}):(r.attr({"aria-selected":"false","aria-expanded":"false"}),i.attr({"aria-hidden":"true",tabIndex:"-1"}))})}else m.apply(this,arguments)},t.fn.collapse.Constructor.prototype.keydown=function(a){var e,r,o=t(this),n=o.closest("div[role=tablist] "),i=a.which||a.keyCode;o=t(this),/(32|37|38|39|40)/.test(i)&&(32==i&&o.click(),e=n.find("[role=tab]"),r=e.index(e.filter(":focus")),38!=i&&37!=i||r--,39!=i&&40!=i||r++,r<0&&(r=e.length-1),r==e.length&&(r=0),e.eq(r).focus(),a.preventDefault(),a.stopPropagation())},t(document).on("keydown.collapse.data-api",'[data-toggle="collapse"]',t.fn.collapse.Constructor.prototype.keydown),t(".carousel").each(function(a){var e=t(this),r=e.find('[data-slide="prev"]'),o=e.find('[data-slide="next"]'),n=e.find(".item"),i=n.parent();e.attr({"data-interval":"false","data-wrap":"false"}),i.attr("role","listbox"),n.attr("role","option");var s=document.createElement("span");s.setAttribute("class","sr-only"),s.innerHTML="Previous";var l=document.createElement("span");l.setAttribute("class","sr-only"),l.innerHTML="Next",r.attr("role","button"),o.attr("role","button"),r.append(s),o.append(l),n.each(function(){var a=t(this);a.hasClass("active")?a.attr({"aria-selected":"true",tabindex:"0"}):a.attr({"aria-selected":"false",tabindex:"-1"})})});var v=t.fn.carousel.Constructor.prototype.slide;t.fn.carousel.Constructor.prototype.slide=function(a,e){var r=this.$element.find(".item.active"),o=e||r[a]();v.apply(this,arguments),r.one(t.support.transition.end,function(){r.attr({"aria-selected":!1,tabIndex:"-1"}),o.attr({"aria-selected":!0,tabIndex:"0"})})},t.fn.carousel.Constructor.prototype.keydown=function(a){var e,r=t(this),o=r.closest("div[role=listbox]"),n=o.find("[role=option]"),i=o.parent(),s=a.which||a.keyCode;/(37|38|39|40)/.test(s)&&(e=n.index(n.filter(".active")),37!=s&&38!=s||(i.carousel("prev"),e--,e<0?e=n.length-1:r.prev().focus()),39!=s&&40!=s||(i.carousel("next"),e++,e==n.length?e=0:r.one(t.support.transition.end,function(){r.next().focus()})),a.preventDefault(),a.stopPropagation())},t(document).on("keydown.carousel.data-api","div[role=option]",t.fn.carousel.Constructor.prototype.keydown);var g=function(a,e,r){var o=(a.attr(e)||"").split(/\s+/),n=t.inArray(r,o);n!==-1&&o.splice(n,1),o=t.trim(o.join(" ")),o?a.attr(e,o):a.removeAttr(e)}}(jQuery);
+  
+ 
+ (function($) { 
+  "use strict"; 
+
+  // GENERAL UTILITY FUNCTIONS
+  // ===============================
+  
+  var uniqueId = function(prefix) {
+      return (prefix || 'ui-id') + '-' + Math.floor((Math.random()*1000)+1)
+  }
+
+  
+  var removeMultiValAttributes = function (el, attr, val) {
+   var describedby = (el.attr( attr ) || "").split( /\s+/ )
+      , index = $.inArray(val, describedby)
+   if ( index !== -1 ) {
+     describedby.splice( index, 1 )
+   }
+   describedby = $.trim( describedby.join( " " ) )
+   if (describedby ) {
+     el.attr( attr, describedby )
+   } else {
+    el.removeAttr( attr )
+   }
+  }
+
+// selectors  Courtesy: https://github.com/jquery/jquery-ui/blob/master/ui/focusable.js and tabbable.js
+/*
+Copyright jQuery Foundation and other contributors, https://jquery.org/
+
+This software consists of voluntary contributions made by many
+individuals. For exact contribution history, see the revision history
+available at https://github.com/jquery/jquery-ui
+
+The following license applies to all parts of this software except as
+documented below:
+
+====
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+====
+
+Copyright and related rights for sample code are waived via CC0. Sample
+code is defined as all source code contained within the demos directory.
+
+CC0: http://creativecommons.org/publicdomain/zero/1.0/
+
+====
+*/
+
+  var focusable = function ( element, isTabIndexNotNaN ) {
+    var map, mapName, img,
+    nodeName = element.nodeName.toLowerCase();
+    if ( "area" === nodeName ) {
+    map = element.parentNode;
+    mapName = map.name;
+    if ( !element.href || !mapName || map.nodeName.toLowerCase() !== "map" ) {
+    return false;
+    }
+    img = $( "img[usemap='#" + mapName + "']" )[ 0 ];
+    return !!img && visible( img );
+    }
+    return ( /input|select|textarea|button|object/.test( nodeName ) ?
+    !element.disabled :
+    "a" === nodeName ?
+    element.href || isTabIndexNotNaN :isTabIndexNotNaN) && visible( element ); // the element and all of its ancestors must be visible  
+  }
+  var visible = function ( element ) {
+    return $.expr.filters.visible( element ) &&
+      !$( element ).parents().addBack().filter(function() {
+        return $.css( this, "visibility" ) === "hidden";
+      }).length;
+  }
+
+  $.extend( $.expr[ ":" ], {
+    data: $.expr.createPseudo ?
+      $.expr.createPseudo(function( dataName ) {
+        return function( elem ) {
+          return !!$.data( elem, dataName );
+        };
+      }) :
+      // support: jQuery <1.8
+      function( elem, i, match ) {
+        return !!$.data( elem, match[ 3 ] );
+      },
+
+    focusable: function( element ) {
+      return focusable( element, !isNaN( $.attr( element, "tabindex" ) ) );
+    },
+
+    tabbable: function( element ) {
+      var tabIndex = $.attr( element, "tabindex" ),
+        isTabIndexNaN = isNaN( tabIndex );
+      return ( isTabIndexNaN || tabIndex >= 0 ) && focusable( element, !isTabIndexNaN );
+    }
+  });
+
+  // Modal Extension
+  // ===============================
+
+  $('.modal-dialog').attr( {'role' : 'document'})
+    var modalhide =   $.fn.modal.Constructor.prototype.hide
+    $.fn.modal.Constructor.prototype.hide = function(){
+       modalhide.apply(this, arguments)
+       $(document).off('keydown.bs.modal')
+    }
+
+    var modalfocus =   $.fn.modal.Constructor.prototype.enforceFocus
+    $.fn.modal.Constructor.prototype.enforceFocus = function(){
+      var $content = this.$element.find(".modal-content")
+      var focEls = $content.find(":tabbable")
+      , $lastEl = $(focEls[focEls.length-1])
+      , $firstEl = $(focEls[0])
+      $lastEl.on('keydown.bs.modal', $.proxy(function (ev) {
+        if(ev.keyCode === 9 && !(ev.shiftKey | ev.ctrlKey | ev.metaKey | ev.altKey)) { // TAB pressed
+          ev.preventDefault();
+          $firstEl.focus();
+        }
+      }, this))
+      $firstEl.on('keydown.bs.modal', $.proxy(function (ev) {
+          if(ev.keyCode === 9 && ev.shiftKey) { // SHIFT-TAB pressed
+            ev.preventDefault();
+            $lastEl.focus();
+          }
+      }, this))
+      modalfocus.apply(this, arguments)
+    }
+
+  // DROPDOWN Extension
+  // ===============================
+
+  var toggle   = '[data-toggle=dropdown]'
+      , $par
+      , firstItem
+      , focusDelay = 200
+      , menus = $(toggle).parent().find('ul').attr('role','menu')
+      , lis = menus.find('li').attr('role','presentation')
+
+    // add menuitem role and tabIndex to dropdown links
+    lis.find('a').attr({'role':'menuitem', 'tabIndex':'-1'})
+    // add aria attributes to dropdown toggle
+    $(toggle).attr({ 'aria-haspopup':'true', 'aria-expanded': 'false'})
+
+    $(toggle).parent()
+      // Update aria-expanded when open
+      .on('shown.bs.dropdown',function(e){
+        $par = $(this)
+        var $toggle = $par.find(toggle)
+        $toggle.attr('aria-expanded','true')
+        $toggle.on('keydown.bs.dropdown', $.proxy(function (ev) {
+          setTimeout(function() {
+            firstItem = $('.dropdown-menu [role=menuitem]:visible', $par)[0]
+            try{ firstItem.focus()} catch(ex) {}
+          }, focusDelay)
+        }, this))
+
+      })
+      // Update aria-expanded when closed
+      .on('hidden.bs.dropdown',function(e){
+        $par = $(this)
+        var $toggle = $par.find(toggle)
+        $toggle.attr('aria-expanded','false')
+      })
+
+    // Close the dropdown if tabbed away from
+    $(document)
+      .on('focusout.dropdown.data-api', '.dropdown-menu', function(e){
+        var $this = $(this)
+          , that = this;
+        // since we're trying to close when appropriate,
+        // make sure the dropdown is open
+        if (!$this.parent().hasClass('open')) {
+          return;
+        }
+        setTimeout(function() {
+          if(!$.contains(that, document.activeElement)){
+            $this.parent().find('[data-toggle=dropdown]').dropdown('toggle')
+          }
+        }, 150)
+       })
+      .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , $.fn.dropdown.Constructor.prototype.keydown);
+
+  // Tab Extension
+  // ===============================
+  
+  var $tablist = $('.nav-tabs, .nav-pills')
+        , $lis = $tablist.children('li')
+        , $tabs = $tablist.find('[data-toggle="tab"], [data-toggle="pill"]')
+
+    if($tabs){
+      $tablist.attr('role', 'tablist')
+      $lis.attr('role', 'presentation')
+      $tabs.attr('role', 'tab')
+    }
+
+    $tabs.each(function( index ) {
+      var tabpanel = $($(this).attr('href'))
+        , tab = $(this)
+        , tabid = tab.attr('id') || uniqueId('ui-tab')
+
+        tab.attr('id', tabid)
+
+      if(tab.parent().hasClass('active')){
+        tab.attr( { 'tabIndex' : '0', 'aria-selected' : 'true', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr({ 'role' : 'tabpanel', 'tabIndex' : '0', 'aria-hidden' : 'false', 'aria-labelledby':tabid })
+      }else{
+        tab.attr( { 'tabIndex' : '-1', 'aria-selected' : 'false', 'aria-controls': tab.attr('href').substr(1) } )
+        tabpanel.attr( { 'role' : 'tabpanel', 'tabIndex' : '-1', 'aria-hidden' : 'true', 'aria-labelledby':tabid } )
+      }
+    })
+
+    $.fn.tab.Constructor.prototype.keydown = function (e) {
+      var $this = $(this)
+      , $items
+      , $ul = $this.closest('ul[role=tablist] ')
+      , index
+      , k = e.which || e.keyCode
+
+      $this = $(this)
+      if (!/(37|38|39|40)/.test(k)) return
+
+      $items = $ul.find('[role=tab]:visible')
+      index = $items.index($items.filter(':focus'))
+
+      if (k == 38 || k == 37) index--                         // up & left
+      if (k == 39 || k == 40) index++                        // down & right
+
+
+      if(index < 0) index = $items.length -1
+      if(index == $items.length) index = 0
+
+      var nextTab = $items.eq(index)
+      if(nextTab.attr('role') ==='tab'){
+
+        nextTab.tab('show')      //Comment this line for dynamically loaded tabPabels, to save Ajax requests on arrow key navigation
+        .focus()
+      }
+      // nextTab.focus()
+
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    $(document).on('keydown.tab.data-api','[data-toggle="tab"], [data-toggle="pill"]' , $.fn.tab.Constructor.prototype.keydown)
+
+   var tabactivate =    $.fn.tab.Constructor.prototype.activate;
+   $.fn.tab.Constructor.prototype.activate = function (element, container, callback) {
+      var $active = container.find('> .active')
+      $active.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex' : '-1','aria-selected' : false })
+      $active.filter('.tab-pane').attr({ 'aria-hidden' : true,'tabIndex' : '-1' })
+
+      tabactivate.apply(this, arguments)
+
+      element.addClass('active')
+      element.find('[data-toggle=tab], [data-toggle=pill]').attr({ 'tabIndex' : '0','aria-selected' : true })
+      element.filter('.tab-pane').attr({ 'aria-hidden' : false,'tabIndex' : '0' })
+   }
+
+  // Collapse Extension
+  // ===============================
+
+     var $colltabs =  $('[data-toggle="collapse"]')
+      $colltabs.each(function( index ) {
+        var colltab = $(this)
+        , collpanel = (colltab.attr('data-target')) ? $(colltab.attr('data-target')) : $(colltab.attr('href'))
+        , parent  = colltab.attr('data-parent')
+        , collparent = parent && $(parent)
+        , collid = colltab.attr('id') || uniqueId('ui-collapse')
+
+          colltab.attr('id', collid)
+
+          if(collparent){
+            colltab.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
+            $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role','presentation')
+            collparent.attr({ 'role' : 'tablist', 'aria-multiselectable' : 'true' })
+
+            if(collpanel.hasClass('in')){
+              colltab.attr({ 'aria-controls': collpanel.attr('id'), 'aria-selected':'true', 'aria-expanded':'true', 'tabindex':'0' })
+              collpanel.attr({ 'role':'tabpanel', 'tabindex':'0', 'aria-labelledby':collid, 'aria-hidden':'false' })
+            }else{
+              colltab.attr({'aria-controls' : collpanel.attr('id'), 'tabindex':'-1' })
+              collpanel.attr({ 'role':'tabpanel', 'tabindex':'-1', 'aria-labelledby':collid, 'aria-hidden':'true' })
+            }
+          }
+      })
+
+    var collToggle = $.fn.collapse.Constructor.prototype.toggle
+    $.fn.collapse.Constructor.prototype.toggle = function(){
+        var prevTab = this.$parent && this.$parent.find('[aria-expanded="true"]') , href
+
+        if(prevTab){
+          var prevPanel = prevTab.attr('data-target') || (href = prevTab.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
+          , $prevPanel = $(prevPanel)
+          , $curPanel = this.$element
+          , par = this.$parent
+          , curTab
+
+        if (this.$parent) curTab = this.$parent.find('[data-toggle=collapse][href="#' + this.$element.attr('id') + '"]')
+
+        collToggle.apply(this, arguments)
+
+        if ($.support.transition) {
+          this.$element.one($.support.transition.end, function(){
+
+              prevTab.attr({ 'aria-selected':'false','aria-expanded':'false', 'tabIndex':'-1' })
+              $prevPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1'})
+
+              curTab.attr({ 'aria-selected':'true','aria-expanded':'true', 'tabIndex':'0' })
+
+              if($curPanel.hasClass('in')){
+                $curPanel.attr({ 'aria-hidden' : 'false','tabIndex' : '0' })
+              }else{
+                curTab.attr({ 'aria-selected':'false','aria-expanded':'false'})
+                $curPanel.attr({ 'aria-hidden' : 'true','tabIndex' : '-1' })
+              }
+          })
+        }
+      }else{
+        collToggle.apply(this, arguments)
+      }
+    }
+
+    $.fn.collapse.Constructor.prototype.keydown = function (e) {
+      var $this = $(this)
+      , $items
+      , $tablist = $this.closest('div[role=tablist] ')
+      , index
+      , k = e.which || e.keyCode
+
+      $this = $(this)
+      if (!/(32|37|38|39|40)/.test(k)) return
+      if(k==32) $this.click()
+
+      $items = $tablist.find('[role=tab]')
+      index = $items.index($items.filter(':focus'))
+
+      if (k == 38 || k == 37) index--                                        // up & left
+      if (k == 39 || k == 40) index++                        // down & right
+      if(index < 0) index = $items.length -1
+      if(index == $items.length) index = 0
+
+      $items.eq(index).focus()
+
+      e.preventDefault()
+      e.stopPropagation()
+
+    }
+
+    $(document).on('keydown.collapse.data-api','[data-toggle="collapse"]' ,  $.fn.collapse.Constructor.prototype.keydown);
+    
+
+// Carousel Extension
+  // ===============================
+
+      $('.carousel').each(function (index) {
+
+        // This function positions a highlight box around the tabs in the tablist to use in focus styling
+
+        function setTablistHighlightBox() {
+
+          var $tab
+              , offset
+              , height
+              , width
+              , highlightBox = {}
+
+            highlightBox.top     = 0
+          highlightBox.left    = 32000
+          highlightBox.height  = 0
+          highlightBox.width   = 0
+
+          for (var i = 0; i < $tabs.length; i++) {
+            $tab = $tabs[i]
+            offset = $($tab).offset()
+            height = $($tab).height()
+            width  = $($tab).width()
+
+//            console.log(" Top: " + offset.top + " Left: " + offset.left + " Height: " + height + " Width: " + width)
+
+            if (highlightBox.top < offset.top) {
+              highlightBox.top    = Math.round(offset.top)
+            }
+
+            if (highlightBox.height < height) {
+              highlightBox.height = Math.round(height)
+            }
+
+            if (highlightBox.left > offset.left) {
+              highlightBox.left = Math.round(offset.left)
+            }
+
+            var w = (offset.left - highlightBox.left) + Math.round(width)
+
+            if (highlightBox.width < w) {
+              highlightBox.width = w
+            }
+
+          } // end for
+
+//          console.log("[HIGHLIGHT]  Top: " +  highlightBox.top + " Left: " +  highlightBox.left + " Height: " +  highlightBox.height + " Width: " +  highlightBox.width)
+
+          $tablistHighlight.style.top    = (highlightBox.top    - 2)  + 'px'
+          $tablistHighlight.style.left   = (highlightBox.left   - 2)  + 'px'
+          $tablistHighlight.style.height = (highlightBox.height + 7)  + 'px'
+          $tablistHighlight.style.width  = (highlightBox.width  + 8)  + 'px'
+
+        } // end function
+
+        var $this = $(this)
+          , $prev        = $this.find('[data-slide="prev"]')
+          , $next        = $this.find('[data-slide="next"]')
+          , $tablist    = $this.find('.carousel-indicators')
+          , $tabs       = $this.find('.carousel-indicators li')
+          , $tabpanels  = $this.find('.item')
+          , $tabpanel
+          , $tablistHighlight
+          , $pauseCarousel
+          , $complementaryLandmark
+          , $tab
+          , $is_paused = false
+          , offset
+          , height
+          , width
+          , i
+          , id_title  = 'id_title'
+          , id_desc   = 'id_desc'
+
+
+        $tablist.attr('role', 'tablist')
+
+        $tabs.focus(function() {
+          $this.carousel('pause')
+          $is_paused = true
+          $pauseCarousel.innerHTML = "Play Carousel"
+          $(this).parent().addClass('active');
+//          $(this).addClass('focus')
+          setTablistHighlightBox()
+          $($tablistHighlight).addClass('focus')
+          $(this).parents('.carousel').addClass('contrast')
+        })
+
+        $tabs.blur(function(event) {
+          $(this).parent().removeClass('active');
+//          $(this).removeClass('focus')
+          $($tablistHighlight).removeClass('focus')
+          $(this).parents('.carousel').removeClass('contrast')
+        })
+
+
+        for (i = 0; i < $tabpanels.length; i++) {
+          $tabpanel = $tabpanels[i]
+          $tabpanel.setAttribute('role', 'tabpanel')
+          $tabpanel.setAttribute('id', 'tabpanel-' + index + '-' + i)
+          $tabpanel.setAttribute('aria-labelledby', 'tab-' + index + '-' + i)
+        }
+
+        if (typeof $this.attr('role') !== 'string') {
+          $this.attr('role', 'complementary');
+          $this.attr('aria-labelledby', id_title);
+          $this.attr('aria-describedby', id_desc);
+          $this.prepend('<p  id="' + id_desc   + '" class="sr-only">A carousel is a rotating set of images, rotation stops on keyboard focus on carousel tab controls or hovering the mouse pointer over images.  Use the tabs or the previous and next buttons to change the displayed slide.</p>')
+          $this.prepend('<h2 id="' + id_title  + '" class="sr-only">Carousel content with ' + $tabpanels.length + ' slides.</h2>')
+        }
+
+
+        for (i = 0; i < $tabs.length; i++) {
+          $tab = $tabs[i]
+
+          $tab.setAttribute('role', 'tab')
+          $tab.setAttribute('id', 'tab-' + index + '-' + i)
+          $tab.setAttribute('aria-controls', 'tabpanel-' + index + '-' + i)
+
+          var tpId = '#tabpanel-' + index + '-' + i
+          var caption = $this.find(tpId).find('h1').text()
+
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = $this.find(tpId).text()
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = $this.find(tpId).find('h3').text()
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = $this.find(tpId).find('h4').text()
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = $this.find(tpId).find('h5').text()
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = $this.find(tpId).find('h6').text()
+          if ((typeof caption !== 'string') || (caption.length === 0)) caption = "no title";
+
+//          console.log("CAPTION: " + caption )
+
+          var tabName = document.createElement('span')
+          tabName.setAttribute('class', 'sr-only')
+          tabName.innerHTML='Slide ' + (i+1)
+          if (caption) tabName.innerHTML += ": " +  caption
+          $tab.appendChild(tabName)
+
+         }
+
+        // create div for focus styling of tablist
+        $tablistHighlight = document.createElement('div')
+        $tablistHighlight.className = 'carousel-tablist-highlight'
+        document.body.appendChild($tablistHighlight)
+
+        // create button for screen reader users to stop rotation of carousel
+
+        // create button for screen reader users to pause carousel for virtual mode review
+        $complementaryLandmark = document.createElement('aside')
+        $complementaryLandmark.setAttribute('class', 'carousel-aside-pause')
+        $complementaryLandmark.setAttribute('aria-label', 'carousel pause/play control')
+        $this.prepend($complementaryLandmark)
+
+        $pauseCarousel = document.createElement('button')
+        $pauseCarousel.className = "carousel-pause-button"
+        $pauseCarousel.innerHTML = "Pause Carousel"
+        $pauseCarousel.setAttribute('title', "Pause/Play carousel button can be used by screen reader users to stop carousel animations")
+        $($complementaryLandmark).append($pauseCarousel)
+
+        $($pauseCarousel).click(function() {
+          if ($is_paused) {
+            $pauseCarousel.innerHTML = "Pause Carousel"
+            $this.carousel('cycle')
+            $is_paused = false
+          }
+          else {
+            $pauseCarousel.innerHTML = "Play Carousel"
+            $this.carousel('pause')
+            $is_paused = true
+          }
+        })
+        $($pauseCarousel).focus(function() {
+          $(this).addClass('focus')
+        })
+
+        $($pauseCarousel).blur(function() {
+          $(this).removeClass('focus')
+        })
+
+        setTablistHighlightBox()
+
+        $( window ).resize(function() {
+          setTablistHighlightBox()
+        })
+
+        // Add space bar behavior to prev and next buttons for SR compatibility
+        $prev.attr('aria-label', 'Previous Slide')
+        $prev.keydown(function(e) {
+          var k = e.which || e.keyCode
+          if (/(13|32)/.test(k)) {
+            e.preventDefault()
+            e.stopPropagation()
+            $prev.trigger('click');
+          }
+        });
+
+        $prev.focus(function() {
+          $(this).parents('.carousel').addClass('contrast')
+        })
+
+        $prev.blur(function() {
+          $(this).parents('.carousel').removeClass('contrast')
+        })
+
+        $next.attr('aria-label', 'Next Slide')
+        $next.keydown(function(e) {
+          var k = e.which || e.keyCode
+          if (/(13|32)/.test(k)) {
+            e.preventDefault()
+            e.stopPropagation()
+            $next.trigger('click');
+          }
+        });
+
+        $next.focus(function() {
+          $(this).parents('.carousel').addClass('contrast')
+        })
+
+        $next.blur(function() {
+          $(this).parents('.carousel').removeClass('contrast')
+        })
+
+        $('.carousel-inner a').focus(function() {
+          $(this).parents('.carousel').addClass('contrast')
+        })
+
+         $('.carousel-inner a').blur(function() {
+          $(this).parents('.carousel').removeClass('contrast')
+        })
+
+        $tabs.each(function () {
+          var item = $(this)
+          if(item.hasClass('active')) {
+            item.attr({ 'aria-selected': 'true', 'tabindex' : '0' })
+          }else{
+            item.attr({ 'aria-selected': 'false', 'tabindex' : '-1' })
+          }
+        })
+      })
+
+      var slideCarousel = $.fn.carousel.Constructor.prototype.slide
+      $.fn.carousel.Constructor.prototype.slide = function (type, next) {
+        var $element = this.$element
+          , $active  = $element.find('[role=tabpanel].active')
+          , $next    = next || $active[type]()
+          , $tab
+          , $tab_count = $element.find('[role=tabpanel]').size()
+          , $prev_side = $element.find('[data-slide="prev"]')
+          , $next_side = $element.find('[data-slide="next"]')
+          , $index      = 0
+          , $prev_index = $tab_count -1
+          , $next_index = 1
+          , $id
+
+        if ($next && $next.attr('id')) {
+          $id = $next.attr('id')
+          $index = $id.lastIndexOf("-")
+          if ($index >= 0) $index = parseInt($id.substring($index+1), 10)
+
+          $prev_index = $index - 1
+          if ($prev_index < 1) $prev_index = $tab_count - 1
+
+          $next_index = $index + 1
+          if ($next_index >= $tab_count) $next_index = 0
+        }
+
+        $prev_side.attr('aria-label', 'Show slide ' + ($prev_index+1) + ' of ' + $tab_count)
+        $next_side.attr('aria-label', 'Show slide ' + ($next_index+1) + ' of ' + $tab_count)
+
+
+        slideCarousel.apply(this, arguments)
+
+      $active
+        .one('bsTransitionEnd', function () {
+          var $tab
+
+          $tab = $element.find('li[aria-controls="' + $active.attr('id') + '"]')
+          if ($tab) $tab.attr({'aria-selected':false, 'tabIndex': '-1'})
+
+          $tab = $element.find('li[aria-controls="' + $next.attr('id') + '"]')
+          if ($tab) $tab.attr({'aria-selected': true, 'tabIndex': '0'})
+
+       })
+      }
+
+     var $this;
+     $.fn.carousel.Constructor.prototype.keydown = function (e) {
+
+     $this = $this || $(this)
+     if(this instanceof Node) $this = $(this)
+
+     function selectTab(index) {
+       if (index >= $tabs.length) return
+       if (index < 0) return
+
+       $carousel.carousel(index)
+       setTimeout(function () {
+            $tabs[index].focus()
+            // $this.prev().focus()
+       }, 150)
+     }
+
+     var $carousel = $(e.target).closest('.carousel')
+      , $tabs      = $carousel.find('[role=tab]')
+      , k = e.which || e.keyCode
+      , index
+
+      if (!/(37|38|39|40)/.test(k)) return
+
+      index = $tabs.index($tabs.filter('.active'))
+      if (k == 37 || k == 38) {                           //  Up
+        index--
+        selectTab(index);
+      }
+
+      if (k == 39 || k == 40) {                          // Down
+        index++
+        selectTab(index);
+      }
+
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    $(document).on('keydown.carousel.data-api', 'li[role=tab]', $.fn.carousel.Constructor.prototype.keydown);
+
+
+ })(jQuery);
