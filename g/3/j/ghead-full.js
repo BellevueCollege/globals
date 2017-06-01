@@ -82,240 +82,565 @@ y.addTest("flexboxtweener",h("flexAlign","end",!0)),/*!
 }
 !*/
 y.addTest("flexwrap",h("flexWrap","wrap",!0)),function(){var e=navigator.userAgent,t=e.match(/applewebkit\/([0-9]+)/gi)&&parseFloat(RegExp.$1),n=e.match(/w(eb)?osbrowser/gi),r=e.match(/windows phone/gi)&&e.match(/iemobile\/([0-9])+/gi)&&parseFloat(RegExp.$1)>=9,o=t<533&&e.match(/android/gi);return n||o||r}()?y.addTest("fontface",!1):E('@font-face {font-family:"font";src:url("https://")}',function(e,n){var r=t.getElementById("smodernizr"),o=r.sheet||r.styleSheet,a=o?o.cssRules&&o.cssRules[0]?o.cssRules[0].cssText:o.cssText||"":"",i=/src/i.test(a)&&0===a.indexOf(n.split(" ")[0]);y.addTest("fontface",i)}),function(){var e,t,n,o,a,i,s;for(var l in g)if(g.hasOwnProperty(l)){if(e=[],t=g[l],t.name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(o=r(t.fn,"function")?t.fn():t.fn,a=0;a<e.length;a++)i=e[a],s=i.split("."),1===s.length?y[s[0]]=o:(!y[s[0]]||y[s[0]]instanceof Boolean||(y[s[0]]=new Boolean(y[s[0]])),y[s[0]][s[1]]=o),x.push((o?"":"no-")+s.join("-"))}}(),function(e){var t=b.className,n=y._config.classPrefix||"";if(C&&(t=t.baseVal),y._config.enableJSClass){var r=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(r,"$1"+n+"js$2")}y._config.enableClasses&&(t+=" "+n+e.join(" "+n),C?b.className.baseVal=t:b.className=t)}(x),delete v.addTest,delete v.addAsyncTest;for(var z=0;z<y._q.length;z++)y._q[z]();e.Modernizr=y}(window,document);
-/*! Respond.js v1.4.2: min/max-width media query polyfill
- * Copyright 2014 Scott Jehl
- * Licensed under MIT
- * https://j.mp/respondjs */
+(function ($) {
+  var queryParser = function (a) {
+      var i, p, b = {};
+      if (a === "") {
+        return {};
+      }
+      for (i = 0; i < a.length; i += 1) {
+        p = a[i].split('=');
+        if (p.length === 2) {
+          b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+      }
+      return b;
+    };
+  $.queryParams = function () {
+    return queryParser(window.location.search.substr(1).split('&'));
+  };
+  $.hashParams = function () {
+    return queryParser(window.location.hash.substr(1).split('&'));
+  };
 
-/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
-/*! NOTE: If you're already including a window.matchMedia polyfill via Modernizr or otherwise, you don't need this part */
-(function(w) {
-  "use strict";
-  w.matchMedia = w.matchMedia || function(doc, undefined) {
-    var bool, docElem = doc.documentElement, refNode = docElem.firstElementChild || docElem.firstChild, fakeBody = doc.createElement("body"), div = doc.createElement("div");
-    div.id = "mq-test-1";
-    div.style.cssText = "position:absolute;top:-100em";
-    fakeBody.style.background = "none";
-    fakeBody.appendChild(div);
-    return function(q) {
-      div.innerHTML = '&shy;<style media="' + q + '"> #mq-test-1 { width: 42px; }</style>';
-      docElem.insertBefore(fakeBody, refNode);
-      bool = div.offsetWidth === 42;
-      docElem.removeChild(fakeBody);
-      return {
-        matches: bool,
-        media: q
+
+  var ident = 0;
+
+  window.Swiftype = window.Swiftype || {};
+  Swiftype.root_url = Swiftype.root_url || 'https://api.swiftype.com';
+  Swiftype.pingUrl = function(endpoint, callback) {
+    var to = setTimeout(callback, 350);
+    var img = new Image();
+    img.onload = img.onerror = function() {
+      clearTimeout(to);
+      callback();
+    };
+    img.src = endpoint;
+    return false;
+  };
+  Swiftype.pingAutoSelection = function(engineKey, docId, value, callback) {
+    var params = {
+      t: new Date().getTime(),
+      engine_key: engineKey,
+      doc_id: docId,
+      prefix: value
+    };
+    var url = Swiftype.root_url + '/api/v1/public/analytics/pas?' + $.param(params);
+    Swiftype.pingUrl(url, callback);
+  };
+  Swiftype.findSelectedSection = function() {
+    var sectionText = $.hashParams().sts;
+    if (!sectionText) { return; }
+
+    function normalizeText(str) {
+      var out = str.replace(/\s+/g, '');
+      out = out.toLowerCase();
+      return out;
+    }
+
+    sectionText = normalizeText(sectionText);
+
+    $('h1, h2, h3, h4, h5, h6').each(function(idx) {
+      $this = $(this);
+      if (normalizeText($this.text()).indexOf(sectionText) >= 0) {
+        this.scrollIntoView(true);
+        return false;
+      }
+    });
+  };
+
+  Swiftype.htmlEscape = Swiftype.htmlEscape || function htmlEscape(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  };
+
+  $.fn.swiftype = function (options) {
+    Swiftype.findSelectedSection();
+    var options = $.extend({}, $.fn.swiftype.defaults, options);
+
+    return this.each(function () {
+      var $this = $(this);
+      var config = $.meta ? $.extend({}, options, $this.data()) : options;
+      $this.attr('autocomplete', 'off');
+      $this.data('swiftype-config-autocomplete', config);
+      $this.submitted = false;
+      $this.cache = new LRUCache(10);
+      $this.emptyQueries = [];
+
+      $this.isEmpty = function(query) {
+        return $.inArray(normalize(query), this.emptyQueries) >= 0
       };
-    };
-  }(w.document);
-})(this);
 
-(function(w) {
-  "use strict";
-  var respond = {};
-  w.respond = respond;
-  respond.update = function() {};
-  var requestQueue = [], xmlHttp = function() {
-    var xmlhttpmethod = false;
-    try {
-      xmlhttpmethod = new w.XMLHttpRequest();
-    } catch (e) {
-      xmlhttpmethod = new w.ActiveXObject("Microsoft.XMLHTTP");
-    }
-    return function() {
-      return xmlhttpmethod;
-    };
-  }(), ajax = function(url, callback) {
-    var req = xmlHttp();
-    if (!req) {
-      return;
-    }
-    req.open("GET", url, true);
-    req.onreadystatechange = function() {
-      if (req.readyState !== 4 || req.status !== 200 && req.status !== 304) {
+      $this.addEmpty = function(query) {
+        $this.emptyQueries.unshift(normalize(query));
+      };
+
+      var styles = config.dropdownStylesFunction($this);
+      var $swiftypeWidget = $('<div class="' + config.widgetContainerClass + '" />');
+      var $listContainer = $('<div />').addClass(config.suggestionListClass).appendTo($swiftypeWidget).css(styles).hide();
+      $swiftypeWidget.appendTo(config.autocompleteContainingElement);
+      var $list = $('<' + config.suggestionListType + ' />').appendTo($listContainer);
+
+      $this.data('swiftype-list', $list);
+
+      $this.abortCurrent = function() {
+        if ($this.currentRequest) {
+          $this.currentRequest.abort();
+        }
+      };
+
+      $this.showList = function() {
+        if (handleFunctionParam(config.disableAutocomplete) === false) {
+          $listContainer.show();
+        }
+      };
+
+
+      $this.hideList = function(sync) {
+        if (sync) {
+          $listContainer.hide();
+        } else {
+          setTimeout(function() { $listContainer.hide(); }, 10);
+        }
+      };
+
+      $this.focused = function() {
+        return $this.is(':focus');
+      };
+
+      $this.submitting = function() {
+        $this.submitted = true;
+      };
+
+      $this.listResults = function() {
+        return $(config.resultListSelector, $list);
+      };
+
+      $this.activeResult = function() {
+        return $this.listResults().filter('.' + config.activeItemClass).first();
+      };
+
+      $this.prevResult = function() {
+        var list = $this.listResults(),
+          currentIdx = list.index($this.activeResult()),
+          nextIdx = currentIdx - 1,
+          next = list.eq(nextIdx);
+        $this.listResults().removeClass(config.activeItemClass);
+        if (nextIdx >= 0) {
+          next.addClass(config.activeItemClass);
+        }
+      };
+
+      $this.nextResult = function() {
+        var list = $this.listResults(),
+          currentIdx = list.index($this.activeResult()),
+          nextIdx = currentIdx + 1,
+          next = list.eq(nextIdx);
+        $this.listResults().removeClass(config.activeItemClass);
+        if (nextIdx >= 0) {
+          next.addClass(config.activeItemClass);
+        }
+      };
+
+      $this.selectedCallback = function(data) {
+        return function() {
+          var value = $this.val(),
+            callback = function() {
+              config.onComplete(data, value);
+            };
+          Swiftype.pingAutoSelection(config.engineKey, data['id'], value, callback);
+        };
+      };
+
+      $this.registerResult = function($element, data) {
+        $element.data('swiftype-item', data);
+        $element.click($this.selectedCallback(data)).mouseover(function () {
+          $this.listResults().removeClass(config.activeItemClass);
+          $element.addClass(config.activeItemClass);
+        });
+      };
+
+      $this.getContext = function() {
+        return {
+          config: config,
+          list: $list,
+          registerResult: $this.registerResult
+        };
+      };
+
+
+      var typingDelayPointer;
+      var suppressKey = false;
+      $this.lastValue = '';
+      $this.keyup(function (event) {
+        if (suppressKey) {
+          suppressKey = false;
+          return;
+        }
+
+        // ignore arrow keys, shift
+        if (((event.which > 36) && (event.which < 41)) || (event.which == 16)) return;
+
+        if (config.typingDelay > 0) {
+          clearTimeout(typingDelayPointer);
+          typingDelayPointer = setTimeout(function () {
+            processInput($this);
+          }, config.typingDelay);
+        } else {
+          processInput($this);
+        }
+      });
+
+      $this.styleDropdown = function() {
+        $listContainer.css(config.dropdownStylesFunction($this));
+      };
+
+      $(window).resize(function (event) {
+        $this.styleDropdown();
+      });
+
+      $this.keydown(function (event) {
+        $this.styleDropdown();
+        // enter = 13; up = 38; down = 40; esc = 27
+        var $active = $this.activeResult();
+        switch (event.which) {
+        case 13:
+          if (($active.length !== 0) && ($list.is(':visible'))) {
+            event.preventDefault();
+            $this.selectedCallback($active.data('swiftype-item'))();
+          } else if ($this.currentRequest) {
+            $this.submitting();
+          }
+          $this.hideList();
+          suppressKey = true;
+          break;
+        case 38:
+          event.preventDefault();
+          if ($active.length === 0) {
+            $this.listResults().last().addClass(config.activeItemClass);
+          } else {
+            $this.prevResult();
+          }
+          break;
+        case 40:
+          event.preventDefault();
+          if ($active.length === 0) {
+            $this.listResults().first().addClass(config.activeItemClass);
+          } else if ($active != $this.listResults().last()) {
+            $this.nextResult();
+          }
+          break;
+        case 27:
+          $this.hideList();
+          suppressKey = true;
+          break;
+        default:
+          $this.submitted = false;
+          break;
+        }
+      });
+
+      // opera wants keypress rather than keydown to prevent the form submit
+      $this.keypress(function (event) {
+        if ((event.which == 13) && ($this.activeResult().length > 0)) {
+          event.preventDefault();
+        }
+      });
+
+      // stupid hack to get around loss of focus on mousedown
+      var mouseDown = false;
+      var blurWait = false;
+      $(document).bind('mousedown.swiftype' + ++ident, function () {
+        mouseDown = true;
+      });
+      $(document).bind('mouseup.swiftype' + ident, function () {
+        mouseDown = false;
+        if (blurWait) {
+          blurWait = false;
+          $this.hideList();
+        }
+      });
+      $this.blur(function () {
+        if (mouseDown) {
+          blurWait = true;
+        } else {
+          $this.hideList();
+        }
+      });
+      $this.focus(function () {
+        setTimeout(function() { $this.select() }, 10);
+        if ($this.listResults().filter(':not(.' + config.noResultsClass + ')').length > 0) {
+          $this.showList();
+        }
+      });
+    });
+  };
+
+  var normalize = function(str) {
+    return $.trim(str).toLowerCase();
+  };
+
+  var callRemote = function ($this, term) {
+    $this.abortCurrent();
+
+    var params = {},
+      config = $this.data('swiftype-config-autocomplete');
+
+    params['q'] = term;
+    params['engine_key'] = config.engineKey;
+    params['search_fields'] = handleFunctionParam(config.searchFields);
+    params['fetch_fields'] = handleFunctionParam(config.fetchFields);
+    params['filters'] = handleFunctionParam(config.filters);
+    params['document_types'] = handleFunctionParam(config.documentTypes);
+    params['functional_boosts'] = handleFunctionParam(config.functionalBoosts);
+    params['sort_field'] = handleFunctionParam(config.sortField);
+    params['sort_direction'] = handleFunctionParam(config.sortDirection);
+    params['per_page'] = config.resultLimit;
+    params['highlight_fields'] = config.highlightFields;
+
+    var endpoint = Swiftype.root_url + '/api/v1/public/engines/suggest.json';
+    $this.currentRequest = $.ajax({
+      type: 'GET',
+      dataType: 'jsonp',
+      url: endpoint,
+      data: params
+    }).done(function(data) {
+      var norm = normalize(term);
+      if (data.record_count > 0) {
+        $this.cache.put(norm, data.records);
+      } else {
+        $this.addEmpty(norm);
+        $this.data('swiftype-list').empty();
+        $this.hideList();
         return;
       }
-      callback(req.responseText);
+      processData($this, data.records, term);
+    });
+  };
+
+  var getResults = function($this, term) {
+    var norm = normalize(term);
+    if ($this.isEmpty(norm)) {
+      $this.data('swiftype-list').empty();
+      $this.hideList();
+      return;
+    }
+    var cached = $this.cache.get(norm);
+    if (cached) {
+      processData($this, cached, term);
+    } else {
+      callRemote($this, term);
+    }
+  };
+
+  // private helpers
+  var processInput = function ($this) {
+      var term = $this.val();
+      if (term === $this.lastValue) {
+        return;
+      }
+      $this.lastValue = term;
+      if ($.trim(term) === '') {
+        $this.data('swiftype-list').empty()
+        $this.hideList();
+        return;
+      }
+      if (typeof $this.data('swiftype-config-autocomplete').engineKey !== 'undefined') {
+        getResults($this, term);
+      }
     };
-    if (req.readyState === 4) {
-      return;
-    }
-    req.send(null);
-  }, isUnsupportedMediaQuery = function(query) {
-    return query.replace(respond.regex.minmaxwh, "").match(respond.regex.other);
-  };
-  respond.ajax = ajax;
-  respond.queue = requestQueue;
-  respond.unsupportedmq = isUnsupportedMediaQuery;
-  respond.regex = {
-    media: /@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,
-    keyframes: /@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,
-    comments: /\/\*[^*]*\*+([^/][^*]*\*+)*\//gi,
-    urls: /(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,
-    findStyles: /@media *([^\{]+)\{([\S\s]+?)$/,
-    only: /(only\s+)?([a-zA-Z]+)\s?/,
-    minw: /\(\s*min\-width\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/,
-    maxw: /\(\s*max\-width\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/,
-    minmaxwh: /\(\s*m(in|ax)\-(height|width)\s*:\s*(\s*[0-9\.]+)(px|em)\s*\)/gi,
-    other: /\([^\)]*\)/g
-  };
-  respond.mediaQueriesSupported = w.matchMedia && w.matchMedia("only all") !== null && w.matchMedia("only all").matches;
-  if (respond.mediaQueriesSupported) {
-    return;
-  }
-  var doc = w.document, docElem = doc.documentElement, mediastyles = [], rules = [], appendedEls = [], parsedSheets = {}, resizeThrottle = 30, head = doc.getElementsByTagName("head")[0] || docElem, base = doc.getElementsByTagName("base")[0], links = head.getElementsByTagName("link"), lastCall, resizeDefer, eminpx, getEmValue = function() {
-    var ret, div = doc.createElement("div"), body = doc.body, originalHTMLFontSize = docElem.style.fontSize, originalBodyFontSize = body && body.style.fontSize, fakeUsed = false;
-    div.style.cssText = "position:absolute;font-size:1em;width:1em";
-    if (!body) {
-      body = fakeUsed = doc.createElement("body");
-      body.style.background = "none";
-    }
-    docElem.style.fontSize = "100%";
-    body.style.fontSize = "100%";
-    body.appendChild(div);
-    if (fakeUsed) {
-      docElem.insertBefore(body, docElem.firstChild);
-    }
-    ret = div.offsetWidth;
-    if (fakeUsed) {
-      docElem.removeChild(body);
-    } else {
-      body.removeChild(div);
-    }
-    docElem.style.fontSize = originalHTMLFontSize;
-    if (originalBodyFontSize) {
-      body.style.fontSize = originalBodyFontSize;
-    }
-    ret = eminpx = parseFloat(ret);
-    return ret;
-  }, applyMedia = function(fromResize) {
-    var name = "clientWidth", docElemProp = docElem[name], currWidth = doc.compatMode === "CSS1Compat" && docElemProp || doc.body[name] || docElemProp, styleBlocks = {}, lastLink = links[links.length - 1], now = new Date().getTime();
-    if (fromResize && lastCall && now - lastCall < resizeThrottle) {
-      w.clearTimeout(resizeDefer);
-      resizeDefer = w.setTimeout(applyMedia, resizeThrottle);
-      return;
-    } else {
-      lastCall = now;
-    }
-    for (var i in mediastyles) {
-      if (mediastyles.hasOwnProperty(i)) {
-        var thisstyle = mediastyles[i], min = thisstyle.minw, max = thisstyle.maxw, minnull = min === null, maxnull = max === null, em = "em";
-        if (!!min) {
-          min = parseFloat(min) * (min.indexOf(em) > -1 ? eminpx || getEmValue() : 1);
-        }
-        if (!!max) {
-          max = parseFloat(max) * (max.indexOf(em) > -1 ? eminpx || getEmValue() : 1);
-        }
-        if (!thisstyle.hasquery || (!minnull || !maxnull) && (minnull || currWidth >= min) && (maxnull || currWidth <= max)) {
-          if (!styleBlocks[thisstyle.media]) {
-            styleBlocks[thisstyle.media] = [];
-          }
-          styleBlocks[thisstyle.media].push(rules[thisstyle.rules]);
-        }
-      }
-    }
-    for (var j in appendedEls) {
-      if (appendedEls.hasOwnProperty(j)) {
-        if (appendedEls[j] && appendedEls[j].parentNode === head) {
-          head.removeChild(appendedEls[j]);
-        }
-      }
-    }
-    appendedEls.length = 0;
-    for (var k in styleBlocks) {
-      if (styleBlocks.hasOwnProperty(k)) {
-        var ss = doc.createElement("style"), css = styleBlocks[k].join("\n");
-        ss.type = "text/css";
-        ss.media = k;
-        head.insertBefore(ss, lastLink.nextSibling);
-        if (ss.styleSheet) {
-          ss.styleSheet.cssText = css;
+
+  var processData = function ($this, data, term) {
+      var $list = $this.data('swiftype-list'),
+        config = $this.data('swiftype-config-autocomplete');
+
+      $list.empty();
+      $this.hideList(true);
+
+      config.resultRenderFunction($this.getContext(), data);
+
+      var totalItems = $this.listResults().length;
+      if ((totalItems > 0 && $this.focused()) || (config.noResultsMessage !== undefined)) {
+        if ($this.submitted) {
+          $this.submitted = false;
         } else {
-          ss.appendChild(doc.createTextNode(css));
+          $this.showList();
         }
-        appendedEls.push(ss);
       }
-    }
-  }, translate = function(styles, href, media) {
-    var qs = styles.replace(respond.regex.comments, "").replace(respond.regex.keyframes, "").match(respond.regex.media), ql = qs && qs.length || 0;
-    href = href.substring(0, href.lastIndexOf("/"));
-    var repUrls = function(css) {
-      return css.replace(respond.regex.urls, "$1" + href + "$2$3");
-    }, useMedia = !ql && media;
-    if (href.length) {
-      href += "/";
-    }
-    if (useMedia) {
-      ql = 1;
-    }
-    for (var i = 0; i < ql; i++) {
-      var fullq, thisq, eachq, eql;
-      if (useMedia) {
-        fullq = media;
-        rules.push(repUrls(styles));
-      } else {
-        fullq = qs[i].match(respond.regex.findStyles) && RegExp.$1;
-        rules.push(RegExp.$2 && repUrls(RegExp.$2));
-      }
-      eachq = fullq.split(",");
-      eql = eachq.length;
-      for (var j = 0; j < eql; j++) {
-        thisq = eachq[j];
-        if (isUnsupportedMediaQuery(thisq)) {
-          continue;
-        }
-        mediastyles.push({
-          media: thisq.split("(")[0].match(respond.regex.only) && RegExp.$2 || "all",
-          rules: rules.length - 1,
-          hasquery: thisq.indexOf("(") > -1,
-          minw: thisq.match(respond.regex.minw) && parseFloat(RegExp.$1) + (RegExp.$2 || ""),
-          maxw: thisq.match(respond.regex.maxw) && parseFloat(RegExp.$1) + (RegExp.$2 || "")
-        });
-      }
-    }
-    applyMedia();
-  }, makeRequests = function() {
-    if (requestQueue.length) {
-      var thisRequest = requestQueue.shift();
-      ajax(thisRequest.href, function(styles) {
-        translate(styles, thisRequest.href, thisRequest.media);
-        parsedSheets[thisRequest.href] = true;
-        w.setTimeout(function() {
-          makeRequests();
-        }, 0);
+    };
+
+  var defaultResultRenderFunction = function(ctx, results) {
+    var $list = ctx.list,
+      config = ctx.config;
+
+    $.each(results, function(document_type, items) {
+      $.each(items, function(idx, item) {
+        ctx.registerResult($('<li>' + config.renderFunction(document_type, item) + '</li>').appendTo($list), item);
       });
-    }
-  }, ripCSS = function() {
-    for (var i = 0; i < links.length; i++) {
-      var sheet = links[i], href = sheet.href, media = sheet.media, isCSS = sheet.rel && sheet.rel.toLowerCase() === "stylesheet";
-      if (!!href && isCSS && !parsedSheets[href]) {
-        if (sheet.styleSheet && sheet.styleSheet.rawCssText) {
-          translate(sheet.styleSheet.rawCssText, href, media);
-          parsedSheets[href] = true;
-        } else {
-          if (!/^([a-zA-Z:]*\/\/)/.test(href) && !base || href.replace(RegExp.$1, "").split("/")[0] === w.location.host) {
-            if (href.substring(0, 2) === "//") {
-              href = w.location.protocol + href;
-            }
-            requestQueue.push({
-              href: href,
-              media: media
-            });
-          }
-        }
-      }
-    }
-    makeRequests();
+    });
   };
-  ripCSS();
-  respond.update = ripCSS;
-  respond.getEmValue = getEmValue;
-  function callMedia() {
-    applyMedia(true);
+
+  var defaultRenderFunction = function(document_type, item) {
+    return '<p class="title">' + Swiftype.htmlEscape(item['title']) + '</p>';
+  };
+
+  var defaultOnComplete = function(item, prefix) {
+    window.location = item['url'];
+  };
+
+  var defaultDropdownStylesFunction = function($this) {
+    var config = $this.data('swiftype-config-autocomplete');
+    var $attachEl = config.attachTo ? $(config.attachTo) : $this;
+    var offset = $attachEl.offset();
+    var styles = {
+      'position': 'absolute',
+      'z-index': 9999,
+      'top': offset.top + $attachEl.outerHeight() + 1,
+      'left': offset.left
+    };
+    if (config.setWidth) {
+      styles['width'] = $attachEl.outerWidth() - 2;
+    }
+    return styles;
+  };
+
+  var handleFunctionParam = function(field) {
+    if (field !== undefined) {
+      var evald = field;
+      if (typeof evald === 'function') {
+        evald = evald.call();
+      }
+      return evald;
+    }
+    return undefined;
+  };
+
+	// simple client-side LRU Cache, based on https://github.com/rsms/js-lru
+
+	function LRUCache(limit) {
+	  this.size = 0;
+	  this.limit = limit;
+	  this._keymap = {};
+	}
+
+  LRUCache.prototype.put = function (key, value) {
+    var entry = {
+      key: key,
+      value: value
+    };
+    this._keymap[key] = entry;
+    if (this.tail) {
+      this.tail.newer = entry;
+      entry.older = this.tail;
+    } else {
+      this.head = entry;
+    }
+    this.tail = entry;
+    if (this.size === this.limit) {
+      return this.shift();
+    } else {
+      this.size++;
+    }
+  };
+
+  LRUCache.prototype.shift = function () {
+    var entry = this.head;
+    if (entry) {
+      if (this.head.newer) {
+        this.head = this.head.newer;
+        this.head.older = undefined;
+      } else {
+        this.head = undefined;
+      }
+      entry.newer = entry.older = undefined;
+      delete this._keymap[entry.key];
+    }
+    return entry;
+  };
+
+  LRUCache.prototype.get = function (key, returnEntry) {
+    var entry = this._keymap[key];
+    if (entry === undefined) return;
+    if (entry === this.tail) {
+      return entry.value;
+    }
+    if (entry.newer) {
+      if (entry === this.head) this.head = entry.newer;
+      entry.newer.older = entry.older;
+    }
+    if (entry.older) entry.older.newer = entry.newer;
+    entry.newer = undefined;
+    entry.older = this.tail;
+    if (this.tail) this.tail.newer = entry;
+    this.tail = entry;
+    return returnEntry ? entry : entry.value;
+  };
+
+  LRUCache.prototype.remove = function (key) {
+    var entry = this._keymap[key];
+    if (!entry) return;
+    delete this._keymap[entry.key];
+    if (entry.newer && entry.older) {
+      entry.older.newer = entry.newer;
+      entry.newer.older = entry.older;
+    } else if (entry.newer) {
+      entry.newer.older = undefined;
+      this.head = entry.newer;
+    } else if (entry.older) {
+      entry.older.newer = undefined;
+      this.tail = entry.older;
+    } else {
+      this.head = this.tail = undefined;
+    }
+
+    this.size--;
+    return entry.value;
+  };
+
+  LRUCache.prototype.clear = function () {
+    this.head = this.tail = undefined;
+    this.size = 0;
+    this._keymap = {};
+  };
+
+  if (typeof Object.keys === 'function') {
+    LRUCache.prototype.keys = function () {
+      return Object.keys(this._keymap);
+    };
+  } else {
+    LRUCache.prototype.keys = function () {
+      var keys = [];
+      for (var k in this._keymap) keys.push(k);
+      return keys;
+    };
   }
-  if (w.addEventListener) {
-    w.addEventListener("resize", callMedia, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onresize", callMedia);
-  }
-})(this);
+
+  $.fn.swiftype.defaults = {
+    activeItemClass: 'active',
+    attachTo: undefined,
+    documentTypes: undefined,
+    filters: undefined,
+    engineKey: undefined,
+    searchFields: undefined,
+    functionalBoosts: undefined,
+    sortField: undefined,
+    sortDirection: undefined,
+    fetchFields: undefined,
+    highlightFields: undefined,
+    noResultsClass: 'noResults',
+    noResultsMessage: undefined,
+    onComplete: defaultOnComplete,
+    resultRenderFunction: defaultResultRenderFunction,
+    renderFunction: defaultRenderFunction,
+    dropdownStylesFunction: defaultDropdownStylesFunction,
+    resultLimit: undefined,
+    suggestionListType: 'ul',
+    suggestionListClass: 'autocomplete',
+    resultListSelector: 'li',
+    setWidth: true,
+    typingDelay: 80,
+    disableAutocomplete: false,
+    autocompleteContainingElement: 'body',
+    widgetContainerClass: 'swiftype-widget'
+  };
+
+})(jQuery);

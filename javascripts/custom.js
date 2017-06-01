@@ -39,3 +39,11 @@ jQuery(function() {
 		'monochrome' : true
 	});
 });
+
+// Swiftype Autofill in search box
+(function ($) {
+	$('#college-search-field').swiftype({ 
+		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
+		resultLimit: 5
+	});
+})(jQuery);

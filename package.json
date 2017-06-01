@@ -18,7 +18,8 @@
     "Firefox ESR"
   ],
   "napa": {
-    "noisy": "DanielRapp/Noisy"
+    "noisy": "DanielRapp/Noisy",
+    "swiftype-autocomplete-jquery": "swiftype/swiftype-autocomplete-jquery"
   },
   "devDependencies": {
     "Respond.js": "github:scottjehl/Respond",
