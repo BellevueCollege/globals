@@ -102,6 +102,12 @@ ul.nav.navbar-nav,
  */
 
 @media screen and (min-width: $screen-sm-min) {
+
+	// Force menu to display on larger screens. Added to counteract new mobile view
+	#main-nav-wrap {
+		display: block !important;
+	}
+	
 	#college-navbar.navbar .nav > li > a {
 		padding: .75em .25em;
 		font-size: 0.9em;
