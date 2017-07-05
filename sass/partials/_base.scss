@@ -35,9 +35,6 @@ $headings-font-weight:    400;
 @import "bootstrap";
 @import "bootstrap-accessibility-custom"; //partial version - not all is neccessary
 
-/* Load Bourbon mixin library */
-@import "bourbon";
-
 /* Load Custom Mixins */
 @import "mixins";
 
