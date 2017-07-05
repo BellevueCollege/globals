@@ -230,6 +230,304 @@ ul#college-top-actions a:hover {
 	}
 }
 
+/* ************************************** */
+/* New Mobile Header Format               */
+/* ************************************** */
+
+// Variable Setup
+$duration: .5s;
+$topbar-base: 10rem; //150px
+$topbar-height: $topbar-base * 0.9;
+$topbar-offset: $topbar-base * .1;
+$topbar-padding: $topbar-base * .025;
+
+
+// Target Mobile Breakpoints Only
+@media screen and (max-width: $screen-sm-min - 1) {
+
+	// Style Header
+	#top-wrap.branded.mobile-s17 {
+		background: none;
+
+		// Logo
+		#vertical-logo {
+			width: 35%;
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			top: -$topbar-offset;
+			margin-left: 3%;
+			position: relative;
+			float: left;
+			z-index: 10;
+
+			// Vertical center
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			
+			box-shadow: 0px 0px 2px $brand-primary-dark;
+			background: #fff;
+
+			// Logo Link
+			a {
+				margin: 1rem;
+				background-image: url("/g/3/i/bellevuecollege-vert.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+
+		// Top bar
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+
+			background-image: none;
+			background: $brand-primary;
+			box-shadow: none;
+			
+		}
+
+		// Top bar buttons
+		#mob-nav {
+			width: 62%;
+			padding: 0 3%;
+			margin-top: 1rem;
+			float: right;
+			.input-group {
+				margin-bottom: 0;
+			}
+		}
+
+		// Items within top bar
+		#tools-link,
+		#main-nav-link {
+			width: 48%;
+			margin-top: 0.5rem;
+			float: right;
+		}
+		#tools-link {
+			margin-right: 4%;
+			float: left;
+		}
+
+		// Menu Dropdown
+		#main-nav-wrap {
+			background: $brand-primary;
+			width: 100%;
+			display: none;
+
+			#nav-top {
+				display: none;
+			}
+
+			#college-navbar {
+				background: none;
+			}
+
+			#college-navbar.navbar .nav > li > a:focus,
+			#college-navbar.navbar .nav > li > a:hover {
+				background: $brand-primary-dark;
+			}
+
+			#college-navbar.navbar .nav > .active > a,
+			#college-navbar.navbar .nav > .active > a:hover,
+			#college-navbar.navbar .nav > .active > a:focus {
+				background: $brand-primary-dark;
+			}
+			
+			.navbar-nav > li > a {
+				padding-left: 35%;
+			}
+			.navbar-nav > li > a {
+				text-align: left;
+			}
+		}
+	}
+
+	// Style when menu is active
+	#top-wrap.branded.mobile-s17.action-menu {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			top: -$topbar-offset;
+			width: 25%;
+
+			a {
+				overflow: hidden;
+				margin: .25rem;
+				background-size: 155%;
+				background-position: top center;
+			}
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#mob-nav {
+			margin-top: .15rem;
+			width:72%;
+		}
+		#tools-link,
+		#bc-searchform {
+			display: none !important;
+		}
+
+		#main-nav-link {
+			width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+	}
+
+	// Style when tools menu is active
+	#top-wrap.branded.mobile-s17.action-tools {
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#tools-close-icon {
+			float: left;
+			color: #fff;
+			padding: 1.5em .1em 1em .25em;
+			font-size: 1.75em;
+			display: block;
+			width: 10%;
+		}
+		#mob-nav {
+			margin-top: .6666rem;
+			width:90%;
+		}
+
+		#main-nav-link,
+		#bc-searchform,
+		#tools-link {
+			display: none !important;
+		}
+
+		#college-actions-column {
+			display: block !important;
+		}
+
+		#college-actions-column { 
+			width: 90%;
+			float: right;
+			margin-top: .8em;
+			a {
+				@include bs-btn;
+				@include button-variant(#333, #fff, #ccc);
+				display: block;
+				width: 100%;
+				text-decoration: none;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row wrap;
+				justify-content: space-around;
+			}
+
+			li {
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+
+				list-style: none;
+				margin: 0 auto;
+				padding: .2em;
+				flex: 1 1 auto;
+
+				float: left; //fallback for non-flexbox browsers
+
+
+			}
+		}
+
+	}
+
+	// Style when search is active
+	#top-wrap.branded.mobile-s17.action-search {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#nav-close-icon {
+			float: left;
+			color: #fff;
+			padding: .52em .1em .25em .25em;
+			font-size: 1.75em;
+			display: block;
+			width: 10%;
+		}
+		#mob-nav {
+			margin-top: .6666rem;
+			width:90%;
+		}
+		#tools-link,
+		#main-nav-link {
+			@include sr-only;
+		}
+
+		#main-nav-link {
+			//width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+	}
+}
+
+// Menu icon
+#top-wrap.branded.mobile-s17 .glyphicon.menu-icon {
+	@extend .glyphicon-menu-hamburger;
+}
+#top-wrap.branded.mobile-s17.action-menu .glyphicon.menu-icon {
+	@extend .glyphicon-remove;
+}
+
+// Close links (hidden unless needed)
+#nav-close-icon,
+#tools-close-icon,
+#college-more-actions {
+	display: none;
+}
 
 
 /* ************************************** */
