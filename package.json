@@ -18,11 +18,12 @@
     "Firefox ESR"
   ],
   "napa": {
-    "noisy": "DanielRapp/Noisy"
+    "noisy": "DanielRapp/Noisy",
+    "swiftype-autocomplete-jquery": "swiftype/swiftype-autocomplete-jquery"
   },
   "devDependencies": {
     "Respond.js": "github:scottjehl/Respond",
-    "bootstrap-accessibility-plugin": "~1.0.2",
+    "bootstrap-accessibility-plugin": "paypal/bootstrap-accessibility-plugin#master",
     "bootstrap-sass": "~3.3.7",
     "bourbon": "~4.3.3",
     "gulp": "^3.9.1",

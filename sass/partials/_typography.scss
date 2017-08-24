@@ -50,6 +50,18 @@ h1:first-child {
 	margin-top: 0;
 }
 
+/* Remove heading margin within well/alert
+ * First children don't need margin; it adds a bunch of space which looks odd */
+.well, .alert {
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child {
+		margin-top: 0;
+	}
+}
+
 
 blockquote {
 	font-family:  $headings-font-family;

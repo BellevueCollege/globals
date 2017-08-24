@@ -144,9 +144,10 @@ gulp.task('modernizr-dev', function() {
 gulp.task('globals-footer-scripts-dev', function() {
   return gulp
     .src([
+      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
       config.npmPath + '/noisy/jquery/jquery.noisy.js',
-      config.jsPath + '/noisy-calls.js',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'
+      config.npmPath + '/swiftype-autocomplete-jquery/jquery.swiftype.autocomplete.js',
+      config.jsPath + '/custom.js'
     ])
     .pipe(concat('g.js'))
     .pipe(gulp.dest(config.verPath + '/j'));
@@ -188,9 +189,10 @@ gulp.task('respondjs', function() {
 gulp.task('globals-footer-scripts', function() {
   return gulp
     .src([
+      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
       config.npmPath + '/noisy/jquery/jquery.noisy.js',
-      config.jsPath + '/noisy-calls.js',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js'
+      config.npmPath + '/swiftype-autocomplete-jquery/jquery.swiftype.autocomplete.js',
+      config.jsPath + '/custom.js'
     ])
     .pipe(concat('g.js'))
     .pipe(uglify(uglifyOptions))
@@ -204,7 +206,7 @@ gulp.task('header-scripts-full', ['modernizr'], function() {
   return gulp
     .src([
       config.verPath + '/j/ghead.js',
-      config.npmPath + '/Respond.js/dest/respond.src.js'
+      config.npmPath + '/swiftype-autocomplete-jquery/jquery.swiftype.autocomplete.js',
     ])
     .pipe(concat('ghead-full.js'))
     .pipe(gulp.dest(config.verPath + '/j'));
@@ -217,7 +219,7 @@ gulp.task('footer-scripts-full', function() {
       config.npmPath + '/bootstrap-sass/assets/javascripts/bootstrap.js',
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
       config.npmPath + '/noisy/jquery/jquery.noisy.js',
-      config.jsPath + '/noisy-calls.js'
+      config.jsPath + '/custom.js'
     ])
     .pipe(concat('gfoot-full.js'))
     .pipe(gulp.dest(config.verPath + '/j'));
