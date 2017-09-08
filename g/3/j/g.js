@@ -1458,7 +1458,7 @@ jQuery(function() {
 	// Mobile Nav Toggles
 
 	// Make sure new class is in place
-	if ($("#top-wrap").hasClass("mobile-s17")) {
+	if ($("#top-wrap").hasClass("mobile-s17") && $("#top-wrap").hasClass("branded")) {
 
 		// Open tools menu
 		$("#tools-link").find('a').click(function (event) {
