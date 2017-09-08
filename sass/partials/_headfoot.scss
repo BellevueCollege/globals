@@ -545,20 +545,27 @@ $topbar-padding: $topbar-base * .025;
 }
 #site-header .social-media {
 	margin-top: 1.3333em;
-}
-#site-header .social-media li {
-    display: inline-block;
-    margin-right: .66666667em;
-    padding: 0;
-    margin-left: 0;
-}
-#site-header .social-media a {
-	float: none;
-	display: inline-block;
-}
-#site-header .social-media a.more {
-	font-size: .9em;
-	padding-top: .3333333em;
+	ul {
+		padding-left: 0;
+		padding-right: 0;
+		//display: flex;
+	}
+	li {
+		display: inline-block;
+		margin-right: .66666667em;
+		padding: 0;
+		margin-left: 0;
+	}
+
+	a {
+		float: none;
+		display: inline-block;
+		//margin: 0;
+	}
+	a.more {
+		font-size: .9em;
+		padding-top: .3333333em;
+	}
 }
 
 .branded .form-control {
