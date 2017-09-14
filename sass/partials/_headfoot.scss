@@ -3,13 +3,42 @@
 /*	head      								*/
 /* ************************************** */
 
+/* Social Media */
+.social-media ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	li {
+		flex: 0 0 auto;
+	}
+
+	a {
+		padding: 0 .25em;
+		display: inline-block;
+	}
+
+	li:first-child {
+		a {
+			padding-left: 0;
+		}
+	}
+	li:last-child {
+		a {
+			padding-right: 0;
+		}
+	}
+}
+
+
+
 /* Lite Elements */
 #top-wrap.lite {
 	background-color: $brand-primary;
 	box-shadow: 0 0px 10px #999;
-}
-.header-search{
-	margin-top: 0.66667em;
 }
 .header-search fieldset {
 	white-space:nowrap;
@@ -535,80 +564,13 @@ $topbar-padding: $topbar-base * .025;
 	background-color: transparent;
 	padding: 1.3333em 0 0 0;
 }
-#site-header .social-media {
-	margin-top: 1.3333em;
-	ul {
-		padding-left: 0;
-		padding-right: 0;
-		//display: flex;
-	}
-	li {
-		display: inline-block;
-		margin-right: .66666667em;
-		padding: 0;
-		margin-left: 0;
-	}
-
-	a {
-		float: none;
-		display: inline-block;
-		//margin: 0;
-	}
-	a.more {
-		font-size: .9em;
-		padding-top: .3333333em;
-	}
-}
 
 .branded .form-control {
 	height: auto;
 }
 
 
-@media screen and (min-width: $screen-sm-min) {
-	#site-header {
-		padding-top: 1.666667em;
-		padding-bottom: 2em;
-	}
-	#site-header .header-search {
-		margin: 0;
-	}
-
-	#site-header .social-media li {
-		margin-right: 0;
-	}
-	#site-header .form-search {
-		margin-top: 1em;
-		margin-bottom: 1.3333em;
-	}
-
-	.globals-branded #site-header {
-		padding: 0;
-		padding-top: 1em;
-	}
-}
-
-/*
-@media screen and (min-width: 46em) {
-	#site-header .header-search {
-		margin-top: 1em;
-	}
-}
-*/
-
-@media screen and (min-width: 50em) {
-#site-header .social-media {
-/*    margin-top: 0; */
-}
-#site-header .header-search {
-		margin-top: 0em;
-	}
-}
 @media screen and (min-width: 62em) {
-	#site-header .social-media {
-			margin-top: 0;
-			text-align: right;
-	}
 
 	ul#college-top-actions a.top-actions {
 		padding-left: .7em;
@@ -640,7 +602,6 @@ h1.site-title a {
 p.site-description {
 	line-height: 1.5em;
 	margin: 0;
-	margin-top: .5em;
 }
 
 
@@ -665,73 +626,69 @@ p.site-description {
 	background-color: #E1E1E1;
     border-bottom: 1px solid #999999;
     border-top: 1px solid #999999;
-}
-#bigfoot .inner {
+	
+	.inner {
 	@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
 	padding-top: 1.3333333em;
 	padding-bottom: 1.3333333em;
 	background-color: #E5E5E5;
 }
-
-.ie7 #bigfoot .inner,
-.ie8 #bigfoot .inner {
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-}
-
-#bigfoot ul {
+	ul {
 	margin: 0;
 	padding: 0;
 	list-style: none
 }
 
-#bigfoot li {
+	li,
+	p {
 	margin: 0;
 	padding: 0;
 	font-size: 0.9em;
 	color: #494949;
 }
 
-#bigfoot h3 {
+	h3 {
 	font-size: .9em;
 	font-weight: bold;
 	color: #666;
 	font-family: $font-family-base;
 	margin: 0;
 }
-#bigfoot h3 ~ ul {
+	h3 ~ ul {
 	margin-bottom: $std-margin;
 }
+	.social-media {
+		max-width: 16em;
+		h3 {
+			margin-top: $std-margin;
+		}
+		ul {
+			margin-bottom: 0;
+			margin-top: .25em;
+		}
 
-#bigfoot a {
+		p {
+			margin-bottom: $std-margin;
+		}
+	}
+	a {
 	text-decoration: underline;
 	white-space: nowrap;
 	line-height:1em;
 	color: #003D79;
 }
-#bigfoot a:hover,
-#bigfoot a:active {
+	a:hover,
+	a:active {
 	color: #000;
 }
 
-.social-media {
-	margin-top: 1.3333em;
-}
-.social-media li{
-	display: inline;
-}
-.social-media a {
-	display: block;
-	float: left;
-	margin-right: .66666667em;
-}
-.social-media a.more {
-	font-size: .9em;
-	padding-top: .3333333em;}
 #bellevueaddress {}
 #bellevueaddress .tel,
 #bellevueaddress .adr {
 	font-size: .9em;
+		line-height: 1.4em;
+		margin-top:.1em;
+	}
 }
 
 #legalbar {
