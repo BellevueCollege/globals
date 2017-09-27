@@ -40,7 +40,7 @@ abbr[data-original-title] {
 }
 
 /* Media query for phones to stop interface wiggling */
-@media screen and (max-width: $screen-xs-max) {
+@media screen and (max-width: $screen-sm-max) { //changed from screen-xs-max  
 	.row {
 		margin-right: 0; //remove right margin
 	}
