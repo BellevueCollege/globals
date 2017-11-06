@@ -60,12 +60,12 @@ h2, h3 {
 }
 
 /*	Hide all headings	*/
-section#top-wrap *, div#main-nav-wrap *, footer, div.navbar, ul#legalbar, ul#skiplinks, #myCarousel, .form-search{
+header#top-wrap *, div#main-nav-wrap *, footer, div.navbar, ul#legalbar, ul#skiplinks, #myCarousel, .form-search{
 	display:none;
 }
 
 /*	Replace logo with 'Bellevue College' text */
-section#top-wrap:after{
+header#top-wrap:after{
 	content:"Bellevue College";
 	font-size:2em;
 	position:static;
