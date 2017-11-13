@@ -3279,19 +3279,19 @@ jQuery(function() {
 		// Open tools menu
 		$("#tools-link").find('a').click(function (event) {
 			event.preventDefault();
-			$("section#top-wrap").toggleClass("action-tools");
+			$("header#top-wrap").toggleClass("action-tools");
 			$("#tools-close-icon").focus();
 		});
 
 		// Close tools menu
 		$("#tools-close-icon").click(function (event) {
 			event.preventDefault();
-			$("section#top-wrap").toggleClass("action-tools");
+			$("header#top-wrap").toggleClass("action-tools");
 			$("#tools-link a").focus();
 		});
 
 		// Move menu to header
-		$("#main-nav-wrap").insertAfter($("section#top-wrap").find(".container") );
+		$("#main-nav-wrap").insertAfter($("header#top-wrap").find(".container") );
 
 		// Expand menu
 		$("#main-nav-link").find('a').click( function( event ) {
@@ -3302,15 +3302,15 @@ jQuery(function() {
 				$(this).attr('aria-expanded', 'false');
 			}
 			
-			$("section#top-wrap").toggleClass("action-menu").
+			$("header#top-wrap").toggleClass("action-menu").
 				find("#main-nav-wrap").slideToggle().attr('aria-role', 'region');
 		});
 
 		// Transform when search has focus
 		$("#bc-searchform").focusin( function ( event ) {
-			$("section#top-wrap").addClass("action-search");
+			$("header#top-wrap").addClass("action-search");
 		}).focusout( function ( event ) {
-			$("section#top-wrap").removeClass("action-search");
+			$("header#top-wrap").removeClass("action-search");
 		});
 	}
 
