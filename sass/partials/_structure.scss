@@ -104,9 +104,14 @@
 
 .globals-lite #main {
 	box-shadow: 0 5px 10px #888888;
-	margin-top: 2.33333em;
+	margin-top: 0;
 	background-color: white;
 }
 
+@media screen and (min-width: $screen-sm-min) {
+	.globals-lite #main {
+		margin-top: 15px;
+	}
+}
 
 

@@ -35,8 +35,8 @@ $headings-font-weight:    400;
 @import "bootstrap";
 @import "bootstrap-accessibility-custom"; //partial version - not all is neccessary
 
-/* Load Bourbon mixin library */
-@import "bourbon";
+/* Load Custom Mixins */
+@import "mixins";
 
 /* Variables */
 
@@ -45,3 +45,4 @@ $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
 
+$brand-primary-dark: #162F57;

@@ -3,13 +3,42 @@
 /*	head      								*/
 /* ************************************** */
 
+/* Social Media */
+.social-media ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	li {
+		flex: 0 0 auto;
+	}
+
+	a {
+		padding: 0 .25em;
+		display: inline-block;
+	}
+
+	li:first-child {
+		a {
+			padding-left: 0;
+		}
+	}
+	li:last-child {
+		a {
+			padding-right: 0;
+		}
+	}
+}
+
+
+
 /* Lite Elements */
 #top-wrap.lite {
 	background-color: $brand-primary;
 	box-shadow: 0 0px 10px #999;
-}
-.header-search{
-	margin-top: 0.66667em;
 }
 .header-search fieldset {
 	white-space:nowrap;
@@ -31,6 +60,72 @@
 	background: url(../i/homepage.png) no-repeat 100% 0.5em;
 }
 
+.globals-lite {
+	// Lite Header
+	#top {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	#site-branding,
+	#header-actions-container {
+		padding: 1em;
+		flex: 1 1 auto;
+	}
+
+	.social-media {
+		margin-bottom: 1em;
+
+		ul {
+			justify-content: flex-end;
+		}
+		a {
+			padding: 0 .75em;
+		}
+	}
+
+}
+@media screen and (min-width: $screen-sm-min) {
+	.globals-lite {
+		#top {
+			flex-direction: row;
+			align-items: center;
+		}
+		#site-branding {
+			width: 66.666666%;
+			margin-bottom: 0;
+			padding-right: .5em;
+		}
+
+		#header-actions-container {
+			width: 33.333333%;
+			padding-left: .5em;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md-min) {
+	.globals-lite {
+		#site-branding {
+			padding-right: .5em;
+			padding-left: 2em;
+		}
+
+		#header-actions-container {
+			padding-right: 2em;
+			padding-left: .5em;
+		}
+	}
+}
+
+
+
+// Search box/etc
+#header-actions-container {
+	display: flex;
+	flex-direction: column;
+}
+
 #mobile-nav  {
 	padding: 0;
 	list-style-type: none;
@@ -43,16 +138,8 @@
 		margin-bottom: 0.2em;
 		width: 310px;
 	}
-	#smallhead {
-		padding:  0 1em;
-	}
 }
 
-@media screen and (min-width: 55em) {
-	#smallhead {
-		padding:  0 2em;
-	}
-}
 @media screen and (min-width: 80em) {
 	#smallhead {
 		padding:  0;
@@ -230,6 +317,363 @@ ul#college-top-actions a:hover {
 	}
 }
 
+/* ************************************** */
+/* New Mobile Header Format               */
+/* ************************************** */
+
+// Variable Setup
+$duration: .5s;
+$topbar-base: 10rem; //150px
+$topbar-height: $topbar-base * 0.9;
+$topbar-offset: $topbar-base * .1;
+$topbar-padding: $topbar-base * .025;
+
+
+// Target Mobile Breakpoints Only
+@media screen and (max-width: $screen-sm-min - 1) {
+
+	// Style Header
+	#top-wrap.branded.mobile-s17 {
+		background: none;
+
+		// Logo
+		#vertical-logo {
+			width: 35%;
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			top: -$topbar-offset;
+			margin-left: 3%;
+			position: relative;
+			float: left;
+			z-index: 10;
+
+			// Vertical center
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			
+			box-shadow: 0px 0px 2px $brand-primary-dark;
+			background: #fff;
+
+			// Logo Link
+			a {
+				margin: 1rem;
+				background-image: url("/g/3/i/bellevuecollege-vert.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+
+		// Top bar
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+
+			background-image: none;
+			background: $brand-primary;
+			box-shadow: none;
+			
+		}
+		// Top bar buttons
+		#mob-nav {
+			width: 62%;
+			padding: 0 3%;
+			margin-top: 1rem;
+			float: right;
+			.input-group {
+				margin-bottom: 0;
+			}
+		}
+
+		// Items within top bar
+		#tools-link,
+		#main-nav-link {
+			width: 48%;
+			margin-top: 0.5rem;
+			float: right;
+		}
+		#tools-link {
+			margin-right: 4%;
+			float: left;
+		}
+	}
+	// Lite only styles
+	#top.mobile-s17 {
+		#header-actions-container {
+			flex-direction: column-reverse;
+
+			background: $brand-primary;
+			padding-top: .5em;
+			padding-bottom: .5em;
+
+			.social-media,
+			#header-actions-bar {
+			}
+		}
+		.social-media {
+			display: none;
+			margin-bottom: 0;
+
+			ul {
+				justify-content: center;
+
+				li {
+					background: #fff;
+					//border-radius: 4px;
+					margin-top: 1em; 
+					margin-bottom: 0;
+					padding:.5em;
+				}
+
+				li:first-child {
+					border-radius: 4px 0 0px 4px;
+					padding-left: 1em;
+				}
+				li:last-child {
+					border-radius: 0 4px 4px 0;
+					padding-right: 1em;
+				}
+			}
+		}
+
+	}
+
+	// Branded / Lite
+	#top-wrap.branded.mobile-s17,
+	#top.mobile-s17 {
+		padding-bottom: 0;
+
+		// Menu Dropdown
+		#main-nav-wrap {
+			background: $brand-primary;
+			width: 100%;
+			display: none;
+
+			#nav-top {
+				display: none;
+			}
+
+			#college-navbar {
+				background: none;
+			}
+
+			#college-navbar.navbar .nav > li > a:focus,
+			#college-navbar.navbar .nav > li > a:hover {
+				background: $brand-primary-dark;
+			}
+
+			#college-navbar.navbar .nav > .active > a,
+			#college-navbar.navbar .nav > .active > a:hover,
+			#college-navbar.navbar .nav > .active > a:focus {
+				background: $brand-primary-dark;
+			}
+			
+			.navbar-nav > li > a {
+				padding-left: 35%;
+			}
+			.navbar-nav > li > a {
+				text-align: left;
+			}
+		}
+	}
+
+	// Style when menu is active (branded and lite)
+	#top-wrap.branded.mobile-s17.action-menu,
+	#top.mobile-s17.action-menu {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			top: -$topbar-offset;
+			width: 25%;
+
+			a {
+				overflow: hidden;
+				margin: .25rem;
+				background-size: 155%;
+				background-position: top center;
+			}
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#mob-nav {
+			margin-top: .15rem;
+			width:72%;
+		}
+		#tools-link,
+		#bc-searchform,
+		#bc-search-container-lite {
+			display: none !important;
+		}
+
+		#main-nav-link {
+			width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+		.social-media {
+			display: block;
+		}
+	}
+
+	// Style when tools menu is active
+	#top-wrap.branded.mobile-s17.action-tools {
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#tools-close-icon {
+			float: left;
+			color: #fff;
+			padding: 1.5em .1em 1em .25em;
+			font-size: 1.75em;
+			display: block;
+			width: 10%;
+		}
+		#mob-nav {
+			margin-top: .6666rem;
+			width:90%;
+		}
+
+		#main-nav-link,
+		#bc-searchform,
+		#tools-link {
+			display: none !important;
+		}
+
+		#college-actions-column {
+			display: block !important;
+		}
+
+		#college-actions-column { 
+			width: 90%;
+			float: right;
+			margin-top: .8em;
+			a {
+				@include bs-btn;
+				@include button-variant(#333, #fff, #ccc);
+				display: block;
+				width: 100%;
+				text-decoration: none;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row wrap;
+				justify-content: space-around;
+			}
+
+			li {
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+
+				list-style: none;
+				margin: 0 auto;
+				padding: .2em;
+				flex: 1 1 auto;
+
+				float: left; //fallback for non-flexbox browsers
+
+
+			}
+		}
+
+	}
+
+	// Style when search is active
+	#top-wrap.branded.mobile-s17.action-search,
+	#top.mobile-s17.action-search {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		.container.logobar {
+			height: $topbar-height - ( $topbar-offset * 2 );
+			top: $topbar-offset + $topbar-padding;
+			width: 100%;
+			position: relative;
+			
+			box-shadow: none;
+		}
+		#nav-close-icon {
+			float: left;
+			color: #fff;
+			padding: .52em .1em .25em .25em;
+			font-size: 1.75em;
+			display: block;
+			width: 10%;
+		}
+		#nav-close-icon.lite {
+			padding: .15em .1em 0em 0em;
+		}
+		#mob-nav {
+			margin-top: .6666rem;
+			width:90%;
+		}
+		#tools-link,
+		#main-nav-link {
+			@include sr-only;
+		}
+
+		#main-nav-link {
+			//width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+		#bc-search-container-lite {
+			width: 100%;
+		}
+	}
+}
+
+// Menu icon
+#top-wrap.branded.mobile-s17 .glyphicon.menu-icon,
+#top.mobile-s17 #header-actions-container .glyphicon.menu-icon {
+	@extend .glyphicon-menu-hamburger;
+}
+#top-wrap.branded.mobile-s17.action-menu .glyphicon.menu-icon,
+#top.mobile-s17.action-menu #header-actions-container .glyphicon.menu-icon {
+	@extend .glyphicon-remove;
+}
+
+// Close links (hidden unless needed)
+#nav-close-icon,
+#tools-close-icon,
+#college-more-actions {
+	display: none;
+}
 
 
 /* ************************************** */
@@ -245,73 +689,13 @@ ul#college-top-actions a:hover {
 	background-color: transparent;
 	padding: 1.3333em 0 0 0;
 }
-#site-header .social-media {
-	margin-top: 1.3333em;
-}
-#site-header .social-media li {
-    display: inline-block;
-    margin-right: .66666667em;
-    padding: 0;
-    margin-left: 0;
-}
-#site-header .social-media a {
-	float: none;
-	display: inline-block;
-}
-#site-header .social-media a.more {
-	font-size: .9em;
-	padding-top: .3333333em;
-}
 
 .branded .form-control {
 	height: auto;
 }
 
 
-@media screen and (min-width: $screen-sm-min) {
-	#site-header {
-		padding-top: 1.666667em;
-		padding-bottom: 2em;
-	}
-	#site-header .header-search {
-		margin: 0;
-	}
-
-	#site-header .social-media li {
-		margin-right: 0;
-	}
-	#site-header .form-search {
-		margin-top: 1em;
-		margin-bottom: 1.3333em;
-	}
-
-	.globals-branded #site-header {
-		padding: 0;
-		padding-top: 1em;
-	}
-}
-
-/*
-@media screen and (min-width: 46em) {
-	#site-header .header-search {
-		margin-top: 1em;
-	}
-}
-*/
-
-@media screen and (min-width: 50em) {
-#site-header .social-media {
-/*    margin-top: 0; */
-}
-#site-header .header-search {
-		margin-top: 0em;
-	}
-}
 @media screen and (min-width: 62em) {
-	#site-header .social-media {
-			margin-top: 0;
-			text-align: right;
-	}
 
 	ul#college-top-actions a.top-actions {
 		padding-left: .7em;
@@ -343,7 +727,7 @@ h1.site-title a {
 p.site-description {
 	line-height: 1.5em;
 	margin: 0;
-	margin-top: .5em;
+	//margin-top: .5em;
 }
 
 
@@ -366,75 +750,71 @@ p.site-description {
 
 #bigfoot {
 	background-color: #E1E1E1;
-    border-bottom: 1px solid #999999;
-    border-top: 1px solid #999999;
-}
-#bigfoot .inner {
-	@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
-	padding-top: 1.3333333em;
-	padding-bottom: 1.3333333em;
-	background-color: #E5E5E5;
-}
+	border-bottom: 1px solid #999999;
+	border-top: 1px solid #999999;
+	
+	.inner {
+		@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
+		padding-top: 1.3333333em;
+		padding-bottom: 1.3333333em;
+		background-color: #E5E5E5;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none
+	}
 
-.ie7 #bigfoot .inner,
-.ie8 #bigfoot .inner {
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-}
+	li,
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 0.9em;
+		color: #494949;
+	}
 
-#bigfoot ul {
-	margin: 0;
-	padding: 0;
-	list-style: none
-}
+	h3 {
+		font-size: .9em;
+		font-weight: bold;
+		color: #666;
+		font-family: $font-family-base;
+		margin: 0;
+	}
+	h3 ~ ul {
+		margin-bottom: $std-margin;
+	}
+	.social-media {
+		max-width: 16em;
+		h3 {
+			margin-top: $std-margin;
+		}
+		ul {
+			margin-bottom: 0;
+			margin-top: .25em;
+		}
 
-#bigfoot li {
-	margin: 0;
-	padding: 0;
-	font-size: 0.9em;
-	color: #494949;
-}
+		p {
+			margin-bottom: $std-margin;
+		}
+	}
+	a {
+		text-decoration: underline;
+		white-space: nowrap;
+		line-height:1em;
+		color: #003D79;
+	}
+	a:hover,
+	a:active {
+		color: #000;
+	}
 
-#bigfoot h3 {
-	font-size: .9em;
-	font-weight: bold;
-	color: #666;
-	font-family: $font-family-base;
-	margin: 0;
-}
-#bigfoot h3 ~ ul {
-	margin-bottom: $std-margin;
-}
-
-#bigfoot a {
-	text-decoration: underline;
-	white-space: nowrap;
-	line-height:1em;
-	color: #003D79;
-}
-#bigfoot a:hover,
-#bigfoot a:active {
-	color: #000;
-}
-
-.social-media {
-	margin-top: 1.3333em;
-}
-.social-media li{
-	display: inline;
-}
-.social-media a {
-	display: block;
-	float: left;
-	margin-right: .66666667em;
-}
-.social-media a.more {
-	font-size: .9em;
-	padding-top: .3333333em;}
-#bellevueaddress {}
-#bellevueaddress .tel,
-#bellevueaddress .adr {
-	font-size: .9em;
+	#bellevueaddress {}
+	#bellevueaddress .tel,
+	#bellevueaddress .adr {
+		font-size: .9em;
+		line-height: 1.4em;
+		margin-top:.1em;
+	}
 }
 
 #legalbar {

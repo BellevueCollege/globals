@@ -1,6 +1,17 @@
 /* ************************************** */
 /* Carousel 																*/
 /* ************************************** */
+@media screen and (min-width: $screen-sm-min) {
+	#carousel-featured-in-content {
+		margin:  0	1em;
+	}
+}
+@media screen and (min-width: $screen-md-min) {
+	#carousel-featured-in-content {
+		margin:  0	2em;
+	}
+}
+
 .carousel-control {
 	font-family: $font-family-base;
 	position: absolute;
