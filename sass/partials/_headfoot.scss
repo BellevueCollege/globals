@@ -487,7 +487,7 @@ $topbar-vert-padding: 1em;
 			}
 			
 			.navbar-nav > li > a {
-				padding-left: 35%;
+				padding-left: calc(25% + .5rem);
 			}
 			.navbar-nav > li > a {
 				text-align: left;
@@ -524,7 +524,11 @@ $topbar-vert-padding: 1em;
 			z-index: 20;
 			position: relative;
 
-			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+			background: linear-gradient(#fff $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+
+			position: sticky;
+			top: 0;
+
 		}
 		#mob-nav {
 			margin-top: .3rem + $topbar-padding;
