@@ -369,6 +369,7 @@ $topbar-vert-padding: 1em;
 			margin-top: $topbar-padding;
 			width: 100%;
 			position: relative;
+			z-index: 10;
 
 			background-image: none;
 			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
@@ -521,8 +522,7 @@ $topbar-vert-padding: 1em;
 			height: $topbar-height;
 			margin-top: $topbar-padding;
 			width: 100%;
-			z-index: 20;
-			position: relative;
+			z-index: 10;
 
 			background: linear-gradient(#fff $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
 
