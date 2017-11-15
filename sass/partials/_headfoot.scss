@@ -327,25 +327,24 @@ $topbar-base: 10rem; //150px
 $topbar-height: $topbar-base * 0.9;
 $topbar-offset: $topbar-base * .1;
 $topbar-padding: $topbar-base * .025;
+$topbar-vert-padding: 1em;
 
 
 // Target Mobile Breakpoints Only
 @media screen and (max-width: $screen-sm-min - 1) {
 
-	// Style Header
+	// Style Header -- Branded only
 	#top-wrap.branded.mobile-s17 {
 		background: none;
 
 		// Logo
 		#vertical-logo {
-			width: 35%;
+			width: calc(40% - #{$topbar-vert-padding * 2});
 			max-width: $topbar-base;
 			min-height: $topbar-height;
-			top: -$topbar-offset;
-			margin-left: 3%;
-			position: relative;
 			float: left;
 			z-index: 10;
+			margin-left: $topbar-vert-padding * 2; // Not sure why this needs to be doubled.
 
 			// Vertical center
 			display: flex !important;
@@ -366,21 +365,25 @@ $topbar-padding: $topbar-base * .025;
 
 		// Top bar
 		.container.logobar {
-			height: $topbar-height - ( $topbar-offset * 2 );
-			top: $topbar-offset + $topbar-padding;
+			height: $topbar-height;
+			margin-top: $topbar-padding;
 			width: 100%;
 			position: relative;
 
 			background-image: none;
-			background: $brand-primary;
+			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
 			box-shadow: none;
+
+			& > .row.content-padding {
+				padding: 0;
+			}
 			
 		}
 		// Top bar buttons
 		#mob-nav {
-			width: 62%;
-			padding: 0 3%;
-			margin-top: 1rem;
+			width: calc(60% - #{$topbar-vert-padding * 2});
+			padding: 0;
+			margin: (1rem + $topbar-offset) 1em 0 0;
 			float: right;
 			.input-group {
 				margin-bottom: 0;
@@ -398,7 +401,14 @@ $topbar-padding: $topbar-base * .025;
 			margin-right: 4%;
 			float: left;
 		}
+
+		#main-nav-wrap {
+			top: -$topbar-offset;
+			padding-top: $topbar-offset;
+		}
 	}
+	
+
 	// Lite only styles
 	#top.mobile-s17 {
 		#header-actions-container {
@@ -451,23 +461,29 @@ $topbar-padding: $topbar-base * .025;
 			width: 100%;
 			display: none;
 
+			position: relative;
+
 			#nav-top {
 				display: none;
 			}
 
 			#college-navbar {
 				background: none;
-			}
 
-			#college-navbar.navbar .nav > li > a:focus,
-			#college-navbar.navbar .nav > li > a:hover {
-				background: $brand-primary-dark;
-			}
+				&.navbar .nav {
+					margin: 0;
 
-			#college-navbar.navbar .nav > .active > a,
-			#college-navbar.navbar .nav > .active > a:hover,
-			#college-navbar.navbar .nav > .active > a:focus {
-				background: $brand-primary-dark;
+					& > li > a:focus,
+					& > li > a:hover {
+						background: $brand-primary-dark;
+					}
+
+					& > .active > a,
+					& > .active > a:hover,
+					& > .active > a:focus {
+						background: $brand-primary-dark;
+					}
+				}
 			}
 			
 			.navbar-nav > li > a {
@@ -490,8 +506,7 @@ $topbar-padding: $topbar-base * .025;
 		#vertical-logo {
 			max-width: $topbar-base;
 			min-height: $topbar-height;
-			top: -$topbar-offset;
-			width: 25%;
+			width: calc(25% - #{$topbar-vert-padding * 2});
 
 			a {
 				overflow: hidden;
@@ -501,17 +516,19 @@ $topbar-padding: $topbar-base * .025;
 			}
 
 		}
+
 		.container.logobar {
-			height: $topbar-height - ( $topbar-offset * 2 );
-			top: $topbar-offset + $topbar-padding;
+			height: $topbar-height;
+			margin-top: $topbar-padding;
 			width: 100%;
+			z-index: 20;
 			position: relative;
-			
-			box-shadow: none;
+
+			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
 		}
 		#mob-nav {
-			margin-top: .15rem;
-			width:72%;
+			margin-top: .3rem + $topbar-padding;
+			width: calc(75% - #{$topbar-vert-padding * 2});
 		}
 		#tools-link,
 		#bc-searchform,
@@ -537,25 +554,17 @@ $topbar-padding: $topbar-base * .025;
 			@include sr-only;
 
 		}
-		.container.logobar {
-			height: $topbar-height - ( $topbar-offset * 2 );
-			top: $topbar-offset + $topbar-padding;
-			width: 100%;
-			position: relative;
-			
-			box-shadow: none;
-		}
 		#tools-close-icon {
 			float: left;
 			color: #fff;
 			padding: 1.5em .1em 1em .25em;
+			margin: $topbar-offset  0 0 1rem;
 			font-size: 1.75em;
 			display: block;
-			width: 10%;
+			width: calc(12% - 1rem);
 		}
 		#mob-nav {
-			margin-top: .6666rem;
-			width:90%;
+			display: none;
 		}
 
 		#main-nav-link,
@@ -569,9 +578,9 @@ $topbar-padding: $topbar-base * .025;
 		}
 
 		#college-actions-column { 
-			width: 90%;
+			margin: (1rem + $topbar-offset - .2rem) 1em 0 0;
+			width: calc(88% - #{$topbar-vert-padding});
 			float: right;
-			margin-top: .8em;
 			a {
 				@include bs-btn;
 				@include button-variant(#333, #fff, #ccc);
@@ -619,27 +628,32 @@ $topbar-padding: $topbar-base * .025;
 
 		}
 		.container.logobar {
-			height: $topbar-height - ( $topbar-offset * 2 );
-			top: $topbar-offset + $topbar-padding;
+			height: $topbar-height;
+			margin-top: $topbar-padding;
 			width: 100%;
+			z-index: 20;
 			position: relative;
-			
-			box-shadow: none;
+
+			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
 		}
 		#nav-close-icon {
 			float: left;
 			color: #fff;
 			padding: .52em .1em .25em .25em;
+			//padding: 1.5em .1em 1em .25em;
+			margin: $topbar-offset  0 0 1rem;
 			font-size: 1.75em;
 			display: block;
-			width: 10%;
+			width: calc(15% - 1rem);
 		}
+
 		#nav-close-icon.lite {
-			padding: .15em .1em 0em 0em;
+			margin: .15em .1em 0em 0em;
+			padding: 0;
 		}
 		#mob-nav {
-			margin-top: .6666rem;
-			width:90%;
+			margin-top: .666rem + $topbar-padding;
+			width: calc(85% - 1rem);
 		}
 		#tools-link,
 		#main-nav-link {
