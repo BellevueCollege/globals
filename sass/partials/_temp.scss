@@ -71,3 +71,9 @@ As a style, all css blocks in this file should be commented with the following:
 #home-events h2 {
 	margin: 0;
 }
+
+/* Mayflower, 2017-11-13 
+   May need to be preserved until version 4 for Mayflower lite compat */
+#site-header.row {
+	width: 100%;
+}

@@ -102,6 +102,12 @@ ul.nav.navbar-nav,
  */
 
 @media screen and (min-width: $screen-sm-min) {
+
+	// Force menu to display on larger screens. Added to counteract new mobile view
+	#main-nav-wrap {
+		display: block !important;
+	}
+	
 	#college-navbar.navbar .nav > li > a {
 		padding: .75em .25em;
 		font-size: 0.9em;
@@ -134,12 +140,13 @@ ul.nav.navbar-nav,
 		}
 		a:focus {
 			position:static;
-			width: auto;
+			width: 100%;
 			height: auto;
-			padding: 0;
-			margin: 0;
-			overflow:auto;
-			border: 0;
+			display: block;
+			border: 1px solid transparent;
+			padding: 6px 12px;
+			margin-top: .5em;
+			margin-bottom: .5em;
 		}
 
 	}

@@ -240,8 +240,8 @@ gulp.task('minify-full', ['header-scripts-full', 'footer-scripts-full'], functio
 
 // Watch function (sass) - dev use only
 gulp.task('watch',function() {
-  gulp
-    .watch(config.sassPath + '/**/*.scss', ['sass-dev']);
+  gulp.watch(config.sassPath + '/**/*.scss', ['sass-dev']);
+  gulp.watch(config.jsPath + '/custom.js', ['footer-scripts-full', 'minify-full']);
 });
 
 
