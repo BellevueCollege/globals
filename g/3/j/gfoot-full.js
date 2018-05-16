@@ -3267,7 +3267,8 @@ jQuery(function() {
 	// Swiftype Autofill in search box
 	$('#college-search-field').swiftype({ 
 		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
-		resultLimit: 5
+		resultLimit: 5,
+		typingDelay: 600
 	});
 
 	// Javascript to enable link to tab
