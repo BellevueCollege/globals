@@ -84,7 +84,24 @@
 		}
 	}
 
+	p.site-title{ //override bootstrap
+		margin: 0;
+	}
+
+	p.site-description-margin { //add margin to site desc when there is a site desc
+		margin: 10px 0 0;
+	}
+
+	.social-media-no-margin { //remove social media margin if no social media
+		margin-bottom: 0;
+	}
+
+	#main-nav-link {
+		min-height: 0;
+	}
+
 }
+
 @media screen and (min-width: $screen-sm-min) {
 	.globals-lite {
 		#top {
