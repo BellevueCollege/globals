@@ -693,6 +693,20 @@ $topbar-vert-padding: 1em;
 	}
 }
 
+// Target Mobile Less Than 330px
+@media screen and (max-width: 329px) {
+	// Lite only
+	#top.mobile-s17 {
+		.social-media {
+			ul {
+				li {
+					padding: 0.5em 0.25em;
+				}
+			}
+		}
+	}
+}
+
 // Menu icon
 #top-wrap.branded.mobile-s17 .glyphicon.menu-icon,
 #top.mobile-s17 #header-actions-container .glyphicon.menu-icon {
