@@ -21,6 +21,7 @@ Commands are all configured in [gulpfile.js](gulpfile.js). Dependencies (and ver
 
 ### Process Support
 * browserlist-stats.json - contains browser usage from Google Analytics
+  * This can be generated using [BrowserList-GA](https://github.com/browserslist/browserslist-ga) by running `npx browserslist-ga`
 * gulpfile.js - Gulp processes
 * package.json - npm dependancies
 

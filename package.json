@@ -14,8 +14,10 @@
   "license": "MIT",
   "browserslist": [
     "> 2% in my stats",
-    "last 2 versions",
-    "Firefox ESR"
+    "last 2 major versions",
+    "Firefox ESR",
+    "not ie <= 10",
+    "not dead"
   ],
   "napa": {
     "noisy": "DanielRapp/Noisy",
@@ -26,15 +28,15 @@
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#master",
     "bootstrap-sass": "~3.3.7",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "~6.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-modernizr": "^1.0.0",
+    "gulp-modernizr": "~3.1.0",
     "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "~4.0.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^2.0.1",
-    "napa": "^2.3.0",
+    "gulp-uglify": "^3.0.1",
+    "napa": "^3.0.0",
     "uglify-save-license": "^0.4.1"
   }
 }
