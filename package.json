@@ -1,6 +1,6 @@
 {
   "name": "globals",
-  "version": "3.13.0",
+  "version": "3.13.1",
   "description": "Bellevue College Style Library",
   "main": "gulpfile.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "devDependencies": {
     "Respond.js": "github:scottjehl/Respond",
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#master",
-    "bootstrap-sass": "~3.3.7",
+    "bootstrap-sass": "~3.4.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "~6.0.0",
     "gulp-concat": "^2.6.1",
@@ -34,7 +34,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "~4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.1",
     "napa": "^3.0.0",
     "uglify-save-license": "^0.4.1"
