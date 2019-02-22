@@ -20,20 +20,18 @@
     "not dead"
   ],
   "napa": {
-    "noisy": "DanielRapp/Noisy",
     "swiftype-autocomplete-jquery": "swiftype/swiftype-autocomplete-jquery"
   },
   "devDependencies": {
-    "Respond.js": "github:scottjehl/Respond",
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#master",
-    "bootstrap-sass": "~3.4.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "~6.0.0",
+    "bootstrap-sass": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-modernizr": "~3.1.0",
+    "gulp-modernizr": "^3.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "~4.0.2",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.1",
     "napa": "^3.0.0",
