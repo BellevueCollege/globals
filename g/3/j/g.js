@@ -1095,7 +1095,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
       $list.empty();
       $this.hideList(true);
 
-      config.resultRenderFunction($this.getContext(), data);
+      config.resultRenderFunction($this.getContext(), data, term);
 
       var totalItems = $this.listResults().length;
       if ((totalItems > 0 && $this.focused()) || (config.noResultsMessage !== undefined)) {
@@ -1113,12 +1113,12 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 
     $.each(results, function(document_type, items) {
       $.each(items, function(idx, item) {
-        ctx.registerResult($('<li>' + config.renderFunction(document_type, item) + '</li>').appendTo($list), item);
+        ctx.registerResult($('<li>' + config.renderFunction(document_type, item, idx) + '</li>').appendTo($list), item);
       });
     });
   };
 
-  var defaultRenderFunction = function(document_type, item) {
+  var defaultRenderFunction = function(document_type, item, idx) {
     return '<p class="title">' + Swiftype.htmlEscape(item['title']) + '</p>';
   };
 
@@ -1283,7 +1283,6 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
   };
 
 })(jQuery);
-
 (function ($) {
 	// Swiftype Autofill in search box
 	$('#college-search-field').swiftype({ 
