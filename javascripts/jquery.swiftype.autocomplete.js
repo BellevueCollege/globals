@@ -206,6 +206,7 @@
         if (((event.which > 36) && (event.which < 41)) || (event.which == 16)) return;
 
         if (config.typingDelay > 0) {
+          renderSearchLoadingIcon($this);
           clearTimeout(typingDelayPointer);
           typingDelayPointer = setTimeout(function () {
             processInput($this);
@@ -333,10 +334,12 @@
       if (data.record_count > 0) {
         $this.cache.put(norm, data.records);
       } else {
+        hideSearchLoadingIcon();
         $this.addEmpty(norm);
         $this.showNoResults();
         return;
       }
+      hideSearchLoadingIcon();
       processData($this, data.records, term);
     });
   };
@@ -365,6 +368,7 @@
       if ($.trim(term) === '') {
         $this.data('swiftype-list').empty()
         $this.hideList();
+        hideSearchLoadingIcon();
         return;
       }
       if (typeof $this.data('swiftype-config-autocomplete').engineKey !== 'undefined') {
@@ -436,6 +440,16 @@
     }
     return undefined;
   };
+
+  // Add Loading Icon -- BC Custom
+  var renderSearchLoadingIcon = function( input ) {
+    if ( input.val().length > 2 ) {
+      $('#autocomplete-loading').show();
+    }
+  }
+  var hideSearchLoadingIcon = function() {
+    $('#autocomplete-loading').hide();
+  }
 
 	// simple client-side LRU Cache, based on https://github.com/rsms/js-lru
 

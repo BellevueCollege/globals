@@ -163,6 +163,20 @@
 	}
 }
 
+/* Recent Pages in Search */
+#autocomplete-loading {
+	color: #ccc;
+	position: absolute;
+	z-index: 100;
+	right: 5em;
+	top: .333em;
+
+	span {
+		padding: 0;
+		margin: 0;
+	}
+
+}
 
 /* Branded */
 
