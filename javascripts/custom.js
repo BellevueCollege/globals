@@ -1,52 +1,179 @@
-/*Functions for BC Calls to Noisy.js*/
-
-/* JQuery Document Ready*/
-jQuery(function() {
-
-	jQuery('body').noisy({
-		'intensity' : 0.5,
-		'size' : 200,
-		'opacity' : 0.04,
-		'fallback' : '',
-		'monochrome' : false
-	});
-	jQuery('#bigfoot').noisy({
-		'intensity' : 0.5,
-		'size' : 80,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : false
-	}).find('.inner').noisy({
-		'intensity' : 1,
-		'size' : 80,
-		'opacity' : 0.04,
-		'fallback' : '',
-		'monochrome' : false
-	});
-	jQuery('#top-wrapper').find('.border').noisy({
-		'intensity' : 0.5,
-		'size' : 80,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : true
-	});
-
-	jQuery('.navbar').find('.navbar-inner').noisy({
-		'intensity' : 0.5,
-		'size' : 40,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : true
-	});
-});
-
-
 (function ($) {
 	// Swiftype Autofill in search box
 	$('#college-search-field').swiftype({ 
 		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
 		resultLimit: 5,
-		typingDelay: 600
+		typingDelay: 600,
+		renderFunction: function(document_type, item, idx) {
+			return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
+		}
+	});
+
+/**
+ * Suggest Recent Searches
+ * 
+ * Store recent searches and autofills, and suggest them in search box
+ */
+	// Store Search Terms in Local Storage
+	var storeSearchItem = function storeSearchItem( term, target ) {
+		var searchHistory;
+		var historyObject = { 
+			term: term,
+			target: target
+		}
+
+		if ( ! localStorage.getItem('searchHistory') ) {
+			// Build array and save to local storage as JSON array in string
+			searchHistory = [historyObject];
+			localStorage.searchHistory = JSON.stringify( searchHistory );
+		} else {
+			// Load previous search history and parse to JSON
+			searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+			// Add new search term to array
+			searchHistory.unshift(historyObject);
+			// Truncate array to only save 5 items
+			searchHistory = searchHistory.slice(0, 5);
+			// Build array and save to local storage as JSON array in string
+			localStorage.searchHistory = JSON.stringify( searchHistory );
+		}
+		
+	}
+
+	// Output Search Terms to Page
+	var renderSuggestions = function renderSuggestions($this) {
+		if ( localStorage.getItem('searchHistory') 
+			 && ($this.val().length < 1 )
+			 && ( $('#recent-pages-autocomplete').length === 0 ) ) {
+			// Load Search History
+			var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+			// Get visual position on page
+			var searchPosition = $('#college-search-field').position();
+			var searchWidth = $('#college-search-field').css('width');
+			
+			// Build Output
+			var autocompleteOutput = '<div id="recent-pages-autocomplete" style="top: '+ (searchPosition.top + 33) +'px; left: '+ (searchPosition.left + 18 ) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
+			$.each(searchHistory, function(i, obj ){
+				if (null == obj.target) {
+					autocompleteOutput += '<li><a role="option" href="https://www.bellevuecollege.edu/search/?txtQuery=' + obj.term + '">'+ obj.term + '</a></li>';
+				} else {
+					autocompleteOutput += '<li><a role="option" href="'+ obj.target +'">'+ obj.term +'</a></li>';
+				}
+			});
+			autocompleteOutput += '</ul></div>';
+			$('#bc-searchform').append(autocompleteOutput);
+		}
+	}
+	// Remove suggestions from page
+	var removeSuggestions = function removeSuggestions () {
+		if  ( $('#recent-pages-autocomplete').length > 0 ) {
+			window.setTimeout( function(){
+				$('#recent-pages-autocomplete').remove();
+			}, 150 );
+		}
+	}
+
+	// Save Recent Searches
+	$('#bc-searchform form').submit(function(e) {
+
+		// Hijack search form submission if a suggestion is selected
+		if ( $('#recent-pages-autocomplete li.active').length ) {
+			e.preventDefault(); //don't submit!
+
+			// Go to URL
+			$('#recent-pages-autocomplete li.active a').first().click();
+
+			return;
+		}
+
+		// Capture search field
+		var searchTerm = $( 'input#college-search-field' ).val();
+
+		// Check there is a search term
+		if (searchTerm.length > 0 ) {
+		// Store without link
+		storeSearchItem(searchTerm, null);
+		}
+
+		return true; // return false to cancel form action
+
+		
+	});
+
+	// Save AutoCompletes
+	$( ".autocomplete" ).first().on( "click", 'p.title', function() {
+		storeSearchItem($(this).text(), $(this).attr("data-url"));
+	});
+	
+	// Trigger display of suggestions
+	$('#college-search-field').focus( function() {
+		renderSuggestions($(this));
+	});
+
+	// Trigger removal of suggestions based on focus
+	$('#bc-searchform').focusout( function(e) {
+		// Check to make sure element that lost focus is not child of #bc-searchform
+		if ( this.contains(e.relatedTarget) ) {
+			// Do nothing
+		} else {
+			removeSuggestions();
+		}
+	});
+
+	// Trigger removal of suggestions based on content of search field
+	$('#college-search-field').keyup( function() {
+		// Remove suggestions when search box has content
+		if ( $(this).val().length > 0 ) {
+			removeSuggestions();
+		} else {
+			renderSuggestions($(this)); // Render out suggestions if there is content!
+		}
+	});
+
+	// Keyboard Controls
+	var availableOptions = $('#recent-pages-autocomplete li');
+	var selectedOption;
+	// Down arrow
+	$('#college-search-field').keydown(function(e) {
+		
+		// Available options have often not loaded; re-load them if needed
+		var loadAvailableOptions = function() {
+			if (availableOptions.length === 0) {
+				availableOptions = $('#recent-pages-autocomplete li');
+			}
+		}
+
+		// Check for arrow keys
+		switch(e.which) {
+			case 40 : // Down Arrow
+				loadAvailableOptions();
+				if(selectedOption) {
+					selectedOption.removeClass('active');
+					next = selectedOption.next();
+					if(next.length > 0) {
+						selectedOption = next.addClass('active');
+					} else {
+						selectedOption = availableOptions.eq(0).addClass('active');
+					}
+				} else {
+					selectedOption = availableOptions.eq(0).addClass('active');
+				}
+				break;
+			case 38 : // Up Arrow
+				loadAvailableOptions();
+				if(selectedOption) {
+					selectedOption.removeClass('active');
+					next = selectedOption.prev();
+					if(next.length > 0) {
+						selectedOption = next.addClass('active');
+					} else {
+						selectedOption = availableOptions.last().addClass('active');
+					}
+				} else {
+					selectedOption = availableOptions.last().addClass('active');
+				}
+				break;
+		}
 	});
 
 	// Javascript to enable link to tab
