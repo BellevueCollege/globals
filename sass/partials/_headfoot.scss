@@ -177,6 +177,52 @@
 	}
 
 }
+#recent-pages-autocomplete {
+	position: absolute;
+	z-index: 99;
+
+	background: #fff;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	line-height: 1.25em;
+
+	p {
+		font-size: .8rem;
+		padding: .125em .5em;
+		margin: 0;
+		color: #000;
+		background: #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li a {
+		margin: 0;
+		padding: .333em 1em ;
+		display: block;
+		border-bottom: 1px solid #e5e5e5;
+		text-decoration: none;
+		color: #000;
+	}
+	li:last-child a {
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	li.active a,
+	a:hover,
+	a:focus {
+		border-bottom: 1px solid #49a4ff;
+		background-color: #afd7ff;
+
+	}
+}
 
 /* Branded */
 
