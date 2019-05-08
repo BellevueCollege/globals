@@ -1805,6 +1805,10 @@ else {
   var renderSearchLoadingIcon = function( input ) {
     if ( input.val().length > 2 ) {
       $('#autocomplete-loading').show();
+
+      window.setTimeout( function(){
+        hideSearchLoadingIcon();
+      }, 5000 );
     }
   }
   var hideSearchLoadingIcon = function() {
