@@ -3378,7 +3378,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 			e.preventDefault(); //don't submit!
 
 			// Go to URL
-			$('#recent-pages-autocomplete li.active a').first().click();
+			window.location = $('#recent-pages-autocomplete li.active a').first().attr('href');
 
 			return;
 		}
