@@ -22,7 +22,9 @@
 			container: this, // to override, an element will need to be provided
 			field: '#college-search-field',
 			autocompleteItem: '.autocomplete',
-			id: 'recent-pages-autocomplete'
+			id: 'recent-pages-autocomplete',
+			searchURL: 'https://www.bellevuecollege.edu/search/?txtQuery=',
+			localStorageKey: 'searchHistory'
 		}
 
 		var options = $.extend({}, $.fn.searchHistory.defaults, options);
@@ -35,10 +37,10 @@
 				target: target
 			}
 	
-			if ( ! localStorage.getItem('searchHistory') ) {
+			if ( ! localStorage.getItem(options.localStorageKey) ) {
 				// Build array and save to local storage as JSON array in string
 				searchHistory = [historyObject];
-				localStorage.searchHistory = JSON.stringify( searchHistory );
+				localStorage.setItem(options.localStorageKey, JSON.stringify( searchHistory ));
 			} else {
 				// Load previous search history and parse to JSON
 				searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
@@ -54,21 +56,22 @@
 
 		// Output Search Terms to Page
 		var renderSuggestions = function renderSuggestions($this) {
-			if ( localStorage.getItem('searchHistory') 
+			if ( localStorage.getItem(options.localStorageKey) 
 				 && ($this.val().length < 1 )
 				 && ( $('#' + options.id).length === 0 ) ) {
 				// Load Search History
-				var searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+				var searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
 	
 				// Get visual position on page
 				var searchPosition = $(options.field).position();
+				var searchHight = $(options.field).outerHeight();
 				var searchWidth = $(options.field).css('width');
 				
 				// Build Output
-				var autocompleteOutput = '<div id="' + options.id + '" style="top: '+ (searchPosition.top + 33) +'px; left: '+ (searchPosition.left + 18 ) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
+				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + searchHight) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
 				$.each(searchHistory, function(i, obj ){
 					if (null == obj.target) {
-						autocompleteOutput += '<li><a role="option" href="https://www.bellevuecollege.edu/search/?txtQuery=' + obj.term + '">' + obj.term + '</a></li>';
+						autocompleteOutput += '<li><a role="option" href="' + options.searchURL + encodeURIComponent(obj.term) + '">' + obj.term + '</a></li>';
 					} else {
 						autocompleteOutput += '<li><a role="option" href="'+ obj.target +'">'+ obj.term +'</a></li>';
 					}
