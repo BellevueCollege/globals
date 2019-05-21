@@ -1423,7 +1423,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 		});
 
 		// Save AutoCompletes
-		$( options.autocompleteItem ).first().on( "click", 'p.title', function() {
+		$( options.autocompleteItem ).on( "click", 'p.title', function() {
 			storeSearchItem($(this).text(), $(this).attr("data-url"));
 		});
 

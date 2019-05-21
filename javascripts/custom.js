@@ -120,7 +120,7 @@
 		});
 
 		// Save AutoCompletes
-		$( options.autocompleteItem ).first().on( "click", 'p.title', function() {
+		$( options.autocompleteItem ).on( "click", 'p.title', function() {
 			storeSearchItem($(this).text(), $(this).attr("data-url"));
 		});
 
