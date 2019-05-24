@@ -180,6 +180,9 @@
 #bc-search-container-lite #autocomplete-loading {
 	top: 0.5em;
 }
+#bc-search-container-lite #autocomplete-loading.college-search-field-custom {
+	right: 7.25em;
+}
 .recent-pages-autocomplete {
 	position: absolute;
 	z-index: 99;
