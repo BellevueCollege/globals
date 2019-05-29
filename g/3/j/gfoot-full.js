@@ -3340,13 +3340,13 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 				localStorage.setItem(options.localStorageKey, JSON.stringify( searchHistory ));
 			} else {
 				// Load previous search history and parse to JSON
-				searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+				searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
 				// Add new search term to array
 				searchHistory.unshift(historyObject);
 				// Truncate array to only save 5 items
 				searchHistory = searchHistory.slice(0, 5);
 				// Build array and save to local storage as JSON array in string
-				localStorage.searchHistory = JSON.stringify( searchHistory );
+				localStorage.setItem(options.localStorageKey, JSON.stringify( searchHistory ));
 			}
 			
 		}
