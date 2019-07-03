@@ -25,7 +25,7 @@
   "devDependencies": {
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#master",
     "bootstrap-sass": "^3.4.1",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-modernizr": "^3.2.1",
