@@ -1326,8 +1326,10 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 			field: '#college-search-field',
 			autocompleteItem: '.autocomplete',
 			id: 'recent-pages-autocomplete',
-			searchURL: 'https://www.bellevuecollege.edu/search/?txtQuery=',
-			localStorageKey: 'searchHistory'
+			searchURL: 'https://www.bellevuecollege.edu/search/',
+			queryPeram: 'txtQuery',
+			searchPerams: {}, // Any extra perams that should be passed as part of search URL
+			localStorageKey: 'searchHistory',
 		}
 
 		var options = $.extend({}, $.fn.searchHistory.defaults, options);
@@ -1339,7 +1341,6 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 				term: term,
 				target: target
 			}
-	
 			if ( ! localStorage.getItem(options.localStorageKey) ) {
 				// Build array and save to local storage as JSON array in string
 				searchHistory = [historyObject];
@@ -1364,7 +1365,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 				 && ( $('#' + options.id).length === 0 ) ) {
 				// Load Search History
 				var searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
-	
+
 				// Get visual position on page
 				var searchPosition = $(options.field).position();
 				var searchHight = $(options.field).outerHeight();
@@ -1374,7 +1375,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + searchHight) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
 				$.each(searchHistory, function(i, obj ){
 					if (null == obj.target) {
-						autocompleteOutput += '<li><a role="option" href="' + options.searchURL + encodeURIComponent(obj.term) + '">' + obj.term + '</a></li>';
+						autocompleteOutput += '<li><a role="option" href="' + buildQueryURL(obj.term) + '">' + obj.term + '</a></li>';
 					} else {
 						autocompleteOutput += '<li><a role="option" href="'+ obj.target +'">'+ obj.term +'</a></li>';
 					}
@@ -1393,9 +1394,24 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 			}
 		}
 
+		/**
+		 * Build Query URL by creating object, then converting to perams
+		 */
+		var buildQueryURL = function buildQueryURL( query ) {
+			var queryObj = {};
+
+			// Create main query
+			queryObj[options.queryPeram] = query;
+
+			// Merge with optional query object
+			$.extend(queryObj, options.searchPerams);
+
+			// Convert to URL perams
+			queryURL = options.searchURL + '?' + $.param(queryObj);
+			return(queryURL);
+		}
 		// Save Recent Searches
 		options.container.find('form').submit(function(e) {
-
 			// Hijack search form submission if a suggestion is selected
 			var historyDropdown = options.container.find('#' + options.id);
 
@@ -1499,8 +1515,12 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 		});
 	}
 
-	// Instantiate for Globals Branded
-	$('#bc-searchform').searchHistory({});
+	// Instantiate for Globals Branded and Lite
+	if ( $('#bc-searchform').length != 0 ) {
+		$('#bc-searchform').searchHistory({});
+	} else if ( $('#bc-search-container-lite').length != 0 && $('#college-search-field').length != 0 ) {
+		$('#bc-search-container-lite').searchHistory({});
+	}
 
 	// Javascript to enable link to tab
 	// From https://stackoverflow.com/a/18627712
