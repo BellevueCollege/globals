@@ -1,53 +1,225 @@
-/*Functions for BC Calls to Noisy.js*/
-
-/* JQuery Document Ready*/
-jQuery(function() {
-
-	jQuery('body').noisy({
-		'intensity' : 0.5,
-		'size' : 200,
-		'opacity' : 0.04,
-		'fallback' : '',
-		'monochrome' : false
-	});
-	jQuery('#bigfoot').noisy({
-		'intensity' : 0.5,
-		'size' : 80,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : false
-	}).find('.inner').noisy({
-		'intensity' : 1,
-		'size' : 80,
-		'opacity' : 0.04,
-		'fallback' : '',
-		'monochrome' : false
-	});
-	jQuery('#top-wrapper').find('.border').noisy({
-		'intensity' : 0.5,
-		'size' : 80,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : true
-	});
-
-	jQuery('.navbar').find('.navbar-inner').noisy({
-		'intensity' : 0.5,
-		'size' : 40,
-		'opacity' : 0.05,
-		'fallback' : '',
-		'monochrome' : true
-	});
-});
-
-
 (function ($) {
 	// Swiftype Autofill in search box
 	$('#college-search-field').swiftype({ 
 		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
 		resultLimit: 5,
-		typingDelay: 600
+		typingDelay: 600,
+		renderFunction: function(document_type, item, idx) {
+			return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
+		}
 	});
+
+/**
+ * Suggest Recent Searches
+ * 
+ * Store recent searches and autofills, and suggest them in search box
+ */
+	
+
+	$.fn.searchHistory = function( options ) {
+
+		$.fn.searchHistory.defaults = {
+			container: this, // to override, an element will need to be provided
+			field: '#college-search-field',
+			autocompleteItem: '.autocomplete',
+			id: 'recent-pages-autocomplete',
+			searchURL: 'https://www.bellevuecollege.edu/search/',
+			queryPeram: 'txtQuery',
+			searchPerams: {}, // Any extra perams that should be passed as part of search URL
+			localStorageKey: 'searchHistory',
+		}
+
+		var options = $.extend({}, $.fn.searchHistory.defaults, options);
+
+		// Store Search Terms in Local Storage
+		var storeSearchItem = function storeSearchItem( term, target ) {
+			var searchHistory;
+			var historyObject = { 
+				term: term,
+				target: target
+			}
+
+			if ( ! localStorage.getItem(options.localStorageKey) ) {
+				// Build array and save to local storage as JSON array in string
+				searchHistory = [historyObject];
+				localStorage.setItem(options.localStorageKey, JSON.stringify( searchHistory ));
+			} else {
+				// Load previous search history and parse to JSON
+				searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
+				// Add new search term to array
+				searchHistory.unshift(historyObject);
+				// Truncate array to only save 5 items
+				searchHistory = searchHistory.slice(0, 5);
+				// Build array and save to local storage as JSON array in string
+				localStorage.setItem(options.localStorageKey, JSON.stringify( searchHistory ));
+			}
+			
+		}
+
+		// Output Search Terms to Page
+		var renderSuggestions = function renderSuggestions($this) {
+			if ( localStorage.getItem(options.localStorageKey) 
+				 && ($this.val().length < 1 )
+				 && ( $('#' + options.id).length === 0 ) ) {
+				// Load Search History
+				var searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
+
+				// Get visual position on page
+				var searchPosition = $(options.field).position();
+				var searchHight = $(options.field).outerHeight();
+				var searchWidth = $(options.field).css('width');
+				
+				// Build Output
+				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + searchHight) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
+				$.each(searchHistory, function(i, obj ){
+					if (null == obj.target) {
+						autocompleteOutput += '<li><a role="option" href="' + buildQueryURL(obj.term) + '">' + obj.term + '</a></li>';
+					} else {
+						autocompleteOutput += '<li><a role="option" href="'+ obj.target +'">'+ obj.term +'</a></li>';
+					}
+				});
+				autocompleteOutput += '</ul></div>';
+				options.container.append(autocompleteOutput);
+			}
+		}
+
+		// Remove suggestions from page
+		var removeSuggestions = function removeSuggestions () {
+			if  ( $('#' + options.id).length > 0 ) {
+				window.setTimeout( function(){
+					$('#' + options.id).remove();
+				}, 150 );
+			}
+		}
+
+		/**
+		 * Build Query URL by creating object, then converting to perams
+		 */
+		var buildQueryURL = function buildQueryURL( query ) {
+			var queryObj = {};
+
+			// Create main query
+			queryObj[options.queryPeram] = query;
+
+			// Merge with optional query object
+			$.extend(queryObj, options.searchPerams);
+
+			// Convert to URL perams
+			queryURL = options.searchURL + '?' + $.param(queryObj);
+			return(queryURL);
+		}
+		// Save Recent Searches
+		options.container.find('form').submit(function(e) {
+
+			// Hijack search form submission if a suggestion is selected
+			var historyDropdown = options.container.find('#' + options.id);
+
+			if ( historyDropdown.find( 'li.active' ).length ) {
+				e.preventDefault(); //don't submit!
+
+				// Go to URL
+				window.location = historyDropdown.find( 'li.active a' ).first().attr('href');
+
+				return;
+			}
+
+			// Capture search field
+			var searchTerm = $( options.field ).val();
+
+			// Check there is a search term
+			if (searchTerm.length > 0 ) {
+			// Store without link
+			storeSearchItem(searchTerm, null);
+			}
+
+			return true; // return false to cancel form action
+
+			
+		});
+
+		// Save AutoCompletes
+		$( options.autocompleteItem ).on( "click", 'p.title', function() {
+			storeSearchItem($(this).text(), $(this).attr("data-url"));
+		});
+
+		// Trigger display of suggestions
+		$(options.field).focus( function() {
+			renderSuggestions($(this));
+		});
+
+		// Trigger removal of suggestions based on focus
+		options.container.focusout( function(e) {
+			// Check to make sure element that lost focus is not child of #bc-searchform
+			if ( this.contains(e.relatedTarget) ) {
+				// Do nothing
+			} else {
+				removeSuggestions();
+			}
+		});
+
+		// Trigger removal of suggestions based on content of search field
+		$(options.field).keyup( function() {
+			// Remove suggestions when search box has content
+			if ( $(this).val().length > 0 ) {
+				removeSuggestions();
+			} else {
+				renderSuggestions($(this)); // Render out suggestions if there is content!
+			}
+		});
+
+		// Keyboard Controls
+		var availableOptions = $('#' + options.id).find('li');
+		var selectedOption;
+		// Down arrow
+		$(options.field).keydown(function(e) {
+			
+			// Available options have often not loaded; re-load them if needed
+			var loadAvailableOptions = function() {
+				if (availableOptions.length === 0) {
+					availableOptions = $('#' + options.id).find('li');
+				}
+			}
+
+			// Check for arrow keys
+			switch(e.which) {
+				case 40 : // Down Arrow
+					loadAvailableOptions();
+					if(selectedOption) {
+						selectedOption.removeClass('active');
+						next = selectedOption.next();
+						if(next.length > 0) {
+							selectedOption = next.addClass('active');
+						} else {
+							selectedOption = availableOptions.eq(0).addClass('active');
+						}
+					} else {
+						selectedOption = availableOptions.eq(0).addClass('active');
+					}
+					break;
+				case 38 : // Up Arrow
+					loadAvailableOptions();
+					if(selectedOption) {
+						selectedOption.removeClass('active');
+						next = selectedOption.prev();
+						if(next.length > 0) {
+							selectedOption = next.addClass('active');
+						} else {
+							selectedOption = availableOptions.last().addClass('active');
+						}
+					} else {
+						selectedOption = availableOptions.last().addClass('active');
+					}
+					break;
+			}
+		});
+	}
+
+	// Instantiate for Globals Branded and Lite
+	if ( $('#bc-searchform').length != 0 ) {
+		$('#bc-searchform').searchHistory({});
+	} else if ( $('#bc-search-container-lite').length != 0 && $('#college-search-field').length != 0 ) {
+		$('#bc-search-container-lite').searchHistory({});
+	}
 
 	// Javascript to enable link to tab
 	// From https://stackoverflow.com/a/18627712
