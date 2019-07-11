@@ -3335,6 +3335,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 				term: term,
 				target: target
 			}
+
 			if ( ! localStorage.getItem(options.localStorageKey) ) {
 				// Build array and save to local storage as JSON array in string
 				searchHistory = [historyObject];
@@ -3406,6 +3407,7 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 		}
 		// Save Recent Searches
 		options.container.find('form').submit(function(e) {
+
 			// Hijack search form submission if a suggestion is selected
 			var historyDropdown = options.container.find('#' + options.id);
 
