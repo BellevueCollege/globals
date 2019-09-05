@@ -13,11 +13,11 @@ var gulp         = require('gulp');
 
 // Path Configs
 var config = {
-  verPath:  './g/3',
+  verPath:  '../../g/3',
   sassPath: './sass',
   jsPath:   './javascripts',
-  cssPath:  './g/3/c',
-  npmPath:  './node_modules'
+  cssPath:  '../../g/3/c',
+  npmPath:  '../../node_modules'
 }
 
 /**
