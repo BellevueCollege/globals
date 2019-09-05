@@ -1,0 +1,52 @@
+html {
+	font-family: $font-family-base;
+	font-size: 93.75%; /*15px*/
+	overflow-y: scroll;
+	border: 0;
+	}
+body {
+	line-height: $std-line-height;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	background-color: #F2F2F2;
+	font-size: 100%;
+}
+
+/*	Underline All Links not part of other elements	*/
+a {
+	text-decoration: underline;
+}
+
+/* Change Pagination to use Inline Block
+   to prevent odd breaking on small screens */
+ul.pagination {
+	li {
+		display: inline-block;
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+/* Accessibility fixes */
+.label-warning,
+.label-info {
+	color: #000;
+}
+
+/* Remove duplicate browser styling on abbr elements */
+abbr[title],
+abbr[data-original-title] {
+	text-decoration: none;
+}
+
+
+
+/* Add animated loading icon */
+.glyphicon-spin-animate {
+	animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg);}
+	to { transform: rotate(360deg);}
+}

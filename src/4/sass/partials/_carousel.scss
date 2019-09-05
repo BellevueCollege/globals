@@ -1,0 +1,176 @@
+/* ************************************** */
+/* Carousel 																*/
+/* ************************************** */
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	#carousel-featured-in-content {
+		margin:  0	1em;
+	}
+}
+@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+	#carousel-featured-in-content {
+		margin:  0	2em;
+	}
+}
+
+.carousel-control {
+	font-family: $font-family-base;
+	position: absolute;
+	top: 40%;
+	left: 0.3em;
+	left: 1.1rem;
+	width: 0.666666em;
+	height: 0.666666em;
+	font-size: 4em;
+	font-weight: 100;
+	line-height: 0.5em;
+	color: #ffffff;
+	text-decoration:none;
+	text-align: center;
+	background: #222222;
+	border: 0.0333333em solid #ffffff;
+	border-radius: 0.5em;
+	opacity: 0.5;
+
+	span.glyphicon {
+		margin-left: -.9rem;
+		margin-top: -1.05rem;
+		font-size: 30px;
+	}
+}
+a.carousel-control:focus {
+	border-radius: 0.5em;
+	outline: none;
+}
+.carousel-control.right {
+	right: 0.3em;
+	right: 1.1rem;
+	left: auto;
+
+	span.glyphicon {
+		margin-right: -.9rem;
+		margin-left: auto;
+		margin-top: -1.05rem;
+		font-size: 30px;
+	}
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "md")
+) {
+	#carousel-featured-in-content .carousel-control {
+		left: 0.7em;
+		left: 3.3rem;
+	}
+	#carousel-featured-in-content .carousel-control.right {
+		right: 0.7em;
+		right: 3.3rem;
+		left: auto;
+	}
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+	color: #ffffff;
+	text-decoration: none;
+	opacity: 0.9;
+	outline: none;
+}
+
+
+
+.carousel-indicators {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	left: auto;
+	width: auto;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	z-index: 15;
+	margin: 0;
+	list-style: none;
+}
+
+.carousel.slide.content-padding .carousel-indicators {
+	right: 3em;
+}
+
+.carousel-indicators li {
+	display: block;
+	float: left;
+	width: 1em;
+	height: 1em;
+	margin: 2px;
+	margin-top: .25em;
+	margin-left: 0.333333em;
+	text-indent: -999px;
+	background-color: #ccc;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 0.5em;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+}
+.carousel-indicators li:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+}
+
+.carousel-indicators .active {
+	background-color: #fff;
+	width: 1em;
+	height: 1em;
+	margin: 2px;
+	margin-left: 0.33333333em;
+	border-radius: 9px;
+}
+
+.carousel-indicators li.active:hover {
+	background-color: #fff;
+	cursor:auto;
+}
+
+.carousel a {
+	text-decoration: none;
+}
+
+/* Force caption below slideshow on mobile */
+.carousel-caption {
+	position: static;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0.6666667em 1em;
+	background: #333333;
+	background: rgba(0, 0, 0, 1);
+	color: #fff;
+	text-align: left;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	/* Overlay caption on larger breakpoints */
+	.carousel-caption {
+		position: absolute;
+		background: rgba(0, 0, 0, 0.75);
+	}
+}
+
+.carousel-caption h2 {
+	font-size: 1.4em;
+	line-height: 1.429em;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-caption p {
+	margin: 0;
+}
+.carousel-caption a {
+	color: #ffffff;
+	text-decoration: none;
+}
+.carousel-caption a:focus,
+.carousel-caption a:hover {
+	text-decoration: underline
+}

@@ -13,10 +13,10 @@ var gulp         = require('gulp');
 
 // Path Configs
 var config = {
-  verPath:  '../../g/3',
+  verPath:  '../../g/4',
   sassPath: './sass',
   jsPath:   './javascripts',
-  cssPath:  '../../g/3/c',
+  cssPath:  '../../g/4/c',
   npmPath:  '../../node_modules'
 }
 
@@ -36,9 +36,7 @@ var sassOptions = {
   sourceComments: false,
   includePaths: [
       config.sassPath,
-      config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      //config.npmPath + '/bourbon/app/assets/stylesheets',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
+      config.npmPath + '/bootstrap/scss',
   ],
   precision: 10
 }
@@ -51,10 +49,8 @@ var sassDevOptions = {
   outputStyle: 'nested',
   sourceComments: true,
   includePaths: [
-      config.sassPath,
-      config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      //config.npmPath + '/bourbon/app/assets/stylesheets',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
+    config.sassPath,
+    config.npmPath + '/bootstrap/scss',
   ],
   precision: 10
 }
@@ -172,7 +168,6 @@ function modernizrProd() {
 function globalsFooterScriptsDev() {
   return gulp
     .src([
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
       config.jsPath + '/jquery.swiftype.autocomplete.js',
       config.jsPath + '/custom.js'
     ])
@@ -185,7 +180,7 @@ function globalsFooterScriptsDev() {
  **/
 function bootstrapScripts() {
   return gulp
-    .src( config.npmPath + '/bootstrap-sass/assets/javascripts/bootstrap.min.js' )
+    .src( config.npmPath + '/bootstrap/dist/js/bootstrap.js' )
     .pipe(gulp.dest( config.verPath + '/j' ));
 }
 
@@ -195,7 +190,6 @@ function bootstrapScripts() {
 function globalsFooterScripts() {
   return gulp
     .src([
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
       config.jsPath + '/jquery.swiftype.autocomplete.js',
       config.jsPath + '/custom.js'
     ])
@@ -224,8 +218,7 @@ function headerScriptsFull() {
 function footerScriptsFull() {
   return gulp
     .src([
-      config.npmPath + '/bootstrap-sass/assets/javascripts/bootstrap.js',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
+      config.npmPath + '/bootstrap/dist/js/bootstrap.js',
       config.jsPath + '/custom.js'
     ])
     .pipe(concat('gfoot-full.js'))
@@ -261,7 +254,7 @@ function watch() {
  */
 const dev = gulp.series(
     sassDev,
-    bootstrapFonts,
+    // bootstrapFonts,
     bootstrapScripts,
     modernizrDev,
     headerScriptsFull,
@@ -272,7 +265,7 @@ const dev = gulp.series(
 
 const prod = gulp.series(
     sassProd,
-    bootstrapFonts,
+    // bootstrapFonts,
     bootstrapScripts,
     modernizrProd,
     headerScriptsFull,

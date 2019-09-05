@@ -1,0 +1,1008 @@
+
+/* ************************************** */
+/*	head      								*/
+/* ************************************** */
+
+/* Social Media */
+.social-media ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	li {
+		flex: 0 0 auto;
+	}
+
+	a {
+		padding: 0 .25em;
+		display: inline-block;
+	}
+
+	li:first-child {
+		a {
+			padding-left: 0;
+		}
+	}
+	li:last-child {
+		a {
+			padding-right: 0;
+		}
+	}
+}
+
+
+
+/* Lite Elements */
+#top-wrap.lite {
+	background-color: $brand-primary;
+	box-shadow: 0 0px 10px #999;
+}
+.header-search fieldset {
+	white-space:nowrap;
+}
+#smallhead-wrap {
+	background: $brand-primary url(../i/headbg.jpg) repeat-y;
+}
+#smallhead {
+	position: relative;
+	zoom: 1 /*IE hack, see next line*/;
+	transition: padding 0.5s ease;
+}
+
+.lite #bc-logo {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+.lite #bc-logo:hover {
+	background: url(../i/homepage.png) no-repeat 100% 0.5em;
+}
+
+.globals-lite {
+	// Lite Header
+	#top {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	#site-branding,
+	#header-actions-container {
+		padding: 1em;
+		flex: 1 1 auto;
+	}
+
+	.social-media {
+		margin-bottom: 1em;
+
+		ul {
+			justify-content: flex-end;
+		}
+		a {
+			padding: 0 .75em;
+		}
+	}
+
+	p.site-title{ //override bootstrap
+		margin: 0;
+	}
+
+	p.site-description-margin { //add margin to site desc when there is a site desc
+		margin: 10px 0 0;
+	}
+
+	.social-media-no-margin { //remove social media margin if no social media
+		margin-bottom: 0;
+	}
+
+	#main-nav-link {
+		min-height: 0;
+	}
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	.globals-lite {
+		#top {
+			flex-direction: row;
+			align-items: center;
+		}
+		#site-branding {
+			width: 66.666666%;
+			margin-bottom: 0;
+			padding-right: .5em;
+		}
+
+		#header-actions-container {
+			width: 33.333333%;
+			padding-left: .5em;
+		}
+	}
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "md")
+) {
+	.globals-lite {
+		#site-branding {
+			padding-right: .5em;
+			padding-left: 2em;
+		}
+
+		#header-actions-container {
+			padding-right: 2em;
+			padding-left: .5em;
+		}
+	}
+}
+
+
+
+// Search box/etc
+#header-actions-container {
+	display: flex;
+	flex-direction: column;
+}
+
+#mobile-nav  {
+	padding: 0;
+	list-style-type: none;
+	margin: 0;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	.lite #bc-logo {
+		margin-top: 0.2em;
+		margin-bottom: 0.2em;
+		width: 310px;
+	}
+}
+
+@media screen and (min-width: 80em) {
+	#smallhead {
+		padding:  0;
+	}
+}
+
+/* Recent Pages in Search */
+#autocomplete-loading {
+	color: #ccc;
+	position: absolute;
+	z-index: 100;
+	right: 5em;
+	top: .333em;
+
+	span {
+		padding: 0;
+		margin: 0;
+	}
+
+}
+#bc-search-container-lite #autocomplete-loading {
+	top: 0.5em;
+}
+#bc-search-container-lite #autocomplete-loading.college-search-field-custom {
+	right: 7.25em;
+}
+.recent-pages-autocomplete {
+	position: absolute;
+	z-index: 99;
+
+	background: #fff;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	line-height: 1.25em;
+
+	p {
+		font-size: .8rem;
+		padding: .125em .5em;
+		margin: 0;
+		color: #000;
+		background: #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li a {
+		margin: 0;
+		padding: .333em 1em ;
+		display: block;
+		border-bottom: 1px solid #e5e5e5;
+		text-decoration: none;
+		color: #000;
+	}
+	li:last-child a {
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	li.active a,
+	a:hover,
+	a:focus {
+		border-bottom: 1px solid #49a4ff;
+		background-color: #afd7ff;
+
+	}
+}
+
+/* Branded */
+
+#top-wrap.branded {
+	background: $brand-primary url(../i/headbgwide.jpg) repeat-x;
+}
+
+.container.logobar {
+	background: url(../i/headbg.jpg) repeat-y scroll 0 0 $brand-primary;
+	padding-left: 0;
+	padding-right: 0;
+}
+.container.logobar.border {
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
+}
+
+.ie7 .container.logobar .border,
+.ie8 .container.logobar .border{
+	border-left: 1px solid #002c57;
+	border-right: 1px solid #002c57;
+}
+
+#bc-logo {
+	display: block;
+	float: none;
+}
+
+.branded #bc-logo {
+	margin-top: 0.666655557em;
+	padding-bottom: 0.333333em;
+}
+#bc-logo img {
+	display: block;
+	height: auto;
+	width: auto;
+	margin: 0 auto;
+}
+
+#mob-nav .input-group {
+	margin-bottom: 1em;
+}
+
+#mybc {  // should be class?
+	font-style: italic;
+}
+
+ul#college-top-actions {
+	margin: 0;
+	padding: 0;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
+}
+
+ul#college-top-actions li {
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
+	list-style: none;
+	margin: 0 auto;
+	padding: .2em;
+	flex: 0 1 auto;
+
+	float: left; //fallback for non-flexbox browsers
+}
+
+
+ul#college-top-actions a {
+	color: white;
+	color: rgba(255,255,255,0.8);
+	padding: .5em 1em;
+	display: block;
+}
+
+ul#college-top-actions a:hover {
+	color: white;
+}
+.lite ul#college-top-actions {
+	padding: 0;
+	margin: 0;
+	display: none;  // If we decide to show in lite, remove
+}
+.lite ul#college-top-actions li {
+	margin: 0 auto 0 auto;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	.branded #bc-logo {
+		margin-top: 1.16666667em;
+		margin-bottom: 1.16666667em;
+		padding-top: .33333333em;
+		padding-bottom: 0.333333em;
+		width: 300px;
+	}
+	.ie8 .branded #bc-logo {
+		width: 280px;
+	}
+	.branded #bc-logo img {
+		max-width: 100%
+	}
+
+	ul.top-actions, #bc-logo {
+		float: left;
+	}
+	#bc-logo img {
+		margin: 0;
+	}
+
+	ul#college-top-actions,
+	.lite ul#college-top-actions {
+		display: block;
+		float: right;
+	}
+	ul#college-top-actions li{
+		font-size: .8em;
+		margin: 0em auto 0em auto;
+	}
+
+	ul#college-top-actions a {
+		padding: .1em 1em;
+	}
+	.lite ul#college-top-actions a {
+		line-height: 1.5em;
+	}
+	.flexwrap {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	/* Provide display:table based styles for non-flexbox browsers */
+	.no-flexbox.no-flexboxlegacy.no-flexboxtweener .flexwrap {
+		display: table;
+		width: 100%;
+	}
+
+
+	#main-nav-wrap {
+		flex: auto;
+	}
+	/* Provide display:table based styles for non-flexbox browsers */
+	.no-flexbox.no-flexboxlegacy.no-flexboxtweener #main-nav-wrap {
+		display: table-header-group;
+	}
+	#content {
+		flex: auto;
+	}
+	#nav-top {
+		position: absolute !important;
+		left: -99999px !important;
+	}
+	.navbar-nav {
+		margin: 0;
+	}
+
+}
+
+@media screen and (min-width: 50em) {
+	.branded #bc-logo {
+		width: 420px;
+	}
+	.branded #bc-logo img {
+		max-width: 100%;
+	}
+	.ie8 .branded #bc-logo {
+		width: 410px;
+	}
+	.branded #bc-logo:hover {
+		background: url(../i/homepage.png) no-repeat 350px 17px;
+	}
+}
+
+/* ************************************** */
+/* New Mobile Header Format               */
+/* ************************************** */
+
+// Variable Setup
+$duration: .5s;
+$topbar-base: 10rem; //150px
+$topbar-height: $topbar-base * 0.9;
+$topbar-offset: $topbar-base * .1;
+$topbar-padding: $topbar-base * .025;
+$topbar-vert-padding: 1em;
+
+
+// Target Mobile Breakpoints Only
+@media screen and (max-width: map-get($grid-breakpoints, "sm") -1 ) {
+
+	// Style Header -- Branded only
+	#top-wrap.branded.mobile-s17 {
+		background: none;
+
+		// Logo
+		#vertical-logo {
+			width: calc(40% - #{$topbar-vert-padding * 2});
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			float: left;
+			z-index: 10;
+			margin-left: $topbar-vert-padding * 2; // Not sure why this needs to be doubled.
+
+			// Vertical center
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			
+			box-shadow: 0px 0px 2px $brand-primary-dark;
+			background: #fff;
+
+			// Logo Link
+			a {
+				margin: 1rem;
+				background-image: url("/g/3/i/bellevuecollege-vert.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+
+		// Top bar
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			position: relative;
+			z-index: 10;
+
+			background-image: none;
+			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+			box-shadow: none;
+
+			& > .row.content-padding {
+				padding: 0;
+			}
+			
+		}
+		// Top bar buttons
+		#mob-nav {
+			width: calc(60% - #{$topbar-vert-padding * 2});
+			padding: 0;
+			margin: (1rem + $topbar-offset) 1em 0 0;
+			float: right;
+			.input-group {
+				margin-bottom: 0;
+			}
+		}
+
+		// Items within top bar
+		#tools-link,
+		#main-nav-link {
+			width: 48%;
+			margin-top: 0.5rem;
+			float: right;
+		}
+		#tools-link {
+			margin-right: 4%;
+			float: left;
+		}
+
+		#main-nav-wrap {
+			top: -$topbar-offset;
+			padding-top: $topbar-offset;
+		}
+	}
+	
+
+	// Lite only styles
+	#top.mobile-s17 {
+		#header-actions-container {
+			flex-direction: column-reverse;
+
+			background: $brand-primary;
+			padding-top: .5em;
+			padding-bottom: .5em;
+
+			.social-media,
+			#header-actions-bar {
+			}
+		}
+		.social-media {
+			display: none;
+			margin-bottom: 0;
+
+			ul {
+				justify-content: center;
+
+				li {
+					background: #fff;
+					//border-radius: 4px;
+					margin-top: 1em; 
+					margin-bottom: 0;
+					padding:.5em;
+				}
+
+				li:first-child {
+					border-radius: 4px 0 0px 4px;
+					padding-left: 1em;
+				}
+				li:last-child {
+					border-radius: 0 4px 4px 0;
+					padding-right: 1em;
+				}
+			}
+		}
+
+	}
+
+	// Branded / Lite
+	#top-wrap.branded.mobile-s17,
+	#top.mobile-s17 {
+		padding-bottom: 0;
+
+		// Menu Dropdown
+		#main-nav-wrap {
+			background: $brand-primary;
+			width: 100%;
+			display: none;
+
+			position: relative;
+
+			#nav-top {
+				display: none;
+			}
+
+			#college-navbar {
+				background: none;
+
+				&.navbar .nav {
+					margin: 0;
+
+					& > li > a:focus,
+					& > li > a:hover {
+						background: $brand-primary-dark;
+					}
+
+					& > .active > a,
+					& > .active > a:hover,
+					& > .active > a:focus {
+						background: $brand-primary-dark;
+					}
+				}
+			}
+			
+			.navbar-nav > li > a {
+				padding-left: calc(25% + .5rem);
+			}
+			.navbar-nav > li > a {
+				text-align: left;
+			}
+		}
+	}
+
+	// Style when menu is active (branded and lite)
+	#top-wrap.branded.mobile-s17.action-menu,
+	#top.mobile-s17.action-menu {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			width: calc(25% - #{$topbar-vert-padding * 2});
+
+			a {
+				overflow: hidden;
+				margin: .25rem;
+				background-size: 155%;
+				background-position: top center;
+			}
+
+		}
+
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			z-index: 10;
+
+			background: linear-gradient(#fff $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+
+			position: sticky;
+			top: 0;
+
+		}
+		#mob-nav {
+			margin-top: .3rem + $topbar-padding;
+			width: calc(75% - #{$topbar-vert-padding * 2});
+		}
+		#tools-link,
+		#bc-searchform,
+		#bc-search-container-lite {
+			display: none !important;
+		}
+
+		#main-nav-link {
+			width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+		.social-media {
+			display: block;
+		}
+	}
+
+	// Style when tools menu is active
+	#top-wrap.branded.mobile-s17.action-tools {
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		#tools-close-icon {
+			float: left;
+			color: #fff;
+			padding: 1.5em .1em 1em .25em;
+			margin: $topbar-offset  0 0 1rem;
+			font-size: 1.75em;
+			display: block;
+			width: calc(12% - 1rem);
+		}
+		#mob-nav {
+			display: none;
+		}
+
+		#main-nav-link,
+		#bc-searchform,
+		#tools-link {
+			display: none !important;
+		}
+
+		#college-actions-column {
+			display: block !important;
+		}
+
+		#college-actions-column { 
+			margin: (1rem + $topbar-offset - .2rem) 1em 0 0;
+			width: calc(88% - #{$topbar-vert-padding});
+			float: right;
+			a {
+				@include button-variant(#333, #fff, #ccc);
+				display: block;
+				width: 100%;
+				text-decoration: none;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row wrap;
+				justify-content: space-around;
+			}
+
+			li {
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+
+				list-style: none;
+				margin: 0 auto;
+				padding: .2em;
+				flex: 1 1 auto;
+
+				float: left; //fallback for non-flexbox browsers
+
+
+			}
+		}
+
+	}
+
+	// Style when search is active
+	#top-wrap.branded.mobile-s17.action-search,
+	#top.mobile-s17.action-search {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			@include sr-only;
+
+		}
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			z-index: 20;
+			position: relative;
+
+			background: linear-gradient(transparent $topbar-offset, $brand-primary $topbar-offset, $brand-primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+		}
+		#nav-close-icon {
+			float: left;
+			color: #fff;
+			padding: .52em .1em .25em .25em;
+			//padding: 1.5em .1em 1em .25em;
+			margin: $topbar-offset  0 0 1rem;
+			font-size: 1.75em;
+			display: block;
+			width: calc(15% - 1rem);
+		}
+
+		#nav-close-icon.lite {
+			margin: .15em .1em 0em 0em;
+			padding: 0;
+		}
+		#mob-nav {
+			margin-top: .666rem + $topbar-padding;
+			width: calc(85% - 1rem);
+		}
+		#tools-link,
+		#main-nav-link {
+			@include sr-only;
+		}
+
+		#main-nav-link {
+			//width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+		#bc-search-container-lite {
+			width: 100%;
+		}
+	}
+}
+
+// Target Mobile Less Than 330px
+@media screen and (max-width: 329px) {
+	// Lite only
+	#top.mobile-s17 {
+		.social-media {
+			ul {
+				li {
+					padding: 0.5em 0.25em;
+				}
+			}
+		}
+	}
+}
+
+// Menu icon
+#top-wrap.branded.mobile-s17 .glyphicon.menu-icon,
+#top.mobile-s17 #header-actions-container .glyphicon.menu-icon {
+	//@extend .glyphicon-menu-hamburger; FONTAWESOME
+}
+#top-wrap.branded.mobile-s17.action-menu .glyphicon.menu-icon,
+#top.mobile-s17.action-menu #header-actions-container .glyphicon.menu-icon {
+	//@extend .glyphicon-remove; FONTAWESOME
+}
+
+// Close links (hidden unless needed)
+#nav-close-icon,
+#tools-close-icon,
+#college-more-actions {
+	display: none;
+}
+
+
+/* ************************************** */
+/*	Section header      */
+/* ************************************** */
+
+#site-header {
+	background-color: white;
+	padding-top: 1em;
+	padding-bottom:1em;
+}
+.globals-branded #site-header {
+	background-color: transparent;
+	padding: 1.3333em 0 0 0;
+}
+
+.branded .form-control {
+	height: auto;
+}
+
+
+@media screen and (min-width: 62em) {
+
+	ul#college-top-actions a.top-actions {
+		padding-left: .7em;
+		padding-right: .7em;
+	}
+}
+
+p.site-title,
+h1.site-title {
+	font-size: 2.4em;
+	font-family: $font-family-base;
+	color: #333333;
+	line-height: 1em;
+}
+.globals-branded {
+	h1.site-title,
+	p.site-title {
+		font-weight: 100;
+		margin-bottom: .33rem;
+	}
+}
+
+p.site-title a,
+h1.site-title a {
+	color: #333;
+	text-decoration: none;
+}
+
+p.site-description {
+	line-height: 1.5em;
+	margin: 0;
+	//margin-top: .5em;
+}
+
+
+/* ************************************** */
+/*	Content space 									      */
+/* ************************************** */
+
+#content {
+	background-color: white;
+}
+#content.transparent {
+	background-color: transparent;
+}
+
+
+/* ************************************** */
+/*	Foot														      */
+/* ************************************** */
+
+
+#bigfoot {
+	background-color: #E1E1E1;
+	border-bottom: 1px solid #999999;
+	border-top: 1px solid #999999;
+	
+	.inner {
+		@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
+		padding-top: 1.3333333em;
+		padding-bottom: 1.3333333em;
+		background-color: #E5E5E5;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none
+	}
+
+	li,
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 0.9em;
+		color: #494949;
+	}
+
+	h3 {
+		font-size: .9em;
+		font-weight: bold;
+		color: #666;
+		font-family: $font-family-base;
+		margin: 0;
+	}
+	h3 ~ ul {
+		margin-bottom: $std-margin;
+	}
+	.social-media {
+		max-width: 16em;
+		h3 {
+			margin-top: $std-margin;
+		}
+		ul {
+			margin-bottom: 0;
+			margin-top: .25em;
+		}
+
+		p {
+			margin-bottom: $std-margin;
+		}
+	}
+	a {
+		text-decoration: underline;
+		white-space: nowrap;
+		line-height:1em;
+		color: #003D79;
+	}
+	a:hover,
+	a:active {
+		color: #000;
+	}
+
+	#bellevueaddress {}
+	#bellevueaddress .tel,
+	#bellevueaddress .adr {
+		font-size: .9em;
+		line-height: 1.4em;
+		margin-top:.1em;
+	}
+}
+
+#legalbar {
+	clear: left;
+	margin: 0 auto;
+	padding: 1em 0 1em 0;
+	text-align: center;
+}
+#bigfoot + .container #legalbar {
+	padding: 0.66666667em 0 1em 0;
+}
+
+#legalbar li {
+	display: inline;
+	padding:0;
+	margin: 0;
+	list-style-type: none;}
+#legalbar li a {
+	padding: 0 0.9em 0 1em;
+	color: #666;
+	border-left: 1px solid #DDDDDD;
+	font-size: .8em;
+	white-space: nowrap;}
+#legalbar li a:hover,
+#legalbar li a:focus {
+	color: $brand-primary;}
+#legalbar li.first a {
+	border-left: none;}
+#legalbar li.last {
+	float: none;
+	clear: left;
+	display: block;
+	padding: 0}
+#legalbar li.last a {
+	padding-left: 0;
+	border-left: none; }
+#legalbar span {
+	padding-left: 21px;}
+
+
+@media screen and (min-width: 50em) {
+	#main-wrap,
+	#bigfoot,
+	#top-wrap { padding: 0 0.66667em;}
+}
+
+
+
+
+/* ************************************** */
+/* ************************************** */
+/*	Our Bootstrap Overrides						    */
+/* ************************************** */
+/* ************************************** */
+
+#main-nav-wrap .container-fluid {
+//	padding: 0;
+}
+
+/* ************************************** */
+/* Emergency Alerts (Rave) 				*/
+/* ************************************** */
+
+/* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
+
+#ravealertheader.alert {
+	border-radius: 0;
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
+	margin-bottom: 0;
+}
+
+#ravealertheader .glyphicon {
+	font-size: 4em;
+	text-align: center;
+	display: block;
+}

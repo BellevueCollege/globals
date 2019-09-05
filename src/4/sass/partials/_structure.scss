@@ -1,0 +1,117 @@
+
+/* *************************************************** */
+/*	Classes that apply to multiple elements types      */
+/* *************************************************** */
+
+.top-spacing0 {
+	margin-top: 0;
+}
+.top-spacing5 {
+	margin-top: 0.33333em;
+}
+.top-spacing10 {
+	margin-top: 0.666667em;
+}
+.top-spacing15 {
+	margin-top: 1em;
+}
+.top-spacing20 {
+	margin-top: 1.33333em;
+}
+.top-spacing25 {
+	margin-top: 1.666667em;
+}
+.top-spacing30 {
+	margin-top: 2em;
+}
+.top-spacing35 {
+	margin-top: 2.33333em;
+}
+.top-spacing40 {
+	margin-top: 2.666667em;
+}
+.top-spacing45 {
+	margin-top: 3em;
+}
+.top-spacing50 {
+	margin-top: 3.33333em;
+}
+
+
+/* ************************************** */
+/* ************************************** */
+/*	SITE STRUCTURE                        */
+/* ************************************** */
+/* ************************************** */
+
+
+/* ************************************** */
+/*	Reusable structure     				  */
+/* ************************************** */
+
+
+.box-shadow {
+	box-shadow: 0 2px 4px #ddd;
+	background-color: white;
+}
+
+
+.content-padding {
+	padding:  0	1em;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+	.content-padding {
+		padding:  0	2em;
+	}
+}
+
+.no-padding {
+   padding: 0 !important;
+}
+
+/* ************************************** */
+/*	General													      */
+/* ************************************** */
+
+#skiplinks {
+	margin: 0;
+	li {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	a {
+		display: block;
+		line-height: 1.8em;
+		text-align: center;
+		position: absolute;
+		top: -99999px;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	a:focus {
+		position: inherit;
+	}
+
+	a:hover {
+		color: #468847;
+	}
+}
+
+.globals-lite #main {
+	box-shadow: 0 5px 10px #888888;
+	margin-top: 0;
+	background-color: white;
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+	.globals-lite #main {
+		margin-top: 15px;
+	}
+}
+
+
