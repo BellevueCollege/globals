@@ -8,7 +8,6 @@ var gulp         = require('gulp');
     rename       = require('gulp-rename');
     uglify       = require('gulp-uglify');
     saveLicense  = require('uglify-save-license');
-    modernizr    = require('gulp-modernizr');
 
 
 // Path Configs
@@ -37,6 +36,7 @@ var sassOptions = {
   includePaths: [
       config.sassPath,
       config.npmPath + '/bootstrap/scss',
+      config.npmPath + '/@fortawesome/fontawesome-free/scss',
   ],
   precision: 10
 }
@@ -68,24 +68,7 @@ var uglifyOptions = {
   }
 }
 
-/**
- * Modernizr Settings
- */
-var modernizrOptions = {
-  "tests": [
-    "displaytable",
-    "flexbox",
-    "flexboxlegacy",
-    "flexboxtweener",
-    "flexwrap",
-    "fontface"
-  ],
-  "options": [
-    "testStyles",
-    "html5shiv",
-    "setClasses"
-  ],
-}
+
 
 /**
  * Sass Compilers
@@ -136,68 +119,42 @@ function faFonts() {
     .pipe(gulp.dest( config.verPath + '/f' ));
 }
 
-/**
- * Build Dev Modernizr Scripts
- */
-function modernizrDev() {
-  return gulp
-    .src([
-      config.jsPath + '/**.js',
-      config.npmPath + '/**.scss'
-    ])
-    .pipe(modernizr('ghead.js', modernizrOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
-
-/**
- * Build Production Modernizr Scripts
- */
-function modernizrProd() {
-  return gulp
-    .src([
-      config.jsPath + '/**.js',
-      config.npmPath + '/**.scss'
-    ])
-    .pipe(modernizr('ghead.js', modernizrOptions))
-    .pipe(uglify(uglifyOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
 
 /**
  * Processes to move and concat Scripts (dev alternates)
  **/
-function globalsFooterScriptsDev() {
-  return gulp
-    .src([
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
-      config.jsPath + '/custom.js'
-    ])
-    .pipe(concat('g.js'))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
+// function globalsFooterScriptsDev() {
+//   return gulp
+//     .src([
+//       config.jsPath + '/jquery.swiftype.autocomplete.js',
+//       config.jsPath + '/custom.js'
+//     ])
+//     .pipe(concat('g.js'))
+//     .pipe(gulp.dest(config.verPath + '/j'));
+// }
 
 /**
  * Processes to move and concat Scripts
  **/
-function bootstrapScripts() {
-  return gulp
-    .src( config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js' )
-    .pipe(gulp.dest( config.verPath + '/j' ));
-}
+// function bootstrapScripts() {
+//   return gulp
+//     .src( config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js' )
+//     .pipe(gulp.dest( config.verPath + '/j' ));
+// }
 
 /**
  * Process and Concat Globals Footer Scripts (Legacy)
  */
-function globalsFooterScripts() {
-  return gulp
-    .src([
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
-      config.jsPath + '/custom.js'
-    ])
-    .pipe(concat('g.js'))
-    .pipe(uglify(uglifyOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
+// function globalsFooterScripts() {
+//   return gulp
+//     .src([
+//       config.jsPath + '/jquery.swiftype.autocomplete.js',
+//       config.jsPath + '/custom.js'
+//     ])
+//     .pipe(concat('g.js'))
+//     .pipe(uglify(uglifyOptions))
+//     .pipe(gulp.dest(config.verPath + '/j'));
+// }
 
 
 /**
@@ -206,7 +163,6 @@ function globalsFooterScripts() {
 function headerScriptsFull() {
   return gulp
     .src([
-      config.verPath + '/j/ghead.js',
       config.jsPath + '/jquery.swiftype.autocomplete.js',
     ])
     .pipe(concat('ghead-full.js'))
@@ -256,23 +212,17 @@ function watch() {
 const dev = gulp.series(
     sassDev,
     faFonts,
-    bootstrapScripts,
-    modernizrDev,
     headerScriptsFull,
     footerScriptsFull,
     minifyFull,
-    globalsFooterScriptsDev
   );
 
 const prod = gulp.series(
     sassProd,
     faFonts,
-    bootstrapScripts,
-    modernizrProd,
     headerScriptsFull,
     footerScriptsFull,
     minifyFull,
-    globalsFooterScripts
   );
 
 
