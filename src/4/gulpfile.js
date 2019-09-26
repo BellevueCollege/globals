@@ -51,6 +51,7 @@ var sassDevOptions = {
   includePaths: [
     config.sassPath,
     config.npmPath + '/bootstrap/scss',
+    config.npmPath + '/@fortawesome/fontawesome-free/scss',
   ],
   precision: 10
 }
@@ -129,9 +130,9 @@ function sassProd() {
 /**
  * Processes to move and concat Fonts
  **/
-function bootstrapFonts() {
+function faFonts() {
   return gulp
-    .src( config.npmPath + '/bootstrap-sass/assets/fonts/bootstrap/**.*' )
+    .src( config.npmPath + '/@fortawesome/fontawesome-free/webfonts/**.*' )
     .pipe(gulp.dest( config.verPath + '/f' ));
 }
 
@@ -180,7 +181,7 @@ function globalsFooterScriptsDev() {
  **/
 function bootstrapScripts() {
   return gulp
-    .src( config.npmPath + '/bootstrap/dist/js/bootstrap.js' )
+    .src( config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js' )
     .pipe(gulp.dest( config.verPath + '/j' ));
 }
 
@@ -218,7 +219,7 @@ function headerScriptsFull() {
 function footerScriptsFull() {
   return gulp
     .src([
-      config.npmPath + '/bootstrap/dist/js/bootstrap.js',
+      config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js',
       config.jsPath + '/custom.js'
     ])
     .pipe(concat('gfoot-full.js'))
@@ -254,7 +255,7 @@ function watch() {
  */
 const dev = gulp.series(
     sassDev,
-    // bootstrapFonts,
+    faFonts,
     bootstrapScripts,
     modernizrDev,
     headerScriptsFull,
@@ -265,7 +266,7 @@ const dev = gulp.series(
 
 const prod = gulp.series(
     sassProd,
-    // bootstrapFonts,
+    faFonts,
     bootstrapScripts,
     modernizrProd,
     headerScriptsFull,
