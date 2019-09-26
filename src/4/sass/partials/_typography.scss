@@ -9,9 +9,6 @@
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 
-	/* Instead use this non-standard one: */
-	word-break: break-word;
-
 	/* Adds a hyphen where the word breaks, if supported (No Blink) */
 	hyphens: auto;
 }
@@ -25,16 +22,10 @@
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-}
 
-/* Allow for Bootstrap default functionality with added class */
-h1.noclear,
-h2.noclear,
-h3.noclear,
-h4.noclear,
-h5.noclear, 
-h6.noclear {
-	clear: none;
+	&.noclear {
+		clear: none;
+	}
 }
 
 
@@ -49,12 +40,10 @@ h1:first-child {
 /* Remove heading margin within well/alert
  * First children don't need margin; it adds a bunch of space which looks odd */
 .well, .alert {
-	h2:first-child,
-	h3:first-child,
-	h4:first-child,
-	h5:first-child,
-	h6:first-child {
-		margin-top: 0;
+	h2, h3, h4, h5, h6 {
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -64,7 +53,7 @@ blockquote {
 	margin: 1.33333em 0 0.333333em;
 	padding: 0.333333em 2.4em 0.33333em 2.5em;
 	position: relative;
-	color: $gray-300;
+	color: $gray-600;
 	font-size: 1.4em;
 }
 
@@ -79,9 +68,11 @@ blockquote:before {
 	font-size: 6rem;
 	position: absolute;
 	left: 0.12em;
-	top: 0.25em;
+	top: -0.25em;
 	color: $gray-500;
 }
+
+
 
 blockquote small {
   display: block;

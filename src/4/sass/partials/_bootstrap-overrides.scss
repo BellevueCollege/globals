@@ -5,15 +5,29 @@ a {
 	text-decoration: underline;
 }
 
-/* Change Pagination to use Inline Block
-   to prevent odd breaking on small screens */
-ul.pagination {
+// Resets - prevent typography styles from breaking navbars
+ul.nav.nav-tabs,
+#content ul.nav.nav-tabs,
+ul.nav.nav-pills,
+#content ul.nav.nav-pills,
+ul.nav.navbar-nav,
+#content ul.nav.navbar-nav {
+	font-size: 14px;
+	overflow: visible;
+
 	li {
-		display: inline-block;
+		margin-top: 0;
 		margin-left: 0;
+		margin-right: 0;
 		padding-left: 0;
+
+		a, a:focus {
+			text-decoration: none;
+			box-shadow: none;
+		}
 	}
 }
+
 
 /* Accessibility fixes */
 .label-warning,
@@ -26,8 +40,6 @@ abbr[title],
 abbr[data-original-title] {
 	text-decoration: none;
 }
-
-
 
 /* Add animated loading icon */
 .glyphicon-spin-animate {
