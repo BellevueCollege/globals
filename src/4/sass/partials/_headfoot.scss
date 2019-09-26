@@ -93,7 +93,8 @@
 		margin-bottom: 1.16666667em;
 		padding-top: .33333333em;
 		padding-bottom: 0.333333em;
-		width: 300px;
+		width: 345px;
+		display: block;
 
 		img {
 			max-width: 100%
@@ -145,7 +146,7 @@ $topbar-vert-padding: 1em;
 			// Logo Link
 			a#bc-logo-square {
 				margin: 1rem;
-				background-image: url("../i/bellevuecollege-vert.png");
+				background-image: url("../i/bellevuecollege-vert.svg");
 				background-size: contain;
 				background-repeat: no-repeat;
 			}
