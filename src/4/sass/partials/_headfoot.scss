@@ -40,19 +40,13 @@
 	background-color: $primary;
 	box-shadow: 0 0px 10px #999;
 }
-.header-search fieldset {
-	white-space:nowrap;
-}
-#smallhead-wrap {
-	background: $primary url(../i/headbg.jpg) repeat-y;
-}
-#smallhead {
-	position: relative;
-	zoom: 1 /*IE hack, see next line*/;
-	transition: padding 0.5s ease;
+	
+	.social-media {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: .25rem;
 }
 
-.lite {
 	#bc-logo {
 		display: block;
 		margin-top: 0.2em;
@@ -363,6 +357,10 @@ $topbar-vert-padding: 1em;
 			display:none; // hide on mobile; may want to re-evaluate in the future
 		}
 
+		.lite .social-media {
+			justify-content: center;
+		}
+
 		#secondary-header {
 			#header-actions-container {
 	
@@ -372,7 +370,7 @@ $topbar-vert-padding: 1em;
 	
 			}
 			.social-media {
-				display: none !important;
+				display: none;
 				margin-bottom: 0;
 	
 			}
@@ -434,12 +432,25 @@ $topbar-vert-padding: 1em;
 
 		}
 
-		#college-navbar {
-			display: block;
-			
+	}
+	#secondary-header.action-menu {
+		#header-actions-container {
+			display: flex;
+			flex-direction: column-reverse;
 		}
 		.social-media {
-			display: block;
+			display: flex;
+			margin: 1em 0 .5em;
+			a {
+				background: #fff;
+
+				&:first-child {
+					border-radius: 4px 0 0 4px;
+		}
+				&:last-child {
+					border-radius: 0 4px 4px 0;
+	}
+			}
 		}
 	}
 
@@ -788,6 +799,34 @@ p.site-description {
 	#bigfoot,
 	#top-wrap { padding: 0 0.66667em;}
 }
+
+/* Social Media */
+.social-media {
+	a .fab {
+		font-size: 1.75rem;
+
+		&.fa-facebook-square {
+			color: #3b5998;
+
+		}
+		&.fa-twitter-square {
+			color: #55acee;
+		}
+		&.fa-youtube-square {
+			color: #e52d27;
+		}
+		&.fa-instagram {
+			/*! Thank you https://stackoverflow.com/a/49659118 */
+			color: transparent;
+			background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+			background-clip: text;
+		}
+		&.fa-linkedin {
+			color: #0077b5;
+		}
+	}
+}
+
 
 
 
