@@ -1,12 +1,14 @@
 /* ************************************** */
 /* Carousel 																*/
 /* ************************************** */
-@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+
+
+@include media-breakpoint-up(md) {
 	#carousel-featured-in-content {
 		margin:  0	1em;
 	}
 }
-@media screen and (min-width: map-get($grid-breakpoints, "md")) {
+@include media-breakpoint-up(md) {
 	#carousel-featured-in-content {
 		margin:  0	2em;
 	}
@@ -54,8 +56,7 @@ a.carousel-control:focus {
 	}
 }
 
-@media screen and (min-width: map-get($grid-breakpoints, "md")
-) {
+@include media-breakpoint-up(md) {
 	#carousel-featured-in-content .carousel-control {
 		left: 0.7em;
 		left: 3.3rem;
@@ -147,7 +148,7 @@ a.carousel-control:focus {
 	text-align: left;
 }
 
-@media screen and (min-width: map-get($grid-breakpoints, "sm")) {
+@include media-breakpoint-up(md) {
 	/* Overlay caption on larger breakpoints */
 	.carousel-caption {
 		position: absolute;

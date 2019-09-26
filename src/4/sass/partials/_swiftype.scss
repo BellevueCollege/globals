@@ -41,10 +41,10 @@
 }
 
 .swiftype-widget .autocomplete li.active {
-  border-top: 1px solid darken($brand-info, 20%);
-  border-bottom: 1px solid darken($brand-info, 20%);
-  background-color: $brand-info;
-  box-shadow: 0 1px 0 $brand-info inset;
+  border-top: 1px solid darken($info, 20%);
+  border-bottom: 1px solid darken($info, 20%);
+  background-color: $info;
+  box-shadow: 0 1px 0 $info inset;
 }
 
 .swiftype-widget .autocomplete li p {

@@ -1,37 +1,46 @@
 /* Set path for Bootstrap icon fonts */
 
 /* Over-ride default colors */
-$brand-primary:         #003D79; // BC Brand Primary Blue
-$brand-success:         #317131; // Darkened to meet a11y AA requirements
-$brand-info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
-$brand-warning:         #F2C01E; // BC Brand Yellow
-$brand-danger:          #C4122F; // BC Brand Red
+$primary:         #003D79; // BC Brand Primary Blue
+$success:         #317131; // Darkened to meet a11y AA requirements
+$info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
+$warning:         #F2C01E; // BC Brand Yellow
+$danger:          #C4122F; // BC Brand Red
 
-$btn-info-color:        #162F57;
-$btn-warning-color:     #000;
-$btn-warning-border:    #E36F1E; //BC Brand Orange
-
-$label-default-bg: #555;
-$badge-bg: #555;
-$breadcrumb-active-color: #555;
+$body-bg: #efefef;
 $link-color: #0073ae;
-$link-hover-color: $brand-primary;
+$link-hover-color: $primary;
 
 $font-family-sans-serif:  Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $headings-font-family: $font-family-serif;
 
-$font-size-h1:            1.8em;
-$font-size-h2:            1.6em;
-$font-size-h3:            1.4em;
-$font-size-h4:            1.2em;
-$font-size-h5:            1.1em;
-$font-size-h6:            1em;
+$h1-font-size:            1.8em;
+$h2-font-size:            1.6em;
+$h3-font-size:            1.4em;
+$h4-font-size:            1.2em;
+$h5-font-size:            1.1em;
+$h6-font-size:            1em;
 
 $headings-font-weight:    400;
 
+$enable-shadows: true;
+
+/* Full-width on small and medium bps */
+$container-max-widths: (
+  md: 767px,
+  lg: 960px,
+  xl: 1140px
+);
+
 /* Load Default Bootstrap */
 @import "bootstrap";
+
+$fa-font-path: '../f';
+@import "fontawesome";
+@import "solid.scss";
+@import "brands.scss";
+
 
 /* Load Custom Mixins */
 @import "mixins";
@@ -43,4 +52,4 @@ $std-line-height: 1.66666667em;
 $std-margin: 1em;
 $sm-margin: $std-margin/3;
 
-$brand-primary-dark: #162F57;
+$primary-dark: #162F57;

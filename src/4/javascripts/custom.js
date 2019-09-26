@@ -244,24 +244,23 @@
 
 	// Branded
 	// Make sure new class is in place
-	if ($("#top-wrap").hasClass("mobile-s17") && $("#top-wrap").hasClass("branded")) {
+	if ($("#top-wrap").hasClass("branded")) {
 
 		// Open tools menu
 		$("#tools-link").find('a').click(function (event) {
 			event.preventDefault();
 			$("header#top-wrap").toggleClass("action-tools");
-			$("#tools-close-icon").focus();
+			$("#tools-close-icon a").attr('tabindex', 0).focus();
 		});
 
 		// Close tools menu
 		$("#tools-close-icon").click(function (event) {
 			event.preventDefault();
 			$("header#top-wrap").toggleClass("action-tools");
+			$("#tools-close-icon a").attr('tabindex', -1);
 			$("#tools-link a").focus();
 		});
 
-		// Move menu to header
-		$("#main-nav-wrap").insertAfter($("header#top-wrap").find(".container") );
 
 		// Expand menu
 		$("#main-nav-link").find('a').click( function( event ) {
@@ -273,7 +272,7 @@
 			}
 			
 			$("header#top-wrap").toggleClass("action-menu").
-				find("#main-nav-wrap").slideToggle().attr('aria-role', 'region');
+				find("#college-navbar").slideToggle().attr('aria-role', 'region');
 		});
 
 		// Transform when search has focus
@@ -286,14 +285,11 @@
 
 	// Lite
 	// Make sure new class is in place
-	if ($("#header-actions-container").length && $("#top-wrap").hasClass("lite")) {
-
-		// Move menu to header
-		$("#main-nav-wrap").appendTo($("#top"));
+	if ($("#header-actions-container").length && $("#secondary-header").hasClass("lite")) {
 
 		// Expand menu
 		$("#main-nav-link").find('a').click(function (event) {
-			if ($("#top").css("flex-direction") == "column") {  // only fire when in mobile view
+			//if ($("#secondary-header").css("flex-direction") == "column") {  // only fire when in mobile view
 				event.preventDefault();
 				if ($(this).attr('aria-expanded') == 'false') {
 					$(this).attr('aria-expanded', 'true').focus();
@@ -301,16 +297,16 @@
 					$(this).attr('aria-expanded', 'false');
 				}
 
-				$("div#top.mobile-s17").toggleClass("action-menu").
+				$("#secondary-header").toggleClass("action-menu").
 					find("#main-nav-wrap").slideToggle().attr('aria-role', 'region');
-			}
+			//}
 		});
 
 		// Transform when search has focus
 		$("#bc-search").focusin(function (event) {
-			$("div#top.mobile-s17").addClass("action-search");
+			$("#secondary-header").addClass("action-search");
 		}).focusout(function (event) {
-			$("div#top.mobile-s17").removeClass("action-search");
+			$("#secondary-header").removeClass("action-search");
 		});
 	}
 

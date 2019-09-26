@@ -3,10 +3,6 @@
 /*	Bellevue College Global Elements      */
 /* ************************************** */
 
-a {
-	outline: none;
-}
-
 #content {
 	/* Prevent long words from breaking formatting */
 	/* These are technically the same, but use both */
@@ -125,11 +121,4 @@ button,
 a.btn,
 .list-group a {
 	text-decoration: none;
-}
-
-// Remove extra focus
-button:focus,
-a.btn:focus,
-.list-group a:focus {
-	box-shadow: none;
 }
