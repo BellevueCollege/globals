@@ -19,3 +19,8 @@ gulp.1
 bower_components
 .git
 .vscode
+
+# Globals 4
+/g/4/c/g.css
+/g/4/f/**
+/g/4/j/**
