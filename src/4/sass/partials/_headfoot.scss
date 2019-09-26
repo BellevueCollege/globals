@@ -1,60 +1,41 @@
+/**
+ * Globals Lite
+ *
+ * Lite is used for department sites/etc
+*/
 
-/* ************************************** */
-/*	head      								*/
-/* ************************************** */
+/* Lite Header */
 
-/* Social Media */
-// .social-media ul {
-// 	list-style: none;
-// 	margin: 0;
-// 	padding: 0;
-// 	display: flex;
-// 	justify-content: space-between;
-// 	flex-wrap: wrap;
-
-// 	li {
-// 		flex: 0 0 auto;
-// 	}
-
-// 	a {
-// 		padding: 0 .25em;
-// 		display: inline-block;
-// 	}
-
-// 	li:first-child {
-// 		a {
-// 			padding-left: 0;
-// 		}
-// 	}
-// 	li:last-child {
-// 		a {
-// 			padding-right: 0;
-// 		}
-// 	}
-// }
-
-
-
-/* Lite Elements */
-#top-wrap.lite {
-	background-color: $primary;
-	box-shadow: 0 0px 10px #999;
+#smallhead-wrap {
+	background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,95,166,1) 10%, rgba(0,0,0,0) 80%);
+	
 }
+/* Small lite topbar */
+.lite {
+	&#top-wrap{
+		background-color: $primary;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	}
 	
 	.social-media {
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: .25rem;
-}
+	}
 
 	#bc-logo {
 		display: block;
 		margin-top: 0.2em;
 		margin-bottom: 0.2em;
 		width: 310px;
-	}
-	#bc-logo:hover {
-		background: url(../i/homepage.png) no-repeat 100% 0.5em;
+
+		img {
+			height: 1.45rem;
+		}
+		&:hover {
+			// Show 'homepage' tooltip
+			background: url(../i/homepage.png) no-repeat 100% 0.5em;
+		}
 	}
 	&#secondary-header {
 		background: #ffffff;
@@ -66,139 +47,33 @@
 		}
 	}
 
-}
-
-.globals-lite {
-	// // Lite Header
-	// #top {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	flex-wrap: wrap;
-	// }
-	// #site-branding,
-	// #header-actions-container {
-	// 	padding: 1em;
-	// 	flex: 1 1 auto;
-	// }
-
-	
-
-}
-
-@include media-breakpoint-up(sm) {
-
-	
-
-	
-}
-
-@include media-breakpoint-up(sm) {
-    // your code
-	.globals-lite {
-		#site-branding {
-			padding-right: .5em;
-			padding-left: 2em;
-		}
-
-		#header-actions-container {
-			padding-right: 2em;
-			padding-left: .5em;
-		}
-	}
-}
-
-
-
-
-
-/* Recent Pages in Search */
-#autocomplete-loading {
-	color: #ccc;
-	position: absolute;
-	z-index: 100;
-	right: 5em;
-	top: .333em;
-
-	span {
-		padding: 0;
-		margin: 0;
+	#header-actions-container {
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 
 }
-#bc-search-container-lite #autocomplete-loading {
-	top: 0.5em;
-}
-#bc-search-container-lite #autocomplete-loading.college-search-field-custom {
-	right: 7.25em;
-}
-.recent-pages-autocomplete {
-	position: absolute;
-	z-index: 99;
 
-	background: #fff;
 
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-	border-radius: 3px;
-	line-height: 1.25em;
+/**
+ * Globals Branded
+ *
+ * Branded is used for department sites/etc
+*/
 
-	p {
-		font-size: .8rem;
-		padding: .125em .5em;
-		margin: 0;
-		color: #000;
-		background: #e5e5e5;
-		border-bottom: 1px solid #e5e5e5;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	li a {
-		margin: 0;
-		padding: .333em 1em ;
-		display: block;
-		border-bottom: 1px solid #e5e5e5;
-		text-decoration: none;
-		color: #000;
-	}
-	li:last-child a {
-		border-bottom-left-radius: 3px;
-		border-bottom-right-radius: 3px;
-	}
-
-	li.active a,
-	a:hover,
-	a:focus {
-		border-bottom: 1px solid #49a4ff;
-		background-color: #afd7ff;
-
-	}
-}
-
-/* Branded */
-
+/* Branded Header */
 #top-wrap.branded {
 	background: rgb(0,61,121);
 	background: linear-gradient(0deg, rgba(0,61,121,1) 5%, rgba(0,61,121,1) 90%, rgba(239,239,239,1) 90%);
 }
 
 .container.logobar {
-	background: url(../i/headbg.jpg) repeat-y scroll 0 0 $primary;
+	background: rgb(0,80,159);
+	background: linear-gradient(90deg, rgba(0,64,126,1) 0%, rgba(0,95,166,1) 20%, rgba(0,61,121,1) 80%);
 
 }
 .container.logobar {
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-#mob-nav .input-group {
-	margin-bottom: 1em;
-}
-
-#mybc {  // should be class?
-	font-style: italic;
 }
 
 #college-top-actions a {
@@ -212,40 +87,24 @@
 	}
 }
 
-.lite #college-top-actions {
-
-}
-
-@include media-breakpoint-up(md) {
-	.branded #bc-logo {
+.branded #bc-logo {
+	@include media-breakpoint-up(md) {
 		margin-top: 1.16666667em;
 		margin-bottom: 1.16666667em;
 		padding-top: .33333333em;
 		padding-bottom: 0.333333em;
 		width: 300px;
-	}
 
-	.branded #bc-logo img {
-		max-width: 100%
+		img {
+			max-width: 100%
+		}
 	}
 
 }
 
-@media screen and (min-width: 50em) {
-	.branded #bc-logo {
-		width: 420px;
-	}
-	.branded #bc-logo img {
-		max-width: 100%;
-	}
-
-	.branded #bc-logo:hover {
-		background: url(../i/homepage.png) no-repeat 350px 17px;
-	}
-}
 
 /* ************************************** */
-/* New Mobile Header Format               */
+/* Mobile Header Format               */
 /* ************************************** */
 
 // Variable Setup
@@ -446,10 +305,10 @@ $topbar-vert-padding: 1em;
 
 				&:first-child {
 					border-radius: 4px 0 0 4px;
-		}
+				}
 				&:last-child {
 					border-radius: 0 4px 4px 0;
-	}
+				}
 			}
 		}
 	}
@@ -590,21 +449,6 @@ $topbar-vert-padding: 1em;
 	}
 }
 
-// Target Mobile Less Than 330px
-@media screen and (max-width: 329px) {
-	// Lite only
-	#secondary-header {
-		.social-media {
-			ul {
-				li {
-					padding: 0.5em 0.25em;
-				}
-			}
-		}
-	}
-}
-
-
 // Menu icon
 #top-wrap.branded .menu-icon,
 #secondary-header #header-actions-container .menu-icon {
@@ -666,21 +510,7 @@ h1.site-title a {
 p.site-description {
 	line-height: 1.5em;
 	margin: 0;
-	//margin-top: .5em;
 }
-
-
-/* ************************************** */
-/*	Content space 									      */
-/* ************************************** */
-
-#content {
-	background-color: white;
-}
-#content.transparent {
-	background-color: transparent;
-}
-
 
 /* ************************************** */
 /*	Foot														      */
@@ -691,13 +521,7 @@ p.site-description {
 	background-color: #E1E1E1;
 	border-bottom: 1px solid #999999;
 	border-top: 1px solid #999999;
-	
-	.inner {
-		@include box-shadow (-2px 2px 2px rgba(160, 160, 160, 0.7), 2px 2px 2px rgba(160, 160, 160, 0.7));
-		padding-top: 1.3333333em;
-		padding-bottom: 1.3333333em;
-		background-color: #E5E5E5;
-	}
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -723,14 +547,11 @@ p.site-description {
 		margin-bottom: $std-margin;
 	}
 	.social-media {
-		max-width: 16em;
+		max-width: 12em;
 		h3 {
 			margin-top: $std-margin;
 		}
-		ul {
-			margin-bottom: 0;
-			margin-top: .25em;
-		}
+
 
 		p {
 			margin-bottom: $std-margin;
@@ -741,57 +562,73 @@ p.site-description {
 		white-space: nowrap;
 		line-height:1em;
 		color: #003D79;
-	}
-	a:hover,
-	a:active {
-		color: #000;
+
+		&:hover,
+		&:active {
+			color: #000;
+		}
 	}
 
-	#bellevueaddress {}
-	#bellevueaddress .tel,
-	#bellevueaddress .adr {
-		font-size: .9em;
-		line-height: 1.4em;
-		margin-top:.1em;
+	#bellevueaddress {
+		.tel,
+		.adr {
+			font-size: .9em;
+			line-height: 1.4em;
+			margin-top:.1em;
+		}
 	}
 }
 
+#bigfoot + .container #legalbar {
+	padding: 0.66666667em 0 1em 0;
+}
 #legalbar {
 	clear: left;
 	margin: 0 auto;
 	padding: 1em 0 1em 0;
 	text-align: center;
-}
-#bigfoot + .container #legalbar {
-	padding: 0.66666667em 0 1em 0;
-}
 
-#legalbar li {
-	display: inline;
-	padding:0;
-	margin: 0;
-	list-style-type: none;}
-#legalbar li a {
-	padding: 0 0.9em 0 1em;
-	color: #666;
-	border-left: 1px solid #DDDDDD;
-	font-size: .8em;
-	white-space: nowrap;}
-#legalbar li a:hover,
-#legalbar li a:focus {
-	color: $primary;}
-#legalbar li.first a {
-	border-left: none;}
-#legalbar li.last {
-	float: none;
-	clear: left;
-	display: block;
-	padding: 0}
-#legalbar li.last a {
-	padding-left: 0;
-	border-left: none; }
-#legalbar span {
-	padding-left: 21px;}
+
+	li {
+		display: inline;
+		padding:0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	li a {
+		padding: 0 0.9em 0 1em;
+		color: #666;
+		border-left: 1px solid #DDDDDD;
+		font-size: .8em;
+		white-space: nowrap;
+	}
+
+	li a:hover,
+	li a:focus {
+		color: $primary;
+	}
+
+	li.first a {
+		border-left: none;
+	}
+
+	li.last {
+		float: none;
+		clear: left;
+		display: block;
+		padding: 0
+	}
+
+	li.last a {
+		padding-left: 0;
+		border-left: none;
+	}
+
+	span {
+		padding-left: 21px;
+	}
+}
 
 
 @media screen and (min-width: 50em) {
@@ -828,18 +665,73 @@ p.site-description {
 }
 
 
+/* Recent Pages in Search */
+#autocomplete-loading {
+	color: #ccc;
+	position: absolute;
+	z-index: 100;
+	right: 5em;
+	top: .333em;
 
+	span {
+		padding: 0;
+		margin: 0;
+	}
 
-
-/* ************************************** */
-/* ************************************** */
-/*	Our Bootstrap Overrides						    */
-/* ************************************** */
-/* ************************************** */
-
-#main-nav-wrap .container-fluid {
-//	padding: 0;
 }
+#bc-search-container-lite #autocomplete-loading {
+	top: 0.5em;
+}
+#bc-search-container-lite #autocomplete-loading.college-search-field-custom {
+	right: 7.25em;
+}
+.recent-pages-autocomplete {
+	position: absolute;
+	z-index: 99;
+
+	background: #fff;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	line-height: 1.25em;
+
+	p {
+		font-size: .8rem;
+		padding: .125em .5em;
+		margin: 0;
+		color: #000;
+		background: #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li a {
+		margin: 0;
+		padding: .333em 1em ;
+		display: block;
+		border-bottom: 1px solid #e5e5e5;
+		text-decoration: none;
+		color: #000;
+	}
+	li:last-child a {
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	li.active a,
+	a:hover,
+	a:focus {
+		border-bottom: 1px solid #49a4ff;
+		background-color: #afd7ff;
+
+	}
+}
+
 
 /* ************************************** */
 /* Emergency Alerts (Rave) 				*/

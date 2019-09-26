@@ -298,7 +298,7 @@
 				}
 
 				$("#secondary-header").toggleClass("action-menu").
-					find("#main-nav-wrap").slideToggle().attr('aria-role', 'region');
+					find("#college-navbar").slideToggle().attr('aria-role', 'region');
 			//}
 		});
 
