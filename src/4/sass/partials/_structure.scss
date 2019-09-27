@@ -4,7 +4,9 @@
 /* ************************************** */
 
 #skiplinks {
-	margin: 0;
+	background: $primary;
+	text-align: center;
+	margin-bottom: 0;
 	li {
 		display: inline;
 		margin: 0;
@@ -14,14 +16,17 @@
 	a {
 		@include sr-only;
 		@include sr-only-focusable;
+
+		padding: .125em;
+		margin: .5em;
+		
+		&:focus {
+			
+
+		}
+		
 	}
 
-	a:hover {
-		color: #468847;
-	}
-}
 
-#main {
-	background-color: #ffffff;
 }
 
