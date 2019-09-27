@@ -272,7 +272,7 @@
 			}
 			
 			$("header#top-wrap").toggleClass("action-menu").
-				find("#college-navbar").slideToggle().attr('aria-role', 'region');
+				find("#college-navbar").attr('aria-role', 'region');
 		});
 
 		// Transform when search has focus
@@ -298,7 +298,7 @@
 				}
 
 				$("#secondary-header").toggleClass("action-menu").
-					find("#college-navbar").slideToggle().attr('aria-role', 'region');
+					find("#college-navbar").attr('aria-role', 'region');
 			//}
 		});
 

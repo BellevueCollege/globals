@@ -102,6 +102,9 @@
 	}
 
 }
+#college-navbar {
+	display: flex;
+}
 
 
 /* ************************************** */
@@ -247,6 +250,10 @@ $topbar-vert-padding: 1em;
 		$topbar-height: $topbar-base * 0.9;
 		$topbar-offset: $topbar-base * .1;
 		$topbar-padding: $topbar-base * .1;
+
+		#college-navbar {
+			display: block;
+		}
 
 		#vertical-logo {
 			max-width: $topbar-base;
