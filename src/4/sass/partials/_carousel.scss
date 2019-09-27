@@ -2,80 +2,48 @@
 /* Carousel 																*/
 /* ************************************** */
 
-
-@include media-breakpoint-up(md) {
-	#carousel-featured-in-content {
-		margin:  0	1em;
-	}
+#carousel-featured-full {
+	margin-top: -1.5rem;
+	margin-bottom: 1.5rem;
 }
-@include media-breakpoint-up(md) {
-	#carousel-featured-in-content {
-		margin:  0	2em;
-	}
+#carousel-featured-in-content {
+	margin-bottom: 1.5rem;
 }
 
-.carousel-control {
-	font-family: $font-family-base;
+.carousel-control-prev,
+.carousel-control-next {
 	position: absolute;
 	top: 40%;
-	left: 0.3em;
 	left: 1.1rem;
 	width: 0.666666em;
 	height: 0.666666em;
 	font-size: 4em;
-	font-weight: 100;
-	line-height: 0.5em;
 	color: #ffffff;
-	text-decoration:none;
 	text-align: center;
 	background: #222222;
 	border: 0.0333333em solid #ffffff;
 	border-radius: 0.5em;
 	opacity: 0.5;
 
-	span.glyphicon {
-		margin-left: -.9rem;
-		margin-top: -1.05rem;
-		font-size: 30px;
-	}
 }
-a.carousel-control:focus {
-	border-radius: 0.5em;
-	outline: none;
-}
-.carousel-control.right {
-	right: 0.3em;
+.carousel-control-next {
 	right: 1.1rem;
 	left: auto;
 
-	span.glyphicon {
-		margin-right: -.9rem;
-		margin-left: auto;
-		margin-top: -1.05rem;
-		font-size: 30px;
-	}
 }
 
 @include media-breakpoint-up(md) {
-	#carousel-featured-in-content .carousel-control {
+	#carousel-featured-in-content .carousel-control-prev,
+	#carousel-featured-in-content .carousel-control-next {
 		left: 0.7em;
 		left: 3.3rem;
 	}
-	#carousel-featured-in-content .carousel-control.right {
+	#carousel-featured-in-content .carousel-control-next {
 		right: 0.7em;
 		right: 3.3rem;
 		left: auto;
 	}
 }
-
-.carousel-control:hover,
-.carousel-control:focus {
-	color: #ffffff;
-	text-decoration: none;
-	opacity: 0.9;
-	outline: none;
-}
-
 
 
 .carousel-indicators {
