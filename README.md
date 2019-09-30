@@ -24,7 +24,7 @@ As of version 3.15, gulp commands should be run from the source folder of the gl
 ### Process Support
 * browserlist-stats.json - contains browser usage from Google Analytics
   * This can be generated using [BrowserList-GA](https://github.com/browserslist/browserslist-ga) by running `npx browserslist-ga`
-* gulpfile.js - Gulp processes
+* /src/{version}/gulpfile.js - Gulp processes
 * package.json - npm dependancies
 
 ### Development Files
