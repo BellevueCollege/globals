@@ -1,0 +1,51 @@
+/* Set path for Bootstrap icon fonts */
+
+/* Over-ride default colors */
+$primary:         #003D79; // BC Brand Primary Blue
+$success:         #317131; // Darkened to meet a11y AA requirements
+$info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
+$warning:         #F2C01E; // BC Brand Yellow
+$danger:          #C4122F; // BC Brand Red
+
+$body-bg: #efefef;
+$link-color: #0073ae;
+$link-hover-color: $primary;
+
+$font-family-sans-serif:  Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$headings-font-family: $font-family-serif;
+
+$h1-font-size:            1.8em;
+$h2-font-size:            1.6em;
+$h3-font-size:            1.4em;
+$h4-font-size:            1.2em;
+$h5-font-size:            1.1em;
+$h6-font-size:            1em;
+
+$headings-font-weight:    400;
+
+$enable-shadows: true;
+
+/* Full-width on small and medium bps */
+$container-max-widths: (
+  md: 767px,
+  lg: 960px,
+  xl: 1140px
+);
+
+/* Load Default Bootstrap */
+@import "bootstrap";
+
+$fa-font-path: '../f';
+@import "fontawesome";
+@import "solid.scss";
+@import "brands.scss";
+
+/* Variables */
+
+/* Typography */
+$std-line-height: 1.66666667em;
+$std-margin: 1em;
+$sm-margin: $std-margin/3;
+
+$primary-dark: #162F57;

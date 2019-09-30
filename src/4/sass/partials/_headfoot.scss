@@ -1,0 +1,755 @@
+/**
+ * Globals Lite
+ *
+ * Lite is used for department sites/etc
+*/
+
+/* Lite Header */
+
+#smallhead-wrap {
+	background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,95,166,1) 10%, rgba(0,0,0,0) 80%);
+	
+}
+/* Small lite topbar */
+.lite {
+	&#top-wrap{
+		background-color: $primary;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	}
+	
+	.social-media {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: .25rem;
+	}
+
+	#bc-logo {
+		display: block;
+		margin-top: 0.2em;
+		margin-bottom: 0.2em;
+		width: 310px;
+
+		img {
+			height: 1.45rem;
+		}
+		&:hover {
+			// Show 'homepage' tooltip
+			background: url(../i/homepage.png) no-repeat 100% 0.5em;
+		}
+	}
+	&#secondary-header {
+		background: #ffffff;
+
+		margin-top: 1em;
+
+		#site-branding {
+			@extend .my-3;
+		}
+	}
+
+	#header-actions-container {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+}
+
+
+/**
+ * Globals Branded
+ *
+ * Branded is used for department sites/etc
+*/
+
+/* Branded Header */
+#top-wrap.branded {
+	background: rgb(0,61,121);
+	background: linear-gradient(0deg, rgba(0,61,121,1) 5%, rgba(0,61,121,1) 90%, rgba(239,239,239,1) 90%);
+}
+
+.container.logobar {
+	background: rgb(0,80,159);
+	background: linear-gradient(90deg, rgba(0,64,126,1) 0%, rgba(0,95,166,1) 20%, rgba(0,61,121,1) 80%);
+
+}
+.container.logobar {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#college-top-actions a {
+	@extend .btn-sm;
+	@extend .btn;
+	@extend .btn-link;
+	@extend .btn-block;
+	
+	&, &:hover, &:active, &:focus {
+		color: $light;
+	}
+}
+
+.branded #bc-logo {
+	@include media-breakpoint-up(md) {
+		margin-top: 1.16666667em;
+		margin-bottom: 1.16666667em;
+		padding-top: .33333333em;
+		padding-bottom: 0.333333em;
+		width: 345px;
+		display: block;
+
+		img {
+			max-width: 100%
+		}
+	}
+
+}
+#college-navbar {
+	display: flex;
+}
+
+
+/* ************************************** */
+/* Mobile Header Format               */
+/* ************************************** */
+
+// Variable Setup
+$duration: .5s;
+$topbar-base: 10rem; //150px
+$topbar-height: $topbar-base * 0.9;
+$topbar-offset: $topbar-base * .1;
+$topbar-padding: $topbar-base * .025;
+$topbar-vert-padding: 1em;
+
+// Target Mobile Breakpoints Only
+@include media-breakpoint-down(sm) {
+
+	// Style Header -- Branded only
+	#top-wrap.branded {
+		background: none;
+
+		#college-top-actions {
+			display:none;
+		}
+
+		// Logo
+		#vertical-logo {
+			width: calc(40% - #{$topbar-vert-padding * 2});
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			z-index: 10;
+			margin-left: $topbar-vert-padding; // Not sure why this needs to be doubled.
+
+			// Vertical center
+			display: flex !important;
+			flex-direction: column;
+			justify-content: center;
+			
+			box-shadow: 0px 0px 2px $primary-dark;
+			background: #fff;
+
+			// Logo Link
+			a#bc-logo-square {
+				margin: 1rem;
+				background-image: url("../i/bellevuecollege-vert.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		// Top bar
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			position: relative;
+			z-index: 10;
+
+			background-image: none;
+			background: linear-gradient(transparent $topbar-offset, $primary $topbar-offset, $primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+			box-shadow: none;
+
+			& > .row.content-padding {
+				padding: 0;
+			}
+			
+		}
+	}
+	
+
+	// Branded / Lite
+	#top-wrap.branded,
+	#secondary-header {
+		padding-bottom: 0;
+
+		#college-navbar {
+			background: none;
+			display: none;
+			margin-top: -1rem;
+
+			&.navbar .nav {
+				margin: 0;
+
+				& > li > a:focus,
+				& > li > a:hover {
+					background: $primary-dark;
+				}
+
+				& > .active > a,
+				& > .active > a:hover,
+				& > .active > a:focus {
+					background: $primary-dark;
+				}
+			}
+		}
+		
+		.navbar-nav > li > a {
+			padding-left: calc(25% + .5rem);
+		}
+		.navbar-nav > li > a {
+			text-align: left;
+		}
+	}
+
+		// Lite only styles
+
+		.lite #college-top-actions {
+			display:none; // hide on mobile; may want to re-evaluate in the future
+		}
+
+		.lite .social-media {
+			justify-content: center;
+		}
+
+		#secondary-header {
+			#header-actions-container {
+	
+				background: $primary;
+				padding-top: .5em;
+				padding-bottom: .5em;
+	
+			}
+			.social-media {
+				display: none;
+				margin-bottom: 0;
+	
+			}
+			#college-navbar {
+				margin-top: 0rem;
+			}
+	
+		}
+
+	// Style when menu is active (branded and lite)
+	#top-wrap.branded.action-menu,
+	#secondary-header.action-menu {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#college-navbar {
+			display: block;
+		}
+
+		#vertical-logo {
+			max-width: $topbar-base;
+			min-height: $topbar-height;
+			width: calc(25% - #{$topbar-vert-padding * 2});
+
+			a#bc-logo-square {
+				overflow: hidden;
+				margin: .25rem;
+				background-size: 145%;
+				background-position: top center;
+			}
+
+		}
+
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			z-index: 10;
+
+			background: linear-gradient(#fff $topbar-offset, $primary $topbar-offset, $primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+
+			position: sticky;
+			top: 0;
+
+		}
+		#mob-nav {
+			margin-top: .3rem + $topbar-padding;
+			width: calc(75% - #{$topbar-vert-padding * 2});
+		}
+		#tools-link,
+		#bc-searchform,
+		#bc-search-container-lite {
+			display: none !important;
+		}
+
+		#main-nav-link {
+			max-width: 100%;
+			flex: 1 0 auto;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+
+	}
+	#secondary-header.action-menu {
+		#header-actions-container {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		.social-media {
+			display: flex;
+			margin: 1em 0 .5em;
+			a {
+				background: #fff;
+
+				&:first-child {
+					border-radius: 4px 0 0 4px;
+				}
+				&:last-child {
+					border-radius: 0 4px 4px 0;
+				}
+			}
+		}
+	}
+
+	// Style when tools menu is active
+	#top-wrap.branded.action-tools {
+
+
+		#vertical-logo {
+			@include sr-only;
+		}
+
+		#tools-close-icon {
+			display: flex;
+		}
+
+		#tools-close-icon {
+			a {
+				color: #fff;
+				//padding: 1.5em .1em 1em .25em;
+				padding: $topbar-offset+1.75rem .25rem 1rem .5rem;
+				font-size: 1.75em;
+				display: block;
+				width: calc(12% - 1rem);
+				flex: 1 0 auto;
+			}
+		}
+
+		#mob-nav {
+			display: none;
+		}
+
+		#main-nav-link,
+		#bc-searchform,
+		#tools-link {
+			display: none !important;
+		}
+
+		#college-actions-column { 
+			display: block;
+			margin-top: $topbar-offset + .75rem;
+
+			a {
+				@include button-variant($light, $light);
+				@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: row wrap;
+				justify-content: space-around;
+			}
+
+			li {
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+
+				list-style: none;
+				margin: 0 auto;
+				padding: .2em;
+				flex: 1 1 auto;
+			}
+		}
+
+	}
+
+	// Style when search is active
+	#top-wrap.branded.action-search,
+	#secondary-header.action-search {
+		$topbar-base: 5rem; //150px
+		$topbar-height: $topbar-base * 0.9;
+		$topbar-offset: $topbar-base * .1;
+		$topbar-padding: $topbar-base * .1;
+
+		#vertical-logo {
+			@include sr-only;
+		}
+
+		#college-actions-column {
+			margin-top: $topbar-offset + $topbar-padding;
+		}
+		.container.logobar {
+			height: $topbar-height;
+			margin-top: $topbar-padding;
+			width: 100%;
+			z-index: 20;
+			position: relative;
+
+			background: linear-gradient(transparent $topbar-offset, $primary $topbar-offset, $primary $topbar-height - $topbar-offset, transparent $topbar-height - $topbar-offset);
+		}
+		#tools-close-icon {
+			display: flex;
+		}
+		a#tools-close-icon,
+		#tools-close-icon a {
+			color: #fff;
+				padding-left: .5rem;
+				padding-top: .25rem;
+				margin-left: .25rem;
+				font-size: 1.5em;
+				text-decoration: none;
+				flex: 1 1 auto;
+				max-width: 2em;
+		}
+
+		#tools-close-icon.lite {
+			padding-right: 2rem;
+			padding-top: .5rem;
+		}
+		#mob-nav {
+			margin-top: .666rem + $topbar-padding;
+			width: calc(85% - 1rem);
+		}
+		#tools-link,
+		#main-nav-link {
+			@include sr-only;
+		}
+
+		#main-nav-link {
+			//width: 100%;
+			transition-property: width;
+			transition-duration: $duration;
+
+		}
+		#bc-search-container-lite {
+
+			max-width: 100%;
+			flex: 1 1 auto;
+			display: flex;
+
+			form {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// Menu icon
+#top-wrap.branded .menu-icon,
+#secondary-header #header-actions-container .menu-icon {
+	@extend .fa-bars;
+	
+}
+#top-wrap.branded.action-menu .menu-icon,
+#secondary-header.action-menu #header-actions-container .menu-icon {
+	@extend .fa-times;
+}
+
+// Close links (hidden unless needed)
+#nav-close-icon,
+#tools-close-icon,
+#college-more-actions {
+	display: none;
+}
+
+
+/* ************************************** */
+/*	Section header      */
+/* ************************************** */
+
+#site-header {
+	background-color: white;
+	padding-top: 1em;
+	padding-bottom:1em;
+}
+.globals-branded#site-header {
+	background-color: transparent;
+	padding-bottom:.5em;
+}
+
+.branded .form-control {
+	height: auto;
+}
+
+p.site-title,
+h1.site-title {
+	font-size: 2.4em;
+	font-family: $font-family-base;
+	color: #333333;
+	line-height: 1em;
+}
+.globals-branded {
+	h1.site-title,
+	p.site-title {
+		font-weight: 100;
+		margin-bottom: 0;
+	}
+}
+
+p.site-title a,
+h1.site-title a {
+	color: #333;
+	text-decoration: none;
+}
+
+p.site-description {
+	line-height: 1.5em;
+	margin: 0;
+}
+
+/* ************************************** */
+/*	Foot														      */
+/* ************************************** */
+
+
+#bigfoot {
+	background-color: #E1E1E1;
+	border-bottom: 1px solid #999999;
+	border-top: 1px solid #999999;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none
+	}
+
+	li,
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 0.9em;
+		color: #494949;
+	}
+
+	h3 {
+		font-size: .9em;
+		font-weight: bold;
+		color: #666;
+		font-family: $font-family-base;
+		margin: 0;
+	}
+	h3 ~ ul {
+		margin-bottom: $std-margin;
+	}
+	.social-media {
+		max-width: 12em;
+		h3 {
+			margin-top: $std-margin;
+		}
+
+
+		p {
+			margin-bottom: $std-margin;
+		}
+	}
+	a {
+		text-decoration: underline;
+		white-space: nowrap;
+		line-height:1em;
+		color: #003D79;
+
+		&:hover,
+		&:active {
+			color: #000;
+		}
+	}
+
+	#bellevueaddress {
+		.tel,
+		.adr {
+			font-size: .9em;
+			line-height: 1.4em;
+			margin-top:.1em;
+		}
+	}
+}
+
+#bigfoot + .container #legalbar {
+	padding: 0.66666667em 0 1em 0;
+}
+#legalbar {
+	clear: left;
+	margin: 0 auto;
+	padding: 1em 0 1em 0;
+	text-align: center;
+
+
+	li {
+		display: inline;
+		padding:0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	li a {
+		padding: 0 0.9em 0 1em;
+		color: #666;
+		border-left: 1px solid #DDDDDD;
+		font-size: .8em;
+		white-space: nowrap;
+	}
+
+	li a:hover,
+	li a:focus {
+		color: $primary;
+	}
+
+	li.first a {
+		border-left: none;
+	}
+
+	li.last {
+		float: none;
+		clear: left;
+		display: block;
+		padding: 0
+	}
+
+	li.last a {
+		padding-left: 0;
+		border-left: none;
+	}
+
+	span {
+		padding-left: 21px;
+	}
+}
+
+
+@media screen and (min-width: 50em) {
+	#main-wrap,
+	#bigfoot,
+	#top-wrap { padding: 0 0.66667em;}
+}
+
+/* Social Media */
+.social-media {
+	a .fab {
+		font-size: 1.75rem;
+
+		&.fa-facebook-square {
+			color: #3b5998;
+
+		}
+		&.fa-twitter-square {
+			color: #55acee;
+		}
+		&.fa-youtube-square {
+			color: #e52d27;
+		}
+		&.fa-instagram {
+			/*! Thank you https://stackoverflow.com/a/49659118 */
+			color: transparent;
+			background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+			background-clip: text;
+		}
+		&.fa-linkedin {
+			color: #0077b5;
+		}
+	}
+}
+
+
+/* Recent Pages in Search */
+#autocomplete-loading {
+	color: #ccc;
+	position: absolute;
+	z-index: 100;
+	right: 5.25em;
+	top: .5em;
+
+}
+#bc-search-container-lite #autocomplete-loading {
+	top: 0.5em;
+}
+#bc-search-container-lite #autocomplete-loading.college-search-field-custom {
+	right: 7.25em;
+}
+.recent-pages-autocomplete {
+	position: absolute;
+	z-index: 99;
+
+	background: #fff;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	line-height: 1.25em;
+
+	p {
+		font-size: .8rem;
+		padding: .125em .5em;
+		margin: 0;
+		color: #000;
+		background: #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li a {
+		margin: 0;
+		padding: .333em 1em ;
+		display: block;
+		border-bottom: 1px solid #e5e5e5;
+		text-decoration: none;
+		color: #000;
+	}
+	li:last-child a {
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	li.active a,
+	a:hover,
+	a:focus {
+		border-bottom: 1px solid #49a4ff;
+		background-color: #afd7ff;
+
+	}
+}
+
+
+/* ************************************** */
+/* Emergency Alerts (Rave) 				*/
+/* ************************************** */
+
+/* #ravealertheader.container > #ravelertmessage.alert.alert-danger.alert-error */
+
+#ravealertheader.alert {
+	border-radius: 0;
+	@include box-shadow( -3px 1px 2px rgba(0, 32, 63, 0.4), 3px 1px 2px rgba(0, 32, 63, 0.4));
+	margin-bottom: 0;
+}
+
+#ravealertheader .glyphicon {
+	font-size: 4em;
+	text-align: center;
+	display: block;
+}
