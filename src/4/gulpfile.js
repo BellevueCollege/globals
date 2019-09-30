@@ -8,15 +8,14 @@ var gulp         = require('gulp');
     rename       = require('gulp-rename');
     uglify       = require('gulp-uglify');
     saveLicense  = require('uglify-save-license');
-    modernizr    = require('gulp-modernizr');
 
 
 // Path Configs
 var config = {
-  verPath:  '../../g/3',
+  verPath:  '../../g/4',
   sassPath: './sass',
   jsPath:   './javascripts',
-  cssPath:  '../../g/3/c',
+  cssPath:  '../../g/4/c',
   npmPath:  '../../node_modules'
 }
 
@@ -36,9 +35,8 @@ var sassOptions = {
   sourceComments: false,
   includePaths: [
       config.sassPath,
-      config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      //config.npmPath + '/bourbon/app/assets/stylesheets',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
+      config.npmPath + '/bootstrap/scss',
+      config.npmPath + '/@fortawesome/fontawesome-free/scss',
   ],
   precision: 10
 }
@@ -51,10 +49,9 @@ var sassDevOptions = {
   outputStyle: 'nested',
   sourceComments: true,
   includePaths: [
-      config.sassPath,
-      config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      //config.npmPath + '/bourbon/app/assets/stylesheets',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
+    config.sassPath,
+    config.npmPath + '/bootstrap/scss',
+    config.npmPath + '/@fortawesome/fontawesome-free/scss',
   ],
   precision: 10
 }
@@ -71,24 +68,7 @@ var uglifyOptions = {
   }
 }
 
-/**
- * Modernizr Settings
- */
-var modernizrOptions = {
-  "tests": [
-    "displaytable",
-    "flexbox",
-    "flexboxlegacy",
-    "flexboxtweener",
-    "flexwrap",
-    "fontface"
-  ],
-  "options": [
-    "testStyles",
-    "html5shiv",
-    "setClasses"
-  ],
-}
+
 
 /**
  * Sass Compilers
@@ -133,76 +113,48 @@ function sassProd() {
 /**
  * Processes to move and concat Fonts
  **/
-function bootstrapFonts() {
+function faFonts() {
   return gulp
-    .src( config.npmPath + '/bootstrap-sass/assets/fonts/bootstrap/**.*' )
+    .src( config.npmPath + '/@fortawesome/fontawesome-free/webfonts/**.*' )
     .pipe(gulp.dest( config.verPath + '/f' ));
 }
 
-/**
- * Build Dev Modernizr Scripts
- */
-function modernizrDev() {
-  return gulp
-    .src([
-      config.jsPath + '/**.js',
-      config.npmPath + '/**.scss'
-    ])
-    .pipe(modernizr('ghead.js', modernizrOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
-
-/**
- * Build Production Modernizr Scripts
- */
-function modernizrProd() {
-  return gulp
-    .src([
-      config.jsPath + '/**.js',
-      config.npmPath + '/**.scss'
-    ])
-    .pipe(modernizr('ghead.js', modernizrOptions))
-    .pipe(uglify(uglifyOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
 
 /**
  * Processes to move and concat Scripts (dev alternates)
  **/
-function globalsFooterScriptsDev() {
-  return gulp
-    .src([
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
-      config.jsPath + '/custom.js'
-    ])
-    .pipe(concat('g.js'))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
+// function globalsFooterScriptsDev() {
+//   return gulp
+//     .src([
+//       config.jsPath + '/jquery.swiftype.autocomplete.js',
+//       config.jsPath + '/custom.js'
+//     ])
+//     .pipe(concat('g.js'))
+//     .pipe(gulp.dest(config.verPath + '/j'));
+// }
 
 /**
  * Processes to move and concat Scripts
  **/
-function bootstrapScripts() {
-  return gulp
-    .src( config.npmPath + '/bootstrap-sass/assets/javascripts/bootstrap.min.js' )
-    .pipe(gulp.dest( config.verPath + '/j' ));
-}
+// function bootstrapScripts() {
+//   return gulp
+//     .src( config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js' )
+//     .pipe(gulp.dest( config.verPath + '/j' ));
+// }
 
 /**
  * Process and Concat Globals Footer Scripts (Legacy)
  */
-function globalsFooterScripts() {
-  return gulp
-    .src([
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
-      config.jsPath + '/custom.js'
-    ])
-    .pipe(concat('g.js'))
-    .pipe(uglify(uglifyOptions))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
+// function globalsFooterScripts() {
+//   return gulp
+//     .src([
+//       config.jsPath + '/jquery.swiftype.autocomplete.js',
+//       config.jsPath + '/custom.js'
+//     ])
+//     .pipe(concat('g.js'))
+//     .pipe(uglify(uglifyOptions))
+//     .pipe(gulp.dest(config.verPath + '/j'));
+// }
 
 
 /**
@@ -211,7 +163,6 @@ function globalsFooterScripts() {
 function headerScriptsFull() {
   return gulp
     .src([
-      config.verPath + '/j/ghead.js',
       config.jsPath + '/jquery.swiftype.autocomplete.js',
     ])
     .pipe(concat('ghead-full.js'))
@@ -224,8 +175,7 @@ function headerScriptsFull() {
 function footerScriptsFull() {
   return gulp
     .src([
-      config.npmPath + '/bootstrap-sass/assets/javascripts/bootstrap.js',
-      config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
+      config.npmPath + '/bootstrap/dist/js/bootstrap.bundle.js',
       config.jsPath + '/custom.js'
     ])
     .pipe(concat('gfoot-full.js'))
@@ -261,24 +211,18 @@ function watch() {
  */
 const dev = gulp.series(
     sassDev,
-    bootstrapFonts,
-    bootstrapScripts,
-    modernizrDev,
+    faFonts,
     headerScriptsFull,
     footerScriptsFull,
     minifyFull,
-    globalsFooterScriptsDev
   );
 
 const prod = gulp.series(
     sassProd,
-    bootstrapFonts,
-    bootstrapScripts,
-    modernizrProd,
+    faFonts,
     headerScriptsFull,
     footerScriptsFull,
     minifyFull,
-    globalsFooterScripts
   );
 
 

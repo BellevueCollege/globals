@@ -1,0 +1,115 @@
+
+/* ************************************** */
+/*	Bellevue College Global Elements      */
+/* ************************************** */
+
+#content {
+	/* Prevent long words from breaking formatting */
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	hyphens: auto;
+}
+
+/* **************************************** */
+/*	Scale:  																*/
+/*  traditional http://lamb.cc/typograph/   */
+/* **************************************** */
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+
+	&.noclear {
+		clear: none;
+	}
+}
+
+
+h5.class-heading {
+    margin-top: 2.16667rem !important;
+}
+
+h1:first-child {
+	margin-top: 0;
+}
+
+/* Remove heading margin within well/alert
+ * First children don't need margin; it adds a bunch of space which looks odd */
+.well, .alert {
+	h2, h3, h4, h5, h6 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+
+blockquote {
+	font-family:  $headings-font-family;
+	margin: 1.33333em 0 0.333333em;
+	padding: 0.333333em 2.4em 0.33333em 2.5em;
+	position: relative;
+	color: $gray-600;
+	font-size: 1.4em;
+}
+
+.blockquote-reverse,
+blockquote.pull-right {
+	padding-left: 2.5em;
+}
+
+blockquote:before {
+	display: block;
+	content: "\201C";
+	font-size: 6rem;
+	position: absolute;
+	left: 0.12em;
+	top: -0.25em;
+	color: $gray-500;
+}
+
+
+
+blockquote small {
+  display: block;
+  color: $gray-500;
+}
+
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+
+/* ************************************** */
+/*	Classes applied to text      					*/
+/* ************************************** */
+
+.lead {
+	font-size: 1.15em;
+	font-weight: normal;
+	line-height: $std-line-height;
+}
+
+/**
+ * Reset Bootstrap Elements
+ *
+ * Some Globals elements conflict with Bootstrap defaults,
+ * this code corrects this.
+ **/
+
+// Alerts
+.alert {
+	h1, h2, h3, h4, h5, h6 {
+		clear: none;
+	}
+}
+
+// Remove underline where not needed
+button,
+a.btn,
+.list-group a {
+	text-decoration: none;
+}

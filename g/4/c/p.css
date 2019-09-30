@@ -1,0 +1,107 @@
+/* CSS Document */
+
+/*From HTML5 Boilerplate*/
+* {
+	background: #FFF !important;
+	color: black !important;
+	text-shadow: none !important;
+	filter: none !important;
+	-ms-filter: none !important;
+}
+
+/*	Underline all links	*/
+a, a:visited {
+	text-decoration: underline !important;
+}
+
+/*	Add URL after all links	*/
+a[href]:after {
+	content: " (" attr(href) ")";
+}
+
+/*	Print all abbrs	*/
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
+
+/*	Remove links from select tags	*/
+#myCarousel a:after, a[href^="javascript:"]:after, a[href^="#"]:after, div#site-header *:after{
+	content: "";
+}  /* Don't show links for images, or javascript/internal links */
+
+/*	Put borders around tags	*/
+pre, blockquote, alert {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+thead {
+	display: table-header-group;
+} /* h5bp.com/t */
+tr, img {
+	page-break-inside: avoid;
+}
+img {
+	max-width: 100% !important;
+}
+/*	set page margins	*/
+@page {
+margin: 1cm;
+}
+
+/*	prevent widows and orphans	*/
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+
+/*	Keep headings with content	*/
+h2, h3 {
+	page-break-after: avoid;
+}
+
+/*	Hide all headings	*/
+header#top-wrap *, div#main-nav-wrap *, footer, div.navbar, ul#legalbar, ul#skiplinks, #myCarousel, .form-search{
+	display:none;
+}
+
+/*	Replace logo with 'Bellevue College' text */
+header#top-wrap:after{
+	content:"Bellevue College";
+	font-size:2em;
+	position:static;
+	display:block;
+	margin-left:.5em;
+	line-height:2em;
+	border-bottom:solid 1px #000;
+}
+
+/*	Set margins on headings	*/
+h1, h2, h3 {
+	margin:0;
+	margin-top:.25em;
+}
+
+h1.site-title {
+	font-size:1.7em;
+	position:static;
+	display:block;
+	margin-left:.5em;
+	line-height:1.7em;
+}
+
+/*	Override Header	*/
+.site-header *, #main {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+/*un-reset ul/ol */
+li ul, li ol {
+	margin:0 1.5em;
+}
+ul, ol {
+	margin:0 1.5em 1.5em 1.5em;
+}
+ul {
+	list-style-type:disc;
+}

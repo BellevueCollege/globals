@@ -1,0 +1,8 @@
+
+.page-link {
+	text-decoration: none;
+}
+.page-numbers {
+	/** Shim for WordPress */
+	@extend .page-link;
+}
