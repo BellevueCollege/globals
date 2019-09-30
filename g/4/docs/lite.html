@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Example Lite Page DOM</title>
+
+	<link rel='stylesheet' href='../c/g.css' type='text/css' media='screen' />
+	<link rel='stylesheet' href='../c/p.css' type='text/css' media='print' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type='text/javascript' src='../j/ghead-full.min.js'></script>
+	<!-- BEGIN INCLUDE FROM h/galite.html-->
+			<!-- Analytics are provided through Google Tag Manager -->
+			<!-- Google Tag Manager -->
+			<script>(function (w, d, s, l, i) {
+				w[l] = w[l] || []; w[l].push({
+					'gtm.start':
+						new Date().getTime(), event: 'gtm.js'
+				}); var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+						'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+				})(window, document, 'script', 'dataLayer', 'GTM-N665V3');</script>
+			<!-- End Google Tag Manager -->
+	<!-- END INCLUDE FROM h/galite.html-->
+</head>
+
+<body class="">
+	<!-- BEGIN INCLUDE FROM h/lhead.html-->
+			<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N665V3" height="0" width="0"
+					style="display:none;visibility:hidden"></iframe></noscript>
+			<!-- End Google Tag Manager (noscript) -->
+			<ul id="skiplinks" class="container">
+				<li><a class="text-light" href="#main">Skip to Content</a></li>
+			</ul>
+			<header id="top-wrap" class="lite">
+				<div id="smallhead-wrap" class="container">
+					<div class="row">
+						<div class="col-md-6 col-lg-8">
+							<a href="https://www.bellevuecollege.edu/" id="bc-logo">
+								<img alt="Bellevue College (with link to home page)"
+									src="/g/4/i/bellevuecollege-horiz-wide.svg" />
+							</a><!-- #bc-logo-->
+						</div>
+
+						<ul id="college-top-actions" class="nav justify-content-end col-md-6 col-lg-4 nav nav-pills">
+							<li class="nav-item">
+								<a id="branded-top-actions-register" class="nav-link"
+									href="https://www.bellevuecollege.edu/registration/" class="top-actions">Register</a>
+							</li>
+							<li class="nav-item">
+								<a id="branded-top-actions-services" class="nav-link"
+									href="https://www.bellevuecollege.edu/services/" class="top-actions">Online Services</a>
+							</li>
+							<li class="nav-item">
+								<a id="branded-top-actions-canvas" class="nav-link"
+									href="https://www.bellevuecollege.edu/canvas/" class="top-actions">Canvas</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- #smallhead-wrap .container -->
+			</header><!--#masthead-->
+	<!-- END INCLUDE FROM h/lhead.html-->
+
+	<header id="secondary-header" class="lite container shadow">
+		<div class="row align-items-center">
+			<div class="col-md-8">
+				<div id="site-branding">
+					<p class="site-title">
+						<a title="Return to Home Page" href="#" rel="home">Globals 4 Lite</a>
+					</p>
+					<p class="site-description site-description-margin">
+						Just another multisite Sites site </p>
+				</div><!-- #site-branding -->
+			</div>
+			<div id="header-actions-container" class="col-md-4 header-search-w-description ">
+				<div class="social-media ">
+					<a class="px-2 py-1" href="#" title="Facebook">
+						<i class="fab fa-facebook-square" aria-hidden="true"></i>
+						<span class="sr-only">Facebook</span></a>
+					</a>
+
+					<a class="px-2 py-1" href="#" title="Twitter">
+						<i class="fab fa-twitter-square" aria-hidden="true"></i>
+						<span class="sr-only">Twitter</span>
+					</a>
+
+					<a class="px-2 py-1" href="#" title="YouTube">
+						<i class="fab fa-youtube-square" aria-hidden="true"></i>
+						<span class="sr-only">YouTube</span></a>
+					</a>
+
+					<a class="px-2 py-1" href="#" title="Instagram">
+						<i class="fab fa-instagram" aria-hidden="true"></i>
+						<span class="sr-only">Instagram</span></a>
+					</a>
+
+					<a class="px-2 py-1" href="#" title="LinkedIn">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+						<span class="sr-only">LinkedIn</span></a>
+					</a>
+				</div><!-- social-media -->
+
+				<div id="header-actions-bar" class="row searchform-show">
+					<div id="main-nav-link" class="col-4 col-md-12">
+						<a href="#college-navbar" title="Navigation Menu" class="btn btn-light btn-block"
+							aria-expanded="false" aria-controls="main-nav-wrap"><i class="fas fa-bars"
+								aria-hidden="true"></i> Menu</a>
+					</div><!-- main-nav-link -->
+					<div id="bc-search-container-lite" class="col-8 col-md-12">
+						<a tabindex="-1" id="tools-close-icon" class="lite">
+							<i class="fas fa-chevron-left" aria-hidden="true"></i><span class="sr-only">Close
+								Search</span>
+						</a>
+						<form action="https://www.bellevuecollege.edu/search/" method="get" class="form-search"
+							id="bc-search">
+							<label class="sr-only" for="college-search-field-custom">Search</label>
+							<div class="input-group" role="search">
+								<input type="text" name="txtQuery" class="form-control" maxlength="255"
+									autocomplete="off" id="college-search-field-custom" />
+
+								<input type="hidden" class="college-search-filter" name="site[]"
+									value="multisite.local/g4lite">
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-light"
+										id="college-search-submit">Search</button>
+									<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span class="sr-only">More Search Options</span>
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="https://www.bellevuecollege.edu/search/"
+											id="college-search-site-link">Search Global 4 light</a>
+										<a class="dropdown-item" href="https://www.bellevuecollege.edu/search/"
+											id="college-search-all-link">Search Bellevue College <i
+												class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div><!-- row -->
+
+			</div><!-- header actions container -->
+
+		</div>
+
+
+		<nav id="college-navbar" class="row navbar navbar-dark bg-primary navbar-expand-md">
+			<ul class="nav navbar-nav nav-fill flex-fill" id="main-nav">
+				<li id="nav-top"><a class="nav-link" href="#top">Top ^</a></li>
+				<li class="nav-item active ">
+					<a href="#" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">Link 1</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">Link 2</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">Link 3</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">Link 4</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div id="main" class="globals-lite container shadow">
+		<div class="row pt-4">
+			<div class="col-md-9">
+				<main role="main">
+					<h1>Page Title</h1>
+					<article>
+						<p>Content</p>
+					</article>
+				</main>
+			</div>
+
+			<div class="col-md-3">
+				<div class="card mb-3">
+					<div class="card-header">
+						Sidebar Card
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Cras justo odio</li>
+						<li class="list-group-item">Dapibus ac facilisis in</li>
+						<li class="list-group-item">Vestibulum at eros</li>
+					</ul>
+					<div class="card-body">
+						<h5 class="card-title">Special title treatment</h5>
+						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div><!-- row -->
+	</div><!-- #main .container -->
+
+	<!-- BEGIN INCLUDE FROM h/legal.html-->
+			<div class="container" role="contentinfo">
+				<ul id="legalbar">
+					<li id="legal-footer-accessibility" class="first"><a
+							href="https://www.bellevuecollege.edu/accessibility/">Accessibility</a></li>
+					<li id="legal-footer-alerts"><a href="https://www.bellevuecollege.edu/alerts/">Emergency alerts</a></li>
+					<li id="legal-footer-privacy"><a href="https://www.bellevuecollege.edu/website/privacy/">Privacy notice</a>
+					</li>
+					<li id="legal-footer-disclosure"><a href="https://www.bellevuecollege.edu/legal/publicdisclosure/">Public
+							disclosure</a></li>
+					<li id="legal-footer-website"><a href="https://www.bellevuecollege.edu/website/">Website info</a></li>
+					<li id="legal-footer-equal"><a href="https://www.bellevuecollege.edu/equal/">We are an equal opportunity
+							institution</a></li>
+				</ul><!-- legalbar -->
+			</div><!-- container -->
+	<!-- END INCLUDE FROM h/legal.html-->
+	<script type='text/javascript' src='../j/gfoot-full.min.js?ver=4'></script>
+
+</body>
+
+</html>
