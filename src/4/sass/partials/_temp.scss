@@ -16,3 +16,16 @@ As a style, all css blocks in this file should be commented with the following:
 * Date which code was added
 
 */
+.content-padding {
+    @extend .px-3;
+}
+
+.btn-default {
+    @extend .btn-outline-primary;
+}
+
+.well {
+    @extend .card;
+    @extend .card-body;
+    @extend .bg-light;
+}
