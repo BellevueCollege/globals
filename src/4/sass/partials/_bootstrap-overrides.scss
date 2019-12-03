@@ -33,3 +33,8 @@ abbr[title],
 abbr[data-original-title] {
 	text-decoration: none;
 }
+
+/* Break words if needed to preserve formatting */
+#main {
+	overflow-wrap: break-word
+}
