@@ -5,8 +5,10 @@ Globals is Bellevue College's unified style and reusable content library. Global
 ### Globals 2 — **❌ Deprecated**  
 Based on [Bootstrap 2](https://getbootstrap.com/2.3.2/), Globals 2 was our first Bootstrap-based version of Globals. Globals 2 does not use any build framework, and exists entirely within the `/g/2/` directory.
 
-### Globals 3 — **✅ Production**  
+### Globals 3 — **🔶 Production - Deprecated**  
 Based on [Bootstrap 3](https://getbootstrap.com/docs/3.3/), Globals 3 is our current primary framework for public-facing sites. Globals 3 uses the [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) official fork of Bootstrap 3, with [Gulp](https://gulpjs.com/) being used as a build system.
+
+**Deprecated**: While Globals 3 is still maintained, any new projects should be built on Globals 4, and older projects should be converted where possible.
   
 #### Included Projects:
 * [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) is the core of Globals 3
@@ -25,8 +27,8 @@ Based on [Bootstrap 3](https://getbootstrap.com/docs/3.3/), Globals 3 is our cur
      * Gulp Uglify - minify CSS and JS
      * Uglify Save License - save license comments when minifying
 
-### Globals 4 — **Pre-Production (alpha)**  
-Based on [Bootstrap 4](https://getbootstrap.com/docs/4.3/), Globals 4 is currently in active development, and is ready for use in pre-production projects. Globals 4 Boostrap's native Sass implementation, with [Gulp](https://gulpjs.com/) being used as a build system. 
+### Globals 4 — **✅ Production**  
+Based on [Bootstrap 4](https://getbootstrap.com/docs/4.3/), Globals 4 is ready for production use. Globals 4 Boostrap's native Sass implementation, with [Gulp](https://gulpjs.com/) being used as a build system. 
 
 * [Bootstrap](https://github.com/twbs/bootstrap) is the core of Globals 4
 * [FontAwesome Free](https://fontawesome.com) provides icons (replacing Glyphicons in Globals 3)
