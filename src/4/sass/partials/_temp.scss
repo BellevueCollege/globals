@@ -1,0 +1,31 @@
+/* 
+# Why dooes this file exist?
+
+Some changes to Globals require changing or moving css within other projects,
+like Mayflower, Mayflower Homepage, etc. Unfortionatly browser caching and release
+schedules can prevent these changes from being available to the public in sync with
+globals releases.
+
+That's where this file comes in! The code here is temporary, and should always be 
+duplicated in another project. It lives here as a patch only, and should generally
+be removed on the next major release!
+
+As a style, all css blocks in this file should be commented with the following:
+
+* Project the code is from
+* Date which code was added
+
+*/
+.content-padding {
+    @extend .px-3;
+}
+
+.btn-default {
+    @extend .btn-outline-primary;
+}
+
+.well {
+    @extend .card;
+    @extend .card-body;
+    @extend .bg-light;
+}

@@ -1,0 +1,40 @@
+
+
+/*	Underline All Links not part of other elements	*/
+a {
+	text-decoration: underline;
+}
+
+// Resets - prevent typography styles from breaking navbars
+ul.nav.nav-tabs,
+#content ul.nav.nav-tabs,
+ul.nav.nav-pills,
+#content ul.nav.nav-pills,
+ul.nav.navbar-nav,
+#content ul.nav.navbar-nav {
+	font-size: 14px;
+	overflow: visible;
+
+	li {
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+
+		a, a:focus {
+			text-decoration: none;
+			box-shadow: none;
+		}
+	}
+}
+
+/* Remove duplicate browser styling on abbr elements */
+abbr[title],
+abbr[data-original-title] {
+	text-decoration: none;
+}
+
+/* Break words if needed to preserve formatting */
+#main {
+	overflow-wrap: break-word
+}

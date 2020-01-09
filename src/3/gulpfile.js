@@ -13,11 +13,11 @@ var gulp         = require('gulp');
 
 // Path Configs
 var config = {
-  verPath:  './g/3',
+  verPath:  '../../g/3',
   sassPath: './sass',
   jsPath:   './javascripts',
-  cssPath:  './g/3/c',
-  npmPath:  './node_modules'
+  cssPath:  '../../g/3/c',
+  npmPath:  '../../node_modules'
 }
 
 /**
@@ -37,7 +37,7 @@ var sassOptions = {
   includePaths: [
       config.sassPath,
       config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      config.npmPath + '/bourbon/app/assets/stylesheets',
+      //config.npmPath + '/bourbon/app/assets/stylesheets',
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
   ],
   precision: 10
@@ -53,7 +53,7 @@ var sassDevOptions = {
   includePaths: [
       config.sassPath,
       config.npmPath + '/bootstrap-sass/assets/stylesheets',
-      config.npmPath + '/bourbon/app/assets/stylesheets',
+      //config.npmPath + '/bourbon/app/assets/stylesheets',
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/css'
   ],
   precision: 10
