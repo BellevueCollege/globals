@@ -160,14 +160,14 @@ function faFonts() {
 /**
  * Process and Concat Globals Full Header Scripts
  */
-function headerScriptsFull() {
-  return gulp
-    .src([
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
-    ])
-    .pipe(concat('ghead-full.js'))
-    .pipe(gulp.dest(config.verPath + '/j'));
-}
+// function headerScriptsFull() {
+//   return gulp
+//     .src([
+//       config.npmPath + '/handlebars/dist/handlebars.js',
+//     ])
+//     .pipe(concat('ghead-full.js'))
+//     .pipe(gulp.dest(config.verPath + '/j'));
+// }
 
 /**
  * Process and Concat Globals Full Footer Scripts
@@ -188,7 +188,7 @@ function footerScriptsFull() {
 function minifyFull() {
   return gulp
     .src([
-      config.verPath + '/j/ghead-full.js',
+      //config.verPath + '/j/ghead-full.js',
       config.verPath + '/j/gfoot-full.js'
     ])
     .pipe(uglify(uglifyOptions))
@@ -212,7 +212,7 @@ function watch() {
 const dev = gulp.series(
     sassDev,
     faFonts,
-    headerScriptsFull,
+    //headerScriptsFull,
     footerScriptsFull,
     minifyFull,
   );
@@ -220,7 +220,7 @@ const dev = gulp.series(
 const prod = gulp.series(
     sassProd,
     faFonts,
-    headerScriptsFull,
+    //headerScriptsFull,
     footerScriptsFull,
     minifyFull,
   );
