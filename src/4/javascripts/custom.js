@@ -56,12 +56,12 @@
 				var searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
 
 				// Get visual position on page
-				var searchPosition = $(options.field).position();
+				var searchPosition = $(options.field).offset();
 				var searchHight = $(options.field).outerHeight();
 				var searchWidth = $(options.field).css('width');
 				
 				// Build Output
-				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + searchHight) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
+				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + 6) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
 				$.each(searchHistory, function(i, obj ){
 					if (null == obj.target) {
 						autocompleteOutput += '<li><a role="option" href="' + buildQueryURL(obj.term) + '">' + obj.term + '</a></li>';
