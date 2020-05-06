@@ -56,12 +56,12 @@
 				var searchHistory = JSON.parse(localStorage.getItem(options.localStorageKey));
 
 				// Get visual position on page
-				var searchPosition = $(options.field).offset();
+				var searchPosition = $(options.field).position();
 				var searchHight = $(options.field).outerHeight();
 				var searchWidth = $(options.field).css('width');
 				
 				// Build Output
-				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + 6) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
+				var autocompleteOutput = '<div id="' + options.id + '" class="recent-pages-autocomplete" style="top: '+ (searchPosition.top + searchHight) +'px; width:'+ searchWidth +'" role="listbox"><p>Recent Searches:</p><ul>';
 				$.each(searchHistory, function(i, obj ){
 					if (null == obj.target) {
 						autocompleteOutput += '<li><a role="option" href="' + buildQueryURL(obj.term) + '">' + obj.term + '</a></li>';
@@ -78,7 +78,7 @@
 		var removeSuggestions = function removeSuggestions () {
 			if  ( $('#' + options.id).length > 0 ) {
 				window.setTimeout( function(){
-					$('#' + options.id).remove();
+					//$('#' + options.id).remove();
 				}, 150 );
 			}
 		}
@@ -207,9 +207,9 @@
 
 	// Instantiate for Globals Branded and Lite
 	if ( $('#bc-searchform').length != 0 ) {
-		$('#bc-searchform').searchHistory({});
+		//$('#bc-searchform').searchHistory({});
 	} else if ( $('#bc-search-container-lite').length != 0 && $('#college-search-field').length != 0 ) {
-		$('#bc-search-container-lite').searchHistory({});
+		//$('#bc-search-container-lite').searchHistory({});
 	}
 
 	// Javascript to enable link to tab
