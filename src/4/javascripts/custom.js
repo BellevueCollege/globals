@@ -1,13 +1,4 @@
 (function ($) {
-	// Swiftype Autofill in search box
-	$('#college-search-field').swiftype({ 
-		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
-		resultLimit: 5,
-		typingDelay: 600,
-		renderFunction: function(document_type, item, idx) {
-			return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
-		}
-	});
 
 /**
  * Suggest Recent Searches
@@ -24,7 +15,7 @@
 			autocompleteItem: '.autocomplete',
 			id: 'recent-pages-autocomplete',
 			searchURL: 'https://www.bellevuecollege.edu/search/',
-			queryPeram: 'txtQuery',
+			queryPeram: 'query',
 			searchPerams: {}, // Any extra perams that should be passed as part of search URL
 			localStorageKey: 'searchHistory',
 		}
@@ -87,7 +78,7 @@
 		var removeSuggestions = function removeSuggestions () {
 			if  ( $('#' + options.id).length > 0 ) {
 				window.setTimeout( function(){
-					$('#' + options.id).remove();
+					//$('#' + options.id).remove();
 				}, 150 );
 			}
 		}
@@ -216,9 +207,9 @@
 
 	// Instantiate for Globals Branded and Lite
 	if ( $('#bc-searchform').length != 0 ) {
-		$('#bc-searchform').searchHistory({});
+		//$('#bc-searchform').searchHistory({});
 	} else if ( $('#bc-search-container-lite').length != 0 && $('#college-search-field').length != 0 ) {
-		$('#bc-search-container-lite').searchHistory({});
+		//$('#bc-search-container-lite').searchHistory({});
 	}
 
 	// Javascript to enable link to tab

@@ -2884,20 +2884,27 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
         , parent  = colltab.attr('data-parent')
         , collparent = parent && $(parent)
         , collid = colltab.attr('id') || uniqueId('ui-collapse')
+        , parentpanel = collpanel.parent() // panel containing title and panel body
+        , parentfirstchild = (collparent) ? collparent.find('.panel.panel-default:first-child') : null // first child of containing accordion
+        , hasopenpanel = (collparent) ? collparent.find('.panel-collapse.in').length > 0 : false // true, if collapse parent has any panels with class 'in'; otherwise, false
 
           colltab.attr('id', collid)
 
           if(collparent){
-            colltab.attr({ 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
+            colltab.attr({ 'aria-controls': collpanel.attr('id'), 'role':'tab', 'aria-selected':'false', 'aria-expanded':'false' })
             $(collparent).find('div:not(.collapse,.panel-body), h4').attr('role','presentation')
             collparent.attr({ 'role' : 'tablist', 'aria-multiselectable' : 'true' })
+            collpanel.attr({ 'role':'tabpanel', 'aria-labelledby':collid })
 
-            if(collpanel.hasClass('in')){
-              colltab.attr({ 'aria-controls': collpanel.attr('id'), 'aria-selected':'true', 'aria-expanded':'true', 'tabindex':'0' })
-              collpanel.attr({ 'role':'tabpanel', 'tabindex':'0', 'aria-labelledby':collid, 'aria-hidden':'false' })
+            if(!hasopenpanel && parentpanel.is(parentfirstchild)) {
+              colltab.attr({ 'tabindex':'0' })
+              collpanel.attr({ 'tabindex':'-1' })
+            }else if(collpanel.hasClass('in')){
+              colltab.attr({ 'aria-selected':'true', 'aria-expanded':'true', 'tabindex':'0' })
+              collpanel.attr({ 'tabindex':'0', 'aria-hidden':'false' })
             }else{
-              colltab.attr({'aria-controls' : collpanel.attr('id'), 'tabindex':'-1' })
-              collpanel.attr({ 'role':'tabpanel', 'tabindex':'-1', 'aria-labelledby':collid, 'aria-hidden':'true' })
+              colltab.attr({ 'tabindex':'-1' })
+              collpanel.attr({ 'tabindex':'-1', 'aria-hidden':'true' })
             }
           }
       })
@@ -3296,16 +3303,6 @@ CC0: http://creativecommons.org/publicdomain/zero/1.0/
 
  })(jQuery);
 (function ($) {
-	// Swiftype Autofill in search box
-	$('#college-search-field').swiftype({ 
-		engineKey: 'YUFwdxQ6-Kaa9Zac4rpb',
-		resultLimit: 5,
-		typingDelay: 600,
-		renderFunction: function(document_type, item, idx) {
-			return '<p class="title" data-url="'+ item['url'] +'">' + Swiftype.htmlEscape(item['title']) + '</p>';
-		}
-	});
-
 /**
  * Suggest Recent Searches
  * 
