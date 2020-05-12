@@ -73,7 +73,7 @@
 
 }
 .container.logobar {
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	box-shadow: -3px 1px 2px rgba(0,32,63,0.4), 3px 1px 2px rgba(0,32,63,0.4);
 }
 
 #college-top-actions a {
@@ -530,6 +530,10 @@ p.site-description {
 	border-bottom: 1px solid #999999;
 	border-top: 1px solid #999999;
 
+	& > .container {
+		box-shadow: -2px 2px 2px rgba(160,160,160,0.7), 2px 2px 2px rgba(160,160,160,0.7);
+	}
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -547,7 +551,7 @@ p.site-description {
 	h3 {
 		font-size: .9em;
 		font-weight: bold;
-		color: #666;
+		color: #555;
 		font-family: $font-family-base;
 		margin: 0;
 	}

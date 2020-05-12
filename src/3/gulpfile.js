@@ -173,7 +173,6 @@ function globalsFooterScriptsDev() {
   return gulp
     .src([
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
       config.jsPath + '/custom.js'
     ])
     .pipe(concat('g.js'))
@@ -196,7 +195,6 @@ function globalsFooterScripts() {
   return gulp
     .src([
       config.npmPath + '/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.js',
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
       config.jsPath + '/custom.js'
     ])
     .pipe(concat('g.js'))
@@ -212,7 +210,6 @@ function headerScriptsFull() {
   return gulp
     .src([
       config.verPath + '/j/ghead.js',
-      config.jsPath + '/jquery.swiftype.autocomplete.js',
     ])
     .pipe(concat('ghead-full.js'))
     .pipe(gulp.dest(config.verPath + '/j'));
