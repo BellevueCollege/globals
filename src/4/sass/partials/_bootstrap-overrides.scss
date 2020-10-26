@@ -38,3 +38,13 @@ abbr[data-original-title] {
 #main {
 	overflow-wrap: break-word
 }
+
+/* Add margin after elements */
+.card {
+	margin-bottom: 1rem;
+}
+
+/* Prevent extra padding at bottom of alerts */
+.alert *:last-child {
+	margin-bottom: 0;
+}
