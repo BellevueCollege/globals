@@ -48,3 +48,25 @@ abbr[data-original-title] {
 .alert *:last-child {
 	margin-bottom: 0;
 }
+
+/* Set link colors when text-white or text-light is set */
+.text-light,
+.text-white {
+	a, a:visited {
+		color: lighten($link-color, 50%);
+	}
+	a:active, a:hover, a:focus {
+		color: #fff;
+	}
+
+	/* handle cases where dark text is inside an otherwise light text element*/
+	.text-dark {
+		a, a:visited {
+			color: $link-color;
+		}
+		a:active, a:hover, a:focus {
+			color: #003D79;
+		}
+		
+	}
+}
