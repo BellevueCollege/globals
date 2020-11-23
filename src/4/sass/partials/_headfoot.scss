@@ -44,6 +44,7 @@
 
 		#site-branding {
 			@extend .my-3;
+			font-family: $headings-font-family;
 		}
 	}
 

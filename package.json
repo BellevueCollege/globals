@@ -23,9 +23,9 @@
     "swiftype-autocomplete-jquery": "swiftype/swiftype-autocomplete-jquery"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "bootstrap": "^4.4.1",
-    "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#master",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#main",
     "bootstrap-sass": "^3.4.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
