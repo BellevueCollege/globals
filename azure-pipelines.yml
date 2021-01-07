@@ -1,0 +1,58 @@
+trigger:
+- trunk
+- qa
+variables:
+- name: versionStamp
+  value: '[Build: $(Build.BuildNumber). Commit: $(Build.SourceVersion)]'
+pool:
+  vmImage: "ubuntu-20.04"
+steps:
+- task: Npm@1
+  inputs:
+    command: 'install'
+- task: replacetokens@3
+  inputs:
+    rootDirectory: ''
+    targetFiles: '**/sass/g.scss'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+    useLegacyPattern: false
+    enableTelemetry: true
+- task: gulp@0
+  inputs:
+    gulpFile: 'src/3/gulpfile.js'
+    targets: 'dev'
+    gulpjs: 'node_modules/gulp/bin/gulp.js'
+    enableCodeCoverage: false
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+- task: gulp@0
+  inputs:
+    gulpFile: 'src/4/gulpfile.js'
+    targets: 'dev'
+    gulpjs: 'node_modules/gulp/bin/gulp.js'
+    enableCodeCoverage: false
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+- task: gulp@0
+  inputs:
+    gulpFile: 'src/3/gulpfile.js'
+    targets:
+    gulpjs: 'node_modules/gulp/bin/gulp.js'
+    enableCodeCoverage: false
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/trunk'))
+- task: gulp@0
+  inputs:
+    gulpFile: 'src/4/gulpfile.js'
+    targets:
+    gulpjs: 'node_modules/gulp/bin/gulp.js'
+    enableCodeCoverage: false
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/trunk'))
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: g'
+  inputs:
+    PathtoPublish: g
+    ArtifactName: g
+
