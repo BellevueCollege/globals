@@ -28,14 +28,14 @@ steps:
     targets: 'dev'
     gulpjs: 'node_modules/gulp/bin/gulp.js'
     enableCodeCoverage: false
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/qa'))
 - task: gulp@0
   inputs:
     gulpFile: 'src/4/gulpfile.js'
     targets: 'dev'
     gulpjs: 'node_modules/gulp/bin/gulp.js'
     enableCodeCoverage: false
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/qa'))
 - task: gulp@0
   inputs:
     gulpFile: 'src/3/gulpfile.js'
