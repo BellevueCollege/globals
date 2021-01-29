@@ -271,7 +271,7 @@ $topbar-vert-padding: 1em;
 		}
 
 		.container.logobar {
-			height: $topbar-height;
+			height: auto;
 			margin-top: $topbar-padding;
 			width: 100%;
 			z-index: 10;
