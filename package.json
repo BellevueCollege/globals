@@ -1,6 +1,6 @@
 {
   "name": "globals",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Bellevue College Style Library",
   "main": "src/3/gulpfile.js",
   "scripts": {
@@ -23,8 +23,8 @@
     "swiftype-autocomplete-jquery": "swiftype/swiftype-autocomplete-jquery"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
-    "bootstrap": "^4.5.3",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "bootstrap": "^4.6.0",
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#main",
     "bootstrap-sass": "^3.4.1",
     "gulp": "^4.0.2",
@@ -40,5 +40,6 @@
     "napa": "^3.0.0",
     "popper.js": "^1.16.1",
     "uglify-save-license": "^0.4.1"
-  }
+  },
+  "dependencies": {}
 }
