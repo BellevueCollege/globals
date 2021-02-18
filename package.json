@@ -1,8 +1,8 @@
 {
   "name": "globals",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Bellevue College Style Library",
-  "main": "src/3/gulpfile.js",
+  "main": "src/4/gulpfile.js",
   "scripts": {
     "install": "napa"
   },

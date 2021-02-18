@@ -67,6 +67,29 @@ abbr[data-original-title] {
 		a:active, a:hover, a:focus {
 			color: #003D79;
 		}
+
+		a.btn {
+			&,
+			&:active,
+			&:visited,
+			&:hover,
+			&:focus,
+			&:visited {
+				color: #fff;
+			}
+		}
+		a.btn.btn-warning,
+		a.btn.btn-light,
+		a.btn.btn-info {
+			&,
+			&:active,
+			&:visited,
+			&:hover,
+			&:focus,
+			&:visited {
+				color: #000;
+			}
+		}
 		
 	}
 }
