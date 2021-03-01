@@ -3,9 +3,17 @@
 /* Over-ride default colors */
 $primary:         #003D79; // BC Brand Primary Blue
 $success:         #317131; // Darkened to meet a11y AA requirements
-$info:            #afd7ff; // Lightened BC Brand Blue to meet a11y requirements
+$info:            #C7EAFB; // Lightened BC Brand Blue to meet a11y requirements
 $warning:         #F2C01E; // BC Brand Yellow
 $danger:          #C4122F; // BC Brand Red
+
+$theme-colors: (
+  "primary": #003D79,
+  "success": #317131,
+  "info" : #C7EAFB,
+  "warning" : #F2C01E,
+  "danger" : #C4122F
+);
 
 $body-bg: #efefef;
 $link-color: #0073ae;
@@ -32,6 +40,10 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px
 );
+
+$alert-bg-level: -10;
+$alert-border-level: -3;
+$alert-color-level: 8;
 
 /* Load Default Bootstrap */
 @import "bootstrap";
