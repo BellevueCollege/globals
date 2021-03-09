@@ -52,43 +52,20 @@ abbr[data-original-title] {
 /* Set link colors when text-white or text-light is set */
 .text-light,
 .text-white {
-	a, a:visited {
+	a:not(.btn), a:not(.btn):visited {
 		color: lighten($link-color, 70%);
 	}
-	a:active, a:hover, a:focus {
+	a:not(.btn):active, a:not(.btn):hover, a:not(.btn):focus {
 		color: #fff;
 	}
 
 	/* handle cases where dark text is inside an otherwise light text element*/
 	.text-dark {
-		a, a:visited {
+		a:not(.btn), a:not(.btn):visited {
 			color: $link-color;
 		}
-		a:active, a:hover, a:focus {
+		a:not(.btn):active, a:not(.btn):hover, a:not(.btn):focus {
 			color: #003D79;
-		}
-
-		a.btn {
-			&,
-			&:active,
-			&:visited,
-			&:hover,
-			&:focus,
-			&:visited {
-				color: #fff;
-			}
-		}
-		a.btn.btn-warning,
-		a.btn.btn-light,
-		a.btn.btn-info {
-			&,
-			&:active,
-			&:visited,
-			&:hover,
-			&:focus,
-			&:visited {
-				color: #000;
-			}
 		}
 		
 	}
@@ -96,7 +73,7 @@ abbr[data-original-title] {
 
 .card.bg-info > .card-body,
 .card.bg-warning > .card-body {
-	a {
+	a:not(.btn) {
 		color: darken($link-color, 20%);
 	}
 }
