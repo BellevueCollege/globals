@@ -72,7 +72,8 @@ abbr[data-original-title] {
 }
 
 .card.bg-info > .card-body,
-.card.bg-warning > .card-body {
+.card.bg-warning > .card-body,
+.alert {
 	a:not(.btn) {
 		color: darken($link-color, 20%);
 	}
