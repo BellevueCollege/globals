@@ -7,6 +7,10 @@ variables:
 pool:
   vmImage: "ubuntu-20.04"
 steps:
+- task: NodeTool@0
+  displayName: 'Use Node 14'
+  inputs:
+    versionSpec: 14.x
 - task: Npm@1
   inputs:
     command: 'install'
