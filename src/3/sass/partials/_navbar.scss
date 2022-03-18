@@ -57,7 +57,7 @@ ul.nav.navbar-nav,
 
 	/* prevent normal focus state */
  	a:focus {
-		@extend a:hover;
+		@extend a, :hover;
 		box-shadow: none;
 		border-radius: none;
 		color: #fff;

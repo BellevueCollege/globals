@@ -1,5 +1,5 @@
 /*!
- * modernizr v3.10.0
+ * modernizr v3.12.0
  * Build https://modernizr.com/download?-displaytable-flexbox-flexboxlegacy-flexboxtweener-flexwrap-fontface-setclasses-shiv-teststyles-dontmin
  *
  * Copyright (c)
@@ -35,8 +35,7 @@
    * @access public
    */
   var ModernizrProto = {
-    // The current version, dummy
-    _version: '3.10.0',
+    _version: '3.12.0',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
@@ -336,7 +335,7 @@
 
     ret = callback(div, rule);
     // If this is done after page load we don't want to remove the body so check if body exists
-    if (body.fake) {
+    if (body.fake && body.parentNode) {
       body.parentNode.removeChild(body);
       docElement.style.overflow = docOverflow;
       // Trigger layout so kinetic scrolling isn't disabled in iOS6+
@@ -839,13 +838,13 @@
   
 
   /**
-   * domToCSS takes a camelCase string and converts it to kebab-case
+   * domToCSS takes a camelCase string and converts it to hyphen-case
    * e.g. boxSizing -> box-sizing
    *
    * @access private
    * @function domToCSS
    * @param {string} name - String name of camelCase prop we want to convert
-   * @returns {string} The kebab-case version of the supplied name
+   * @returns {string} The hyphen-case version of the supplied name
    */
   function domToCSS(name) {
     return name.replace(/([A-Z])/g, function(str, m1) {
@@ -934,12 +933,12 @@
   ;
 
   /**
-   * cssToDOM takes a kebab-case string and converts it to camelCase
+   * cssToDOM takes a hyphen-case string and converts it to camelCase
    * e.g. box-sizing -> boxSizing
    *
    * @access private
    * @function cssToDOM
-   * @param {string} name - String name of kebab-case prop we want to convert
+   * @param {string} name - String name of hyphen-case prop we want to convert
    * @returns {string} The camelCase version of the supplied name
    */
   function cssToDOM(name) {
@@ -961,7 +960,7 @@
   // on our modernizr element, but instead just testing undefined vs
   // empty string.
 
-  // Property names can be provided in either camelCase or kebab-case.
+  // Property names can be provided in either camelCase or hyphen-case.
 
   function testProps(props, prefixed, value, skipValueTest) {
     skipValueTest = is(skipValueTest, 'undefined') ? false : skipValueTest;
@@ -1055,7 +1054,7 @@
    * @example
    *
    * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
-   * than kebab-case properties, all properties are their Capitalized variant
+   * than hyphen-case properties, all properties are their Capitalized variant
    *
    * ```js
    * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
@@ -1170,7 +1169,7 @@
    * @optionProp testAllProps
    * @access public
    * @function testAllProps
-   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
+   * @param {string} prop - String naming the property to test (either camelCase or hyphen-case)
    * @param {string} [value] - String of the value to test
    * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
    * @returns {string|boolean} returns the string version of the property, or `false` if it is unsupported
@@ -1317,13 +1316,13 @@ else {
 }
 !*/
 
-  var blacklist = (function() {
+  var unsupportedUserAgent = (function() {
     var ua = navigator.userAgent;
     var webos = ua.match(/w(eb)?osbrowser/gi);
     var wppre8 = ua.match(/windows phone/gi) && ua.match(/iemobile\/([0-9])+/gi) && parseFloat(RegExp.$1) >= 9;
     return webos || wppre8;
   }());
-  if (blacklist) {
+  if (unsupportedUserAgent) {
     Modernizr.addTest('fontface', false);
   } else {
     testStyles('@font-face {font-family:"font";src:url("https://")}', function(node, rule) {

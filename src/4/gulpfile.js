@@ -1,6 +1,6 @@
 // Dependencies
 var gulp         = require('gulp');
-    sass         = require('gulp-sass');
+    sass         = require('gulp-sass')(require('sass'));
     notify       = require('gulp-notify');
     sourcemaps   = require('gulp-sourcemaps');
     autoprefixer = require('gulp-autoprefixer');
@@ -46,7 +46,7 @@ var sassOptions = {
  *
  **/
 var sassDevOptions = {
-  outputStyle: 'nested',
+  outputStyle: 'expanded',
   sourceComments: true,
   includePaths: [
     config.sassPath,
