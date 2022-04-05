@@ -58,6 +58,6 @@ $fa-font-path: '../f';
 /* Typography */
 $std-line-height: 1.66666667em;
 $std-margin: 1em;
-$sm-margin: $std-margin/3;
+$sm-margin: calc($std-margin / 3);
 
 $primary-dark: #162F57;

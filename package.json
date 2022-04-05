@@ -17,7 +17,7 @@
     "not dead"
   ],
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "bootstrap": "^4.6.1",
     "bootstrap-accessibility-plugin": "github:paypal/bootstrap-accessibility-plugin#main",
     "bootstrap-sass": "^3.4.3",
@@ -32,7 +32,7 @@
     "gulp-uglify": "^3.0.2",
     "jquery": "^1.12.4",
     "popper.js": "^1.16.1",
-    "sass": "^1.49.9",
+    "sass": "^1.49.11",
     "uglify-save-license": "^0.4.1"
   }
 }
