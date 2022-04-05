@@ -14,7 +14,6 @@ Based on [Bootstrap 3](https://getbootstrap.com/docs/3.3/), Globals 3 is our cur
 * [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) is the core of Globals 3
 * [Bootstrap Accessibility Plugin](https://paypal.github.io/bootstrap-accessibility-plugin/). Globals 3 uses significant parts of the Bootstrap Accessibility Plugin, but does not include the entire project.
 * [Modernizr](https://modernizr.com/) is used for feature detection to provide fallback for elements like FlexBox.
-* [Swiftype Autocomplete JQuery Plugin](https://github.com/swiftype/swiftype-autocomplete-jquery). Globals 3 uses a forked version of this plugin to allow for additional query caching and styling.
 * [Respond JS](https://github.com/scottjehl/Respond) Media Query polyfill
 * In addition, the following development tools are used:
   * [Node Package Manager](https://www.npmjs.com/) for package management
@@ -32,7 +31,6 @@ Based on [Bootstrap 4](https://getbootstrap.com/docs/4.3/), Globals 4 is ready f
 
 * [Bootstrap](https://github.com/twbs/bootstrap) is the core of Globals 4
 * [FontAwesome Free](https://fontawesome.com) provides icons (replacing Glyphicons in Globals 3)
-* [Swiftype Autocomplete JQuery Plugin](https://github.com/swiftype/swiftype-autocomplete-jquery). Globals 4 uses a forked version of this plugin to allow for additional query caching and styling.
 * In addition, the following development tools are used:
   * [Node Package Manager](https://www.npmjs.com/) for package management
   * [Gulp](https://gulpjs.com/) for build tasks
