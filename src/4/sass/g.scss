@@ -1,6 +1,12 @@
-/*! Globals Version 4.3.0- #{versionStamp}# */
+/*! Globals Version 4.4- #{versionStamp}# */
 
 @import "partials/base";
+
+/* Third party libraries */
+@import "bootstrap";
+@import "fontawesome";
+@import "solid";
+@import "brands";
 
 /* Get our Bootstrap overrides */
 @import "partials/bootstrap-overrides";
