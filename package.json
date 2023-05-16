@@ -1,6 +1,6 @@
 {
   "name": "globals",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "Bellevue College Style Library",
   "main": "src/4/gulpfile.js",
   "repository": {
